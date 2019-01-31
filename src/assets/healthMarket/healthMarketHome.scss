@@ -1,0 +1,234 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#healthMarketHome header {
+    border-bottom: 0;
+}
+
+#healthMarketHome {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+        height: 0.84rem;
+        padding: 0 0.23rem;
+        //  外层图标
+        i {
+            font-size: 0.5rem;
+            color: #939494;
+        }
+        //      搜索框
+        .healthMarketHome-searchBar {
+            position: relative;
+            width: 5rem;
+            height: 0.64rem;
+            input {
+                background: #F2F2F2;
+                width: 5rem;
+                height: 0.64rem;
+                padding: 0 0.6rem;
+                border: 0;
+            }
+            input:hover {
+                border: 0;
+            }
+            i:nth-of-type(1) {
+                position: absolute;
+                left: 0.2rem;
+                top: 0.2rem;
+                font-size: 0.3rem;
+                color: #adadad;
+                z-index: 100;
+            }
+            i:nth-of-type(2) {
+                position: absolute;
+                right: 0.2rem;
+                top: 0.2rem;
+                font-size: 0.3rem;
+                color: #adadad;
+                z-index: 100;
+            }
+        }
+    }
+    //  上方tabbar
+    .el-tabs__header {
+        margin: 0;
+    }
+    .el-tabs__item.is-active {
+        color: red;
+        box-sizing: border-box;
+        border-bottom: 2px solid red;
+    }
+    .el-tabs__active-bar {
+        background-color: red;
+        margin-left: 10px;
+    }
+    .el-tabs--bottom .el-tabs__item.is-bottom:nth-child(2),
+    .el-tabs--bottom .el-tabs__item.is-top:nth-child(2),
+    .el-tabs--top .el-tabs__item.is-bottom:nth-child(2),
+    .el-tabs--top .el-tabs__item.is-top:nth-child(2) {
+        padding-left: 20px;
+    }
+    .el-tabs--bottom .el-tabs__item.is-bottom:last-child,
+    .el-tabs--bottom .el-tabs__item.is-top:last-child,
+    .el-tabs--top .el-tabs__item.is-bottom:last-child,
+    .el-tabs--top .el-tabs__item.is-top:last-child {
+        padding-right: 20px;
+    }
+    //轮播
+    .swiper-container {
+        img {
+            width: 7.5rem;
+            height: 3rem;
+            display: block;
+        }
+        .swiper-pagination-bullet-active {
+            background: #f84e8d;
+        }
+    }
+    
+    .el-tabs__header {
+        position: fixed;
+        top: 0.82rem;
+    }
+    
+    .healthMarketHome-con {
+        padding-top: 1.64rem;
+    }
+    
+    header {
+        position: fixed;
+        top: 0;
+        z-index: 99;
+        background: #fff;
+    }
+    
+    .wrapper {
+        overflow: hidden;
+        /*      padding-bottom: .9rem;
+    */
+        height: 100%;
+    }
+    
+    .healthMarketHomeXWrapper {
+        overflow-x: hidden;
+        height: 100%;
+        /*height: 100%;*/
+    }
+    
+    .healthMarketHomeXContent {
+        min-width: 7.5rem;
+        /*  height: 100%;*/
+    }
+    //#healthMarketHome .el-tabs__item.is-active {
+    //  color: red;
+    //}
+    //  轮播图下边的导航栏
+    .healthMarketHome-navigate {
+        width: 100%;
+        height: 2.44rem;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        >div {
+            width: 1.05rem;
+            height: 1.56rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.26rem;
+            color: #bdbdbd;
+            b {
+                display: block;
+                width: 100%;
+                height: 1.05rem;
+                border-radius: 50%;
+                i {
+                    font-size: 1.1rem;
+                    color: #fff;
+                }
+            }
+        }
+        div:nth-of-type(1) b {
+            background: #fe9923;
+        }
+        div:nth-of-type(2) b {
+            background: #ff797c;
+        }
+        div:nth-of-type(3) b {
+            background: #8bc71f;
+        }
+        div:nth-of-type(4) b {
+            background: #93aef1;
+        }
+    }
+    .healthMarketHome-article {
+        width: 100%;
+        min-height: 5rem;
+        >div {
+            width: 100%;
+            height: 3.13rem;
+            padding: 0 0.3rem;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            border-top: .07rem solid #F2F2F2;
+            >div:nth-of-type(1) {
+                width: 100%;
+                height: 0.82rem;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                h2 {
+                    font-size: 0.3rem;
+                    color: #999999;
+                }
+                span {
+                    font-size: 0.24rem;
+                    color: #c4c4c4;
+                }
+            }
+            .healthMarketHomeXContent {
+                width: 200%;
+                display: flex;
+                flex-direction: row;
+                height: 2rem;
+                >div {
+                    width: 3.4rem;
+                    height: 2rem;
+                    margin-right: 0.1rem;
+                    border-radius: 0.1rem;
+                    position: relative;
+                    flex-shrink: 0;
+                    >img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                    >span {
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        top: 40%;
+                        margin: 0 auto;
+                        font-size: 0.33rem;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
