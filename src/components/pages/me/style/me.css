@@ -1,0 +1,192 @@
+header{
+    height: .85rem;
+    border-bottom:.01rem solid #f2f2f2;
+    box-sizing: border-box;
+    text-align: center;
+    color: black;
+    line-height: .85rem;
+    font-size: .28rem;
+}
+.reportZ{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.dyna{
+    height: 4.52rem;
+    width:100%;
+    padding: 0 .3rem;
+    box-sizing: border-box;
+    border-bottom: .01rem solid #f2f2f2;
+}
+.report{
+    width:100%;
+    height: 1.82rem;
+    padding: .33rem 0 .33rem 0;
+    box-sizing: border-box;
+}
+.reportRen{
+    width:1.2rem;
+    height:1.2rem;
+    float: left;
+}
+.reportRen img{
+    width:100%;
+    height: 100%;
+}
+/* .sugar{
+    width:.83rem;
+    height: .32rem;
+    border:.01rem solid #b9b9b9;
+    box-sizing: border-box;
+    border-radius: .01rem;
+} */
+.reportCon{
+    width:5.7rem;
+    padding-left: .4rem;
+    box-sizing: border-box;
+    height: 1.2rem;
+    float: right;
+}
+.reponConZ{
+    text-align: left;
+}
+.xinren{
+    font-size: .30rem;
+    text-align: left;
+    margin-top: .18rem;
+}
+.reponConZ span:nth-of-type(1){
+    font-size: .30rem;
+    display: inline-block
+}
+.sugar{
+    border:.01rem solid #b9b9b9;
+    box-sizing: border-box;
+    width: 1.41rem;
+    height: .49rem;
+    border-radius: .3rem;
+    -webkit-box-sizing: border-box;
+    font-size: .30rem;
+    display: inline-block;
+    text-align: center;
+    line-height: .49rem;
+}
+.arrow{
+    position: absolute;
+    right:0rem;
+    top:.2rem;
+}
+.fontZt{
+    font-size: .64rem;
+}
+.follow{
+   width:100%;
+   height: 1.44rem;
+   padding: .3rem 0;
+   box-sizing: border-box;
+}
+.follow ul{
+    display: flex;
+    width:100%;
+    height: .98rem;
+    display:-webkit-flex; 
+    justify-content: flex-start;
+    -webkit-justify-content: flex-start;
+}
+
+.follow ul li{
+    width: 33.3%;
+    text-align: center;
+    height: 100%;
+}
+.follow ul li p:nth-of-type(1){
+    display: flex;
+      -webkit-align-items: center; 
+     align-items: center;  
+     -webkit-justify-content: center;  
+    justify-content: center;   
+    font-size: .37rem;
+    height: 50%;
+}
+.follow ul li p:nth-of-type(2){
+    display: flex;
+    -webkit-align-items: center; 
+   align-items: center;  
+   -webkit-justify-content: center;  
+  justify-content: center;   
+    height: 50%;
+    font-size: .24rem;
+}
+.dynamic{
+    width: 3.61rem;
+    height: .83rem;
+    margin: auto;
+    background: #ff5e3a;
+    text-align: center;
+    line-height: .83rem;
+    color: #ffffff;
+    margin-top: .2rem;
+    font-size: .30rem;
+    border-radius: .15rem;
+
+}
+/* 数据中心** */
+.dataZ{
+    margin-top: .78rem;
+}
+.dataZ ul {
+    zoom:1
+}
+.dataZ ul:after{
+    content:"";     
+    display:block;        
+    height:0;        
+    clear:both;        
+    visibility:hidden;      
+}
+.dataZ ul li{
+    width:33.3%;
+    float: left;
+    margin-bottom: .6rem;
+    height: 1.4rem;
+    text-align: center;
+}
+
+.shuju{
+    font-size: .64rem;
+    color: #ff5e3a;
+}
+.dataZ ul li p{
+    margin-top: .25rem;
+    font-size: .28rem;
+}
+/* 我的计划** */
+.plan,.planSz{
+    width:100%;
+    line-height: .85rem;
+    position: relative;
+    height: .85rem;
+}
+.planSz{
+    margin-top: .48rem;
+}
+.planIcon{
+    height: 100%;
+    float: left;
+margin-left: .3rem;
+}
+.planFont{
+    font-size: .58rem;
+
+}
+.planContent{
+    float: left;
+    padding-left: .3rem;
+    box-sizing: border-box;
+    font-size: .34rem;
+}
+.planJ{
+    position: absolute;
+    right:.2rem;
+}

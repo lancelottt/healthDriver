@@ -1,0 +1,280 @@
+.imgZ{
+    position: fixed;
+    width:100%;
+    height: 100%;
+    top:0;
+    bottom: 0;
+    right:0;
+    left:0;
+}
+    .imgZ img{
+        width:100%;
+        height: 100%;
+    }
+    .content p{
+        color: #999999;
+        font-size: .35rem;
+        text-align: left;
+    }
+    .content p:first-child{
+        margin-top: .43rem;
+        text-align: left;
+        margin-bottom: .3rem;
+    }
+    .content{
+        position: fixed;
+        width: 80%;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        top: 0;
+    }
+    .conTu{
+        margin-top: .28rem;
+        position: relative;
+    }
+    .conTu img{
+        width:100%;
+        height: 100%;
+    }
+    .phone{
+        position: absolute;
+        right: .3rem;
+        top: .14rem;
+        z-index: -1;
+    }
+    .phone img{
+        background-size: 100%;
+    }
+    .weChat{
+        width: 1.88rem;
+        position: absolute;
+        height: 1.88rem;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    .weChat img{
+        background-size: 100%;
+    }
+    .weChat span{
+        display: inline-block;
+        margin-top: .3rem;
+        font-size: .25rem;
+        width: 2.0rem;
+    }
+    .imgT{
+        width: 81%;
+        height: .87rem;
+        position: fixed;
+        bottom: 1.2rem;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    .imgTleft{
+        float: left;
+        width:.8rem;
+        height: .8rem;
+    }
+    .imgTleft img{
+        width:100%;
+        height: 100%;
+    }
+    .imgTright{
+        width: 86%;
+        height: 69%;
+        margin-top: .2rem;
+        float: right;
+    }
+    .imgTright img{
+        height: 84%;
+        line-height: .3rem;
+    }
+    /* 登录页面** */
+    .cation{
+        width: 80%;
+        height: 4.5rem;
+        top: 1.9rem;
+        left: .5rem;
+        position: absolute;
+    }
+    .caCon,.Code{
+        text-align: left;
+        color: #999999;
+    }
+    .Code{
+        position: relative;
+    }
+    .huoYan{
+        text-align: center;
+        top: 0.6rem;
+        width: 1.8rem;
+        position: absolute;
+        right: .1rem;
+        height: 0.5rem;
+        line-height: .5rem;
+        border: 1px solid #999999;
+    }
+    .phoneCa,.yan{
+        font-size: .34rem;
+    }
+    .caCon input,.Code input{
+        border-bottom: 1px solid #cccccc;
+        height: 0.8rem;
+        display: inline-block;
+        outline: none;
+        width: 100%;
+        margin-top: .15rem;
+    }
+    .cation .buttonO{
+        color: #ffffff;
+        width: 80%;
+        height: 0.7rem;
+        outline: none;
+        margin-top: .8rem;
+        border: none;
+        background: #999999;
+        border-radius: .09rem;
+        font-size: .35rem;
+    }
+    /* 开启页** */
+   .bannerZ{
+       width:100%;
+       /* background: #cccccc; */
+       height: auto;
+     
+   } 
+   .bannerT{
+       width:100%;
+       background: url("../../../static/img/health.png") no-repeat center;
+       background-size: 100%;
+       padding-top: .58rem;
+       /* height: 10rem; */
+       box-sizing: border-box;
+   }
+   .bannerT p:nth-of-type(1){
+       font-size: .35rem;
+       color: #ddb6c3;
+       display: block;
+   }
+   .bannerTu{
+    width: 87%;
+    margin-top: .3rem;
+    margin: auto;
+    margin-top: .35rem;
+   }
+   .bannerT p:nth-of-type(2){
+    margin-top: .19rem;
+    font-size: .30rem;
+    color: #ddb6c3;
+    display: block;
+}
+   .dingW{
+       width: 100%;
+       position: relative;
+       height: 1.3rem;
+   }
+   .bannerImg{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: -35px;
+    margin: auto;
+   }
+   .bannerImg img{
+    width: 1.2rem;
+    height: 1.2rem;
+   }
+    .startH button{
+        margin-top: .6rem;
+        background: #ff5e3a;
+        width: 83%;
+        /* margin-bottom: .6rem; */
+        height: .8rem;
+        border: 0;
+        font-size: .28rem;
+        color: #ffffff;
+        border-radius: 0.30rem;
+    }
+    .bannerTu ul li{
+        position: relative;
+        width:100%;
+        height:1.8rem;
+        margin-bottom: .3rem;
+    }
+    .bannerTu ul li span{
+        font-size: .36rem;
+        position: absolute;
+        top: .6rem;
+        color: #ffffff;
+        left: .3rem;
+    }
+    .cJ{
+        font-size: .28rem;
+        position: absolute;
+        top: 1.1rem;
+        color: #ffffff;
+        left: .3rem;
+    }
+    .bannerTu ul li img{
+        width:100%;
+        height: 100%;
+    }
+    /* //定制运动方案** */
+    .shopBanner{
+        width:6.46rem;
+        height: 4.76rem;
+        background:#ffffff;
+        border-radius: .1rem;
+        box-shadow:0px 4px 10px #f3bcce;
+        margin: auto;
+        margin-top: .45rem;
+    }
+    .divImg{
+        width:100%;
+        height: 2.64rem;
+    }
+    .divImg img{
+          width:100%;
+          height: 100%;
+    }
+    .shopTitle{
+        width:100%;
+        height: 1.6rem;
+        margin:.33rem auto;
+    }
+    .shopTitle ul li{
+        width:33%;
+        height: 1.6rem;
+        float: left;
+        border-right: .01rem solid #cccccc;
+        box-sizing: border-box;
+        margin: auto;
+    }
+    .shopTitle ul li p:nth-of-type(1){
+        width:.65rem;
+        height: .65rem;
+        margin: auto;
+    }
+    .pImg img{
+        width:100%;
+        height:100%;
+    }
+    .riqi{
+        font-size: .28rem;
+        color: #666666;
+        margin-top: .21rem;
+    }
+    .miniue{
+        font-size: .24rem;
+        color: #999999;
+        margin-top: .13rem;
+    }
+
+
