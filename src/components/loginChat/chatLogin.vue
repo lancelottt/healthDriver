@@ -16,7 +16,7 @@
                     <div @click="loginWinwei()">
                      <img src="../../../static/img/weixin.png" alt="" >
                     </div>
-                     <span>点击微信快捷登录</span>
+                     <span >点击微信快捷登录</span>
                 </div>
                
              </div>

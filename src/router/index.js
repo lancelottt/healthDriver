@@ -46,7 +46,7 @@ import Heart from '@/components/pages/datasj/heart/heart'
 import Me from '@/components/pages/me/me'
 // 发布动态**
 import Amic from '@/components/pages/me/amic'
->>>>>>> origin/wqy
+
 
 Vue.use(Router)
 
