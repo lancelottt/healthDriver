@@ -1,0 +1,117 @@
+.amincZ{
+    width:93%;
+    height: 100%;
+    margin: auto;
+}
+.amic{
+    width:100%;
+    height: 12rem;
+}
+header{
+    height: .85rem;
+    border-bottom:.01rem solid #f2f2f2;
+    box-sizing: border-box;
+    color: black;
+    line-height: .85rem;
+    font-size: .28rem;
+}
+.Tp{
+    float: left;
+}
+.headerAmic{
+    float: left;
+    font-size: .34rem;
+    margin-left: .3rem;
+}
+.headerFb{
+    width:.95rem;
+    height: .62rem;
+    line-height: .62rem;
+    background: #32c58c;
+    color: #ffffff;
+    float: right;
+    border-radius: .09rem;
+    margin-top: .1rem;
+}
+.amicCon{
+    width:93%;
+    height: 10rem;
+    margin: auto;
+}
+.title{
+    width:100%;
+    height: 4.98rem;
+    border-bottom: .01rem solid #f2f2f2;
+    box-sizing: border-box;
+    padding-top: .45rem;
+    box-sizing: border-box;
+    text-align: left;
+}
+.title p:nth-of-type(1){
+    font-size: .32rem;
+    color: #666666;
+}
+.title p:nth-of-type(2){
+    font-size: .28rem;
+    color: #999999;
+    margin-top: .54rem;
+}
+.amicImg{
+    width:1rem;
+    height: 1rem;
+    margin-top: .95rem;
+}
+.amicImg img{
+    width:100%;
+    height: 100%;
+}
+.Tpi{
+    font-size: .54rem;
+}
+.topic,.topicS{
+    width:100%;
+    height: .98rem;
+    padding-left: .2rem;
+    padding-top: .25rem;
+    box-sizing: border-box;
+}
+.topicS{
+    border:.01rem solid #f2f2f2;
+    box-sizing: border-box;
+}
+.toI{
+    float: left;
+
+}
+.huti,.hutis{
+    width:91%;
+    position: relative;
+    padding-left: .35rem;
+    box-sizing: border-box;
+    height: 100%;
+    text-align: left;
+    float: left;
+    border-bottom:.01rem solid #f2f2f2;
+
+}
+.hutis{
+    border-bottom:.01rem solid none;
+}
+.huiP{
+    position: absolute;
+    right:0;
+    bottom: .2rem;
+}
+.huiI{
+    font-size: .45rem
+}
+.toIico{
+    font-size: .59rem;
+}
+.huti p:nth-of-type(1){
+    font-size: .32rem;
+    line-height: .4rem;
+}
+.huiTion{
+    font-size: .34rem;
+}

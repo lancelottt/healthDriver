@@ -45,6 +45,7 @@
 				<arguments>1.0-name-matches-false-false-node_modules</arguments>
 			</matcher>
 		</filter>
+<<<<<<< HEAD
 		<filter>
 			<id>1548321841387</id>
 			<name></name>
@@ -72,5 +73,7 @@
 				<arguments>1.0-name-matches-false-false-node_modules</arguments>
 			</matcher>
 		</filter>
+=======
+>>>>>>> origin/wqy
 	</filteredResources>
 </projectDescription>

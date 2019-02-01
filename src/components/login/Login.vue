@@ -22,5 +22,9 @@
 </script>
 
 <style scoped="scoped">
+<<<<<<< HEAD
+=======
+	@import '../../assets/common/scss/common.css';
+>>>>>>> origin/wqy
 	@import '../../assets/login/login/login.css';
 </style>

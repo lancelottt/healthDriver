@@ -1,2 +1,56 @@
+<<<<<<< HEAD
 #wxLogin{position:relative}#wxLogin img{width:100%;height:100%}#wxLogin .el-button{position:absolute;left:14.5%;top:43%;width:5.36rem;height:0.78rem;background:rgba(255,255,255,0);border:0.02rem solid rgba(181,181,181,0.5);border-radius:0.39rem;font-size:0.36rem;line-height:0.36rem;font-size:0.26rem;font-family:PingFangSC-Regular;font-weight:400;color:#444}#wxLogin .el-button i{font-size:0.4rem;color:#2BB431;float:left}#wxLogin .el-button:hover{border-color:#ff5e3a;color:#ff5e3a}#wxLogin .el-button:hover i{color:red}#wxLogin span{position:absolute;font-size:0.3rem;top:0.5rem;right:0.5rem;color:#7B7B7B}
 /*# sourceMappingURL=login.css.map */
+=======
+#wxLogin {
+	position: relative
+}
+
+#wxLogin img {
+	width: 100%;
+	height: 100%
+}
+
+#wxLogin .el-button {
+	position: absolute;
+	left: 14.5%;
+	top: 43%;
+	width: 5.36rem;
+	height: 0.78rem;
+	background: rgba(255, 255, 255, 0);
+	border: 0.02rem solid rgba(181, 181, 181, 0.5);
+	border-radius: 0.39rem;
+	font-size: 0.36rem;
+	line-height: 0.36rem;
+	font-size: 0.26rem;
+	font-family: PingFangSC-Regular;
+	font-weight: 400;
+	color: #444
+}
+
+#wxLogin .el-button i {
+	font-size: 0.4rem;
+	color: #2BB431;
+	float: left
+}
+
+#wxLogin .el-button:hover {
+	border-color: #ff5e3a;
+	color: #ff5e3a
+}
+
+#wxLogin .el-button:hover i {
+	color: red
+}
+
+#wxLogin span {
+	position: absolute;
+	font-size: 0.3rem;
+	top: 0.5rem;
+	right: 0.5rem;
+	color: #7B7B7B
+}
+
+
+/*# sourceMappingURL=login.css.map */
+>>>>>>> origin/wqy

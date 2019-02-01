@@ -9,23 +9,23 @@
 </template>
 
 <script>
-	import tab from '@/components/home/Home'
+//	import tab from '@/components/home/Home'
 	import Vuex from "vuex"
 
 	export default {
-		components: {
-			'tab-com': tab
-		},
+//		components: {
+//			'tab-com': tab
+//		},
 		name: 'App',
 		methods:{
-			beforeDestroyed(){
-				console.log(show)
-			}
+//			beforeDestroyed(){
+//				console.log(show)
+//			}
 		},
 		computed: {
-			...Vuex.mapState({
-				show: state => state.show
-			})
+//			...Vuex.mapState({
+//				show: state => state.show
+//			})
 		}
 	}
 </script>

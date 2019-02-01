@@ -31,6 +31,7 @@ const actions={
         commit("handleEditTabStatus",params);
     }
 }
+
 const store = new Vuex.Store ({
 	state,
 	getters,

@@ -5,6 +5,8 @@ import 'iview/dist/styles/iview.css';
 import router from './router'
 import Vuex from "vuex";
 import '../static/reset.css'
+//import '../static/border.css'
+import './assets/styles/iconfont.css'
 import '../static/rem.js'
 import store from "@/store/index.js"
 import ElementUI from 'element-ui'
@@ -13,7 +15,8 @@ import 'element-ui/lib/theme-chalk/index.css'
 import Vue from 'vue'
 import App from './App'
 //import Cube from 'cube-ui'
-
+import Mint from 'mint-ui';
+import 'mint-ui/lib/style.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 // require styles
@@ -26,10 +29,12 @@ Vue.use(VueAwesomeSwiper)
 Vue.use(ElementUI)
 Vue.use(iView);
 Vue.use(Vuex);
+Vue.use(Mint);
 
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
+
 new Vue({
   el: '#app',
   router,

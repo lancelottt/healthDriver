@@ -1,6 +1,7 @@
 <template>
 	<div id="userInfo-disease">
 		<header><span class="" @click="handleBack()"><img src="../../../static/img/arrow_03.png"/></span><span>制订你的健康计划</span><span class="skip" @click="handleSkip()">跳过</span></header>
+
 		<!--iconfont icon-xiangzuojiantou-->
 		<section class="identity-con">
 			<div class="infoHint">
@@ -67,12 +68,12 @@
 			handleNext() {
 				this.$router.push('/healthPlan/makeHealthPlan')
 			},
-			
-	
+
 		}
 	}
 </script>
 
 <style>
+
 	@import '../../assets/userInfo/disease/disease.css';
 </style>

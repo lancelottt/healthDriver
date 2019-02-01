@@ -27,7 +27,6 @@
 					</div>
 				</label>
 			</div>
-			
 			<div class="confirmInfo-info  onlyBottomBorder">
 				<span>生日</span>
 				<el-input v-model="inputPhone" placeholder="请输入生日"></el-input>
