@@ -29,7 +29,8 @@ import HealthMarketHome from '@/components/healthMarket/healthMarketHome';
 import ChatLogin from '@/components/loginChat/chatLogin'
 import VerCode from '@/components/loginChat/verCode'
 import Healthy from '@/components/startUp/healthy'
-
+//商城**
+import Shopping from '@/components/pages/shopping/shopping'
 // 引入数据组件**
 import DataSj from '@/components/pages/datasj/datasj'
 // 体重**

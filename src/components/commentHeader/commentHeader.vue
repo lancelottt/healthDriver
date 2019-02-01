@@ -1,7 +1,7 @@
 <template>
     <div class="had">
-        <header>
-            <div>
+        <div>
+            <div class="componentHeader-header">
                 <div class="Tp">
                     <i class="iconfont Tpi">&#xe6b1;</i>
                 </div>
@@ -10,7 +10,7 @@
                     <img src="./img/ShareIcon.png" alt="">
                 </div>
             </div>
-        </header>
+        </div>
     </div>
 </template>
 <script>
@@ -26,7 +26,7 @@ export default {
 .had{
     height: .99rem;
 }
-  header{
+  .componentHeader-header{
     width: 96%;
     /* height: .87rem; */
     box-sizing: border-box;

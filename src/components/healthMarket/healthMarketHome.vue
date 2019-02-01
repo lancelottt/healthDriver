@@ -15,7 +15,7 @@
 			<div class="content">
 				<section class="healthMarketHome-con">
 					<el-tabs v-model="activeName" @tab-click="handleClick" stretch tab-position=top>
-						<el-tab-pane label="健康驾校" name="first">
+						<el-tab-pane label="健康驾校" name="second">
 							<swiper :options="swiperOption">
 								<swiper-slide v-for="(slide, index) in swiperSlides" :key="index">
 									<img :src='slide.src' />
@@ -86,7 +86,7 @@
 								</div>
 							</article>
 						</el-tab-pane>
-						<el-tab-pane label="社区" name="second">社区</el-tab-pane>
+						<el-tab-pane label="社区" name="first">社区</el-tab-pane>
 						<el-tab-pane label="体检评估" name="third">体检评估</el-tab-pane>
 						<el-tab-pane label="家庭阴阳师" name="fourth">家庭阴阳师</el-tab-pane>
 					</el-tabs>
@@ -99,7 +99,7 @@
 
 <script>
 	import BScroll from 'better-scroll'
-	import tab from '@/components/home/Home'
+	import tab from '../foorterGuid/footerGuild'
 
 	export default {
 		name: 'carrousel',

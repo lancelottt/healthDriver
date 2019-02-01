@@ -1,6 +1,6 @@
 .weight{
     width:100%;
-    height: 3.07rem;
+    height: auto;
 }
 .danW{
     height: .63rem;
@@ -33,4 +33,111 @@
     position: absolute;
     bottom: .1rem;
     left: 37%;
+}
+.dataT{
+    height: 9.89rem;
+    width:100%;
+    margin-top: .3rem;
+}
+.dataQ{
+    width: 60%;
+    margin: auto;
+    height: .56rem;
+}
+.dataQ ul li{
+    width:50%;
+    height: .56rem;
+    text-align: center;
+    line-height: .56rem;
+    font-size: .28rem;
+    color: #ff5e3a;
+    border-bottom: .01rem solid #ff5e3a;
+    float: left;
+}
+.dataQ ul li.active{
+    background: #ff5e3a;
+    color: #ffffff;
+}
+.tab-con .light {
+    display: block;
+  }
+.dataC{
+    width:100%;
+    height: auto;
+}
+.dataImg{
+    height: 5.99rem;
+}
+.dataImg img{
+    width:100%;
+    height: 100%;
+}
+.dataCon{
+    width:100%;
+    height: 2rem;
+    border-top: 0.01rem solid #cccccc;
+    margin-top: .5rem;
+}
+.dataCon p{
+    font-size: .30rem;
+    display: inline-block;
+    width: 93%;
+    margin-top: .3rem;
+    height: .6rem;
+    text-align: left;
+    line-height: .6rem;
+    color: #999999;
+}
+.xinW{
+      height: 1rem;
+      margin-top: .3rem;
+      width:96%;
+      margin: auto;
+      margin-top: .4rem;
+}
+.xinWo{
+    width:30%;
+    height: 100%;
+    float: left;
+}
+.xinWo img{
+    width:.68rem;
+    height: .75rem;
+}
+.xinImg{
+    float: left;
+}
+.xinWei{
+    float: right;
+    width: 62%;
+    font-size: .30rem;
+    color: #999999;
+}
+.xinWt{
+    width:40%;
+    height: 100%;
+    font-size: .30rem;
+    float: left;
+    font-weight: 100;
+}
+.xinP{
+    margin-top: .1rem;
+    text-align: left;
+    margin-left: .1rem;
+}
+.xinWs{
+    width:30%;
+    position: relative;
+    height: 100%;
+    float: right;
+    font-family: Light;
+    line-height: 1.22rem;
+}
+.eait{
+    font-size: .72rem;
+}
+.xinSub{
+    position: absolute;
+    top:-.18rem;
+    right:0;
 }

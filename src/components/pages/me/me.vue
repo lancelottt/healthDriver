@@ -1,9 +1,9 @@
 <template>
     <div style="padding-bottom:2.31rem">
      <div >
-         <header>
+         <div class="meHeader">
              我的
-         </header>
+         </div>
          <!-- 发布动态** -->
           <div class="dyna">
            <!-- 新人报道** -->

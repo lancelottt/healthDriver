@@ -1,6 +1,6 @@
 <template>
 <div>
-    <footer class="footer_guide"> 
+    <div class="footer_guide"> 
         <a href="javascript:;" class="guide_item cals" :class="{on:'/self'===$route.path}" @click="goTo('/self')">
         <span class="item_icon" >
             <i class="iconfont heart-broken">&#xe606;</i>
@@ -23,7 +23,7 @@
         <span class="item_icon">
             <i class="iconfont icon-waimai" :style="styleObj">&#xe602;</i>
         </span>
-        <span class="shopping">数据</span>
+        <span class="shopping" >数据</span>
         </a>
          <a href="javascript:;" class="guide_item" :class="{on:'/me'===$route.path}" @click="goTo('/me')">
         <span class="item_icon">
@@ -31,7 +31,7 @@
         </span>
         <span>我的</span>
         </a>
-    </footer>
+    </div>
 </div>
 </template>
 <script>

@@ -1,6 +1,7 @@
 <template>
 	<div id="healthPlan" class="page">
-		<tab-com></tab-com>
+		<!--<tab-com></tab-com>-->
+		<foot-com></foot-com>
 		<header><span class="" @click="handleBack()"><img src="../../../static/img/arrow_03.png"/></span><span>制订你的健康计划</span><span></span></header>
 		<!--iconfont icon-xiangzuojiantou-->
 		<div class="healthPlan-con">
@@ -243,10 +244,11 @@
 </template>
 
 <script>
-	import tab from '@/components/home/Home'
+	import FootTabbar from '../foorterGuid/footerGuild'
+//	import tab from '@/components/home/Home'
 	export default {
 		components: {
-			'tab-com': tab
+			'foot-com': FootTabbar
 		},
 		data() {
 			return {
