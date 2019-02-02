@@ -20,7 +20,7 @@ import Count from '@/components/healthPlan/count'
 //<<<<<<< HEAD
 import Competition from '@/components/competition/competition';
 
-//import Zilv from '@/components/zilv/index'
+import Zilv from '@/components/zilv/index'
 import HealthMarketHome from '@/components/healthMarket/healthMarketHome';
 //import Shangcheng from '@/components/shangcheng/index';
 //import Shuju from '@/components/shuju/index';
@@ -162,11 +162,11 @@ export default new Router({
 			name:'competition',
 			component:Competition
 		},
-//		{
-//			path:'/zilv',
-//			name:'zilv',
-//			component:Zilv
-//		},
+		{
+			path:'/zilv',
+			name:'zilv',
+			component:Zilv
+		},
 //		{
 //			path:'/healthMarket/healthMarketHome',
 //			name:'healthMarketHome',

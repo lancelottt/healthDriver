@@ -20,7 +20,7 @@
                         <div class="xinren">新人报到！请多多关照～</div>
                      <!-- 箭头** -->
                           <div class="arrow">
-                              <i class="iconfont fontZt">&#xe603;</i>
+                              <i class="iconfont fontZt icon-fanhui1"></i>
                           </div>
                     </div>
                   
@@ -52,39 +52,39 @@
        <div class="dataZ">
           <ul>
               <li>
-                  <i class="iconfont shuju">&#xe604;</i>
+                  <i class="iconfont shuju icon-shuju1"></i>
                   <p>数据中心</p>
               </li>
               <li>
-                  <i class="iconfont shuju">&#xe604;</i>
+                  <i class="iconfont shuju icon-shuju1"></i>
                   <p>数据中心</p>
               </li>
               <li>
-                  <i class="iconfont shuju">&#xe604;</i>
+                  <i class="iconfont shuju icon-shuju1"></i>
                   <p>数据中心</p>
               </li>
               <li>
-                  <i class="iconfont shuju">&#xe604;</i>
+                  <i class="iconfont shuju  icon-shuju1"></i>
                   <p>数据中心</p>
               </li>
               <li>
-                  <i class="iconfont shuju">&#xe604;</i>
+                  <i class="iconfont shuju icon-shuju1"></i>
                   <p>数据中心</p>
               </li>
                <li>
-                  <i class="iconfont shuju">&#xe604;</i>
+                  <i class="iconfont shuju  icon-shuju1"></i>
                   <p>数据中心</p>
               </li>
                <li>
-                  <i class="iconfont shuju">&#xe604;</i>
+                  <i class="iconfont shuju  icon-shuju1"></i>
                   <p>数据中心</p>
               </li>
                <li>
-                  <i class="iconfont shuju">&#xe604;</i>
+                  <i class="iconfont shuju icon-shuju1"></i>
                   <p>数据中心</p>
               </li>
                <li>
-                  <i class="iconfont shuju">&#xe604;</i>
+                  <i class="iconfont shuju icon-shuju1"></i>
                   <p>数据中心</p>
               </li>
           </ul>
@@ -92,19 +92,19 @@
        <!-- 我的计划** -->
         <div class="plan">
                <div class="planIcon">
-                   <i class="iconfont planFont">&#xe605;</i>
+                   <i class="iconfont planFont icon-yanjizhushou-shangchuan_xitong"></i>
                </div>
                 <div class="planContent">我的计划</div>
-                <div class="iconfont planJ"> &#xe603;</div>
+                <i class="iconfont planJ icon-fanhui1"></i>
         </div>
         <!-- 系统设置** -->
          <!-- 我的计划** -->
         <div class="planSz">
                <div class="planIcon">
-                   <i class="iconfont planFont">&#xe605;</i>
+                   <i class="iconfont planFont icon-yanjizhushou-shangchuan_xitong"></i>
                </div>
                 <div class="planContent">系统设置</div>
-                <div class="iconfont planJ"> &#xe603;</div>
+                <i class="iconfont planJ icon-fanhui1"></i>
         </div>
      </div>
      <foot-tabbar></foot-tabbar>

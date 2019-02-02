@@ -4,7 +4,9 @@
 			<tab-com></tab-com>
 		</div>-->
 		<!--    <img src="./assets/logo.png">-->
-		<router-view/>
+		<transition name="fadeToBlack" >
+			<router-view></router-view>
+		</transition>
 	</div>
 </template>
 
@@ -95,4 +97,6 @@ span{
 .cals{
     margin-top: .15rem;
 }
+
+
 </style>

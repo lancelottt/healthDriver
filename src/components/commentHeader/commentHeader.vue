@@ -3,7 +3,7 @@
         <div>
             <div class="componentHeader-header">
                 <div class="Tp">
-                    <i class="iconfont Tpi">&#xe6b1;</i>
+                    <i class="iconfont Tpi icon-jiantou-left"></i>
                 </div>
                 <div class="headerAmic">数据中心</div>
                 <div class="headerFb">

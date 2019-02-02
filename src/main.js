@@ -22,6 +22,8 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 // require styles
 import 'swiper/dist/css/swiper.css'
 
+
+
 Vue.use(VueAwesomeSwiper)
 //import BScroll from 'better-scroll';
 //Vue.prototype.$BScroll = BScroll;

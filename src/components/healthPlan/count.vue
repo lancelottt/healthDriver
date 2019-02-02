@@ -2,7 +2,7 @@
 	<div id="count">
 		<div class="count-con">
 			<div class="count-img">
-				<img src="../../../static/img/qweq.png"/>
+				<img src="../../../static/img/qweq.png" />
 			</div>
 			<div class="count-slogon">
 				<span>“无论怎么样，<br />
@@ -14,19 +14,19 @@
 			</div>
 			<div class="count-detail">
 				<div>
-					<img src="../../../static/img/count5.png"/>
+					<img src="../../../static/img/count5.png" />
 					<h1>0</h1>
 					<h2>分钟</h2>
 					<h3>完成训练</h3>
 				</div>
 				<div>
-					<img src="../../../static/img/count3.png"/>
+					<img src="../../../static/img/count3.png" />
 					<h1>0</h1>
 					<h2>分钟</h2>
 					<h3>完成训练</h3>
 				</div>
 				<div>
-					<img src="../../../static/img/count.png"/>
+					<img src="../../../static/img/count.png" />
 					<h1>0</h1>
 					<h2>分钟</h2>
 					<h3>完成训练</h3>
@@ -37,24 +37,27 @@
 				<i>星期二</i>
 			</div>
 			<div class="count-icon">
-				<img src="../../../static/img/count2.png"/>
-				<img src="../../../static/img/count3.png" @click="handleCountBack()"/>
-				<img src="../../../static/img/count1.png"/>
+				<img src="../../../static/img/count2.png" />
+				<img src="../../../static/img/count3.png" @click="handleCountBack()" />
+				<img src="../../../static/img/count1.png" />
 			</div>
+			<transition name="bounceInDown" class="bounceInDown">
+				<router-view></router-view>
+			</transition>
 		</div>
+
 	</div>
 </template>
 
 <script>
 	export default {
-		data(){
-			return{
-				
-				
+		data() {
+			return {
+
 			}
 		},
-		methods:{
-			handleCountBack(){
+		methods: {
+			handleCountBack() {
 				this.$router.push('/healthPlan/healthPlan')
 			}
 		}
