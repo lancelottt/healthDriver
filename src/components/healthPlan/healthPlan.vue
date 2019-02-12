@@ -261,12 +261,28 @@
 
 			}
 		},
+		beforeCreate(){
+			function plusReady(){
+				void plus.push.createMessage('sad');
+            // 在这里调用plus api
+        }
+        if(window.plus){
+            plusReady(
+            	plus.push.createMessage('itWorks!')
+            );
+        }else{
+            document.addEventListener('plusready',plusReady,false);
+        }
+
+		},
 		methods: {
 			loadTop() {
+				
 				//... load more data
 				this.$router.push({
 					name: 'count'
 				})
+				
 			},
 			//			handleBack() {
 			//				this.$router.back()
@@ -275,7 +291,7 @@
 				this.$router.push({
 					name: 'competition'
 				})
-			}
+			},
 		},
 
 	}
