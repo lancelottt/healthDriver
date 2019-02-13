@@ -47,10 +47,21 @@ import Heart from '@/components/pages/datasj/heart/heart'
 import Me from '@/components/pages/me/me'
 // 发布动态**
 import Amic from '@/components/pages/me/amic'
-
-
+//引入脂肪称
+import Fat from '@/components/history/fat'
+// //引入体趋势
+import Trend from '@/components/history/trend'
+// 引入Mi
+import Mi from '@/components/history/trend/mi'
+// 引入脂肪率**
+import FatPer from '@/components/history/trend/fatPer'
+//引入肌肉率
+import MuscleRa from '@/components/history/trend/muscleRa'
+// 引入水分率**
+import WaterRa from '@/components/history/trend/waterRa'
+//引入骨
+import Bone from '@/components/history/trend/bone'
 Vue.use(Router)
-
 export default new Router({
 	routes: [{
 			path: '/',
@@ -167,39 +178,12 @@ export default new Router({
 			name:'zilv',
 			component:Zilv
 		},
-//		{
-//			path:'/healthMarket/healthMarketHome',
-//			name:'healthMarketHome',
-//			component:HealthMarketHome
-//		},
-//		{
-//			path:'/shangcheng',
-//			name:'shangcheng',
-//			component:Shangcheng
-//		},
-//		{
-//			path:'/shuju',
-//			name:'shuju',
-//			component:Shuju
-//		},
-//		{
-//			path:'/wode',
-//			name:'wode',
-//			component:Wode
-//		},
-//		
-//=======
 		// 启动页**
 		{
 			path:'/startUp/healthy',
 			name:'Healthy',
 			component:Healthy
 		},
-		// 默认组件**
-//		{
-//		 path:'/' ,
-//		 redirect:'/self'
-//		},
 		// 引入自律组件**
 		{
 			path:'/self',
@@ -220,7 +204,7 @@ export default new Router({
 		},
 		// 引入数据**
 		{
-			path:'/dataSj',
+			path:'/dataSj/weight',
 			name:'',
 			component:DataSj,
 			children :[
@@ -267,6 +251,52 @@ export default new Router({
 		  path:'/amic',
 		  name:'',
 		  component:Amic
+		},
+		// 引入脂肪称
+		{
+		   path:'/history/fat',
+		   name:'fat',
+		   component:Fat
+		},
+		//引入体趋势
+		{
+			path:'/history/trend',
+			name:'trend',
+			component:Trend,
+			children :[
+				{
+				   path:'/history/trend/mi',
+				   name:'',
+				   component:Mi
+				},
+				{
+                    path:'/history/trend/fatPer',
+				   name:'',
+				   component:FatPer
+				},
+				{
+                    path:'/history/trend/muscleRa',
+				   name:'',
+				   component:MuscleRa
+				},
+				{
+					path:'/history/trend/waterRa',
+					name:'',
+					component:WaterRa
+				},
+				{
+					path:'/history/trend/bone',
+					name:'',
+					component:Bone
+				},
+				{
+					path:'',
+					name:'',
+					redirect: '/history/trend/mi'
+				}
+
+				
+			]
 		}
 	]
 

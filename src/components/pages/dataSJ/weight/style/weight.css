@@ -22,20 +22,20 @@
     height: 100%;
 }
 .jiLw{
-    width:1.64rem;
+    width: 1.64rem;
     height: .51rem;
+    float: left;
     line-height: .51rem;
-    border:.01rem solid #ff5e3a;
+    border: .01rem solid #ff5e3a;
     color: #ff5e3a;
     text-align: center;
+    margin-left: 1.4rem;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     border-radius: .3rem;
-    position: absolute;
-    bottom: .1rem;
-    left: 37%;
 }
 .dataT{
-    height: 9.89rem;
+    height: auto;
     width:100%;
     margin-top: .3rem;
 }
