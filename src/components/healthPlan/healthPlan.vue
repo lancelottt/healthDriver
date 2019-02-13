@@ -261,28 +261,35 @@
 
 			}
 		},
-		beforeCreate(){
-			function plusReady(){
-				void plus.push.createMessage('sad');
-            // 在这里调用plus api
-        }
-        if(window.plus){
-            plusReady(
-            	plus.push.createMessage('itWorks!')
-            );
-        }else{
-            document.addEventListener('plusready',plusReady,false);
-        }
+		beforeCreate() {
+			function plusReady() {
+				// 在这里调用plus api
+				void plus.push.createMessage('fucker',{
+					"MessageOptions":[{"sound":"none"},{title:'mafia'}]
+
+				});
+				plus.audio.createPlayer('http://demo.dcloud.net.cn/test/audio/apple.mp3').play()
+				plus.device.beep();  
+				
+			}
+			if(window.plus) {
+				plusReady(
+					//					plus.push.createMessage('itWorks!')
+					plus.audio.createPlayer('./kiss.mp3').play()
+				);
+			} else {
+				document.addEventListener('plusready', plusReady, false);
+			}
 
 		},
 		methods: {
 			loadTop() {
-				
+
 				//... load more data
 				this.$router.push({
 					name: 'count'
 				})
-				
+
 			},
 			//			handleBack() {
 			//				this.$router.back()

@@ -1,6 +1,9 @@
 #healthPlan {
     overflow: auto;
     .healthPlanHeader {
+        span{
+            font-size: 10px;
+        }
         width: 100%;
         height: 0.84rem;
         display: -webkit-box;
