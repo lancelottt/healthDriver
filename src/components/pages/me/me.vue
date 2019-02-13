@@ -92,7 +92,7 @@
        <!-- 我的计划** -->
         <div class="plan">
                <div class="planIcon">
-                   <i class="iconfont planFont icon-yanjizhushou-shangchuan_xitong"></i>
+                   <i class="iconfont planFont icon-shezhi1"></i>
                </div>
                 <div class="planContent">我的计划</div>
                 <i class="iconfont planJ icon-fanhui1"></i>
@@ -101,7 +101,7 @@
          <!-- 我的计划** -->
         <div class="planSz">
                <div class="planIcon">
-                   <i class="iconfont planFont icon-yanjizhushou-shangchuan_xitong"></i>
+                   <i class="iconfont planFont icon-shezhi1"></i>
                </div>
                 <div class="planContent">系统设置</div>
                 <i class="iconfont planJ icon-fanhui1"></i>
@@ -112,7 +112,6 @@
 </template>
 <script>
 import FootTabbar from '../../foorterGuid/footerGuild'
-
 export default {
   components:{
       FootTabbar

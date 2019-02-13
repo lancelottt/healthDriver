@@ -19,7 +19,7 @@
             	</span>
 				<span class="shopping">商城</span>
 			</a>
-			<a href="javascript:;" :style="objCol" class="guide_item" :class="{on:'/dataSj'===$route.path}" @click="goTo('/dataSj')">
+			<a href="javascript:;" :style="objCol" class="guide_item" :class="{on:'/dataSj/weight'===$route.path}" @click="goTo('/dataSj/weight')">
 				<span class="item_icon">
             		<i class="iconfont  icon-shuju" :style="styleObj"></i><!--icon-waimai-->
        			</span>
@@ -73,10 +73,12 @@
 	
 	.guide_item {
 		display: flex;
+		display: -webkit-flex;
 		flex: 1;
 		margin-top: .1rem;
 		text-align: center;
 		flex-direction: column;
+		-webkit-flex-direction: column;
 		align-items: center;
 		color: #999999;
 	}

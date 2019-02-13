@@ -2,10 +2,29 @@
     <div style="padding-bottom:2.31rem">
         <div class="weight">
              <div class="danW">单位:kg</div>
-             <div class="weiImg">
-                 <img src="./img/qieT.png" alt="">
-                 <div class="jiLw">记录体重</div>
-             </div>
+                    <div class="danT">
+                        <p>69.1</p>
+                        <p>最新体重</p>
+                    </div>
+                    <div class="box">
+                            <div class="box-left"></div>
+                            <div class="box-right"></div>
+                            <div class="box1">
+                                <div class="boxquan"></div>
+                            </div>
+                       
+                    </div>
+                    <div class="tiZ">
+                     <div class="tiNei">
+                            <p style="color:#999999;font-size:.36rem">80.0</p>
+                            <p style="color:#999999;font-size:.20rem">初始体重</p>
+                    </div>
+                      <div class="jiLw">记录体重</div>
+                        <div class="muB">
+                             <p style="color:#999999;font-size:.36rem">65.0</p>
+                            <p style="color:#999999;font-size:.20rem">目标体重</p>
+                        </div>
+                    </div>
         </div>
         <!-- 按天查看** -->
         <div class="dataT">
@@ -26,7 +45,7 @@
                             <div class="xinWo">
                                 <div class="xinImg">
                                     <img src="./img/weight.png" alt="">
-                                    </div>
+                                </div>
                                 <div class="xinWei">
                                         <div>最新体重</div>
                                         <div class="xinP">09:06</div>
@@ -60,6 +79,7 @@ export default {
                 {item: '按天查看'},
                 {item: '体重趋势'}
                 ]
+                 
          }
      },
      methods :{
@@ -71,4 +91,86 @@ export default {
 </script>
 <style lang="" scoped>
 @import './style/weight.css';
+.box{
+    width: 85%;
+    height: .04rem;
+    background:rgb(196, 188, 178);
+    margin: .3rem auto;
+    border-radius: .2rem;
+    position: relative;
+}
+.box-left{
+    width: .15rem;
+    height:.15rem;
+    border-radius: 50%;
+    background: #ff5e3a;
+    position: absolute;
+    left: 0;
+    top:0;
+    bottom: 0;
+    margin: auto;
+}
+.box-right{
+    width: .15rem;
+    height:.15rem;
+    border-radius: 50%;
+    background: #ff5e3a;
+    position: absolute;
+    right: 0;
+    top:0;
+    bottom: 0;
+    margin: auto;
+}
+.box1{
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    background: #ff5e3a;
+}
+.boxquan{
+    width: .15rem;
+    height: .15rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0px;
+    margin: auto;
+    border-radius: 50%;
+    background: #ff5e3a;
+}
+.boxquan:after{
+    content: '';
+    width: .03rem;
+    height: .3rem;
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: #ff5e3a;
+}
+.danT P:nth-of-type(1){
+    font-size: .72rem;
+    color: #999999;
+}
+.danT P:nth-of-type(2){
+    font-size: .20rem;
+    color: #999999;
+    margin-top: .1rem;
+}
+.tiZ {     zoom: 1;
+    width: 90%;
+    margin: auto; } 
+.tiZ:after { clear:both;content:'';display:block;width:0;height:0;visibility:hidden; }
+.tiNei{
+    text-align: left;
+    float: left;
+}
+.muB{
+    text-align: left;
+    float: right
+}
 </style>

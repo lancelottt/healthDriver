@@ -55,7 +55,7 @@
 		padding-bottom: .96rem;
 	}
 	
-.footer_guide{
+/* .footer_guide{
     position: fixed;
     z-index: 100;
     left:0;
@@ -96,7 +96,7 @@ span{
 }
 .cals{
     margin-top: .15rem;
-}
+} */
 
 
 </style>
