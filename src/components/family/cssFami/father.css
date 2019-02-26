@@ -1,0 +1,220 @@
+.conZ{
+    width: 100%;
+    height: auto;
+    background: #eee;
+}
+.conclu{
+    width:100%;
+    height: 7.53rem;
+    background-size: 100% 100%;
+    background: url(./img/imgF.png) no-repeat center;
+}
+.had{
+    width:100%;
+    height: .79rem;
+    font-size: .28rem;
+    line-height: .79rem;
+    color: #333333;
+    text-align: center;
+}
+  .componentHeader-header{
+    width: 96%;
+    box-sizing: border-box;
+    color: black;
+    margin: auto;
+    font-size: .28rem;
+}
+.Tp{
+    float: left;
+    height: .79rem;
+}
+.Tpi{
+    font-size: .54rem;
+    color: #fff;
+}
+.headerAmic{
+    width: 79%;
+    height: 100%;
+    margin: auto;
+    font-size: .34rem;
+    font-size: .28rem;
+    color: #fff;
+    float: left;
+}
+.sion{
+    width: 94%;
+    height: 4.77rem;
+    background: #fff;
+    border-radius: .1rem;
+    margin: auto;
+    padding-top: 1.06rem;
+    box-sizing: border-box;
+    margin-top: .6rem;
+    position: relative;
+}
+.jieL{
+    width:.8rem;
+    height: .45rem;
+    background: url(./img/jL.png) no-repeat center;
+    background-size: 100% 100%;
+    position: absolute;
+    top:.3rem;
+    left: -0.1rem;
+}
+.siCon{
+    width:88%;
+    height: 100%;
+    margin: auto;
+    text-align: left;
+    color: #666666;
+    font-size: .24rem;
+}
+.siCon p:nth-of-type(2){
+    margin-top: .15rem;
+}
+.siCon p:nth-of-type(3){
+    margin-top: .3rem;
+}
+.siCon p:nth-of-type(4){
+    margin-top: .15rem;
+}
+.siCon p:nth-of-type(5){
+    margin-top: .15rem;
+}
+.dPhone{
+    width:100%;
+
+}
+.statusCircl{
+    width:100%;
+    font-size: .24rem;
+    height:.8rem;
+    color: #ff5e3a;
+    box-sizing: border-box;
+    border-radius: .1rem;
+    margin-top: .47rem
+}
+.statusCircl ul {
+    display: -webkit-box;
+    display: flex;
+    width: 50%;
+    -webkit-display: flex;
+    height: 100%;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+ .statusCircl ul li{
+     flex-direction:column;
+    -webkit-flex-direction:column;
+    justify-content:center;
+    -webkit-justify-content:center;
+    flex-direction:column;
+    -webkit-flex-direction:column;
+    align-items:center;
+    font-size: .24rem;
+}
+.statusCircl ul li:nth-of-type(1){
+    width: .42rem;
+    height: .44rem;
+    background-size: 100% 100%;
+    background: url(./img/phoneF.png) no-repeat center;
+} 
+.statusCircl ul li:nth-of-type(2){
+    margin-left: .1rem;
+    color: #ff5e3a;
+    font-size: .24rem;
+}
+.newData{
+    width:93%;
+    height: 5.95rem;
+    margin: auto;
+    margin-top: .45rem;
+}
+.shuJ{
+    width: 100%;
+    height: 1.10rem;
+    line-height: 1.10rem;
+}
+.shuJl{
+    float: left;
+    font-size: .3rem;
+    color: #666666;
+}
+.shuJr{
+    font-size: .2rem;
+    color: #999999;
+    float: right;
+}
+.shuJul{
+    width:100%;
+    height: auto;
+}
+.shuJul ul li{
+    width:100%;
+    height: 1.15rem;
+    padding-left: .25rem;
+    padding-right: .25rem;
+    box-sizing: border-box;
+}
+.shuJul ul li:nth-of-type(1){
+    background: #faf5fc;
+}
+.shuJul ul li:nth-of-type(3){
+    background: #ecf4fe;
+}
+.shuJul ul li:nth-of-type(4){
+    background: #f3fbf0;
+}
+.shuJul ul li:nth-of-type(2){
+    background: #fff6e6;
+    color: #f2a840;
+}
+.press{
+    width:100%;
+    height:.57rem;
+    line-height: .57rem;
+}
+.preSp{
+    margin-top: .1rem;
+    margin-right: .1rem;
+    float: left;
+}
+.preS{
+    float: left;
+}
+.pressL{
+    float: left;
+    /* width: 28%; */
+    height: 100%;
+}
+.smile span{
+    display: inline-block;
+    width:.39rem;
+    height: .39rem;
+    background-size: 100% 100%;
+    background: url(./img/xueyaZ.png) no-repeat center;
+}
+.preSp span{
+    width:.39rem;
+    height: .39rem;
+    display: inline-block;
+    background: url(./img/xueya.png) no-repeat center;
+    background-size: 100% 100%;
+}
+.preS span:nth-of-type(1){
+    font-size: .3rem;
+    color: #c895d8;
+    display: inline-block;
+}
+.preS span:nth-of-type(2){
+     font-size: .24rem;
+     color: #c895d8;
+     display: inline-block;
+}
+.pressR{
+    float: right;
+    color: #c895d8;
+    font-size: .2rem;
+}

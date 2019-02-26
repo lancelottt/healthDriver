@@ -1,0 +1,167 @@
+.shouye{
+    width:94%;
+    height: 12rem;
+    margin: auto;
+}
+.rewu{
+    widows: 100%;
+    height: 1.82rem;
+    line-height: 1.82rem;
+}
+.rewuLe{
+    width:1.21rem;
+    height: 1.2rem;
+    background: url(../img/partO.png) no-repeat center;
+    background-size: 100% 100%;
+    float: left;
+    margin-top: .25rem;
+}
+.rewuRi{
+    font-size: .24rem;
+    float: left;
+    margin-left: .3rem;
+    color: #333333;
+}
+.lative{
+    width:100%;
+    height: 2.28rem;
+    background: #ffffff;
+    padding: .5rem .3rem 0 .3rem;
+    box-sizing: border-box;
+}
+.accum{
+    font-size: .28rem;
+    color: #999999;
+    height: .7rem;
+    text-align: left;
+}
+.minLe{
+    float: left;
+}
+.minLe span:nth-of-type(1){
+    font-size: .72rem;
+    color: #999999;
+}
+.minLe span:nth-of-type(2){
+    font-size: .2rem;
+    color: #666666;
+}
+.minRi{
+    float: right;
+    margin-top: .3rem;
+    font-size: .2rem;
+    color: #666666;
+}
+.culu{
+    width:100%;
+    height: auto;
+    background: #ffffff;
+    margin-top: .1rem;
+}
+.addCulu{
+    width: 100%;
+    height: 1rem;
+    color: #999999;
+    font-size: .28rem;
+    line-height: 1rem;
+    padding-left: .3rem;
+    padding-right: .3rem;
+    box-sizing: border-box;
+}
+.addLe{
+    width: 2.62rem;
+    height: 100%;
+    float: left;
+    text-align: left;
+}
+.addRi{
+    width: 1.92rem;
+    height: .6rem;
+    float: right;
+    background: #32c58c;
+    border-radius: .4rem;
+    line-height: .6rem;
+    font-size: .24rem;
+    margin-top: .2rem;
+    color: #ffffff;
+    text-align: center;
+}
+.thenZ{
+    width:93%;
+    height: auto;
+    margin: auto;
+}
+.then{
+    width:100%;
+    height: 1.43rem;
+    margin: auto;
+    text-align: left;
+    border-bottom: .01rem solid #f2f2f2;
+    box-sizing: border-box;
+}
+.thenLe{
+    width:50%;
+    height: 1.43rem;
+    float: left;
+    padding-top: .3rem;
+    box-sizing: border-box;
+}
+.thenRi{
+    width:50%;
+    height: 1.43rem;
+    float: right;
+    font-size: .2rem;
+    color: #666666;
+    padding-top: .3rem;
+    box-sizing: border-box;
+    text-align: right;
+}
+.thenLe p:nth-of-type(1){
+    font-size: .36rem;
+    color: #999999;
+}
+.thenLe p:nth-of-type(2){
+    font-size: .2rem;
+    color: #666666;
+    margin-top: .3rem;
+}
+.more{
+    font-size: .28rem;
+    color: #999999;
+    width:100%;
+    height: .89rem;
+    line-height: .89rem;
+    text-align: center;
+}
+.plan{
+    width:100%;
+    height: 4.80rem;
+    margin-top: .2rem;
+    background: #fff;
+}
+.planCon{
+    width:95%;
+    height: 4.80rem;
+    margin: auto;
+
+}
+.planTop{
+    width:100%;
+    font-size: .28rem;
+    color: #999999;
+    height: .8rem;
+    text-align: left;
+    line-height: .8rem;
+}
+.planImg{
+    width:100%;
+    height: 2.87rem;
+}
+.slideImg{
+    width:100%;
+    height: 2.87rem;
+}
+.slideImg img{
+    width:100%;
+    height: 100%;
+}
