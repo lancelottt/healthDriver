@@ -29,6 +29,10 @@ import HealthMarketHome from '@/components/healthMarket/healthMarketHome';
 import ChatLogin from '@/components/loginChat/chatLogin'
 import VerCode from '@/components/loginChat/verCode'
 import Healthy from '@/components/startUp/healthy'
+// 身体档案页面**
+import Uncertain from '@/components/uncertain/uncertain'
+// 身体档案中我的血压**
+import Bloodmy from '@/components/uncertain/blood'
 //商城**
 import Shopping from '@/components/pages/shopping/shopping'
 // 引入数据组件**
@@ -59,37 +63,75 @@ import FatPer from '@/components/history/trend/fatPer'
 import MuscleRa from '@/components/history/trend/muscleRa'
 // 引入水分率**
 import WaterRa from '@/components/history/trend/waterRa'
-//引入骨
+//引入骨页面
 import Bone from '@/components/history/trend/bone'
+// 我的家人**
+import Family from '@/components/family/family'
+import Father from '@/components/family/father'
+// 家人中的体重**
+import Wei from '@/components/family/wei'
+// 家人中的血糖**
+import BloodSu from '@/components/family/bloodSu'
+// 会员中心**
+import MemCen from '@/components/memCen/memCen'
+// 我的运动**
+import Mymotion from '@/components/shopping/shopCom' 
+// 我的运动中的首页**
+import Index from '@/components/shopping/motion/index'
+// 我的运动中的跑步**
+import Run from '@/components/shopping/motion/run'
+//我的运动中的健身**
+import Bulid from '@/components/shopping/motion/build'
+//瑜伽
+import Yoga from '@/components/shopping/motion/yoga'
+// 快走**
+import Step from '@/components/shopping/motion/step'
 Vue.use(Router)
 export default new Router({
 	routes: [{
+		
 			path: '/',
 			name: 'Healthy',
 			component: Healthy,
-
-			//					children: [{
-			//						path: '/home/Home',
-			//						name: '22',
-			//						component: Home,
-			//						meta: {
-			//							requireAuth: true
-			//						}
-			//					}, {
-			//						path: '/login/Login',
-			//						name: '11',
-			//						component: Login,
-			//						meta: {
-			//							requireAuth: true
-			//						}
-			//					}]
-
 	},
-
-		{
-			path: '/*any',
-			redirect: 'Home'
-		},
+	// 身体档案**
+	{
+		path:'/Archi',
+		name:'',
+		component:Uncertain
+	},
+	// 我的家人**
+	{
+	   path:'/family',
+	   name:'',
+	   component:Family
+	},
+	{
+		path:'/wei',
+		name:'',
+		component:Wei   
+	},
+	{
+	   path:'/father',
+	   name:'',
+	   component:Father
+	},
+	//家人中的血糖**
+	{
+		path:'/bloodsu',
+		name:'',
+		component:BloodSu
+	},
+	// 身体档案中我的血压**
+	{
+		path:'/bloodMy',
+		name:'',
+		component:Bloodmy
+	},
+	// {
+	// 	path: '/*any',
+	// 	redirect: 'Home'
+	// },
 //		{
 //			path: '/login/Login',
 //			name: 'Login',
@@ -105,12 +147,6 @@ export default new Router({
 			path: '/invitation',
 			name: 'Invitation',
 			component: Invitation,
-
-			//				children: [{
-			//					path: '/invitation/invitationInfo',
-			//					name: 'InvitationInfo',
-			//					component: InvitationInfo
-			//				}]
 		},
 		{
 			path: '/invitation/invitationInfo',
@@ -178,6 +214,12 @@ export default new Router({
 			name:'zilv',
 			component:Zilv
 		},
+		// 会员中心**
+		{
+			path:'/memCen',
+			name:'',
+			component:MemCen
+		},
 		// 启动页**
 		{
 			path:'/startUp/healthy',
@@ -240,6 +282,7 @@ export default new Router({
 				}
 			]
 		},
+
 		// 引入我的**
 		{
 			path:'/me',
@@ -297,7 +340,41 @@ export default new Router({
 
 				
 			]
+		},
+		// 我的运动**
+		{
+			path:'/mymotion',
+			name:'',
+			component:Mymotion,
+			children:[
+				{
+					path:'/mymotion/index',
+					name:'',
+					component:Index
+				},
+				{
+					 path:'/mymotion/run',
+					 name:'',
+					 component:Run
+				},
+				{
+					path:'/mymotion/bulid',
+					name:'',
+					component:Bulid
+				},
+				{
+					path:'/mymotion/yoga',
+					name:'',
+					component:Yoga
+				},
+				{
+					path:'/mymotion/step',
+					name:'',
+					component:Step
+				}
+			]
 		}
+
 	]
 
 })

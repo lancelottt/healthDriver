@@ -1,0 +1,262 @@
+.weiZ{
+    width: 100%;
+    height: auto;
+    background: #eee;
+}
+.wei{
+    width:100%;
+    height: 3.74rem;
+    background: url(./img/ti.png) no-repeat center;
+    background-size:100%;
+}
+.had{
+    width:100%;
+    height: .79rem;
+    font-size: .28rem;
+    line-height: .79rem;
+    color: #333333;
+    text-align: center;
+}
+  .componentHeader-header{
+    width: 93%;
+    box-sizing: border-box;
+    color: black;
+    margin: auto;
+    font-size: .28rem;
+}
+.Tp{
+    float: left;
+    height: .79rem;
+}
+.Tpi{
+    font-size: .54rem;
+    color: rgb(241, 233, 233);
+}
+.headerAmic{
+    width: 79%;
+    height: 100%;
+    margin: auto;
+    font-size: .34rem;
+    font-size: .28rem;
+    color: #fff;
+    float: left;
+}
+.unkn{
+    font-size: .3rem;
+    color: #666666;
+}
+.unscrC{
+    text-align: left;
+}
+.unF{
+    color: #999999;
+    font-size: .24rem;
+    margin-top: .31rem;
+    margin-bottom: .31rem;
+}
+.unscr{
+    width:100%;
+    background: #FFF;
+    margin-top: .1rem;
+    height: 3.98rem;
+}
+.unscrC{
+    width:93%;
+    height:100%;
+    padding: .34rem 0 .34rem 0;
+    box-sizing: border-box;
+    margin: auto;
+}
+.unImg{
+    width:100%;
+    height: 2rem;
+    background: url(./img/zhong.png) no-repeat center;
+    background-size: 100% 100%;
+    position: relative;
+}
+.sult{
+    width: 2.01rem;
+    height: .62rem;
+    border: .01rem solid #fff;
+    outline: none;
+    background: #fdebe7;
+    border-radius: .1rem;
+    text-align: center;
+    line-height: .62rem;
+    padding-left: .2rem;
+    box-sizing: border-box;
+    position: absolute;
+    bottom:.3rem;
+    left: .4rem;
+}
+.butL{
+    width: .42rem;
+    margin-top: .1rem;
+    height: .34rem;
+    background: url(./img/phontA.png) no-repeat center;
+    background-size: 100% 100%;
+    float: left;
+}
+.butR{
+    float: left;
+    font-size: .25rem;
+    color: #fff;
+    padding-left: .1rem;
+    box-sizing: border-box;
+}
+.trend{
+    width:100%;
+    height: 8.67rem;
+    background: #FFF;
+    margin-top: .1rem;
+}
+.trZ{
+    width: 93%;
+    height: 2.77rem;
+    padding-top: .4rem;
+    margin: auto;
+    box-sizing: border-box;
+}
+.reCon{
+    font-size: .3rem;
+    color: #666666;
+    text-align: left;
+}
+.yF{
+    width: 2.80rem;
+    height: 1.22rem;
+}
+.yFdata{
+    font-size: 1.28rem;
+    color: #333333;
+    float: left;
+}
+.kgZ{
+    float: right;
+}
+.kgZ span:nth-of-type(1){
+    font-size: .48rem;
+    color: #333333;
+}
+.kgImg{
+    width:.52rem;
+    height: .52rem;
+    background: url(./img/zhQ.png) no-repeat center;
+    background-size: 100% 100%;
+    display: inline-block;
+}
+.mound{
+    width:1.95rem;
+    height: .6rem;
+    border-radius: .1rem;
+    border:.01rem solid #d8d8d8;
+    flex: 1;
+    -webkit-flex:1;
+}
+.moLeft{
+    width:4.9rem;
+    height: .6rem;
+}
+select {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    width: auto;
+    height: auto;
+    outline: none;
+    background: no-repeat;
+    border: none;
+    text-align: center;
+    display: inline-block;
+    padding: 0 .7rem;
+    color: #4ddfa9;
+    font-size: .28rem;
+    line-height: .5rem;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    }
+    /*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+    select::-ms-expand { display: none; }
+    option::-ms-expand{ display: none; }
+    option{
+        -moz-appearance:none; /* Firefox */
+        -webkit-appearance:none; /* Safari 和 Chrome */
+        appearance:none;
+    }
+.moZu{
+    width:100%;
+    height: .6rem;
+    display: flex;
+    display: -webkit-flex;
+}
+.trZimg{
+    width:100%;
+    height: 5.89rem;
+    background: url(./img/Goal.png) no-repeat center;
+    background-size: 100% 100%;
+}
+.physic{
+    width: 100%;
+    padding: .3rem;
+    height: 3rem;
+    margin-top: .07rem;
+    background: #fff;
+    box-sizing: border-box;
+}
+.phyCon{
+    width:100%;
+    height:.96rem;
+    line-height: .96rem;
+    font-size: .3rem;
+    color: #999999;
+    text-align: left;
+}
+.phyData{
+    width:100%;
+    height: .96rem;
+}
+.phyL{
+    width:20%;
+    height: 100%;
+    font-size: .72rem;
+    color: #333333;
+    float: left;
+    line-height: .96rem;
+}
+.phyC{
+    width:60%;
+    height: 100%;
+    float: left;
+}
+.phyCen{
+    width:60%;
+    height: 100%;
+    margin: auto;
+}
+.phyR{
+    width:.88rem;
+    background: url(./img/dataX.png) no-repeat center;
+    background-size: 100% 100%;
+    height: .88rem;
+    float: right;
+}
+.phyEe{
+    float: left;
+    font-size: .72rem;
+    color: #333333;
+    line-height: .9rem;
+}
+.kgR{
+    float: left;
+    font-size: .28rem;
+    color: #333333;
+    margin-left: .1rem;
+}
+.kgR span:nth-of-type(2){
+    width:.18rem;
+    height: .22rem;
+    background: url(./img/Up.png) no-repeat center;
+    background-size: 100% 100%;
+    display: inline-block;
+}
