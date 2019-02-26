@@ -3,7 +3,7 @@
         <div class="hadHea">
         <div class="had">
             <div class="componentHeader-header">
-                <div class="Tp">
+                <div class="Tp" @click="handlerBack()">
                     
                 </div>
                 <div class="headerAmic">我的运动</div>
@@ -21,6 +21,11 @@ export default {
         return {
 
         }
+    },
+    methods:{
+    	handlerBack(){
+    		this.$router.back()
+    	}
     }
 }
 </script>

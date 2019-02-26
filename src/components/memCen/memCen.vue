@@ -4,7 +4,7 @@
         <div class="memCen">
             <div class="memImg">
                 <div class="memTop">
-                    <div class="memLe">
+                    <div class="memLe" @click="handlerBack()">
                         <div class="meImg"></div>
                     </div>
                     <div class="memCe">
@@ -122,7 +122,11 @@
 </template>
 <script>
 export default {
-    
+    methods:{
+    	handlerBack(){
+    		this.$router.back()
+    	}
+    }
 }
 </script>
 <style lang="" scoped>

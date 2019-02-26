@@ -26,12 +26,12 @@
 							</swiper>
 							<div class="healthMarketHome-navigate">
 								<div @click="handlerToPlayFood()">
-									<b><i class="iconfont icon-boy"></i></b>
+									<b><i class="iconfont icon-nangua"></i></b>
 									<span>玩转食物</span>
 								</div>
-								<div>
-									<b><i class="iconfont icon-girl"></i></b>
-									<span>玩转食物</span>
+								<div @click="handlerToSportGuide()">
+									<b><i class="iconfont icon-2jiankangzhishi"></i></b>
+									<span>运动指南</span>
 								</div>
 								<div>
 									<b><i class="iconfont icon-boy"></i></b>
@@ -142,6 +142,9 @@
 		methods: {
 			handlerToPlayFood(){
 				this.$router.push({name:'playFood'})
+			},
+			handlerToSportGuide(){
+				this.$router.push('/mymotion')
 			},
 			handleHealthMarketHomeCancelInput() {
 				this.state4 = ""

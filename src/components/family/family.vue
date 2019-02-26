@@ -3,7 +3,7 @@
             <div class="had">
                 <div>
                     <div class="componentHeader-header">
-                        <div class="Tp">
+                        <div class="Tp" @click="handlerBack()">
                             <i class="iconfont Tpi icon-jiantou-left"></i>
                         </div>
                         <div class="headerAmic">我的家人</div>
@@ -35,7 +35,7 @@
                                     </span>
                                 </div>
                             </li>
-                        <li>
+                        <li @click="handlerMom()">
                             <div class="faCon">妈妈</div>
                             <div class="moQu">
                                 <span>
@@ -68,6 +68,12 @@ export default {
     methods:{
         father () {
             this.$router.push("/father")
+        },
+        handlerBack(){
+        	this.$router.back()
+        },
+        handlerMom(){
+        	this.$router.push("/father")
         }
     }
 }

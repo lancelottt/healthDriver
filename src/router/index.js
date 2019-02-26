@@ -109,7 +109,7 @@ export default new Router({
 	// 我的家人**
 	{
 	   path:'/family',
-	   name:'',
+	   name:'family',
 	   component:Family
 	},
 	{
@@ -223,7 +223,7 @@ export default new Router({
 		// 会员中心**
 		{
 			path:'/memCen',
-			name:'',
+			name:'memCen',
 			component:MemCen
 		},
 		// 启动页**
@@ -365,6 +365,7 @@ export default new Router({
 			path:'/mymotion',
 			name:'',
 			component:Mymotion,
+			redirect:'/mymotion/index',
 			children:[
 				{
 					path:'/mymotion/index',

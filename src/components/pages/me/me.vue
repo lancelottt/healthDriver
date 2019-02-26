@@ -67,9 +67,9 @@
                   <i class="iconfont shuju  icon-shuju1"></i>
                   <p>数据中心</p>
               </li>
-              <li>
-                  <i class="iconfont shuju icon-shuju1"></i>
-                  <p>数据中心</p>
+              <li @click="handlerMyFamily()">
+                  <i class="iconfont shuju icon-ren"></i>
+                  <p>我的家人</p>
               </li>
                <li>
                   <i class="iconfont shuju  icon-shuju1"></i>
@@ -83,9 +83,9 @@
                   <i class="iconfont shuju icon-shuju1"></i>
                   <p>数据中心</p>
               </li>
-               <li>
-                  <i class="iconfont shuju icon-shuju1"></i>
-                  <p>数据中心</p>
+               <li @click="handlerMembership()">
+                  <i class="iconfont shuju icon-jitui"></i>
+                  <p>我的会员</p>
               </li>
           </ul>
        </div>
@@ -121,6 +121,14 @@ export default {
         
         }
     },
+    methods:{
+    	handlerMyFamily(){
+    		this.$router.push({name:'family'})
+    	},
+    	handlerMembership(){
+    		this.$router.push({name:'memCen'})
+    	}
+    }
 }
 </script>
 <style scoped>

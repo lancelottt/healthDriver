@@ -90,6 +90,8 @@ export default {
         return {
               show:false,
               swiperOption:{
+              	freeMode:true,
+              	spaceBetween:10
            },
            items:[
                {

@@ -5,7 +5,7 @@
                 <div class="had">
                     <div>
                         <div class="componentHeader-header">
-                            <div class="Tp">
+                            <div class="Tp" @click="handlerBack()">
                                 <i class="iconfont Tpi icon-jiantou-left"></i>
                             </div>
                             <div class="headerAmic">爸爸</div>
@@ -186,7 +186,11 @@
 </template>
 <script>
 export default {
-    
+    methods:{
+    	handlerBack(){
+    		this.$router.back()
+    	}
+    }
 }
 </script>
 <style lang="" scoped>
