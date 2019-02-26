@@ -25,7 +25,7 @@
 								</div>
 							</swiper>
 							<div class="healthMarketHome-navigate">
-								<div>
+								<div @click="handlerToPlayFood()">
 									<b><i class="iconfont icon-boy"></i></b>
 									<span>玩转食物</span>
 								</div>
@@ -140,6 +140,9 @@
 			};
 		},
 		methods: {
+			handlerToPlayFood(){
+				this.$router.push({name:'playFood'})
+			},
 			handleHealthMarketHomeCancelInput() {
 				this.state4 = ""
 			},

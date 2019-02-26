@@ -33,6 +33,18 @@ module.exports = {
    		'Swiper':'swiper'
     },
   module: {
+//	vue-radial-progress的 前置:es2015
+  	 loaders: [
+            {
+                test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                loader: 'babel',
+                query: {
+                    presets: ['es2015']
+                }
+            }
+        ],
+
     rules: [
       {
         test: /\.vue$/,
