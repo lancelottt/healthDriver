@@ -1,0 +1,30 @@
+.had{
+    width:100%;
+    height: .79rem;
+    font-size: .28rem;
+    line-height: .79rem;
+    background: #ffffff;
+    color: #333333;
+    text-align: center;
+}
+  .componentHeader-header{
+    width: 96%;
+    box-sizing: border-box;
+    color: black;
+    margin: auto;
+    font-size: .28rem;
+}
+.Tp{
+    float: left;
+    height: .79rem;
+}
+.Tpi{
+    font-size: .54rem;
+}
+.headerAmic{
+    width: 79%;
+    height: 100%;
+    margin: auto;
+    font-size: .34rem;
+    float: left;
+}

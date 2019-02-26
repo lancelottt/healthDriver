@@ -96,7 +96,7 @@
 				this.$router.back()
 			},
 			handleCompetitionPay(){
-				this.$router.push({name:'healthPlan'})
+				this.$router.push({name:'competitionJoined'})
 			}
 		}
 	}

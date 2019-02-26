@@ -16,6 +16,7 @@ body {
 #wxLogin,
 #count,
 #competition,
+#competitionJoined,
 #healthMarketHome {
   display: flex;
   flex-direction: column;
@@ -24,14 +25,14 @@ body {
   overflow: hidden; }
 
 header {
+  background: #fff;
   width: 100%;
-  height: 6.3%;
+  height: 6.6%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: .28rem;
-  box-sizing: border-box;
-  border-bottom: 0.02rem solid #e5e5e5; }
+  box-sizing: border-box; }
   header span:nth-of-type(3) {
     margin-right: 0.34rem;
     font-size: 0.28rem;

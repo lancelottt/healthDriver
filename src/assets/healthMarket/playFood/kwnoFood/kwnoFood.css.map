@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,SAAS,CACL,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,CACZ,gBAAO,CACH,MAAM,CAAE,IAAI,CAEhB,wBAAc,CACV,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,KAAK",
+"sources": ["kwnoFood.scss"],
+"names": [],
+"file": "kwnoFood.css"
+}
