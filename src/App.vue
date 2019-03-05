@@ -11,6 +11,7 @@
 </template>
 
 <script>
+	import axios from 'axios'
 	import Vuex from "vuex"
 	export default {
 		beforeCreate() {
@@ -50,7 +51,7 @@
 				console.log('plusReady')
 			}
 		},
-		name: 'App',
+		//		name: 'App',
 		methods: {
 			plusReady(){
 				console.log('plusReady')
@@ -86,9 +87,7 @@
 */
 		padding-bottom: .96rem;
 	}
-	
-
-/* .footer_guide{
+	/* .footer_guide{
     position: fixed;
     z-index: 100;
     left:0;
@@ -130,6 +129,4 @@ span{
 .cals{
     margin-top: .15rem;
 } */
-
-
 </style>

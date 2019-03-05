@@ -18,7 +18,7 @@
 .memImg{
     width:100%;
     height: 2.53rem;
-    background: url(../img/mem.png) no-repeat center;
+    background: url(../../../../static/images/mem.png) no-repeat center;
     background-size: 100% 100%;
 }
 .memTop{
@@ -37,7 +37,7 @@
 .meImg{
     width:.41rem;
     height: .33rem;
-    background: url(../img/memZuo.png) no-repeat center;
+    background: url(../../../../static/images/memZuo.png) no-repeat center;
     background-size: 100% 100%;
 }
 .memCe{
@@ -60,7 +60,7 @@
     width:.37rem;
     height: .45rem;
     float: left;
-    background: url(../img/ling.png) no-repeat center;
+    background: url(../../../../static/images/ling.png) no-repeat center;
     background-size: 100% 100%;
 }
 .memRi div:nth-of-type(2){
@@ -68,7 +68,7 @@
     float: right;
     height: .41rem;
     float: right;
-     background: url(../img/chi.png) no-repeat center;
+    background: url(../../../../static/images/chi.png) no-repeat center;
     background-size: 100% 100%; 
 }
 .memCon{
@@ -84,7 +84,7 @@
 .cenImg{
     width: 1.42rem;
     height: 1.37rem;
-    background: url(../img/vip.png) no-repeat center;
+    background: url(../../../../static/images/vip.png) no-repeat center;
     background-size: 100% 100%;
     position: absolute;
     top: -0.66rem;
@@ -166,7 +166,7 @@
     width: 94%;
     padding-top: .3rem;
     height: 4.28rem;
-    background: url(../img/beijing.png) no-repeat center;
+    background: url(../../../../static/images/beijing.png) no-repeat center;
     background-size: 100% 100%;
     margin: auto;
     margin-top: .32rem;
@@ -245,7 +245,7 @@
 .balanRi span:nth-of-type(2){
     width:.19rem;
     height: .31rem;
-    background: url(../img/sanjiao.png) no-repeat center;
+    background: url(../../../../static/images/sanjiao.png) no-repeat center;
     background-size: 100% 100%;
     display: inline-block;
     margin-left: .15rem;
@@ -272,7 +272,7 @@
 .schCon ul li p:nth-of-type(1){
     width:1.8rem;
     height: 1.8rem;
-    background: url(../img/guize.png) no-repeat center;
+    background: url(../../../../static/images/guize.png) no-repeat center;
     background-size: 100% 100%;
 }
 .schCon ul li p:nth-of-type(2){

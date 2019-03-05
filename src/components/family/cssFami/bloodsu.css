@@ -6,7 +6,7 @@
 .wei{
     width:100%;
     height: 3.74rem;
-    background: url(./img/ti.png) no-repeat center;
+    background: url(../../../../static/images/ti.png) no-repeat center;
     background-size:100%;
 }
 .had{
@@ -70,7 +70,7 @@
 .unImg{
     width:100%;
     height: 2rem;
-    background: url(./img/bloodDa.png) no-repeat center;
+    background: url(../../../../static/images/bloodDa.png) no-repeat center;
     background-size: 100% 100%;
     position: relative;
 }
@@ -93,7 +93,7 @@
     width: .42rem;
     margin-top: .1rem;
     height: .34rem;
-    background: url(./img/ting.png) no-repeat center;
+    background: url(../../../../static/images/ting.png) no-repeat center;
     background-size: 100% 100%;
     float: left;
 }
@@ -164,7 +164,7 @@
   margin-top: .1rem;
   width:.52rem;
   height: .52rem;
-  background: url(./img/zhQ.png) no-repeat center;
+  background: url(../../../../static/images/zhQ.png) no-repeat center;
   background-size: 100% 100%;  
 }
 .yfTop{
@@ -196,7 +196,7 @@
 .kgImg{
     width:.52rem;
     height: .52rem;
-    background: url(./img/zhQ.png) no-repeat center;
+    background: url(../../../../static/images/zhQ.png) no-repeat center;
     background-size: 100% 100%;
     display: inline-block;
 }
@@ -248,7 +248,7 @@ select {
 .trZimg{
     width:100%;
     height: 5.89rem;
-    background: url(./img/bloodData.png) no-repeat center;
+    background: url(../../../../static/images/bloodData.png) no-repeat center;
     background-size: 100% 100%;
 }
 .physic{
@@ -291,7 +291,7 @@ select {
 }
 .phyR{
     width:.88rem;
-    background: url(./img/dataX.png) no-repeat center;
+    background: url(../../../../static/images/dataX.png) no-repeat center;
     background-size: 100% 100%;
     height: .88rem;
     float: right;
@@ -311,7 +311,7 @@ select {
 .kgR span:nth-of-type(2){
     width:.18rem;
     height: .22rem;
-    background: url(./img/Up.png) no-repeat center;
+    background: url(../../../../static/images/Up.png) no-repeat center;
     background-size: 100% 100%;
     display: inline-block;
 }

@@ -1,0 +1,116 @@
+.march{
+	width:100%;
+	background: #fff;
+
+}
+.distance{
+	width:100%;
+	height: 1rem;
+	line-height: 1rem;
+	font-size: .28rem;
+	color: #999999;
+	text-align: left;
+    padding-left: .35rem;
+    box-sizing: border-box;
+}
+.gradeKilometre{
+	width:100%;
+	height: 1rem;
+	padding: .25rem;
+    box-sizing: border-box;
+}
+.grade{
+	width: 100%;
+	height: 1.49rem;
+}
+.gradeKilometreLeft{
+	float: left;
+}
+.gradeKilometreLeft span:nth-of-type(1){
+	font-size: .72rem;
+	color: #999999;
+	display: inline-block;
+}
+.gradeKilometreLeft span:nth-of-type(2){
+	font-size: .2rem;
+	color: #999999;
+}
+.gradeKilometreRight{
+	font-size: .2rem;
+	color: #999999;
+	float: right;
+}
+.pageProgress{
+	width: 100%;
+	height: .3rem;
+	/*background: navy;*/
+}
+.outdoors{
+	width: 100%;
+	height:auto;
+	background: #FFFFFF;
+}
+.outBar{
+	width:100%;
+	height: .39rem;
+}
+#mint-navbar .mint-tab-item.is-selected {
+    border-bottom: none;
+    margin-bottom: 0;
+    color: #32c58c;
+    font-size: .28rem;
+}
+#mint-navbar{
+	height: .5rem;
+}
+#mint-navbar .mint-tab-item {
+	 border-right: .01rem solid #f2f2f2;
+     box-sizing: border-box;
+     font-size: 15px;
+}
+#mint-navbar .mint-tab-item:nth-of-type(3){
+	border-right: .01rem solid transparent;
+    box-sizing: border-box;
+}
+.selectImg{
+	width: 100%;
+	height: 4.95rem;
+	
+}
+.selectImg img{
+	width:100%;
+	height: 100%;
+}
+.mint-tab-container {
+    overflow: hidden;
+    position: relative;
+    margin-top: .25rem;
+}
+.nominate{
+	width:93%;
+	height: 3rem;
+	margin: auto;
+	height: 3.5rem;
+}
+.nominateTop{
+	font-size: .28rem;
+	width:100%;
+    height: .84rem;
+    line-height: .84rem;
+	color: #999999;
+	text-align: left;
+}
+.nominateImg{
+	width: 100%;
+	height: 2rem;
+}
+.swiper-slide img{
+	width:100%;
+	height: 100%;
+	background-size: 100% 100%;
+}
+.swiper-slide p{
+	margin-top: .2rem;
+	color: #999999;
+	font-size: .24rem;
+}

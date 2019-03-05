@@ -13,9 +13,11 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import 'jquery'
 import Vue from 'vue'
+import axios from 'axios'
 import App from './App'
 //import Cube from 'cube-ui'
 import Mint from 'mint-ui';
+import VCharts from 'v-charts';
 import 'mint-ui/lib/style.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 
@@ -44,10 +46,11 @@ Vue.use(iView);
 Vue.use(Vuex);
 Vue.use(Mint);
 
-Vue.config.productionTip = false;
 //将 holdno 挂载到 vue 的原型上
 //Vue.prototype.holdno = holdno;
 
+Vue.use(VCharts);
+Vue.config.productionTip = false
 /* eslint-disable no-new */
 // holdno是我自己定义的一个工具集 里面有各种操作方法
 

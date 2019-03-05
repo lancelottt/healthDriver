@@ -60,7 +60,7 @@ export default {
     float: left;
     width:.41rem;
     height: .33rem;
-    background: url(./img/ShareIcon.png) no-repeat center;
+    background: url(../../../static/images/ShareIcon.png) no-repeat center;
     background-size: 100% 100%;
     margin-top: .3rem;
 }
@@ -81,7 +81,7 @@ export default {
     color: #ffffff;
     float: right;
     margin-top: .3rem;
-    background: url(./img/search.png) no-repeat center;
+    background: url(../../../static/images/search.png) no-repeat center;
     background-size: 100% 100%;
 } 
   
