@@ -80,7 +80,7 @@ import BloodSu from '@/components/family/bloodSu'
 // 会员中心**
 import MemCen from '@/components/memCen/memCen'
 // 我的运动**
-import Mymotion from '@/components/shopping/shopCom' 
+import Mymotion from '@/components/shopping/shopCom'
 // 我的运动中的首页**
 import Index from '@/components/shopping/motion/index'
 // 我的运动中的跑步**
@@ -91,58 +91,68 @@ import Bulid from '@/components/shopping/motion/build'
 import Yoga from '@/components/shopping/motion/yoga'
 // 快走**
 import Step from '@/components/shopping/motion/step'
+
+import KwnoFoodIndex from '@/components/healthMarket/kwnoFoodComponents/index'
+import KnowFoodCarBon from '@/components/healthMarket/kwnoFoodComponents/carbon'
+import KnowFoodEggWhite from '@/components/healthMarket/kwnoFoodComponents/eggWhite'
+import KnowFoodVegetable from '@/components/healthMarket/kwnoFoodComponents/vegetable'
+import KnowFoodFruit from '@/components/healthMarket/kwnoFoodComponents/fruit'
+import KnowFoodOther from '@/components/healthMarket/kwnoFoodComponents/others'
+
+import WechatLoginTest from '@/components/WeChatTest/weChatLoginTest';
+import Author from '@/components/WeChatTest/author'
 Vue.use(Router)
 export default new Router({
 	routes: [{
-		
+
 			path: '/',
 			name: 'Healthy',
 			component: Healthy,
 
-	},
-	// 身体档案**
-	{
-		path:'/Archi',
-		name:'',
-		component:Uncertain
-	},
-	// 我的家人**
-	{
-	   path:'/family',
-	   name:'family',
-	   component:Family
-	},
-	{
-		path:'/wei',
-		name:'',
-		component:Wei   
-	},
-	{
-	   path:'/father',
-	   name:'',
-	   component:Father
-	},
-	//家人中的血糖**
-	{
-		path:'/bloodsu',
-		name:'',
-		component:BloodSu
-	},
-	// 身体档案中我的血压**
-	{
-		path:'/bloodMy',
-		name:'',
-		component:Bloodmy
-	},
-	// {
-	// 	path: '/*any',
-	// 	redirect: 'Home'
-	// },
-//		{
-//			path: '/login/Login',
-//			name: 'Login',
-//			component: Login,
-//		},
+		},
+		// 身体档案**
+		{
+			path: '/Archi',
+			name: '',
+			component: Uncertain
+		},
+		// 我的家人**
+		{
+			path: '/family',
+			name: 'family',
+			component: Family
+		},
+		{
+			path: '/wei',
+			name: '',
+			component: Wei
+		},
+		{
+			path: '/father',
+			name: '',
+			component: Father
+		},
+		//家人中的血糖**
+		{
+			path: '/bloodsu',
+			name: '',
+			component: BloodSu
+		},
+		// 身体档案中我的血压**
+		{
+			path: '/bloodMy',
+			name: '',
+			component: Bloodmy
+		},
+		// {
+		// 	path: '/*any',
+		// 	redirect: 'Home'
+		// },
+		//		{
+		//			path: '/login/Login',
+		//			name: 'Login',
+		//			component: Login,
+		//		},
 		// 微信登录**
 		{
 			path: '/loginChat/chatLogin',
@@ -222,9 +232,9 @@ export default new Router({
 		},
 		// 会员中心**
 		{
-			path:'/memCen',
-			name:'memCen',
-			component:MemCen
+			path: '/memCen',
+			name: 'memCen',
+			component: MemCen
 		},
 		// 启动页**
 		{
@@ -348,7 +358,7 @@ export default new Router({
 			path: '/healthMarket/playFood',
 			name: 'playFood',
 			component: PlayFood,
-			
+
 		},
 		{
 			path: '/competition/competitionJoined',
@@ -357,43 +367,88 @@ export default new Router({
 		},
 		{
 			path: '/healthMarket/playFood/kwnoFood',
-				name: '',
-				component: KwnoFood,
+			name: '',
+			component: KwnoFood,
 		},
 		// 我的运动**
 		{
-			path:'/mymotion',
-			name:'',
-			component:Mymotion,
-			redirect:'/mymotion/index',
-			children:[
-				{
-					path:'/mymotion/index',
-					name:'',
-					component:Index
+			path: '/mymotion',
+			name: '',
+			component: Mymotion,
+			redirect: '/mymotion/index',
+			children: [{
+					path: '/mymotion/index',
+					name: '',
+					component: Index
 				},
 				{
-					 path:'/mymotion/run',
-					 name:'',
-					 component:Run
+					path: '/mymotion/run',
+					name: '',
+					component: Run
 				},
 				{
-					path:'/mymotion/bulid',
-					name:'',
-					component:Bulid
+					path: '/mymotion/bulid',
+					name: '',
+					component: Bulid
 				},
 				{
-					path:'/mymotion/yoga',
-					name:'',
-					component:Yoga
+					path: '/mymotion/yoga',
+					name: '',
+					component: Yoga
 				},
 				{
-					path:'/mymotion/step',
-					name:'',
-					component:Step
+					path: '/mymotion/step',
+					name: '',
+					component: Step
 				}
 			]
-		}
+		},
+		{
+			path: '/KwnoFood',
+			name: '',
+			component: KwnoFood,
+			children: [{
+					path: '/KwnoFood/index',
+					name: '',
+					component: KwnoFoodIndex
+				},
+				{
+					path: '/KwnoFood/carbon',
+					name: '',
+					component: KnowFoodCarBon
+				},
+				{
+					path: '/KwnoFood/eggWhite',
+					name: '',
+					component: KnowFoodEggWhite
+				},
+				{
+					path: '/KwnoFood/vegetable',
+					name: '',
+					component: KnowFoodVegetable
+				},
+				{
+					path: '/KwnoFood/fruit',
+					name: '',
+					component: KnowFoodFruit
+				},
+				{
+					path: '/KwnoFood/others',
+					name: '',
+					component: KnowFoodOther
+				}
+			]
+		},
+		{
+			path: '/test',
+			name: '',
+			component: WechatLoginTest,
+		},
+		{
+			path: '/author',
+			name: '',
+			component: Author,
+		},
 
 	]
 

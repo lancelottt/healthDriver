@@ -1,13 +1,31 @@
-#kwnoFood{
+#kwnoFood {
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 100%;
-    >header{
+    >header {
         height: 6.3%;
     }
-    .kwnoFood-main{
+    .kwnoFoodTabBar-out {
         width: 100%;
-        height: 93.7%;
+        height: 0.91rem;
+        display: flex;
+        flex-direction: row;
+        
+        .kwnoFoodTabBar {
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            background: pink;
+            text-align: center;
+            div {
+                
+                float: left;
+                line-height: 0.91rem;
+                font-size: 0.26rem;
+                color: #999999;
+            }
+        }
     }
 }

@@ -78,7 +78,7 @@
 					<div class="playFood-article-img">
 
 						<swiper :options="swiperOption">
-							<swiper-slide>
+							<swiper-slide v-for = "(item,index) in foods" :key="index">
 								<div>
 									<div>
 										<img src="http://placekitten.com/400/245" />

@@ -270,6 +270,52 @@
 		},
 		beforeCreate() {
 			function plusReady() {
+				var  auths = null;
+				var  aweixin = null
+				plus.oauth.getServices(function(services) {
+					 auths = services;
+					 aweixin = services['weixin'];
+					console.log(aweixin + '>')
+					console.log(auths.toString())
+				}, function(e) {
+					console.log("获取分享服务列表失败：" + e.message + " - " + e.code);
+				});
+
+				function authLogin() {
+					var s = auths[0];
+					s.login(function(e) {
+							console.log("1！");
+							alert("1！");
+						},
+						function(e) {
+							console.log("0！");
+							alert("0！");
+						}, {
+							// 微信应用的appid
+							appid: "wxb7a73ac2a23fe04b",
+							scope: "snsapi_userinfo",
+							appsecret: '189a61ba487957636b8c7ae796a0d237',
+							response_type: 'code',
+							redirect_uri: 'http%3a%2f%2f192.168.1.151%3a8081'
+						} // 授权获取用户信息
+					);
+				}
+
+				function authorize() {
+					if(!aweixin) {
+						alert("当前环境不支持微信登录");
+						return;
+					}
+					aweixin.authorize(function(e) {
+						alert("授权成功：" + JSON.stringify(e));
+					}, function(e) {
+						alert("授权失败：" + JSON.stringify(e));
+					}, {
+						scope: 'snsapi_userinfo',
+						state: 'authorize test',
+						appid: 'wxb7a73ac2a23fe04b'
+					});
+				}
 
 				// 在这里调用plus api
 				void plus.push.createMessage('success', {
@@ -281,8 +327,7 @@
 
 				});
 				plus.audio.createPlayer('http://demo.dcloud.net.cn/test/audio/apple.mp3').play()
-				plus.device.beep();
-
+				plus.device.beep(3);
 			}
 			if(window.plus) {
 				plusReady(
@@ -372,13 +417,10 @@
 		},
 		methods: {
 			changeFixed(clientHeight) { //动态修改样式
-				console.log(clientHeight);
 				this.$refs.homePage.style.height = clientHeight + 'px';
 			},
 			handleHealthPlanGo1(e) {
 				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				console.log(OffSetTop)
-				console.log(e.currentTarget.clientHeight)
 				while(OffSetTop.top > 350 && OffSetTop.top < 360 && OffSetTop.left > 50 && OffSetTop.left < 100) {
 					return new Promise((resolve) => {
 						anime({
@@ -415,7 +457,6 @@
 			},
 			handleHealthPlanGo2() {
 				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				console.log(OffSetTop)
 				while(OffSetTop.top > 300 && OffSetTop.top < 310 && OffSetTop.left > 50 && OffSetTop.left < 100) {
 					return new Promise((resolve) => {
 						anime({
@@ -432,7 +473,6 @@
 			},
 			handleHealthPlanGo3() {
 				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				console.log(OffSetTop)
 				while(OffSetTop.top > 200 && OffSetTop.top < 270 && OffSetTop.left > 50 && OffSetTop.left < 100) {
 					return new Promise((resolve) => {
 						anime({
@@ -449,7 +489,6 @@
 			},
 			handleHealthPlanGo4() {
 				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				console.log(OffSetTop)
 				if(OffSetTop.top > 220 && OffSetTop.top < 230 && OffSetTop.left > 50 && OffSetTop.left < 100) {
 					return new Promise((resolve) => {
 						anime({
@@ -466,7 +505,6 @@
 			},
 			handleHealthPlanGo5() {
 				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				console.log(OffSetTop)
 				if(OffSetTop.top > 180 && OffSetTop.top < 190 && OffSetTop.left > 50 && OffSetTop.left < 100) {
 					return new Promise((resolve) => {
 						anime({
@@ -505,7 +543,6 @@
 			},
 			handleHealthPlanGo6() {
 				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				console.log(OffSetTop)
 				if(OffSetTop.top > 160 && OffSetTop.top < 170) {
 					return new Promise((resolve) => {
 						anime({
@@ -522,7 +559,6 @@
 			},
 			handleHealthPlanGo7() {
 				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				console.log(OffSetTop)
 				if(OffSetTop.top > 160 && OffSetTop.top < 170) {
 					return new Promise((resolve) => {
 						anime({
@@ -556,7 +592,6 @@
 			},
 			handleHealthPlanGo8() {
 				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				console.log(OffSetTop)
 				if(OffSetTop.top > 180 && OffSetTop.top < 190 && OffSetTop.left > 300 && OffSetTop.left < 350) {
 					return new Promise((resolve) => {
 						anime({
@@ -572,7 +607,6 @@
 			},
 			handleHealthPlanGo9() {
 				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				console.log(OffSetTop)
 				if(OffSetTop.top > 220 && OffSetTop.top < 230 && OffSetTop.left > 300 && OffSetTop.left < 350) {
 					return new Promise((resolve) => {
 						anime({
@@ -589,7 +623,6 @@
 			},
 			handleHealthPlanGo10() {
 				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				console.log(OffSetTop)
 				if(OffSetTop.top > 260 && OffSetTop.top < 270 && OffSetTop.left > 300 && OffSetTop.left < 350) {
 					return new Promise((resolve) => {
 						anime({
@@ -606,7 +639,6 @@
 			},
 			handleHealthPlanGo11() {
 				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				console.log(OffSetTop)
 				if(OffSetTop.top > 300 && OffSetTop.top < 310 && OffSetTop.left > 300 && OffSetTop.left < 350) {
 					return new Promise((resolve) => {
 						anime({
@@ -623,7 +655,6 @@
 			},
 			handleHealthPlanGo12() {
 				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				console.log(OffSetTop)
 				if(OffSetTop.top > 350 && OffSetTop.top < 360 && OffSetTop.left > 300 && OffSetTop.left < 350) {
 					return new Promise((resolve) => {
 						anime({
@@ -638,9 +669,8 @@
 					})
 				}
 			},
-						handleHealthPlanGo13() {
+			handleHealthPlanGo13() {
 				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				console.log(OffSetTop)
 				if(OffSetTop.top > 390 && OffSetTop.top < 400 && OffSetTop.left > 300 && OffSetTop.left < 350) {
 					return new Promise((resolve) => {
 						anime({
@@ -655,9 +685,8 @@
 					})
 				}
 			},
-						handleHealthPlanGo14() {
+			handleHealthPlanGo14() {
 				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				console.log(OffSetTop)
 				if(OffSetTop.top > 430 && OffSetTop.top < 440 && OffSetTop.left > 300 && OffSetTop.left < 350) {
 					return new Promise((resolve) => {
 						anime({
@@ -672,9 +701,8 @@
 					})
 				}
 			},
-						handleHealthPlanGo15() {
+			handleHealthPlanGo15() {
 				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				console.log(OffSetTop)
 				if(OffSetTop.top > 470 && OffSetTop.top < 480 && OffSetTop.left > 300 && OffSetTop.left < 350) {
 					return new Promise((resolve) => {
 						anime({
@@ -689,9 +717,8 @@
 					})
 				}
 			},
-									handleHealthPlanGo16() {
+			handleHealthPlanGo16() {
 				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				console.log(OffSetTop)
 				if(OffSetTop.top > 510 && OffSetTop.top < 520 && OffSetTop.left > 300 && OffSetTop.left < 350) {
 					return new Promise((resolve) => {
 						anime({
@@ -732,15 +759,12 @@
 		},
 		mounted() {
 			var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-			console.log(OffSetTop)
 			// 获取浏览器可视区域高度
 			var Oheight = this.$refs.homePage.offsetHeight
-			console.log(Oheight)
 			this.clientHeight = `${document.documentElement.clientHeight}` //document.body.clientWidth;
 			//console.log(self.clientHeight);
 			window.onresize = function temp() {
 				this.clientHeight = `${document.documentElement.clientHeight}`;
-				console.log(this.clientHeight)
 			};
 		},
 		watch: {

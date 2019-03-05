@@ -98,6 +98,7 @@
 </template>
 
 <script>
+	import axios from 'axios'
 	import BScroll from 'better-scroll'
 	import tab from '../foorterGuid/footerGuild'
 
@@ -140,10 +141,25 @@
 			};
 		},
 		methods: {
-			handlerToPlayFood(){
-				this.$router.push({name:'playFood'})
+			headlerToken() {
+				axios.get('http://192.168.1.164:8080/health-web/modules/umsdistribution/userInfoByPromotionCode?promotionCode=abcdefg', {
+						params: {
+							ID: 12345
+						}
+					})
+					.then(function(response) {
+						console.log(response);
+					})
+					.catch(function(error) {
+						console.log(error);
+					});
 			},
-			handlerToSportGuide(){
+			handlerToPlayFood() {
+				this.$router.push({
+					name: 'playFood'
+				})
+			},
+			handlerToSportGuide() {
 				this.$router.push('/mymotion')
 			},
 			handleHealthMarketHomeCancelInput() {
@@ -370,6 +386,7 @@
 			}
 		},
 		mounted() {
+			this.headlerToken()
 			//			BScroll
 			this.scroll = new BScroll(this.$refs.wrapper, {
 				tap: true,

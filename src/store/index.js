@@ -3,42 +3,48 @@ import Vuex from "vuex";
 import axios from 'axios'
 Vue.use(Vuex);
 
-const state={
-	address:[],
-    show:true
+const state = {
+
+	user: {
+		id: "111"
+	},
+	address: [],
+	show: true
 }
-const getters={
-		
+const getters = {
+
 }
-const mutations={
-	 handleEditTabStatus(state,params){
-        if(!params){
-            state.show = !state.show;
-        }else{
-            console.log(params,7);
-            if(params == 1){
-                state.show = true;
-            }else{
-                state.show = false;
-            }
-        }
-        
-    }
+const mutations = {
+	handleEditTabStatus(state, params) {
+		if(!params) {
+			state.show = !state.show;
+		} else {
+			console.log(params, 7);
+			if(params == 1) {
+				state.show = true;
+			} else {
+				state.show = false;
+			}
+		}
+
+	}
 }
-const actions={
-	 handleEditTabStatus({commit},params){
-        console.log(params)
-        commit("handleEditTabStatus",params);
-    }
+const actions = {
+	handleEditTabStatus({
+		commit
+	}, params) {
+		console.log(params)
+		commit("handleEditTabStatus", params);
+	}
 }
 
-const store = new Vuex.Store ({
+const store = new Vuex.Store({
 	state,
 	getters,
 	mutations,
 	actions,
-	module:{
-		
+	module: {
+
 	}
 })
 export default store;
