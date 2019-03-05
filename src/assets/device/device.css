@@ -1,0 +1,146 @@
+.device{
+	width: 100%;
+	height: auto;
+	background: #EEEEEE;
+	padding-bottom: 2.5rem;
+}
+.deviceTop{
+	width:100%;
+	height: .74rem;
+	background: #fff;
+	line-height: .74rem;
+}
+.deviceTopArrowImg{
+	width:.31rem;
+	height: .33rem;
+}
+.deviceTopArrow{
+	float: left;
+	width:15%;
+	height: .74rem;
+	padding-left: .2rem;
+    box-sizing: border-box;
+}
+.deviceTopArrow img{
+	width:100%;
+	height: 100%;
+}
+.deviceTipArrowData{
+	font-size: .29rem;
+	color: #333333;
+	float: left;
+	width:60%;
+	height: .74rem;
+}
+.intelLigent{
+    font-size: .24rem;
+    color: #FF5E3A;
+    float: right;
+    width:25%;
+    height: .74rem;
+}
+.DeviceList{
+	width: 92%;
+	height: 12rem;
+	margin: auto;
+	margin-top: .12rem;
+}
+.DeviceCon{
+	width:100%;
+	height:auto;
+	border-radius: .1rem;
+	background: #fff;
+    padding: .25rem;
+    box-sizing: border-box;
+	box-shadow: #f4dfd9  0  0.05rem  0  0 ;
+	margin-top: .15rem;
+}
+.LiInter{
+	width:100%;
+	height: .8rem;
+}
+.DeviceImg{
+	float: left;
+	width:7%;
+	height: .17rem;
+	margin-top: .2rem;
+}
+.Devicefonts{
+	float: left;
+	width:15%;
+	margin-top: .25rem;
+	color:#666666;
+	font-size: .3rem;
+}
+.DeviceImgMotion{
+	width:.39rem;
+	height: .37rem;
+	background: url(../../../static/images/shebeiQ.png) no-repeat center;
+	background-size: 100% 100%;
+}
+.DeviceZt{
+	text-align: left;
+}
+.DeviceZt span:nth-of-type(1){
+	display: inline-block;
+	font-size: .48rem;
+	color: #ff5e3a;
+}
+.DeviceZt span:nth-of-type(2){
+	font-size: .22rem;
+	color: #999999;
+}
+.DeviceZt span:nth-of-type(3){
+	display: inline-block;
+	font-size: .48rem;
+	color: #ff5e3a;
+}
+.DeviceZt span:nth-of-type(4){
+    font-size: .22rem;
+	color: #999999;
+}
+.timer{
+	text-align: left;
+}
+.DeviceContent{
+	min-width: 32%;
+	float: left;
+}
+.dataTime{
+	font-size: .22rem;
+	color: #999999;
+	text-align: left;
+}
+.DeviceButton{
+	float: right;
+	width:.88rem;
+	height: .88rem;
+	background-size: 100% 100%;
+}
+.DeviceButton img{
+	width:100%;
+	height: 100%;
+}
+.Kcal{
+	width:100%;
+    height: 1.23rem;
+    margin-top: .3rem;
+}
+.Kcal ul li{
+	width:25%;
+	float: left;
+}
+.kcalImg{
+	margin-left: .1rem;
+	width:.93rem;
+	height: .93rem;
+	margin-left: .3rem;
+}
+.kcalImg img{
+	width:100%;
+	height: 100%;
+}
+.Kcal ul li p{
+	font-size: .2rem;
+	color: #666666;
+}

@@ -39,6 +39,16 @@ import Uncertain from '@/components/uncertain/uncertain'
 import Bloodmy from '@/components/uncertain/blood'
 //商城**
 import Shopping from '@/components/pages/shopping/shopping'
+//引入商城中运动手表首页热销推荐**
+//import Sale from '@/components/pages/shopping/shopTabbar/sale'
+////引入商城中运动手表首页健康管理**
+//import HealthMana from '@/components/pages/shopping/shopTabbar/healthMana'
+////引入商城中运动手表首页健康设备**
+//import HealthEquip from '@/components/pages/shopping/shopTabbar/healthEquip'
+////引入商城中运动手表首页运动装备**
+//import SportsEquip from '@/components/pages/shopping/shopTabbar/sportsEquip'
+////引入商城中运动手表首页体验套餐**
+//import Exper from '@/components/pages/shopping/shopTabbar/experience'
 // 引入数据组件**
 import DataSj from '@/components/pages/datasj/datasj'
 // 体重**
@@ -91,6 +101,24 @@ import Bulid from '@/components/shopping/motion/build'
 import Yoga from '@/components/shopping/motion/yoga'
 // 快走**
 import Step from '@/components/shopping/motion/step'
+//运动课程**
+import SportsCurric from '@/components/shopping/motion/sportsCurric'
+//智能设备**
+import Device from '@/components/device/device'
+//健康数据中的血压**
+import Pressure from '@/components/device/pressure'
+//健康数据中的血糖**
+import Presugar from '@/components/device/sugar'
+//权限设置**
+import Settings from '@/components/settings/settings'
+//设置**
+import SetUp from '@/components/szsetUp/setUp'
+//健康设备**
+import Equip from '@/components/equip/equip'
+//体验套餐**
+import Experience from '@/components/experience/experience'
+//import Experience from '@/components/experience/experience'
+
 Vue.use(Router)
 export default new Router({
 	routes: [{
@@ -127,6 +155,11 @@ export default new Router({
 		path:'/bloodsu',
 		name:'',
 		component:BloodSu
+	},
+	{
+		path:'/sportsCurric',
+		name:'',
+		component:SportsCurric
 	},
 	// 身体档案中我的血压**
 	{
@@ -248,8 +281,37 @@ export default new Router({
 		{
 			path: '/shopping',
 			name: '',
-			component: Shopping,
+			component: Shopping
+//			,
+//			children:[
+//			  {
+//			  	path:'/shopping/sale',
+//			  	name:'sale',
+//			  	component:Sale
+//			  },
+//			  {
+//			  	path:'/shopping/healthMana',
+//			  	name:'healthMana',
+//			  	component:HealthMana
+//			  },
+//			  {
+//			  	path:'/shopping/healthEquip',
+//			  	name:'healthEquip',
+//			  	component:HealthEquip
+//			  },
+//			  {
+//			  	path:'/shopping/sportsEquip',
+//			  	name:'sportsEquip',
+//			  	component:SportsEquip
+//			  },
+//			  {
+//			  	path:'/shopping/exper',
+//			  	name:'exper',
+//			  	component:Exper
+//			  }
+//			]
 		},
+		
 		// 引入数据**
 		{
 			path: '/dataSj/weight',
@@ -393,8 +455,47 @@ export default new Router({
 					component:Step
 				}
 			]
-		}
-
+		},
+		{
+			path:'/device',
+			name:'',
+			component:Device
+		},
+//		健康数据中的血压**
+        {
+        	path:'/pressure',
+        	name:'pressure',
+        	component:Pressure
+        },
+        //健康数据中的血糖
+        {
+        	path:'/presugar',
+        	name:'presugar',
+        	component:Presugar
+        },
+//      权限设置**
+        {
+        	path:'/settings',
+        	name:'settings',
+        	component:Settings
+        },
+//      设置**/
+        {
+        	path:'/setUp',
+        	name:'setUp',
+        	component:SetUp
+        },
+//      健康设备**
+        {
+        	path:'/equip',
+        	name:'equip',
+        	component:Equip
+        }
+        ,
+        {
+        	path:'/experience',
+        	name:'experience',
+        	component:Experience
+        }
 	]
-
 })

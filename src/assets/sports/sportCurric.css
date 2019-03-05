@@ -1,0 +1,61 @@
+.hadHeaContent{
+	width:100%;
+	height: auto;
+	background: #fff;
+}
+.coursesContent{
+	width:100%;
+	height: auto;
+	background: #FFF;
+	margin-top: .1rem;
+}
+.guessYou,.courses{
+	width:100%;
+	height: 7.37rem;
+}
+.guessContent{
+	width:92%;
+	height: 7.37rem;
+	margin: auto;
+}
+.guessContent p{
+	width:100%;
+	height: .86rem;
+	line-height: .86rem;
+	font-size: .32rem;
+	color: #666666;
+	text-align: left;
+}
+.guessYouImg{
+	width: 100%;
+	
+}
+.guessYouImg ul li{
+    width: 49%;
+    height: 2rem;
+    margin-right: .1rem;
+    float: left;
+    margin-bottom: .1rem;
+    position: relative;
+}
+.guessYouImg ul li p{
+	position: absolute;
+    width: 2.81rem;
+    height: 1.68rem;
+    left: 0;
+    line-height: 1.68rem;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    font-size: .24rem;
+    color: #fff;
+    text-align: center;
+}
+.guessYouImg ul li:nth-child(even){
+	margin-right: 0;
+}
+.guessYouImg ul li img{
+	width:100%;
+	height: 100%;
+}

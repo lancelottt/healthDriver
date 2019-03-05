@@ -11,6 +11,7 @@
 </template>
 
 <script>
+	import axios from 'axios'
 	import Vuex from "vuex"
 	export default {
 		beforeCreate() {
@@ -49,7 +50,7 @@
 			var mNb = mNotification.build()
 			nm.notify(NotifyID, mNb);
 		},
-		name: 'App',
+		//		name: 'App',
 		methods: {
 			//			beforeDestroyed(){
 			//				console.log(show)
@@ -85,9 +86,7 @@
 */
 		padding-bottom: .96rem;
 	}
-	
-
-/* .footer_guide{
+	/* .footer_guide{
     position: fixed;
     z-index: 100;
     left:0;
@@ -129,6 +128,4 @@ span{
 .cals{
     margin-top: .15rem;
 } */
-
-
 </style>

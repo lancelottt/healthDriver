@@ -1,6 +1,7 @@
 <template>
 	<div id="invitation">
-		<header><!--<span class="" @click="handleBack()"><img src="../../../static/img/arrow_03.png"/></span><span>制订你的健康计划</span><span></span>--></header>
+		<header>
+			<!--<span class="" @click="handleBack()"><img src="../../../static/img/arrow_03.png"/></span><span>制订你的健康计划</span><span></span>--></header>
 		<!--iconfont icon-xiangzuojiantou-->
 		<div class="invitation-content">
 			<el-form label-position="left" :model="ruleForm" :rules="rules" ref="ruleForm" label-width="0px" class="demo-ruleForm varyfyInviteCode-container">
@@ -9,7 +10,7 @@
 					<el-input type="varifyCode" v-model="ruleForm.varifyCode" auto-complete="off" placeholder="邀请码"></el-input>
 				</el-form-item>
 			</el-form>
-			<el-button type="danger" round class="inviteInfoRight" @click="invitationHandleSure()">主要按钮</el-button>
+			<el-button type="danger" round class="inviteInfoRight" @click="invitationHandleSure()">确定</el-button>
 			<h2 class="varifyCodeHint">“邀请码是健康驾校为会员用户提供的专属
 					编码，普通用户需要有会员的推荐方可正
 					常使用以及购买健康商品，快去找您身边
@@ -21,6 +22,7 @@
 </template>
 
 <script>
+	import axios from 'axios'
 	export default {
 		data() {
 			return {
@@ -38,14 +40,29 @@
 			}
 		},
 		methods: {
-			handleBack(){
+			handleBack() {
 				this.$router.back()
 			},
 			invitationHandleSure() {
 				this.$router.push({
 					path: '/invitation/invitationInfo'
 				})
+			},
+			getTokenUser() {
+				axios({
+					method: "get",
+					url: 'http://192.168.1.164:8080/health-web/modules/umsmember/getUser',
+					//      data: obj,
+					headers: {
+						'token': 'abcd123456'
+					}
+				}).then((res)=> {
+					console.log(res);
+				});
 			}
+		},
+		mounted() {
+			this.getTokenUser()
 		},
 		created() {
 
@@ -56,10 +73,8 @@
 				type: 'success'
 			})
 		}
-
 	}
 </script>
-
 <style>
 	@import '../../assets/invite/inviteCode/invite.css';
 </style>

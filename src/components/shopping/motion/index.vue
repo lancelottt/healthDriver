@@ -74,7 +74,7 @@
                     <swiper :options="swiperOption">
                             <swiper-slide v-for="(item,index) in items" :key="index">
                                   <div class="slideImg">
-                                      <img src="../img/jian.png" alt="">
+                                  	<img src="../../../../static/images/jian.png" alt=''>
                                   </div>
                             </swiper-slide>
                     </swiper>
@@ -117,5 +117,5 @@ export default {
 }
 </script>
 <style lang="" scoped>
-@import '../style/index.css';
+@import '../../../assets/sports/index.css';
 </style>

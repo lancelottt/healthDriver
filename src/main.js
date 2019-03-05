@@ -13,9 +13,11 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import 'jquery'
 import Vue from 'vue'
+import axios from 'axios'
 import App from './App'
 //import Cube from 'cube-ui'
 import Mint from 'mint-ui';
+import VCharts from 'v-charts';
 import 'mint-ui/lib/style.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 
@@ -39,9 +41,8 @@ Vue.use(ElementUI)
 Vue.use(iView);
 Vue.use(Vuex);
 Vue.use(Mint);
-
+Vue.use(VCharts);
 Vue.config.productionTip = false
-
 /* eslint-disable no-new */
 
 new Vue({
