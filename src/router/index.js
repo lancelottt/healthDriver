@@ -119,6 +119,16 @@ import Equip from '@/components/equip/equip'
 //体验套餐**
 import Experience from '@/components/experience/experience'
 //import Experience from '@/components/experience/experience'
+//认识食物
+import KwnoFoodIndex from '@/components/healthMarket/kwnoFoodComponents/index'
+import KnowFoodCarBon from '@/components/healthMarket/kwnoFoodComponents/carbon'
+import KnowFoodEggWhite from '@/components/healthMarket/kwnoFoodComponents/eggWhite'
+import KnowFoodVegetable from '@/components/healthMarket/kwnoFoodComponents/vegetable'
+import KnowFoodFruit from '@/components/healthMarket/kwnoFoodComponents/fruit'
+import KnowFoodOther from '@/components/healthMarket/kwnoFoodComponents/others'
+
+import WechatLoginTest from '@/components/WeChatTest/weChatLoginTest';
+import Author from '@/components/WeChatTest/author'
 
 Vue.use(Router)
 export default new Router({
@@ -423,6 +433,15 @@ export default new Router({
 			path: '/healthMarket/playFood/kwnoFood',
 			name: '',
 			component: KwnoFood,
+		},
+		{			path: '/test',
+			name: '',
+			component: WechatLoginTest,
+		},
+		{
+			path: '/author',
+			name: '',
+			component: Author,
 		},
 		// 我的运动**
 		{
