@@ -141,19 +141,19 @@
 			};
 		},
 		methods: {
-			headlerToken() {
-				axios.get('http://192.168.1.164:8080/health-web/modules/umsdistribution/userInfoByPromotionCode?promotionCode=abcdefg', {
-						params: {
-							ID: 12345
-						}
-					})
-					.then(function(response) {
-						console.log(response);
-					})
-					.catch(function(error) {
-						console.log(error);
-					});
-			},
+//			headlerToken() {
+//				axios.get('http://192.168.1.164:8080/health-web/modules/umsdistribution/userInfoByPromotionCode?promotionCode=abcdefg', {
+//						params: {
+//							ID: 12345
+//						}
+//					})
+//					.then(function(response) {
+//						console.log(response);
+//					})
+//					.catch(function(error) {
+//						console.log(error);
+//					});
+//			},
 			handlerToPlayFood() {
 				this.$router.push({
 					name: 'playFood'
@@ -386,7 +386,7 @@
 			}
 		},
 		mounted() {
-			this.headlerToken()
+//			this.headlerToken()
 			//			BScroll
 			this.scroll = new BScroll(this.$refs.wrapper, {
 				tap: true,

@@ -129,6 +129,7 @@ import KnowFoodOther from '@/components/healthMarket/kwnoFoodComponents/others'
 
 import WechatLoginTest from '@/components/WeChatTest/weChatLoginTest';
 import Author from '@/components/WeChatTest/author'
+import MMlogin from '@/components/WeChatTest/mmlogin'
 
 Vue.use(Router)
 export default new Router({
@@ -138,56 +139,55 @@ export default new Router({
 			name: 'Healthy',
 			component: Healthy,
 
-
-	},
-	// 身体档案**
-	{
-		path:'/Archi',
-		name:'',
-		component:Uncertain
-	},
-	// 我的家人**
-	{
-	   path:'/family',
-	   name:'family',
-	   component:Family
-	},
-	{
-		path:'/wei',
-		name:'',
-		component:Wei   
-	},
-	{
-	   path:'/father',
-	   name:'',
-	   component:Father
-	},
-	//家人中的血糖**
-	{
-		path:'/bloodsu',
-		name:'',
-		component:BloodSu
-	},
-	{
-		path:'/sportsCurric',
-		name:'',
-		component:SportsCurric
-	},
-	// 身体档案中我的血压**
-	{
-		path:'/bloodMy',
-		name:'',
-		component:Bloodmy
-	},
-	// {
-	// 	path: '/*any',
-	// 	redirect: 'Home'
-	// },
-//		{
-//			path: '/login/Login',
-//			name: 'Login',
-//			component: Login,
-//		},
+		},
+		// 身体档案**
+		{
+			path: '/Archi',
+			name: '',
+			component: Uncertain
+		},
+		// 我的家人**
+		{
+			path: '/family',
+			name: 'family',
+			component: Family
+		},
+		{
+			path: '/wei',
+			name: '',
+			component: Wei
+		},
+		{
+			path: '/father',
+			name: '',
+			component: Father
+		},
+		//家人中的血糖**
+		{
+			path: '/bloodsu',
+			name: '',
+			component: BloodSu
+		},
+		{
+			path: '/sportsCurric',
+			name: '',
+			component: SportsCurric
+		},
+		// 身体档案中我的血压**
+		{
+			path: '/bloodMy',
+			name: '',
+			component: Bloodmy
+		},
+		// {
+		// 	path: '/*any',
+		// 	redirect: 'Home'
+		// },
+		//		{
+		//			path: '/login/Login',
+		//			name: 'Login',
+		//			component: Login,
+		//		},
 		// 微信登录**
 		{
 			path: '/loginChat/chatLogin',
@@ -294,36 +294,36 @@ export default new Router({
 			path: '/shopping',
 			name: '',
 			component: Shopping
-//			,
-//			children:[
-//			  {
-//			  	path:'/shopping/sale',
-//			  	name:'sale',
-//			  	component:Sale
-//			  },
-//			  {
-//			  	path:'/shopping/healthMana',
-//			  	name:'healthMana',
-//			  	component:HealthMana
-//			  },
-//			  {
-//			  	path:'/shopping/healthEquip',
-//			  	name:'healthEquip',
-//			  	component:HealthEquip
-//			  },
-//			  {
-//			  	path:'/shopping/sportsEquip',
-//			  	name:'sportsEquip',
-//			  	component:SportsEquip
-//			  },
-//			  {
-//			  	path:'/shopping/exper',
-//			  	name:'exper',
-//			  	component:Exper
-//			  }
-//			]
+			//			,
+			//			children:[
+			//			  {
+			//			  	path:'/shopping/sale',
+			//			  	name:'sale',
+			//			  	component:Sale
+			//			  },
+			//			  {
+			//			  	path:'/shopping/healthMana',
+			//			  	name:'healthMana',
+			//			  	component:HealthMana
+			//			  },
+			//			  {
+			//			  	path:'/shopping/healthEquip',
+			//			  	name:'healthEquip',
+			//			  	component:HealthEquip
+			//			  },
+			//			  {
+			//			  	path:'/shopping/sportsEquip',
+			//			  	name:'sportsEquip',
+			//			  	component:SportsEquip
+			//			  },
+			//			  {
+			//			  	path:'/shopping/exper',
+			//			  	name:'exper',
+			//			  	component:Exper
+			//			  }
+			//			]
 		},
-		
+
 		// 引入数据**
 		{
 			path: '/dataSj/weight',
@@ -434,7 +434,8 @@ export default new Router({
 			name: '',
 			component: KwnoFood,
 		},
-		{			path: '/test',
+		{
+			path: '/test',
 			name: '',
 			component: WechatLoginTest,
 		},
@@ -513,45 +514,49 @@ export default new Router({
 			]
 		},
 		{
-			path:'/device',
-			name:'',
-			component:Device
+			path: '/device',
+			name: '',
+			component: Device
 		},
-//		健康数据中的血压**
-        {
-        	path:'/pressure',
-        	name:'pressure',
-        	component:Pressure
-        },
-        //健康数据中的血糖
-        {
-        	path:'/presugar',
-        	name:'presugar',
-        	component:Presugar
-        },
-//      权限设置**
-        {
-        	path:'/settings',
-        	name:'settings',
-        	component:Settings
-        },
-//      设置**/
-        {
-        	path:'/setUp',
-        	name:'setUp',
-        	component:SetUp
-        },
-//      健康设备**
-        {
-        	path:'/equip',
-        	name:'equip',
-        	component:Equip
-        }
-        ,
-        {
-        	path:'/experience',
-        	name:'experience',
-        	component:Experience
-        }
+		//		健康数据中的血压**
+		{
+			path: '/pressure',
+			name: 'pressure',
+			component: Pressure
+		},
+		//健康数据中的血糖
+		{
+			path: '/presugar',
+			name: 'presugar',
+			component: Presugar
+		},
+		//      权限设置**
+		{
+			path: '/settings',
+			name: 'settings',
+			component: Settings
+		},
+		//      设置**/
+		{
+			path: '/setUp',
+			name: 'setUp',
+			component: SetUp
+		},
+		//      健康设备**
+		{
+			path: '/equip',
+			name: 'equip',
+			component: Equip
+		},
+		{
+			path: '/experience',
+			name: 'experience',
+			component: Experience
+		},
+		{
+			path: '/mmlogin',
+			name: '',
+			component: MMlogin
+		},
 	]
 })

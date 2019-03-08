@@ -4,9 +4,7 @@
 			<p>
 				<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<</p>
 		</header>
-		<div type="primary" @click="handlerWxLogin()">获取微信服务</div>
-		<div @click="wxAuth()">微信授权</div>
-		<div @click="wxLogin()">微信登录</div>
+		<div id="loginWx" @click="wxLogin()">微信登录</div>
 	</div>
 </template>
 <script type="text/javascript">
@@ -17,23 +15,23 @@
 
 		data() {
 			return {
-				weixinCode: ''
+				weixinCode: '',
 			}
 		},
 		beforeCreate() {
-			function plusReady() {
-				// 在这里调用plus api
-				void plus.push.createMessage('success', {
-					"MessageOptions": [{
-						"sound": "none"
-					}, {
-						title: 'mafia'
-					}]
-
-				});
-				plus.audio.createPlayer('http://demo.dcloud.net.cn/test/audio/apple.mp3').play()
-				plus.device.beep();
-			}
+						function plusReady() {
+							void plus.push.createMessage('success', {
+								"MessageOptions": [{
+									"sound": "none"
+								}, {
+									title: 'mafia'
+								}]
+			
+							});
+							plus.audio.createPlayer('http://demo.dcloud.net.cn/test/audio/apple.mp3').play()
+							plus.device.beep();
+						}
+			
 			// 监听plusready事件  
 		},
 		mounted() {
@@ -216,79 +214,134 @@
 			//
 		},
 		methods: {
-			handlerWxLogin() {
-				var aweixin = null
-				var auths = null;
-				plus.oauth.getServices(function(services) {
-					auths = services;
-					aweixin = services[0]
-					console.log(auths)
-					console.log(aweixin)
-				}, function(e) {
-					console.log("获取分享服务列表失败：" + e.message + " - " + e.code);
-				});
-			},
-			wxAuth() {
-				function authorize() {
-					if(!aweixin) {
-						alert("当前环境不支持微信登录");
-						return;
-					}
-					aweixin.authorize(function(e) {
-						alert("授权成功：" + JSON.stringify(e));
-					}, function(e) {
-						alert("授权失败：" + JSON.stringify(e));
-					}, {
-						scope: 'snsapi_userinfo',
-						state: 'authorize test',
-						appid: 'wxb7a73ac2a23fe04b'
-					});
-				}
-			},
-			wxLogin() {
-				var aweixin = null
-				var auths = null;
-				plus.oauth.getServices(function(services) {
-					auths = services;
-					aweixin = services[0]
-					console.log(auths)
-					console.log(aweixin)
-				}, function(e) {
-					console.log("获取分享服务列表失败：" + e.message + " - " + e.code);
-				});
-				plus.oauth.AuthService.login()
-
-				if(plus.runtime.isApplicationExist({
-						pname: 'com.tencent.mm',
-						action: 'weixin://'
-					})) {
-					console.log("微信已安装");
-				} else {
-					console.log("微信未安装");
-				}
-				//				aweixin.login(function(e) {
-				//						console.log("1！");
-				//						alert("1！");
-				//					},
-				//					function(e) {
-				//						console.log("0");
-				//						alert("0！");
-				//					}, {
-				//						// 微信应用的appid
-				//						appid: "wxb7a73ac2a23fe04b",
-				//						scope: "snsapi_userinfo",
-				//						appsecret: '189a61ba487957636b8c7ae796a0d237',
-				//						response_type: 'code',
-				//						redirect_uri: 'http%3a%2f%2f192.168.1.151%3a8081'
-				//					} // 授权获取用户信息
-				//				);
-			},
-
-			handlerBack() {
-				this.$router.back()
-			}
-
+			//			handlerWxLogin() {
+			//				var aweixin = null
+			//				var auths = null;
+			//				plus.oauth.getServices(function(services) {
+			//					auths = services;
+			//					aweixin = services[0]
+			//					console.log(auths)
+			//					console.log(aweixin)
+			//				}, function(e) {
+			//					console.log("获取分享服务列表失败：" + e.message + " - " + e.code);
+			//				});
+			//			},
+			//			wxAuth() {
+			//				function authorize() {
+			//					if(!aweixin) {
+			//						alert("当前环境不支持微信登录");
+			//						return;
+			//					}
+			//					aweixin.authorize(function(e) {
+			//						alert("授权成功：" + JSON.stringify(e));
+			//					}, function(e) {
+			//						alert("授权失败：" + JSON.stringify(e));
+			//					}, {
+			//						scope: 'snsapi_userinfo',
+			//						state: 'authorize test',
+			//						appid: 'wxb7a73ac2a23fe04b'
+			//					});
+			//				}
+			//			},
+			//			wxLogin() {
+			//				this.$router.push('/mmlogin')
+			//				document.getElementById('loginWx').addEventListener('tap', function() {
+			//					plus.oauth.getServices(
+			//						function(s) {
+			//							console.log(JSON.stringify(s));
+			//							for(k in s) {
+			//								if(s[k].id == 'weixin') {
+			//									wxLoginObj = s[k];
+			//								}
+			//							}
+			//							//检查微信登录模块
+			//							if(wxLoginObj == null) {
+			//								plus.nativeUI.toast('微信登录失败');
+			//								return;
+			//							}
+			//							wxLoginObj.login(
+			//								function(res1) {
+			//									var user = res1.target.userInfo;
+			//									var gender = new Array('', '男', '女');
+			//									axios.post(
+			//										apiUrl + 'members&m=createUser&type=2', {
+			//											openid: user.openid,
+			//											name: user.nickname,
+			//											face: user.headimgurl,
+			//											gender: gender[user.sex]
+			//										},
+			//										function(res) {
+			//											console.log(JSON.stringify(res));
+			//											if(res.status == 'ok') {
+			//												//注册成功记录关键值同时完成登录
+			//												plus.storage.setItem('suid', res.data.u_id + '');
+			//												plus.storage.setItem('srand', res.data.u_randnum + '');
+			//												console.log('登录成功 ^_^');
+			//												//延迟2秒登录界面
+			//												setTimeout(function() {
+			//													plus.webview.getWebviewById('login').close();
+			//												}, 2000);
+			//											}
+			//										},
+			//										'json'
+			//									);
+			//								},
+			//								function(e) {
+			//									plus.nativeUI.toast('微信登录失败');
+			//									return;
+			//								}
+			//							);
+			//						},
+			//						function(e) {
+			//							plus.nativeUI.toast('第三方登录插件获取失败');
+			//							console.log(JSON.stringify(e));
+			//						}
+			//					);
+			//				});
+			//								var aweixin = null
+			//								var auths = null;
+			//								plus.oauth.getServices(function(services) {
+			//									auths = services;
+			//									aweixin = services[0]
+			//									console.log(auths)
+			//									console.log(aweixin)
+			//								}, function(e) {
+			//									console.log("获取分享服务列表失败：" + e.message + " - " + e.code);
+			//								});
+			//								plus.oauth.AuthService.login()
+			//				
+			//								if(plus.runtime.isApplicationExist({
+			//										pname: 'com.tencent.mm',
+			//										action: 'weixin://'
+			//									})) {
+			//									console.log("微信已安装");
+			//								} else {
+			//									console.log("微信未安装");
+			//								}
+			//								
+			//
+			//								aweixin.login(function(e) {
+			//										console.log("1！");
+			//										alert("1！");
+			//									},
+			//									function(e) {
+			//										console.log("0");
+			//										alert("0！");
+			//									}, {
+			//										// 微信应用的appid
+			//										appid: "wxb7a73ac2a23fe04b",
+			//										scope: "snsapi_userinfo",
+			//										appsecret: '189a61ba487957636b8c7ae796a0d237',
+			//										response_type: 'code',
+			//										redirect_uri: 'http%3a%2f%2f192.168.1.151%3a8081'
+			//									} // 授权获取用户信息
+			//								);
 		},
+
+		handlerBack() {
+			this.$router.back()
+		}
+
 
 	}
 </script>
