@@ -1,0 +1,245 @@
+.revenue{
+	width:100%;
+	height:100%;
+	background: #EEEEEE;
+	padding-bottom: 8.99rem;
+	box-sizing: border-box;
+}
+.revenContent{
+	width:100%;
+	height: .84rem;
+	background: #FFFFFF;
+}
+.memTop{
+    width:100%;
+    height: .78rem;
+    padding: 0 .34rem 0 .34rem;
+    box-sizing: border-box;
+}
+.memLe{
+    width:15%;
+    height: .78rem;
+    padding-top: .2rem;
+    box-sizing: border-box;
+    float: left;
+}
+.meImg{
+    width:.41rem;
+    height: .33rem;
+    background: url(../../../static/images/revenFanhui.png) no-repeat center;
+    background-size: 100% 100%;
+}
+.memCe{
+    font-size: .28rem;
+    color:rgba(153,153,153,1);
+    width:70%;
+    height: 100%;
+    float: left;
+    line-height: .78rem;
+    text-align: center;
+}
+.memRi{
+    width:15%;
+    height: .78rem;
+    float: right;
+    padding-top: .2rem;
+    box-sizing: border-box;
+}
+.memRi div:nth-of-type(1){
+    width:.37rem;
+    height: .45rem;
+    float: left;
+    background: url(../../../static/images/revenD.png) no-repeat center;
+    background-size: 100% 100%;
+}
+.memRi div:nth-of-type(2){
+    width:.39rem;
+    float: right;
+    height: .41rem;
+    float: right;
+    background: url(../../../static/images/revenShzhi.png) no-repeat center;
+    background-size: 100% 100%; 
+}
+/*当月,当周***/
+.month{
+	width:100%;
+	height: .92rem;
+	background: #fff;
+}
+.monthYue{
+    width: 92%;
+	height: .92rem;
+	margin: auto;
+}
+.tabpand {
+    color:rgba(153,153,153,1);
+    font-size: .28rem;
+}
+.month >>> .mint-tab-item-label {
+    font-size: .28rem;
+}
+.month >>> .mint-navbar .mint-tab-item.is-selected {
+    border-bottom: .06rem solid #FF5E3A;
+    color: #FF5E3A !important;
+    margin-bottom: -3px;
+}
+.month >>> .mint-navbar .mint-tab-item {
+    height: .92rem;
+    width:25%;
+}
+.fanli{
+	width:100%;
+	height: 3.85rem;
+	background: #FFFFFF;
+}
+.fanliContent{
+	width:92%;
+	height: 3.85rem;
+	margin: auto;
+}
+.fanTu{
+	width:100%;
+	height: 2.98rem;
+	background: url(../../../static/images/revenWen.png) no-repeat center;
+	background-size: 100% 100%;
+	position: relative;
+}
+.tuDinwei{
+    position: absolute;
+    width: 60%;
+    height: 2rem;
+    right: 0.6rem;
+    top: 0.2rem;
+}
+.tuDinLeft{
+	float: left;
+}
+.tuDinLeft p:nth-of-type(1){
+	font-size: .30rem;
+	color: #fff;
+	margin-top: .42rem;
+}
+.tuDinLeft p:nth-of-type(2){
+	font-size: .20rem;
+	color: #fff;
+	margin-top: .23rem;
+}
+.tuDinLeft p:nth-of-type(3){
+	font-size: .72rem;
+	color: #fff;
+	margin-top: .42rem;
+}
+.tuDinRight{
+	float: right;
+	width:1.51rem;
+	line-height: .61rem;
+	text-align: center;
+	height: .61rem;
+	background: url(../../../static/images/revenQu.png) no-repeat center;
+	background-size: 100% 100%;
+	font-size: .2rem;
+    color:rgba(255,255,255,1);
+    margin-top: .32rem;
+}
+.whole{
+	width:100%;
+	height: .76rem;
+}
+.wholeUl{
+	float: left;
+	width:80%;
+	height: .76rem;
+	line-height: .76rem;
+	text-align: center;
+}
+.wholeUl ul li{
+	float: left;
+	width:25%;
+	height: .76rem;
+	font-size: .28rem;
+	color: #999999;
+}
+.wholeRi{
+	float: right;
+	width: 20%;
+	height: .76rem;
+	line-height: .76rem;
+	text-align: center;
+	font-size: .28rem;
+	color: #999999;
+}
+.serch{
+	width: 100%;
+	height: 1.04rem;
+	background: #FFFFFF;
+}
+.serchCon{
+	width:92%;
+	height: 1.04rem;
+	margin: auto;
+}
+.serLeft{
+	float: left;
+	width: 36%;
+	height: 1.04rem;
+}
+.serCenter{
+	float: left;
+	width: 50%;
+	height: 1.04rem;
+}
+.serContent{
+	padding-left: .1rem;
+    margin-left: .2rem;
+    box-sizing: border-box;
+	background:rgba(242,242,242,1);
+    border-radius:.01rem;
+    width:100%;
+    height: .8rem;
+    margin-top: .13rem;
+    line-height: .8rem;
+}
+.serImg{
+	float: left;
+	width:.38rem;
+	height: .38rem;
+	margin-top: .1rem;
+}
+.serImg img{
+	width:100%;
+	height: 100%;
+}
+.serInout{
+	float: left;
+    padding-left: .1rem;
+    width: 78%;
+    box-sizing: border-box;
+    height: .8rem;
+    padding-left: .2rem;
+    box-sizing: border-box;
+}
+.serInout input{
+	font-size: .24rem;
+	outline: none;
+	border:0;
+	background: none;
+}
+.serRight{
+	float: right;
+	width: 14%;
+	height: 1.04rem;
+	text-align: center;
+	font-size: .28rem;
+	color: #999999;
+	line-height: 1.04rem;
+}
+.block{
+	width: 100%;
+    height: .65rem;
+    margin-top: .2rem;
+}
+.serLeft >>> .el-input__inner{
+	width: 2.45rem;
+    height: .65rem;
+}
+

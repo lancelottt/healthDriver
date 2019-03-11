@@ -42,11 +42,11 @@
 .exper{
 	width: 100%;
     height: 1.4rem;
-    position: fixed;
-    z-index: 99;
-    top: 0;
-    right: 0;
-    left: 0;
+    /*position: fixed;*/
+    /*z-index: 99;*/
+    /*top: 0;*/
+    /*right: 0;*/
+    /*left: 0;*/
 }
 .hotExpe:after{
 	 clear:both;content:'';display:block;width:0;height:0;visibility:hidden; 
@@ -115,11 +115,12 @@
     top: .15rem;
 }
 .contents{
-	width: 100%;
-    height: auto;
-    line-height: .8rem;
+	    width: 100%;
+    background: #fff;
+    height: .75rem;
+    line-height: .75rem;
+    font-size: .28rem;
     color: #333333;
-    font-size: .4rem;
     text-align: left;
     padding-left: .3rem;
     -webkit-box-sizing: border-box;

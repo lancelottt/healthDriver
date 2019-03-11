@@ -127,12 +127,10 @@ export default {
 //	      _this.lowerList = _this.partsIndex;
         },
         handLower(id) {
-         alert(id);
-//       this.$router.push({
-//      path: "goodDetail",
-//      query: { id: id }
-//       });
-        	
+         this.$router.push({
+	        path: "equipSport",
+	//      query: { id: id }
+	         });
         }
 	},
 	components:{

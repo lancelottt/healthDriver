@@ -1,0 +1,136 @@
+.modity{
+	width:100%;
+	background: #fcfcfc;
+	margin-top: .96rem;
+}
+.modityCon{
+	width:100%;
+	height: 1.41rem;
+	line-height: 1.31rem;
+	text-align: center;
+	font-size: .36rem;
+	color: #666666;
+}
+.modityUl{
+	width:100%;
+	height: 1.72rem;
+}
+.modityUl ul {
+	width:100%;
+	clear: both;
+    content: '';
+    display: block;
+    height: 0;
+}
+.modityUl ul{
+	zoom:1
+}
+.modityUl ul li{
+	width:33%;
+	height: 1.72rem;
+	float: left;
+	margin: auto;
+	padding-top: .3rem;
+    box-sizing: border-box;
+}
+.modityUl ul li p img{
+	width:.75rem;
+	height: .75rem;
+}
+.modityUl ul li p:nth-of-type(2) {
+	font-size: .24rem;
+	margin-top: .1rem;
+	color: #666666;
+}
+.modeP{
+	color: #FF5E3A;
+}
+.modityImg{
+	width:100%;
+	height: 4.84rem;
+}
+.modityImg img{
+	width:100%;
+	height: 100%;
+	background-size: 100% 100%;
+}
+.inspect{
+	width:92%;
+	height: 4.22rem;
+	margin: auto;
+}
+.insSpan{
+	width:100%;
+	height: 1.02rem;
+	line-height: 1.02rem;
+	text-align: center;
+}
+.insSpan span:nth-of-type(1){
+	color:rgba(129,218,182,1);
+	font-size: .36rem;
+}
+.insSpan span:nth-of-type(2){
+	color:#666666;
+	font-size: .36rem;
+}
+.inspectXian{
+	width:.78rem;
+	height:.03rem;
+	background:rgba(153,153,153,1);
+	margin: auto;
+}
+.zho{
+	font-size:.12rem;
+	font-weight:400;
+	color:rgba(129,218,182,1);
+	line-height:.36rem;
+}
+.inspeCon{
+	width:100%;
+	margin-top: .29rem;
+}
+.inspeCon ul:after{
+	clear:both;content:'';
+	display:block;
+	width:0;
+	height:0;
+	visibility:hidden; 
+}
+..inspeCon ul{
+	zoom:1
+}
+.inspeCon ul li{
+    width: 30%;
+    height: .6rem;
+    border: .01rem solid rgba(129,218,182,1);
+    border-radius: .05rem;
+    float: left;
+    margin-right: .27rem;
+    margin-bottom: .2rem;
+    padding-top: .1rem;
+    box-sizing: border-box;
+}
+.inspeCon ul li:nth-child(3n) {
+          margin-right: 0;
+ }
+ .inspeCon ul li p:nth-of-type(1){
+ 	width:.35rem;
+ 	height: .12rem;
+ 	background: url(../../../static/images/details05.png) no-repeat center;
+ 	background-size: 100% 100%;
+ 	margin: auto;
+ 	margin-bottom: .06rem;
+ }
+.inspeCon ul li p:nth-of-type(2){
+	color:rgba(153,153,153,1);
+	font-size: .2rem;
+}
+.cation{
+    position: fixed;
+    bottom: .9rem;
+    right: .2rem;
+    width: .86rem;
+    height: .86rem;
+    background: url(../../../static/images/details06.png) no-repeat center;
+    background-size: 100% 100%;
+}

@@ -39,6 +39,20 @@ import Uncertain from '@/components/uncertain/uncertain'
 import Bloodmy from '@/components/uncertain/blood'
 //商城**
 import Shopping from '@/components/pages/shopping/shopping'
+
+
+//商城中的商品，评论，详情**
+import EquipDetails from '@/components/equip/details'
+//商城中的商品
+import EquipSport from '@/components/equip/details/sport'
+//商城中的评论
+import EquipEvaluate from '@/components/equip/details/evaluate'
+//商城中的详情
+import ModityDetails from '@/components/equip/details/modityDetails'
+
+
+
+
 //引入商城中运动手表首页热销推荐**
 //import Sale from '@/components/pages/shopping/shopTabbar/sale'
 ////引入商城中运动手表首页健康管理**
@@ -89,6 +103,10 @@ import Wei from '@/components/family/wei'
 import BloodSu from '@/components/family/bloodSu'
 // 会员中心**
 import MemCen from '@/components/memCen/memCen'
+//我的预计收入**
+import Revenue from '@/components/memCen/revenue'
+//通用设置**
+import SetupTong from '@/components/memCen/setup'
 // 我的运动**
 import Mymotion from '@/components/shopping/shopCom' 
 // 我的运动中的首页**
@@ -115,9 +133,26 @@ import Settings from '@/components/settings/settings'
 import SetUp from '@/components/szsetUp/setUp'
 //健康设备**
 import Equip from '@/components/equip/equip'
+//健康管理**
+import HealthMana from '@/components/pages/shopping/shopTabbar/healthMana'
 //体验套餐**
 import Experience from '@/components/experience/experience'
+<<<<<<< Updated upstream
 //import Experience from '@/components/experience/experience'
+=======
+//套餐详情
+import PackageDetails from '@/components/experience/packageDetails'
+//认识食物
+import KwnoFoodIndex from '@/components/healthMarket/kwnoFoodComponents/index'
+import KnowFoodCarBon from '@/components/healthMarket/kwnoFoodComponents/carbon'
+import KnowFoodEggWhite from '@/components/healthMarket/kwnoFoodComponents/eggWhite'
+import KnowFoodVegetable from '@/components/healthMarket/kwnoFoodComponents/vegetable'
+import KnowFoodFruit from '@/components/healthMarket/kwnoFoodComponents/fruit'
+import KnowFoodOther from '@/components/healthMarket/kwnoFoodComponents/others'
+
+import WechatLoginTest from '@/components/WeChatTest/weChatLoginTest';
+import Author from '@/components/WeChatTest/author'
+>>>>>>> Stashed changes
 
 Vue.use(Router)
 export default new Router({
@@ -259,6 +294,18 @@ export default new Router({
 			name:'memCen',
 			component:MemCen
 		},
+//		我的预计收入**
+        {
+        	path:'/revenue',
+        	name:'revenue',
+        	component:Revenue
+        },
+//      我的通用设置**
+         {
+         	path:'/setupTong',
+         	name:'setupTong',
+         	component:SetupTong
+         },
 		// 启动页**
 		{
 			path: '/startUp/healthy',
@@ -492,10 +539,48 @@ export default new Router({
         	component:Equip
         }
         ,
+//      健康管理**
+        {
+        	path:'/healthMana',
+        	name:'healthMana',
+        	component:HealthMana
+        },
         {
         	path:'/experience',
         	name:'experience',
         	component:Experience
+        },
+        {
+        	path:'/equipDetails',
+        	name:'equipDetails',
+        	component:EquipDetails,
+        	children:[
+        	  {
+        	  	path:'/equipSport',
+        	  	name:'equipSport',
+        	  	component:EquipSport
+        	  },
+        	  {
+        	  	path:'/equipEvaluate',
+        	  	name:'equipEvaluate',
+        	  	component:EquipEvaluate
+        	  },
+        	  {
+        	  	path:'/modityDetails',
+        	  	name:'modityDetails',
+        	  	component:ModityDetails
+        	  }
+        	]
+        },
+        {
+        	path:'',
+        	name:'',
+        	redirect:'/equipSport'
+        },
+        {
+        	path:'/packageDetails',
+        	name:'packageDetails',
+        	component:PackageDetails
         }
 	]
 })
