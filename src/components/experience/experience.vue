@@ -6,7 +6,7 @@
 		    <div class="upperList">
 			   <span v-for="(list,index) in PartsUpper" class="list" :class="{active:index===partsIndex}" :key="index" @click="btn(index)" >{{list.name}}</span>
 			</div>
-			<div class="lower">
+			<!--<div class="lower">-->
 				<div class="lowContent">
 					<div class="lowMar">
 					   <div class="lowerList">
@@ -20,7 +20,7 @@
 					      </p>
 					      <p>¥ 899</p>
 					   </div>
-					   <div class="lowerList">
+					   <div class="lowerList" @click="handLower()">
 					   	  <img src="../../../static/images/expe02.png" alt="" />
 					      <p>【899价保双12】【热销爆款】</p>
 					      <p> 125项青中老全面体检</p>
@@ -71,7 +71,7 @@
 					 	<span>{{list.volume}}</span>
 					 </p>
 				</div>-->
-           </div>
+           <!--</div>-->
 		</div>
 	</div>
 </template>
@@ -105,6 +105,9 @@ import ExperienceHeader from './experienceHeader'
 	      _this.partsIndex = index;
 //	      _this.lowerList = _this.partsIndex;
         },
+        handLower () {
+        	this.$router.push({name:'packageDetails'})
+        }
 	},
    }
 </script>

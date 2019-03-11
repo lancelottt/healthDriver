@@ -12,7 +12,7 @@
                     </div>
                     <div class="memRi">
                         <div></div>
-                        <div></div>
+                        <div @click="handShezhi()"></div>
                     </div>
                 </div>
             </div>
@@ -56,7 +56,7 @@
             <div class="inZi">预计收入（元）</div>
         <div class="inUl">
            <ul>
-               <li>
+               <li @click="hangLi()">
                    <p>0</p>
                    <P>今日预计收入（元）</p>
                    <div class="xian"></div>
@@ -122,9 +122,20 @@
 </template>
 <script>
 export default {
+	data () {
+		return{
+			
+		}
+	},
     methods:{
     	handlerBack(){
     		this.$router.back()
+    	},
+    	hangLi () {
+    		this.$router.push({name:'revenue'})
+    	},
+    	handShezhi () {
+    		this.$router.push({name:'setupTong'})
     	}
     }
 }

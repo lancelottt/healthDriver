@@ -49,16 +49,16 @@
 				})
 			},
 			getTokenUser() {
-				axios({
-					method: "get",
-					url: 'http://192.168.1.164:8080/health-web/modules/umsmember/getUser',
-					//      data: obj,
-					headers: {
-						'token': 'abcd123456'
-					}
-				}).then((res)=> {
-					console.log(res);
-				});
+//				axios({
+//					method: "get",
+//					url: 'http://192.168.1.164:8080/health-web/modules/umsmember/getUser',
+//					//      data: obj,
+//					headers: {
+//						'token': 'abcd123456'
+//					}
+//				}).then((res)=> {
+//					console.log(res);
+//				});
 			}
 		},
 		mounted() {
