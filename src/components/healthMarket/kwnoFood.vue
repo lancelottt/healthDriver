@@ -12,7 +12,6 @@
 		<router-view></router-view>
 	</div>
 </template>
-import
 <script type="text/javascript">
 	export default {
 		data() {

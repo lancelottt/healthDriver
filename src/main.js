@@ -36,6 +36,7 @@ Vue.use(VideoPlayer)
 //swiper4的vueAwesomeSwiper
 Vue.use(VueAwesomeSwiper)
 
+
 //betterScroll已弃用
 //import BScroll from 'better-scroll';
 //Vue.prototype.$BScroll = BScroll;

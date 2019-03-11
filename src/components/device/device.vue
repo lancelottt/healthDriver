@@ -428,6 +428,6 @@
 </script>
 
 <style scoped="">
-@import '../../assets/device/device.css'	
+@import '../../assets/device/device.css';	
 	
 </style>

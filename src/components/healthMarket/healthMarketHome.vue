@@ -1,7 +1,6 @@
 <template>
 	<div id="healthMarketHome" class="page">
 		<tab-com></tab-com>
-
 		<header>
 			<div><i class="iconfont icon-tianjiahaoyou"></i></div>
 			<div class="healthMarketHome-searchBar">
