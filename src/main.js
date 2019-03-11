@@ -70,7 +70,7 @@ router.beforeEach((to, from, next) => {
 	if(!store.state.user.id && to.path != '/author') {
 		// 第一次进入项目
 		setCookie('beforeLoginUrl', to.fullPath) // 保存用户进入的url
-		next('/author')
+		next('/test')
 		return true
 	}
 	next()

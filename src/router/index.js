@@ -553,10 +553,6 @@ export default new Router({
 			name: 'experience',
 			component: Experience
 		},
-		{
-			path: '/mmlogin',
-			name: '',
-			component: MMlogin
-		},
+		
 	]
 })
