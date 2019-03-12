@@ -8,8 +8,8 @@
     </div>
     <div class="outerMain">
       <div class="heartMain">
-        <div class="rota">
-          <el-progress type="circle" :percentage="25" :text-inside="true" color="#FF9500" stroke-width="8"></el-progress>
+        <div class="rota" ref="userinfo">
+          <el-progress type="circle" :percentage="25" :text-inside="true" color="#FF9500" :stroke-width="8"></el-progress>
         </div>
         <div class=heartTitle>
           <h3>58</h3>
@@ -42,34 +42,38 @@
 </template>
 
 <script>
-     export default {
-     data() {
-       return {
-         isActive: true,
-         value1: true,
-         value2: true,
-         num: 10
-       }
-     },
-     methods: {
-      handleBack() {
-				this.$router.back()
-	  	}
-    },
-    computed: {
-        dashArrayWidth: function () {
-            //计算周长
-            var line = 2 * Math.PI * 80;
-            console.log(line)
+    import axios from 'axios';
+    export default {
+        data() {
             return {
-                //stork-dasharray有两个参数，第一个代表虚线的宽度，第二个代表虚线两两的间隔
-                start: '0,' + line,//开始状态
-                end: line * (this.num / 100) + ',' + line * ((100 - this.num) / 100)//结束状态
+                isActive: true,
+                value1: true,
+                value2: true,
+                num: 10
             }
+        },
+        methods: {
+            handleBack() {
+                this.$router.back()
+            }
+        },
+        created() {
+            console.log('123')
+            axios.get('health-web/modules/userDataRecord/athleticCount', {
+                headers: {
+                    // 'token ': 'faad5a64-2f11-4b4a-9136-f7f50c333947',
+                },
+                params: {}
+            })
+        },
+        mounted() {
+            document.querySelectorAll('path')[0].setAttribute("stroke", '#fff');
+        },
+        computed: {
+
         }
     }
-   }
 </script>
 <style scoped>
-  @import '../../assets/store/heartRate.css';
+    @import '../../assets/store/heartRate.css';
 </style>
