@@ -574,7 +574,19 @@ export default new Router({
       name: '',
       component: Airlines
     },
-    // 在线问
+    // 语音录入
+    {
+      path: '/KwnoFood/fruit/voiceInputs',
+      name: '',
+      component: voiceInputs
+    },
+    // 健康设备
+    {
+      path: '/KwnoFood/fruit/SportDevices',
+      name: '',
+      component: SportDevices
+    },
+    // 数据解读
     {
       path: '/KwnoFood/fruit/decodingData',
       name: '',

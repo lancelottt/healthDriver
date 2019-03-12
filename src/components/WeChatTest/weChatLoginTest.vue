@@ -5,7 +5,7 @@
 				<-------------------------------</p>
 		</header>
 		<div id="loginWx" class="iconfont icon-weixin" style="{font-size: 1rem;color: green;}" @click="wxLogin()">微信登录</div>
-		<div class="iconfont icon-weixin" style="{font-size: 1rem;color: orangered;}" @click="handlerLogout()">注销登录</div>
+		<!--<div class="iconfont icon-weixin" style="{font-size: 1rem;color: orangered;}" @click="handlerLogout()">注销登录</div>-->
 	</div>
 </template>
 <script type="text/javascript">
@@ -108,6 +108,7 @@
 							console.log(_this.weixinCode)
 							_this.requestLogin();
 							_this.sendWxCode();
+							_this.wxLogOut();
 						}, function(error) {
 							console.log('authorize fail:' + JSON.stringify(error));
 						}, {
@@ -127,7 +128,6 @@
 			},
 			requestLogin() {
 				// 这里请求服务端授权登录
-				console.log(JSON.stringify(weixinService))
 				weixinService.login(function(e) {
 					console.log("登陆成功" + JSON.stringify(e))
 				}, function(e) {
@@ -147,38 +147,20 @@
 				//				
 				//				})
 			},
-			handlerLogout() {
-				var weixinService = null
-				plus.oauth.getServices(function(services) {
-					if(services && services.length) {
-						for(var i = 0, len = services.length; i < len; i++) {
-							if(services[i].id === 'weixin') {
-								weixinService = services[i];
-								break;
-							}
-						}
-						if(!weixinService) {
-							console.log('没有微信登录授权服务');
-							return;
-						}
-						weixinService.logout(function(event) {
-							console.log('注销成功 ' + JSON.stringify(event))
-						}, function(error) {
-							console.log('注销失败' + JSON.stringify(error));
-						});
-					} else {
-						console.log('无可用的登录授权服务');
-					}
+			wxLogOut() {
+				weixinService.logout(function(event) {
+					console.log('注销成功 ' + JSON.stringify(event))
 				}, function(error) {
-					console.error('获取授权失败:' + JSON.stringify(error));
+					console.log('注销失败' + JSON.stringify(error));
 				});
+
 			},
 			sendWxCode() {
-//				axios.post(
-//
-//				).then(
-//					
-//				).catch()
+				//				axios.post(
+				//
+				//				).then(
+				//					
+				//				).catch()
 			},
 			//			handlerWxLogin() {
 			//				var aweixin = null
