@@ -148,6 +148,24 @@ import KnowFoodEggWhite from '@/components/healthMarket/kwnoFoodComponents/eggWh
 import KnowFoodVegetable from '@/components/healthMarket/kwnoFoodComponents/vegetable'
 import KnowFoodFruit from '@/components/healthMarket/kwnoFoodComponents/fruit'
 import KnowFoodOther from '@/components/healthMarket/kwnoFoodComponents/others'
+import kwnoFoodDetails from '@/components/healthMarket/kwnoFoodDetails'
+
+// 支持门店
+import Store from '@/components/store/store'
+// 在线问
+import Airlines from '@/components/store/airlines'
+// 数据解读
+import DecodingData from '@/components/store/decodingData'
+// 运动设备 
+import SportDevices from '@/components/store/SportDevices'
+// 语音录入
+import voiceInputs from '@/components/store/voiceInputs'
+// 添加用药量
+import AddPharmacy from '@/components/store/addPharmacy'
+// 权限设置
+import PermissionSet from '@/components/store/permissionSet'
+// 心率
+import HeartRate from '@/components/store/heartRate'
 
 import WechatLoginTest from '@/components/WeChatTest/weChatLoginTest';
 import Author from '@/components/WeChatTest/author'
@@ -156,477 +174,470 @@ import MMlogin from '@/components/WeChatTest/mmlogin'
 
 Vue.use(Router)
 export default new Router({
-	routes: [{
+  routes: [{
 
-			path: '/',
-			name: 'Healthy',
-			component: Healthy,
 
-		},
-		// 身体档案**
-		{
-			path: '/Archi',
-			name: '',
-			component: Uncertain
-		},
-		// 我的家人**
-		{
-			path: '/family',
-			name: 'family',
-			component: Family
-		},
-		{
-			path: '/wei',
-			name: '',
-			component: Wei
-		},
-		{
-			path: '/father',
-			name: '',
-			component: Father
-		},
-		//家人中的血糖**
-		{
-			path: '/bloodsu',
-			name: '',
-			component: BloodSu
-		},
-		{
-			path: '/sportsCurric',
-			name: '',
-			component: SportsCurric
-		},
-		// 身体档案中我的血压**
-		{
-			path: '/bloodMy',
-			name: '',
-			component: Bloodmy
-		},
-		// {
-		// 	path: '/*any',
-		// 	redirect: 'Home'
-		// },
-		//		{
-		//			path: '/login/Login',
-		//			name: 'Login',
-		//			component: Login,
-		//		},
-		// 微信登录**
-		{
-			path: '/loginChat/chatLogin',
-			name: 'loginChat',
-			component: ChatLogin
-		},
-		{
-			path: '/invitation',
-			name: 'Invitation',
-			component: Invitation,
-		},
-		{
-			path: '/invitation/invitationInfo',
-			name: 'invitationInfo',
-			component: InvitationInfo
-		},
-		{
-			path: '/login/telLogin',
-			name: 'telLogin',
-			component: TelLogin
-		},
-		{
-			path: '/userInfo/confirmInfo',
-			name: 'confirmInfo',
-			component: ConfirmInfo,
+      path: '/',
+      name: 'Healthy',
+      component: Healthy,
 
-		},
-		{
-			path: '/userInfo/identity',
-			name: 'identity',
-			component: Identity
-		},
-		{
-			path: '/userInfo/habit',
-			name: 'habit',
-			component: Habit
-		},
-		{
-			path: '/loginChat/verCode',
-			name: 'verCode',
-			component: VerCode
-		},
-		{
-			path: '/userInfo/sport',
-			name: 'sport',
-			component: Sport
-		},
-		{
-			path: '/userInfo/disease',
-			name: 'disease',
-			component: Disease
-		},
-		{
-			path: '/healthPlan/makeHealthPlan',
-			name: 'makeHealthPlan',
-			component: MakeHealthPlan
-		},
-		{
-			path: '/healthPlan/healthPlan',
-			name: 'healthPlan',
-			component: HealthPlan
-		},
-		{
-			path: '/healthPlan/count',
-			name: 'count',
-			component: Count
-		},
-		{
-			path: '/competition/competition',
-			name: 'competition',
-			component: Competition
-		},
-		{
-			path: '/zilv',
-			name: 'zilv',
-			component: Zilv
-		},
-		// 会员中心**
-		{
-			path: '/memCen',
-			name: 'memCen',
-			component: MemCen
-		},
-//		我的预计收入**
-        {
-        	path:'/revenue',
-        	name:'revenue',
-        	component:Revenue
+
+    },
+    // 身体档案**
+    {
+      path: '/Archi',
+      name: '',
+      component: Uncertain
+    },
+    // 我的家人**
+    {
+      path: '/family',
+      name: 'family',
+      component: Family
+    },
+    {
+      path: '/wei',
+      name: '',
+      component: Wei
+    },
+    {
+      path: '/father',
+      name: '',
+      component: Father
+    },
+    //家人中的血糖**
+    {
+      path: '/bloodsu',
+      name: '',
+      component: BloodSu
+    },
+    {
+      path: '/sportsCurric',
+      name: '',
+      component: SportsCurric
+    },
+    // 身体档案中我的血压**
+    {
+      path: '/bloodMy',
+      name: '',
+      component: Bloodmy
+    },
+    // {
+    // 	path: '/*any',
+    // 	redirect: 'Home'
+    // },
+    //		{
+    //			path: '/login/Login',
+    //			name: 'Login',
+    //			component: Login,
+    //		},
+    // 微信登录**
+    {
+      path: '/loginChat/chatLogin',
+      name: 'loginChat',
+      component: ChatLogin
+    },
+    {
+      path: '/invitation',
+      name: 'Invitation',
+      component: Invitation,
+    },
+    {
+      path: '/invitation/invitationInfo',
+      name: 'invitationInfo',
+      component: InvitationInfo
+    },
+    {
+      path: '/login/telLogin',
+      name: 'telLogin',
+      component: TelLogin
+    },
+    {
+      path: '/userInfo/confirmInfo',
+      name: 'confirmInfo',
+      component: ConfirmInfo,
+    },
+    {
+      path: '/userInfo/identity',
+      name: 'identity',
+      component: Identity
+    },
+    {
+      path: '/userInfo/habit',
+      name: 'habit',
+      component: Habit
+    },
+    {
+      path: '/loginChat/verCode',
+      name: 'verCode',
+      component: VerCode
+    },
+    {
+      path: '/userInfo/sport',
+      name: 'sport',
+      component: Sport
+    },
+    {
+      path: '/userInfo/disease',
+      name: 'disease',
+      component: Disease
+    },
+    {
+      path: '/healthPlan/makeHealthPlan',
+      name: 'makeHealthPlan',
+      component: MakeHealthPlan
+    },
+    {
+      path: '/healthPlan/healthPlan',
+      name: 'healthPlan',
+      component: HealthPlan
+    },
+    {
+      path: '/healthPlan/count',
+      name: 'count',
+      component: Count
+    },
+    {
+      path: '/competition/competition',
+      name: 'competition',
+      component: Competition
+    },
+    {
+      path: '/zilv',
+      name: 'zilv',
+      component: Zilv
+    },
+    // 会员中心**
+    {
+      path: '/memCen',
+      name: 'memCen',
+      component: MemCen
+    },
+    // 启动页**
+    {
+      path: '/startUp/healthy',
+      name: 'Healthy',
+      component: Healthy
+    },
+    // 引入自律组件**
+    {
+      path: '/self',
+      name: 'healthPlan',
+      component: HealthPlan,
+    },
+    // 引入健康**
+    {
+      path: '/healthyZ',
+      name: 'healthMarketHome',
+      component: HealthMarketHome,
+    },
+    //引入商城
+    {
+      path: '/shopping',
+      name: '',
+      component: Shopping
+      //			,
+      //			children:[
+      //			  {
+      //			  	path:'/shopping/sale',
+      //			  	name:'sale',
+      //			  	component:Sale
+      //			  },
+      //			  {
+      //			  	path:'/shopping/healthMana',
+      //			  	name:'healthMana',
+      //			  	component:HealthMana
+      //			  },
+      //			  {
+      //			  	path:'/shopping/healthEquip',
+      //			  	name:'healthEquip',
+      //			  	component:HealthEquip
+      //			  },
+      //			  {
+      //			  	path:'/shopping/sportsEquip',
+      //			  	name:'sportsEquip',
+      //			  	component:SportsEquip
+      //			  },
+      //			  {
+      //			  	path:'/shopping/exper',
+      //			  	name:'exper',
+      //			  	component:Exper
+      //			  }
+      //			]
+    },
+
+    // 引入数据**
+    {
+      path: '/dataSj/weight',
+      name: '',
+      component: DataSj,
+      children: [{
+          path: '/dataSj/weight',
+          name: '',
+          component: Weight
         },
-//      我的通用设置**
-         {
-         	path:'/setupTong',
-         	name:'setupTong',
-         	component:SetupTong
-         },
-		// 启动页**
-		{
-			path: '/startUp/healthy',
-			name: 'Healthy',
-			component: Healthy
-		},
-		// 引入自律组件**
-		{
-			path: '/self',
-			name: 'healthPlan',
-			component: HealthPlan,
-		},
-		// 引入健康**
-		{
-			path: '/healthyZ',
-			name: 'healthMarketHome',
-			component: HealthMarketHome,
-		},
-		//引入商城
-		{
-			path: '/shopping',
-			name: '',
-			component: Shopping
-			//			,
-			//			children:[
-			//			  {
-			//			  	path:'/shopping/sale',
-			//			  	name:'sale',
-			//			  	component:Sale
-			//			  },
-			//			  {
-			//			  	path:'/shopping/healthMana',
-			//			  	name:'healthMana',
-			//			  	component:HealthMana
-			//			  },
-			//			  {
-			//			  	path:'/shopping/healthEquip',
-			//			  	name:'healthEquip',
-			//			  	component:HealthEquip
-			//			  },
-			//			  {
-			//			  	path:'/shopping/sportsEquip',
-			//			  	name:'sportsEquip',
-			//			  	component:SportsEquip
-			//			  },
-			//			  {
-			//			  	path:'/shopping/exper',
-			//			  	name:'exper',
-			//			  	component:Exper
-			//			  }
-			//			]
-		},
-
-		// 引入数据**
-		{
-			path: '/dataSj/weight',
-			name: '',
-			component: DataSj,
-			children: [{
-					path: '/dataSj/weight',
-					name: '',
-					component: Weight
-				},
-				{
-					path: '/dataSj/blood',
-					name: '',
-					component: Blood
-				},
-				{
-					path: '/dataSj/sugar',
-					name: '',
-					component: Sugar
-				},
-				{
-					path: '/dataSj/motion',
-					name: '',
-					component: Motion
-				},
-				{
-					path: '/dataSj/heart',
-					name: '',
-					component: Heart
-				},
-				{
-					path: '',
-					name: '',
-					redirect: '/dataSj/weight'
-				}
-			]
-		},
-
-		// 引入我的**
-		{
-			path: '/me',
-			name: '',
-			component: Me,
-		},
-		// 发布动态**
-		{
-			path: '/amic',
-			name: '',
-			component: Amic
-		},
-		// 引入脂肪称
-		{
-			path: '/history/fat',
-			name: 'fat',
-			component: Fat
-		},
-		//引入体趋势
-		{
-			path: '/history/trend',
-			name: 'trend',
-			component: Trend,
-			children: [{
-					path: '/history/trend/mi',
-					name: '',
-					component: Mi
-				},
-				{
-					path: '/history/trend/fatPer',
-					name: '',
-					component: FatPer
-				},
-				{
-					path: '/history/trend/muscleRa',
-					name: '',
-					component: MuscleRa
-				},
-				{
-					path: '/history/trend/waterRa',
-					name: '',
-					component: WaterRa
-				},
-				{
-					path: '/history/trend/bone',
-					name: '',
-					component: Bone
-				},
-				{
-					path: '',
-					name: '',
-					redirect: '/history/trend/mi'
-				},
-
-			]
-		},
-		{
-			path: '/healthMarket/playFood',
-			name: 'playFood',
-			component: PlayFood,
-
-		},
-		{
-			path: '/competition/competitionJoined',
-			name: 'competitionJoined',
-			component: CompetitionJoined,
-		},
-		{
-			path: '/healthMarket/playFood/kwnoFood',
-			name: '',
-			component: KwnoFood,
-		},
-		{
-			path: '/test',
-			name: '',
-			component: WechatLoginTest,
-		},
-		{
-			path: '/author',
-			name: '',
-			component: Author,
-		},
-		// 我的运动**
-		{
-			path: '/mymotion',
-			name: '',
-			component: Mymotion,
-			redirect: '/mymotion/index',
-			children: [{
-					path: '/mymotion/index',
-					name: '',
-					component: Index
-				},
-				{
-					path: '/mymotion/run',
-					name: '',
-					component: Run
-				},
-				{
-					path: '/mymotion/bulid',
-					name: '',
-					component: Bulid
-				},
-				{
-					path: '/mymotion/yoga',
-					name: '',
-					component: Yoga
-				},
-				{
-					path: '/mymotion/step',
-					name: '',
-					component: Step
-				}
-			]
-		},
-		{
-			path: '/KwnoFood',
-			name: '',
-			component: KwnoFood,
-			children: [{
-					path: '/KwnoFood/index',
-					name: '',
-					component: KwnoFoodIndex
-				},
-				{
-					path: '/KwnoFood/carbon',
-					name: '',
-					component: KnowFoodCarBon
-				},
-				{
-					path: '/KwnoFood/eggWhite',
-					name: '',
-					component: KnowFoodEggWhite
-				},
-				{
-					path: '/KwnoFood/vegetable',
-					name: '',
-					component: KnowFoodVegetable
-				},
-				{
-					path: '/KwnoFood/fruit',
-					name: '',
-					component: KnowFoodFruit
-				},
-				{
-					path: '/KwnoFood/others',
-					name: '',
-					component: KnowFoodOther
-				}
-			]
-		},
-		{
-
-			path:'/device',
-			name:'',
-			component:Device
-		},
-//		健康数据中的血压**
         {
-        	path:'/pressure',
-        	name:'pressure',
-        	component:Pressure
+          path: '/dataSj/blood',
+          name: '',
+          component: Blood
         },
-        //健康数据中的血糖
         {
-        	path:'/presugar',
-        	name:'presugar',
-        	component:Presugar
+          path: '/dataSj/sugar',
+          name: '',
+          component: Sugar
         },
-//      权限设置**
         {
-        	path:'/settings',
-        	name:'settings',
-        	component:Settings
+          path: '/dataSj/motion',
+          name: '',
+          component: Motion
         },
-//      设置**/
         {
-        	path:'/setUp',
-        	name:'setUp',
-        	component:SetUp
+          path: '/dataSj/heart',
+          name: '',
+          component: Heart
         },
-//      健康设备**
         {
-        	path:'/equip',
-        	name:'equip',
-        	component:Equip
+          path: '',
+          name: '',
+          redirect: '/dataSj/weight'
         }
-        ,
-//      健康管理**
-        {
-        	path:'/healthMana',
-        	name:'healthMana',
-        	component:HealthMana
+      ]
+    },
+
+
+    // 引入我的**
+    {
+      path: '/me',
+      name: '',
+      component: Me,
+    },
+    // 发布动态**
+    {
+      path: '/amic',
+      name: '',
+      component: Amic
+    },
+    // 引入脂肪称
+    {
+      path: '/history/fat',
+      name: 'fat',
+      component: Fat
+    },
+    //引入体趋势
+    {
+      path: '/history/trend',
+      name: 'trend',
+      component: Trend,
+      children: [{
+          path: '/history/trend/mi',
+          name: '',
+          component: Mi
         },
         {
-        	path:'/experience',
-        	name:'experience',
-        	component:Experience
+          path: '/history/trend/fatPer',
+          name: '',
+          component: FatPer
         },
         {
-        	path:'/equipDetails',
-        	name:'equipDetails',
-        	component:EquipDetails,
-        	children:[
-        	  {
-        	  	path:'/equipSport',
-        	  	name:'equipSport',
-        	  	component:EquipSport
-        	  },
-        	  {
-        	  	path:'/equipEvaluate',
-        	  	name:'equipEvaluate',
-        	  	component:EquipEvaluate
-        	  },
-        	  {
-        	  	path:'/modityDetails',
-        	  	name:'modityDetails',
-        	  	component:ModityDetails
-        	  }
-        	]
+          path: '/history/trend/muscleRa',
+          name: '',
+          component: MuscleRa
         },
         {
-        	path:'',
-        	name:'',
-        	redirect:'/equipSport'
+          path: '/history/trend/waterRa',
+          name: '',
+          component: WaterRa
         },
         {
-        	path:'/packageDetails',
-        	name:'packageDetails',
-        	component:PackageDetails
+          path: '/history/trend/bone',
+          name: '',
+          component: Bone
+        },
+        {
+          path: '',
+          name: '',
+          redirect: '/history/trend/mi'
+        },
+
+      ]
+    },
+    {
+      path: '/healthMarket/playFood',
+      name: 'playFood',
+      component: PlayFood,
+
+    },
+    {
+      path: '/competition/competitionJoined',
+      name: 'competitionJoined',
+      component: CompetitionJoined,
+    },
+    {
+      path: '/healthMarket/playFood/kwnoFood',
+      name: '',
+      component: KwnoFood,
+    },
+    {
+      path: '/test',
+      name: '',
+      component: WechatLoginTest,
+    },
+    {
+      path: '/author',
+      name: '',
+      component: Author,
+    },
+    // 我的运动**
+    {
+      path: '/mymotion',
+      name: '',
+      component: Mymotion,
+      redirect: '/mymotion/index',
+      children: [{
+          path: '/mymotion/index',
+          name: '',
+          component: Index
+        },
+        {
+          path: '/mymotion/run',
+          name: '',
+          component: Run
+        },
+        {
+          path: '/mymotion/bulid',
+          name: '',
+          component: Bulid
+        },
+        {
+          path: '/mymotion/yoga',
+          name: '',
+          component: Yoga
+        },
+        {
+          path: '/mymotion/step',
+          name: '',
+          component: Step
         }
-	]
+
+      ]
+    },
+    {
+      path: '/KwnoFood',
+      name: '',
+      component: KwnoFood,
+      children: [{
+          path: '/KwnoFood/index',
+          name: '',
+          component: KwnoFoodIndex
+        },
+        {
+          path: '/KwnoFood/carbon',
+          name: '',
+          component: KnowFoodCarBon
+        },
+        {
+          path: '/KwnoFood/eggWhite',
+          name: '',
+          component: KnowFoodEggWhite
+        },
+        {
+          path: '/KwnoFood/vegetable',
+          name: '',
+          component: KnowFoodVegetable
+        },
+        {
+          path: '/KwnoFood/fruit',
+          name: '',
+          component: KnowFoodFruit
+        },
+        {
+          path: '/KwnoFood/others',
+          name: '',
+          component: KnowFoodOther
+        }
+      ]
+    },
+    {
+      path: '/KwnoFood/fruit/details',
+      name: '',
+      component: kwnoFoodDetails,
+    },
+    // 支持门店
+    {
+      path: '/KwnoFood/fruit/store',
+      name: '',
+      component: Store,
+    },
+    // 在线问
+    {
+      path: '/KwnoFood/fruit/Airlines',
+      name: '',
+      component: Airlines
+    },
+    // 在线问
+    {
+      path: '/KwnoFood/fruit/decodingData',
+      name: '',
+      component: DecodingData
+    },
+    // 添加用药量
+    {
+      path: '/KwnoFood/fruit/addPharmacy',
+      name: '',
+      component: AddPharmacy
+    },
+    // 权限设置
+    {
+      path: '/KwnoFood/fruit/PermissionSet',
+      name: '',
+      component: PermissionSet
+    },
+    // 心率
+    {
+      path: '/KwnoFood/fruit/HeartRate',
+      name: '',
+      component: HeartRate
+    },
+    {
+      path: '/device',
+      name: '',
+      component: Device
+    },
+    //		健康数据中的血压**
+    {
+      path: '/pressure',
+      name: 'pressure',
+      component: Pressure
+    },
+    //健康数据中的血糖
+    {
+      path: '/presugar',
+      name: 'presugar',
+      component: Presugar
+    },
+    //      权限设置**
+    {
+      path: '/settings',
+      name: 'settings',
+      component: Settings
+    },
+    //      设置**/
+    {
+      path: '/setUp',
+      name: 'setUp',
+      component: SetUp
+    },
+    //      健康设备**
+    {
+      path: '/equip',
+      name: 'equip',
+      component: Equip
+    },
+    {
+      path: '/experience',
+      name: 'experience',
+      component: Experience
+    },
+
+  ]
 })

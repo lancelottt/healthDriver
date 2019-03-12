@@ -17,9 +17,9 @@ import axios from 'axios'
 import App from './App'
 //import Cube from 'cube-ui'
 import Mint from 'mint-ui';
-import VCharts from 'v-charts';
 import 'mint-ui/lib/style.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+//import vueWaterfallEasy from 'vue-waterfall-easy'
 
 import { setCookie, getCookie, delCookie } from '@/utils/holdno';
 // require styles
@@ -36,6 +36,7 @@ Vue.use(VideoPlayer)
 //swiper4的vueAwesomeSwiper
 Vue.use(VueAwesomeSwiper)
 
+
 //betterScroll已弃用
 //import BScroll from 'better-scroll';
 //Vue.prototype.$BScroll = BScroll;
@@ -49,7 +50,6 @@ Vue.use(Mint);
 //将 holdno 挂载到 vue 的原型上
 //Vue.prototype.holdno = holdno;
 
-Vue.use(VCharts);
 Vue.config.productionTip = false
 /* eslint-disable no-new */
 // holdno是我自己定义的一个工具集 里面有各种操作方法

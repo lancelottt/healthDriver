@@ -1,0 +1,182 @@
+ .Equitheader {
+   width: 100%;
+   height: .89rem;
+   background: #fff;
+   position: fixed;
+   z-index: 1;
+   padding: 0 .2rem 0 .2rem;
+   box-sizing: border-box;
+ }
+
+ .header-left {
+   width: 10%;
+   height: 100%;
+   float: left;
+ }
+
+ i {
+   font-size: 0.36rem;
+   line-height: .89rem;
+   text-align: center;
+   display: block;
+ }
+
+ .header-in {
+   width: 80%;
+   float: left;
+   text-align: center;
+   font-size: 0.28rem;
+   line-height: 0.85rem;
+   color: #333333;
+ }
+
+ .header-rigth {
+   width: 10%;
+   float: right;
+ }
+
+ .pharmacyType {
+   width: 100%;
+   padding: 0 0.2rem;
+   box-sizing: border-box;
+   padding-top: 1rem;
+   background: #fff;
+ }
+
+ .pharmacyType ul {
+   display: flex;
+   display: -webkit-flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0.23rem;
+ }
+
+ .pharmacyType ul:first-child {
+   border-bottom: 1px solid #cccccc;
+ }
+
+ .pharmacyType button {
+   height: 0.53rem;
+   padding: 0 0.2rem;
+   background: #ccc;
+   border-radius: 4px;
+   font-size: 0.2rem;
+   color: #fff;
+   outline: medium;
+   border: 0;
+ }
+
+ .pharmacyType .allType {
+   background: #ccc;
+    background: linear-gradient(#FF5E3A, #FF9500);
+ }
+
+ .pharmacyType button img {
+   width: 0.22rem;
+   height: 0.24rem;
+ }
+
+ .pharmacyType .nextBtn {
+   width: 0.19rem;
+   height: 0.31rem;
+ }
+
+ .pharmacyTime {
+   margin: 0.1rem 0;
+   width: 100%;
+   padding: 0 0.2rem;
+   height: auto;
+   overflow: hidden;
+   background: #fff;
+ }
+
+ .pharmacyTimeMain {
+   border: 1px solid #cccccc;
+   border-radius: 4px;
+   width: 100%;
+   height: auto;
+   margin-bottom: 0.25rem;
+ }
+
+ .pharmacyTime h3 {
+   font-size: 0.28rem;
+   padding: 0.27rem 0;
+   color: #666;
+ }
+
+ .pharmacyTime ul li {
+   display: flex;
+   display: -webkit-flex;
+   justify-content: space-between;
+   margin: 0 0.25rem;
+   padding: 0.24rem;
+   border-bottom: 1px solid #ccc;
+   box-sizing: border-box;
+   align-items: center;
+ }
+
+ .pharmacyTime ul h4 {
+   color: #FF5E3A;
+ }
+
+ .pharmacyTime ul input {
+   color: #999999;
+   border: none;
+   outline: medium;
+ }
+
+ .pharmacyTimeMain ul li:last-child {
+   border: 0;
+ }
+
+ .pharmacyAgain {
+   font-size: 0;
+   text-align: left;
+   background: #fff;
+   width: 100%;
+   padding: 0.25rem;
+   margin-top: 0.1rem;
+   overflow: hidden;
+ }
+
+ .pharmacyAgain h3 {
+   font-size: 0.28rem;
+   color: #666;
+   margin-bottom: 0.43rem;
+ }
+
+ .pharmacyAgain button {
+   width: 1.09rem;
+   height: 0.54rem;
+   line-height: 0.54rem;
+   font-size: 0.24rem;
+   background: rgba(153, 153, 153, 0.2);
+   color: #999;
+   padding: 0;
+   border: 0;
+   outline: medium;
+   margin-right: 0.28rem;
+   border-radius: 4px;
+ }
+
+ .pharmacyAgain .active {
+   color: #fff;
+   background: #FF5E3A;
+ }
+
+ .pharmacyRemind {
+   text-align: left;
+   background: #fff;
+   width: 100%;
+   padding: 0.25rem;
+   margin-top: 0.1rem;
+   display: flex;
+   display: -webkit-flex;
+   justify-content: space-between;
+   align-items: center;
+ }
+
+ .el-switch.is-checked .el-switch__core {
+   border-color: red;
+   background-color: red;
+ }

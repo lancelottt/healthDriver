@@ -1,2 +1,252 @@
-html,body{width:100%;height:100%}#healthMarketHome header{border-bottom:0}#healthMarketHome{display:flex;flex-direction:column;width:100%;height:100%;overflow:hidden}#healthMarketHome header{display:flex;flex-direction:row;justify-content:space-around;width:100%;height:0.84rem;padding:0 0.23rem}#healthMarketHome header i{font-size:0.5rem;color:#939494}#healthMarketHome header .healthMarketHome-searchBar{position:relative;width:5rem;height:0.64rem}#healthMarketHome header .healthMarketHome-searchBar input{background:#F2F2F2;width:5rem;height:0.64rem;padding:0 0.6rem;border:0}#healthMarketHome header .healthMarketHome-searchBar input:hover{border:0}#healthMarketHome header .healthMarketHome-searchBar i:nth-of-type(1){position:absolute;left:0.2rem;top:0.2rem;font-size:0.3rem;color:#adadad;z-index:100}#healthMarketHome header .healthMarketHome-searchBar i:nth-of-type(2){position:absolute;right:0.2rem;top:0.2rem;font-size:0.3rem;color:#adadad;z-index:100}#healthMarketHome .el-tabs__header{margin:0}#healthMarketHome .el-tabs__item.is-active{color:red;box-sizing:border-box;border-bottom:2px solid red}#healthMarketHome .el-tabs__active-bar{background-color:red;margin-left:10px}#healthMarketHome .el-tabs--bottom .el-tabs__item.is-bottom:nth-child(2),#healthMarketHome .el-tabs--bottom .el-tabs__item.is-top:nth-child(2),#healthMarketHome .el-tabs--top .el-tabs__item.is-bottom:nth-child(2),#healthMarketHome .el-tabs--top .el-tabs__item.is-top:nth-child(2){padding-left:20px}#healthMarketHome .el-tabs--bottom .el-tabs__item.is-bottom:last-child,#healthMarketHome .el-tabs--bottom .el-tabs__item.is-top:last-child,#healthMarketHome .el-tabs--top .el-tabs__item.is-bottom:last-child,#healthMarketHome .el-tabs--top .el-tabs__item.is-top:last-child{padding-right:20px}#healthMarketHome .swiper-container img{width:7.5rem;height:3rem;display:block}#healthMarketHome .swiper-container .swiper-pagination-bullet-active{background:#f84e8d}#healthMarketHome .el-tabs__header{position:fixed;top:0.82rem}#healthMarketHome .healthMarketHome-con{padding-top:1.64rem}#healthMarketHome header{position:fixed;top:0;z-index:99;background:#fff}#healthMarketHome .wrapper{overflow:hidden;height:100%}#healthMarketHome .healthMarketHomeXWrapper{overflow-x:hidden;height:100%}#healthMarketHome .healthMarketHomeXContent{min-width:7.5rem}#healthMarketHome .healthMarketHome-navigate{width:100%;height:2.44rem;box-sizing:border-box;display:flex;flex-direction:row;justify-content:space-around;align-items:center}#healthMarketHome .healthMarketHome-navigate>div{width:1.05rem;height:1.56rem;display:flex;flex-direction:column;justify-content:space-between;align-items:center;font-size:0.26rem;color:#bdbdbd}#healthMarketHome .healthMarketHome-navigate>div b{display:block;width:100%;height:1.05rem;border-radius:50%}#healthMarketHome .healthMarketHome-navigate>div b i{font-size:1.1rem;color:#fff}#healthMarketHome .healthMarketHome-navigate div:nth-of-type(1) b{background:#fe9923}#healthMarketHome .healthMarketHome-navigate div:nth-of-type(2) b{background:#ff797c}#healthMarketHome .healthMarketHome-navigate div:nth-of-type(3) b{background:#8bc71f}#healthMarketHome .healthMarketHome-navigate div:nth-of-type(4) b{background:#93aef1}#healthMarketHome .healthMarketHome-article{width:100%;min-height:5rem}#healthMarketHome .healthMarketHome-article>div{width:100%;height:3.13rem;padding:0 0.3rem;display:flex;flex-direction:column;box-sizing:border-box;border-top:.07rem solid #F2F2F2}#healthMarketHome .healthMarketHome-article>div>div:nth-of-type(1){width:100%;height:0.82rem;display:flex;flex-direction:row;justify-content:space-between;align-items:center}#healthMarketHome .healthMarketHome-article>div>div:nth-of-type(1) h2{font-size:0.3rem;color:#999999}#healthMarketHome .healthMarketHome-article>div>div:nth-of-type(1) span{font-size:0.24rem;color:#c4c4c4}#healthMarketHome .healthMarketHome-article>div .healthMarketHomeXContent{width:200%;display:flex;flex-direction:row;height:2rem}#healthMarketHome .healthMarketHome-article>div .healthMarketHomeXContent>div{width:3.4rem;height:2rem;margin-right:0.1rem;border-radius:0.1rem;position:relative;flex-shrink:0}#healthMarketHome .healthMarketHome-article>div .healthMarketHomeXContent>div>img{width:100%;height:100%}#healthMarketHome .healthMarketHome-article>div .healthMarketHomeXContent>div>span{position:absolute;left:0;right:0;top:40%;margin:0 auto;font-size:0.33rem;color:#fff}
+html,
+body {
+  width: 100%;
+  height: 100%
+}
+
+#healthMarketHome header {
+  border-bottom: 0
+}
+
+#healthMarketHome {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden
+}
+
+#healthMarketHome header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  height: 0.84rem;
+  padding: 0 0.23rem
+}
+
+#healthMarketHome header i {
+  font-size: 0.5rem;
+  color: #939494
+}
+
+#healthMarketHome header .healthMarketHome-searchBar {
+  position: relative;
+  width: 5rem;
+  height: 0.64rem
+}
+
+#healthMarketHome header .healthMarketHome-searchBar input {
+  background: #F2F2F2;
+  width: 5rem;
+  height: 0.64rem;
+  padding: 0 0.6rem;
+  border: 0
+}
+
+#healthMarketHome header .healthMarketHome-searchBar input:hover {
+  border: 0
+}
+
+#healthMarketHome header .healthMarketHome-searchBar i:nth-of-type(1) {
+  position: absolute;
+  left: 0.2rem;
+  top: 0.2rem;
+  font-size: 0.3rem;
+  color: #adadad;
+  z-index: 100
+}
+
+#healthMarketHome header .healthMarketHome-searchBar i:nth-of-type(2) {
+  position: absolute;
+  right: 0.2rem;
+  top: 0.2rem;
+  font-size: 0.3rem;
+  color: #adadad;
+  z-index: 100
+}
+
+#healthMarketHome .el-tabs__header {
+  margin: 0
+}
+
+#healthMarketHome .el-tabs__item.is-active {
+  color: red;
+  box-sizing: border-box;
+  border-bottom: 2px solid red
+}
+
+#healthMarketHome .el-tabs__active-bar {
+  background-color: red;
+  margin-left: 10px
+}
+
+#healthMarketHome .el-tabs--bottom .el-tabs__item.is-bottom:nth-child(2),
+#healthMarketHome .el-tabs--bottom .el-tabs__item.is-top:nth-child(2),
+#healthMarketHome .el-tabs--top .el-tabs__item.is-bottom:nth-child(2),
+#healthMarketHome .el-tabs--top .el-tabs__item.is-top:nth-child(2) {
+  padding-left: 20px
+}
+
+#healthMarketHome .el-tabs--bottom .el-tabs__item.is-bottom:last-child,
+#healthMarketHome .el-tabs--bottom .el-tabs__item.is-top:last-child,
+#healthMarketHome .el-tabs--top .el-tabs__item.is-bottom:last-child,
+#healthMarketHome .el-tabs--top .el-tabs__item.is-top:last-child {
+  padding-right: 20px
+}
+
+#healthMarketHome .swiper-container img {
+  width: 7.5rem;
+  height: 3rem;
+  display: block
+}
+
+#healthMarketHome .swiper-container .swiper-pagination-bullet-active {
+  background: #f84e8d
+}
+
+#healthMarketHome .el-tabs__header {
+  position: fixed;
+  top: 0.82rem
+}
+
+#healthMarketHome .healthMarketHome-con {
+  padding-top: 1.64rem
+}
+
+#healthMarketHome header {
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  background: #fff
+}
+
+#healthMarketHome .wrapper {
+  overflow: hidden;
+  height: 100%
+}
+
+#healthMarketHome .healthMarketHomeXWrapper {
+  overflow-x: hidden;
+  height: 100%
+}
+
+#healthMarketHome .healthMarketHomeXContent {
+  min-width: 7.5rem
+}
+
+#healthMarketHome .healthMarketHome-navigate {
+  width: 100%;
+  height: 2.44rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center
+}
+
+#healthMarketHome .healthMarketHome-navigate>div {
+  width: 1.05rem;
+  height: 1.56rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.26rem;
+  color: #bdbdbd
+}
+
+#healthMarketHome .healthMarketHome-navigate>div b {
+  display: block;
+  width: 100%;
+  height: 1.05rem;
+  border-radius: 50%
+}
+
+#healthMarketHome .healthMarketHome-navigate>div b i {
+  font-size: 1.1rem;
+  color: #fff
+}
+
+#healthMarketHome .healthMarketHome-navigate div:nth-of-type(1) b {
+  background: #fe9923
+}
+
+#healthMarketHome .healthMarketHome-navigate div:nth-of-type(2) b {
+  background: #ff797c
+}
+
+#healthMarketHome .healthMarketHome-navigate div:nth-of-type(3) b {
+  background: #8bc71f
+}
+
+#healthMarketHome .healthMarketHome-navigate div:nth-of-type(4) b {
+  background: #93aef1
+}
+
+#healthMarketHome .healthMarketHome-article {
+  width: 100%;
+  min-height: 5rem
+}
+
+#healthMarketHome .healthMarketHome-article>div {
+  width: 100%;
+  height: 3.13rem;
+  padding: 0 0.3rem;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  border-top: .07rem solid #F2F2F2
+}
+
+#healthMarketHome .healthMarketHome-article>div>div:nth-of-type(1) {
+  width: 100%;
+  height: 0.82rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center
+}
+
+#healthMarketHome .healthMarketHome-article>div>div:nth-of-type(1) h2 {
+  font-size: 0.3rem;
+  color: #999999
+}
+
+#healthMarketHome .healthMarketHome-article>div>div:nth-of-type(1) span {
+  font-size: 0.24rem;
+  color: #c4c4c4
+}
+
+#healthMarketHome .healthMarketHome-article>div .healthMarketHomeXContent {
+  width: 200%;
+  display: flex;
+  flex-direction: row;
+  height: 2rem
+}
+
+#healthMarketHome .healthMarketHome-article>div .healthMarketHomeXContent>div {
+  width: 3.4rem;
+  height: 2rem;
+  margin-right: 0.1rem;
+  border-radius: 0.1rem;
+  position: relative;
+  flex-shrink: 0
+}
+
+#healthMarketHome .healthMarketHome-article>div .healthMarketHomeXContent>div>img {
+  width: 100%;
+  height: 100%
+}
+
+#healthMarketHome .healthMarketHome-article>div .healthMarketHomeXContent>div>span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 40%;
+  margin: 0 auto;
+  font-size: 0.33rem;
+  color: #fff
+}
+
 /*# sourceMappingURL=healthMarketHome.css.map */
