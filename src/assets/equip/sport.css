@@ -1,0 +1,100 @@
+.meter{
+	width:100%;
+	height: 7.06rem;
+	margin-top: .96rem;
+	position: relative;
+	background: #fff;
+}
+.meterLocation{
+	width: 1.29rem;
+	height: .96rem;
+	position: absolute;
+	right:.31rem;
+	top:.2rem;
+}
+.gouwu{
+	width:.6rem;
+	height: .6rem;
+	background: url(../../../static/images/commod0.png) no-repeat center;
+	background-size: 100% 100%;
+	float: left;
+}
+.commod{
+	background: url(../../../static/images/commod06.png) no-repeat center;
+	width:.6rem;
+	height: .6rem;
+	background-size: 100% 100%;
+	float: right;
+}
+.meterImg{
+	width:100%;
+	height: 4.35rem;
+	background: url(../../../static/images/commod07.png) no-repeat center;
+	background-size: 100% 100%;
+}
+.meterJianshu{
+	width:100%;
+	height: .64rem;
+	text-align: left;
+	line-height: .64rem;
+    padding-left: .4rem;
+    box-sizing: border-box;
+}
+.meterJianshu span:nth-of-type(2){
+	display: inline-block;
+    width: 2.01rem;
+    height: .36rem;
+    background: #FF5E3A;
+    line-height: .42rem;
+    border-radius: .3rem;
+    color: #FFFFFF;
+    text-align: center;
+    margin-left: .1rem;
+}
+.meterJianshu span:nth-of-type(1){
+	font-size: .36rem;
+	color: #FF5E3A;
+	display: inline-block;
+}
+.meterJianshu span:nth-of-type(3){
+	font-size: .24rem;
+	color:#FF5E3A;
+	margin-left: 1.87rem;
+}
+.meter p{
+	padding-left: .3rem;
+	box-sizing: border-box;
+}
+.meter p:nth-of-type(1){
+	font-size: .30rem;
+	color: #666666;
+	text-align: left;
+	margin-top: .2rem;
+}
+.meter p:nth-of-type(2){
+	font-size: .24rem;
+	color: #FF5E3A;
+	text-align: left;
+	margin-top: .17rem;
+}
+.wish{
+	background: url(../../../static/images/commod01.png) no-repeat center;
+	background-size: 100% 100%;
+	width:100%;
+	height: 10.26rem;
+	border-top: .08rem solid #f2f2f2;
+	box-sizing: border-box;
+	border-bottom: .03rem solid #fff;
+}
+.demand{
+	width:100%;
+	height: 9.42rem;
+	background: url(../../../static/images/commod03.png) no-repeat center;
+	background-size: 100% 100%;
+}
+.desire{
+	width:100%;
+	height:8.96rem;
+	background: url(../../../static/images/commod02.png) no-repeat center;
+	background-size: 100% 100%;
+}

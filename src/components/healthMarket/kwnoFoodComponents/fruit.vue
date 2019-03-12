@@ -43,7 +43,7 @@ import axios from 'axios';
          })
        },
        goKnonwFoodMean() {
-           console.log(123)
+//         console.log(123)
           //  this.$router.push('/KwnoFood/fruit/details')
           this.$router.push('/KwnoFood/fruit/details')
        }

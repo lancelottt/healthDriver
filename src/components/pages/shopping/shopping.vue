@@ -24,7 +24,7 @@
                <router-link to="/shopping">热销推荐</router-link>
            </div>
            <div class="tabItem">
-               <router-link to="/equip">健康管理</router-link>
+               <router-link to="/healthMana">健康管理</router-link>
            </div>
           <div class="tabItem">
                <router-link to="/equip">健康设备</router-link>

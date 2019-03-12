@@ -16,35 +16,11 @@
 	export default {
 		beforeCreate() {
 			document.addEventListener('plusready', function() {
-				let uuid = plus.device.uuid
+				console.log('plusEventListenerReady')
 			}, false)
 		},
 		created() {
-//			var NotifyID = 1;
-//			var main = plus.android.runtimeMainActivity();
-//			var Context = plus.android.importClass("android.content.Context");
-//			var Noti = plus.android.importClass("android.app.Notification");
-//			var NotificationManager = plus.android.importClass("android.app.NotificationManager");
-//			var nm = main.getSystemService(Context.NOTIFICATION_SERVICE)
-//			var Notification = plus.android.importClass("android.app.Notification");
-//			var mNotification = new Notification.Builder(main);
-//			var Intent = plus.android.importClass("android.content.Intent");
-//			var PendingIntent = plus.android.importClass("android.app.PendingIntent");
-//			var intent = new Intent(main, main.getClass());
-//			var pendingIntent = PendingIntent.getActivity(main, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
-//			var r = plus.android.importClass("android.R");
-//
-//			mNotification.setOngoing(true);
-//			mNotification.setContentTitle("Hbuilder")
-//			mNotification.setContentText("MUI & 5+ 好！")
-//
-//			mNotification.setSmallIcon(r.drawable.ic_notification_overlay)
-//			mNotification.setTicker("PadInfo")
-//
-//			mNotification.setContentIntent(pendingIntent);
-//			mNotification.setNumber(10)
-//			var mNb = mNotification.build()
-//			nm.notify(NotifyID, mNb);
+
 		},
 		mounted(){
 			function  plusReady(){

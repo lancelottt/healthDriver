@@ -6,13 +6,13 @@
 		<foot-com></foot-com>
 		<mt-loadmore :top-method="loadTop" ref="loadmore">
 
-			<div class="healthPlanHeader"><span>下拉查看日签</span></div>
+			<div class="healthPlanHeader" ><i class="iconfont icon-weixin" @click="handlerWxLog()"></i><span>下拉查看日签</span></div>
 			<!--iconfont icon-xiangzuojiantou-->
 			<div class="healthPlan-con">
 				<Tabs value="name1">
 					<!--	-------------------------------------------我的计划------------------------------------------->
 					<TabPane label="我的计划" name="name1" class='hitCard'>
-						<h1>健康自律养成计划</h1>
+						<h1>健康自律养成计划<i @click="handlerLogout()">注销微信登录</i></h1>
 						<h2>1/28天</h2>
 						<div class="myPlan" @click="handleJoinCompetition()">
 							<img src="../../../static/img/sleep_10.png" alt="" />
@@ -265,157 +265,319 @@
 		data() {
 			return {
 				moveDistance: this.offsetHeight,
-				Oheight: ""
+				Oheight: "",
+				//微信code
+				weChatCode: '',
+				weixinCode: ''
 			}
 		},
-		beforeCreate() {
-			function plusReady() {
-				var  auths = null;
-				var  aweixin = null
-				plus.oauth.getServices(function(services) {
-					 auths = services;
-					 aweixin = services['weixin'];
-					console.log(aweixin + '>')
-					console.log(auths.toString())
-				}, function(e) {
-					console.log("获取分享服务列表失败：" + e.message + " - " + e.code);
-				});
-
-				function authLogin() {
-					var s = auths[0];
-					s.login(function(e) {
-							console.log("1！");
-							alert("1！");
-						},
-						function(e) {
-							console.log("0！");
-							alert("0！");
-						}, {
-							// 微信应用的appid
-							appid: "wxb7a73ac2a23fe04b",
-							scope: "snsapi_userinfo",
-							appsecret: '189a61ba487957636b8c7ae796a0d237',
-							response_type: 'code',
-							redirect_uri: 'http%3a%2f%2f192.168.1.151%3a8081'
-						} // 授权获取用户信息
-					);
-				}
-
-				function authorize() {
-					if(!aweixin) {
-						alert("当前环境不支持微信登录");
-						return;
+				beforeCreate() {
+					var _this = this;
+		
+					function plusReady() {
+						var _this = this;
+						var weChatService = null;
+						plus.oauth.getServices(function(services) {
+							console.log(services)
+							console.log(services[0])
+							if(services && services.length) {
+								for(var i = 0; i <= services.length; i++) {
+									if(services[i].id = 'weixin') {
+										weChatService = services[i];
+										break;
+									}
+								}
+								if(!weChatService) {
+									console.log('没微信服务')
+									return;
+								}
+								//						weChatService.authorize(function(e) {
+								//							console.log(JSON.stringify(e))
+								//							console.log(_this)
+								//							console.log("授权成功：" + JSON.stringify(e));
+								//							_this.weChatCode = e.code;
+								//							_this.requestWxLogin();
+								//						}, function(e) {
+								//							console.log("授权失败：" + JSON.stringify(e));
+								//						}, {
+								//							scope: 'snsapi_userinfo',
+								//							state: 'weChatLoginTest',
+								//							appid: 'wxb7a73ac2a23fe04b',
+								//							appsecret: '189a61ba487957636b8c7ae796a0d237',
+								//							//					redirect_url:'redirect_url'
+								//						});
+								console.log(_this)
+								console.log(weChatService)
+								weChatService.authorize(function(event) {
+									alert("授权成功：" + JSON.stringify(event));
+								}, function(e) {
+									alert("授权失败：" + JSON.stringify(event));
+								}, {
+									scope: 'snsapi_userinfo',
+									state: 'authorize test',
+									appid: 'wxb7a73ac2a23fe04b',
+									appsecret: '189a61ba487957636b8c7ae796a0d237'
+								});
+		
+							} else {
+								console.log('services???')
+							}
+		
+						}, function(e) {
+							console.log("获取服务失败：" + e.message + " - " + e.code);
+						});
+		
+						//				var s = jsonData[0];
+						//				if(!s.authResult) {
+						//					s.login(function(e) {
+						//						alert("登录认证成功！");
+						//					}, function(e) {
+						//						alert("登录认证失败！");
+						//					});
+						//				} else {
+						//					alert("已经登录认证！");
+						//				}
+						//			}
+		
+						//			function authLogin() {
+						//				var s = jsonData[0];
+						//				s.login(function(e) {
+						//						console.log("1！");
+						//						alert("1！");
+						//					},
+						//					function(e) {
+						//						console.log("0！");
+						//						alert("0！");
+						//					}, {
+						//						// 微信应用的appid
+						//						appid: "wxb7a73ac2a23fe04b",
+						//						scope: "snsapi_userinfo",
+						//						appsecret: '189a61ba487957636b8c7ae796a0d237',
+						//						response_type: 'code',
+						//						redirect_uri: 'http%3a%2f%2f192.168.1.151%3a8081'
+						//					} // 授权获取用户信息
+						//				);
+						//			}
+						//
+						//			function authorize() {
+						//				if(!aweixin) {
+						//					alert("当前环境不支持微信登录");
+						//					return;
+						//				}
+						//				aweixin.authorize(function(e) {
+						//					alert("授权成功：" + JSON.stringify(e));
+						//				}, function(e) {
+						//					alert("授权失败：" + JSON.stringify(e));
+						//				}, {
+						//					scope: 'snsapi_userinfo',
+						//					state: 'authorize test',
+						//					appid: 'wxb7a73ac2a23fe04b'
+						//				});
+						//			}
+		
+						// 在这里调用plus api
+						void plus.push.createMessage('success', {
+							"MessageOptions": [{
+								"sound": "none"
+							}, {
+								title: 'mafia'
+							}]
+		
+						});
+						plus.audio.createPlayer('http://demo.dcloud.net.cn/test/audio/apple.mp3').play()
+						plus.device.beep(3);
 					}
-					aweixin.authorize(function(e) {
-						alert("授权成功：" + JSON.stringify(e));
-					}, function(e) {
-						alert("授权失败：" + JSON.stringify(e));
-					}, {
-						scope: 'snsapi_userinfo',
-						state: 'authorize test',
-						appid: 'wxb7a73ac2a23fe04b'
-					});
-				}
+					if(window.plus) {
+						plusReady(
+							//					plus.push.createMessage('itWorks!')
+							plus.audio.createPlayer(plus.io.convertLocalFileSystemURL('./kiss.mp3')).play()
+						);
+					} else {
+						document.addEventListener('plusready', plusReady, false);
+					}
+		
+					// 监听plusready事件  
+					document.addEventListener("plusready", function() {
+						// 扩展API加载完毕，现在可以正常调用扩展API
+						// 添加监听从系统消息中心点击某条消息启动应用事件
+						plus.push.addEventListener("receive", function(msg) {
+							// 分析msg.payload处理业务逻辑 
+		
+							alert("You clicked: " + msg.content);
+						}, false);
+					}, false);
+					//function plusReady(){
+					//	            //  
+					//          this.on('tap', 'button', function(event) {  
+					//              var id = this.getAttribute('id');
+					//				addAlarm();
+					//});
+					//var main = plus.android.runtimeMainActivity();// 广播接收  
+					//          var ALARM_RECEIVER = "alarm_receiver";  
+					//          var receiver = plus.android.implements('io.dcloud.android.content.BroadcastReceiver', {  
+					//              onReceive: function(context, intent) { //实现onReceiver回调函数  
+					//                  plus.android.importClass(intent); //通过intent实例引入intent类，方便以后的‘.’操作  
+					//                  //console.log(intent.getAction()); //获取action  
+					//                  var txt = "接收到消息"  +intent.getAction() +  ": " +  getCurTime();
+					//                  mui.toast(txt);  
+					//                  pushMsg(txt);  
+					//                  main.unregisterReceiver(receiver); //取消监听  
+					//              }  
+					//          });  
+					//          //  
+					//          function addAlarm() {  
+					//              // --- 注册监听 start ---  
+					//              var IntentFilter = plus.android.importClass('android.content.IntentFilter');  
+					//              var filter = new IntentFilter(ALARM_RECEIVER);  
+					//              main.registerReceiver(receiver, filter);  
+					//              // --- 注册监听 end ---  
+					//              // --- 设置闹铃时间 start ---  
+					//              var Calendar = plus.android.importClass('java.util.Calendar');  
+					//              var calendar = Calendar.getInstance();  
+					//              // 11点4分执行  
+					//                calendar.set(Calendar.HOUR_OF_DAY, 11);  
+					//                calendar.set(Calendar.MINUTE, 4);  
+					//                calendar.set(Calendar.SECOND, 0);  
+					//              // 过5s 执行  
+					//              calendar.setTimeInMillis(Date.parse(new Date()));  
+					//              calendar.add(Calendar.SECOND, 5);  
+					//              // --- 设置闹铃时间 end ---  
+					//              // --- 设置闹铃 ---  
+					//              var Intent = plus.android.importClass('android.content.Intent');  
+					//              var intent = new Intent(ALARM_RECEIVER);  
+					//              //  
+					//              var PendingIntent = plus.android.importClass('android.app.PendingIntent');  
+					//              var sender = PendingIntent.getBroadcast(main, 0, intent, 0);  
+					//              //  
+					//              var AlarmManager = plus.android.importClass("android.app.AlarmManager");  
+					//              var Context = plus.android.importClass("android.content.Context");  
+					//              var alarm = main.getSystemService(Context.ALARM_SERVICE);  
+					//              // 一次    
+					//              alarm.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), sender);  
+					//              // 重复多次  
+					//              //alarm.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), 5 * 1000, sender);  
+					//              mui.toast("设置闹铃5秒后提醒: " +  getCurTime());  
+					//          };  
+					//          //  
+					//          function pushMsg(content) {  
+					//              var options = {  
+					//                  "title": "闹铃提醒",  
+					//              };  
+					//              plus.push.createMessage(content, "alarm", options);  
+					//          };  
+					//          //  
+					//          function getCurTime() {  
+					//              var d = new Date();  
+					//              return d.getFullYear() +  "-" +  (d.getMonth() -  1) +  "-" +  d.getDate() +  " "  + d.getHours() +  ":" +  d.getMinutes() +  ":" +  d.getSeconds();  
+					//          };  
+					//}
 
-				// 在这里调用plus api
-				void plus.push.createMessage('success', {
-					"MessageOptions": [{
-						"sound": "none"
-					}, {
-						title: 'mafia'
-					}]
-
-				});
-				plus.audio.createPlayer('http://demo.dcloud.net.cn/test/audio/apple.mp3').play()
-				plus.device.beep(3);
-			}
-			if(window.plus) {
-				plusReady(
-					//					plus.push.createMessage('itWorks!')
-					plus.audio.createPlayer(plus.io.convertLocalFileSystemURL('./kiss.mp3')).play()
-				);
-			} else {
-				document.addEventListener('plusready', plusReady, false);
-			}
-
-			// 监听plusready事件  
-			document.addEventListener("plusready", function() {
-				// 扩展API加载完毕，现在可以正常调用扩展API
-				// 添加监听从系统消息中心点击某条消息启动应用事件
-				plus.push.addEventListener("receive", function(msg) {
-					// 分析msg.payload处理业务逻辑 
-
-					alert("You clicked: " + msg.content);
-				}, false);
-			}, false);
-			//function plusReady(){
-			//	            //  
-			//          this.on('tap', 'button', function(event) {  
-			//              var id = this.getAttribute('id');
-			//				addAlarm();
-			//});
-			//var main = plus.android.runtimeMainActivity();// 广播接收  
-			//          var ALARM_RECEIVER = "alarm_receiver";  
-			//          var receiver = plus.android.implements('io.dcloud.android.content.BroadcastReceiver', {  
-			//              onReceive: function(context, intent) { //实现onReceiver回调函数  
-			//                  plus.android.importClass(intent); //通过intent实例引入intent类，方便以后的‘.’操作  
-			//                  //console.log(intent.getAction()); //获取action  
-			//                  var txt = "接收到消息"  +intent.getAction() +  ": " +  getCurTime();
-			//                  mui.toast(txt);  
-			//                  pushMsg(txt);  
-			//                  main.unregisterReceiver(receiver); //取消监听  
-			//              }  
-			//          });  
-			//          //  
-			//          function addAlarm() {  
-			//              // --- 注册监听 start ---  
-			//              var IntentFilter = plus.android.importClass('android.content.IntentFilter');  
-			//              var filter = new IntentFilter(ALARM_RECEIVER);  
-			//              main.registerReceiver(receiver, filter);  
-			//              // --- 注册监听 end ---  
-			//              // --- 设置闹铃时间 start ---  
-			//              var Calendar = plus.android.importClass('java.util.Calendar');  
-			//              var calendar = Calendar.getInstance();  
-			//              // 11点4分执行  
-			//                calendar.set(Calendar.HOUR_OF_DAY, 11);  
-			//                calendar.set(Calendar.MINUTE, 4);  
-			//                calendar.set(Calendar.SECOND, 0);  
-			//              // 过5s 执行  
-			//              calendar.setTimeInMillis(Date.parse(new Date()));  
-			//              calendar.add(Calendar.SECOND, 5);  
-			//              // --- 设置闹铃时间 end ---  
-			//              // --- 设置闹铃 ---  
-			//              var Intent = plus.android.importClass('android.content.Intent');  
-			//              var intent = new Intent(ALARM_RECEIVER);  
-			//              //  
-			//              var PendingIntent = plus.android.importClass('android.app.PendingIntent');  
-			//              var sender = PendingIntent.getBroadcast(main, 0, intent, 0);  
-			//              //  
-			//              var AlarmManager = plus.android.importClass("android.app.AlarmManager");  
-			//              var Context = plus.android.importClass("android.content.Context");  
-			//              var alarm = main.getSystemService(Context.ALARM_SERVICE);  
-			//              // 一次    
-			//              alarm.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), sender);  
-			//              // 重复多次  
-			//              //alarm.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), 5 * 1000, sender);  
-			//              mui.toast("设置闹铃5秒后提醒: " +  getCurTime());  
-			//          };  
-			//          //  
-			//          function pushMsg(content) {  
-			//              var options = {  
-			//                  "title": "闹铃提醒",  
-			//              };  
-			//              plus.push.createMessage(content, "alarm", options);  
-			//          };  
-			//          //  
-			//          function getCurTime() {  
-			//              var d = new Date();  
-			//              return d.getFullYear() +  "-" +  (d.getMonth() -  1) +  "-" +  d.getDate() +  " "  + d.getHours() +  ":" +  d.getMinutes() +  ":" +  d.getSeconds();  
-			//          };  
-			//}
-
-		},
+				},
 		methods: {
+			handlerWxLog() {
+				var _this = this;
+				// #ifdef APP-PLUS
+				var weixinService = null;
+				// http://www.html5plus.org/doc/zh_cn/oauth.html#plus.oauth.getServices
+				plus.oauth.getServices(function(services) {
+					console.log(services)
+					if(services && services.length) {
+						for(var i = 0, len = services.length; i < len; i++) {
+							if(services[i].id === 'weixin') {
+								weixinService = services[i];
+								break;
+							}
+						}
+						if(!weixinService) {
+							console.log('没有微信登录授权服务');
+							return;
+						}
+						// http://www.html5plus.org/doc/zh_cn/oauth.html#plus.oauth.AuthService.authorize
+						weixinService.authorize(function(event) {
+							_this.weixinCode = event.code;
+							console.log(event)
+							console.log(JSON.stringify(event))
+							console.log(this)
+							console.log(_this) //用户换取 access_token 的 code
+							console.log(weixinService)
+							console.log(_this.weixinCode)
+							_this.requestLogin();
+						}, function(error) {
+							console.error('authorize fail:' + JSON.stringify(error));
+						}, {
+							// http://www.html5plus.org/doc/zh_cn/oauth.html#plus.oauth.AuthOptions
+							appid: 'wxb7a73ac2a23fe04b',
+							appsecret: ' 189a61ba487957636b8c7ae796a0d237',
+							scope: 'snsapi_userinfo'
+							//开放平台的应用标识。暂时填个假的充数，仅做演示。
+						});
+					} else {
+						console.log('无可用的登录授权服务');
+					}
+				}, function(error) {
+					console.error('getServices fail:' + JSON.stringify(error));
+				});
+				// #endif
+			},
+			requestLogin() {
+				// 这里请求服务端授权登录
+				console.log(JSON.stringify(weixinService))
+				weixinService.login(function(e) {
+					console.log("登陆成功" + JSON.stringify(e))
+				}, function(e) {
+					console.log("登录失败" + JSON.stringify(e))
+				}, {
+					scope: 'snsapi_userinfo',
+					state: 'weChatLoginTest',
+					appid: 'wxb7a73ac2a23fe04b',
+					appsecret: '189a61ba487957636b8c7ae796a0d237',
+					//					redirect_url:'redirect_url'
+				})
+				//				this.axios({
+				//					url: 'xxxxxxx/login',
+				//					data: {
+				//						code: this.weixinCode
+				//					},
+				//				
+				//				})
+			},
+			handlerLogout(){
+				weixinService.logout(function(e){
+					console.log('注销成功'+JSON.strigify(e))
+				},function(e){
+					console.log("注销失败"+JSON.stringify(e))
+				})
+			},
+//			requestWxLogin() {
+//				var that = this;
+//				that.sendWxCode()
+//				console.log(weChatService)
+//				weChatService.login(function(e) {
+//						console.log(weChatCode)
+//						console.log('微信登录成功' + JSON.stringify(e))
+//					},
+//					function(e) {
+//						console.log('微信登录失败' + JSON.stringify(e))
+//					}, {
+//						scope: 'snsapi_userinfo',
+//						state: 'weChatLoginTest',
+//						appid: 'wxb7a73ac2a23fe04b',
+//						appsecret: '189a61ba487957636b8c7ae796a0d237',
+//						//					redirect_url:'redirect_url'
+//					}
+//				)
+//
+//			},
+			sendWxCode() {
+				//				this.axios({
+				//					methods:'post',
+				//					url:'',
+				//					data:{
+				//						code:that.weChatCode
+				//					}
+				//				})
+				console.log(code)
+			},
 			changeFixed(clientHeight) { //动态修改样式
 				this.$refs.homePage.style.height = clientHeight + 'px';
 			},
