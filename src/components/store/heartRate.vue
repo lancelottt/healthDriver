@@ -61,7 +61,7 @@
             console.log('123')
             axios.get('health-web/modules/userDataRecord/athleticCount', {
                 headers: {
-                    // 'token ': 'faad5a64-2f11-4b4a-9136-f7f50c333947',
+                    'X-Custom-Header': 'foobar'
                 },
                 params: {}
             })
