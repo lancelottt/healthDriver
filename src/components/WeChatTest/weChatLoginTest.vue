@@ -107,6 +107,7 @@
 							console.log(JSON.stringify(weixinService))
 							console.log(_this.weixinCode)
 							_this.requestLogin();
+							_this.sendWxCode();
 						}, function(error) {
 							console.log('authorize fail:' + JSON.stringify(error));
 						}, {
@@ -126,10 +127,8 @@
 			},
 			requestLogin() {
 				// 这里请求服务端授权登录
-				var sendCode_this = this
 				console.log(JSON.stringify(weixinService))
 				weixinService.login(function(e) {
-					sendCode_this.sendWxCode()
 					console.log("登陆成功" + JSON.stringify(e))
 				}, function(e) {
 					console.log("登录失败" + JSON.stringify(e))

@@ -638,6 +638,48 @@ export default new Router({
       name: 'experience',
       component: Experience
     },
-
+    //      健康管理**
+        {
+        	path:'/healthMana',
+        	name:'healthMana',
+        	component:HealthMana
+        },
+        {
+        	path:'/experience',
+        	name:'experience',
+        	component:Experience
+        },
+        {
+        	path:'/equipDetails',
+        	name:'equipDetails',
+        	component:EquipDetails,
+        	children:[
+        	  {
+        	  	path:'/equipSport',
+        	  	name:'equipSport',
+        	  	component:EquipSport
+        	  },
+        	  {
+        	  	path:'/equipEvaluate',
+        	  	name:'equipEvaluate',
+        	  	component:EquipEvaluate
+        	  },
+        	  {
+        	  	path:'/modityDetails',
+        	  	name:'modityDetails',
+        	  	component:ModityDetails
+        	  }
+        	]
+        },
+        {
+        	path:'',
+        	name:'',
+        	redirect:'/equipSport'
+        },
+        {
+        	path:'/packageDetails',
+        	name:'packageDetails',
+        	component:PackageDetails
+				}
   ]
 })

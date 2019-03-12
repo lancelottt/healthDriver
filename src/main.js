@@ -19,7 +19,6 @@ import App from './App'
 import Mint from 'mint-ui';
 import 'mint-ui/lib/style.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
-//import vueWaterfallEasy from 'vue-waterfall-easy'
 
 import { setCookie, getCookie, delCookie } from '@/utils/holdno';
 // require styles
@@ -35,7 +34,6 @@ Vue.use(VideoPlayer)
 
 //swiper4的vueAwesomeSwiper
 Vue.use(VueAwesomeSwiper)
-
 
 //betterScroll已弃用
 //import BScroll from 'better-scroll';
