@@ -2,7 +2,7 @@
 	<div>
 	    <div class="goodDetailFooter">
             <div class="left">
-            	 <div class="shop">
+            	 <div class="shop" @click="goService()">
                      <i class="iconfont icon-service"></i>
                     <span>客服</span>
                 </div>
@@ -29,34 +29,42 @@
 	</div>
 </template>
 <script>
-	export default{
-		data () {
-			return{
-			}
-		}
-	}
+    export default {
+        props: {},
+        data() {
+            return {}
+        },
+        methods: {
+            goService() {
+                this.$emit('ChildSerice')
+            }
+        }
+    }
 </script>
 <style scoped="scoped">
-.goodDetailFooter {
-    position: fixed;
-    width: 100%;
-    bottom: 0rem;
-    height: .93rem;
-    background: #fff;
-}
-.left {
-    width: 45%;
-    float: left;
-    position: relative;
-    font-size: .24rem;   
-    height: .93rem;
+    .goodDetailFooter {
+        position: fixed;
+        width: 100%;
+        bottom: 0rem;
+        height: .93rem;
+        background: #fff;
     }
- .rigth {
-    width: 55%;
-    float: right;
-    height: .93rem;
-} 
-.add a{
+    
+    .left {
+        width: 45%;
+        float: left;
+        position: relative;
+        font-size: .24rem;
+        height: .93rem;
+    }
+    
+    .rigth {
+        width: 55%;
+        float: right;
+        height: .93rem;
+    }
+    
+    .add a {
         display: block;
         width: 50%;
         height: .93rem;
@@ -66,68 +74,72 @@
         color: white;
         font-size: 0.24rem;
         float: left;
-        
     }
-
-.purchase a {
-    float: left;
-    display: block;
-    width: 50%;
-    height: .93rem;
-    line-height: .93rem;
-    text-align: center;
-    color: white;
-    font-size: 0.24rem;
-    background: #ff0000;
-    }   
-.shop {
-    width: 44%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    float: left;
-    border-right: .01rem solid #eee;
-      }
-.shop  span {
-    display: block;
-    text-align: center;
-    color: #767676;
-}
-.goodDetailFooter .left .shop i {
-    font-size: 0.45rem;
-    display: block;
-    text-align: center;
-}
-.collection span{
-    font-size: .18rem;
-    line-height: 0.35rem;
-	color: #999999;
-	display: inline-block;
-}
-.shop span{
-	color: #999999;
-	line-height: 0.35rem;
-}
-.collection{
-	
-    margin-top: .1rem;
-}
-.shop{
-	font-size: .18rem;
-	
-	
-    margin-top: .1rem;
-}
-.goodDetailFooter .left .collection i {
-    font-size: 0.45rem;
-    display: block;
-    text-align: center;
-}
+    
+    .purchase a {
+        float: left;
+        display: block;
+        width: 50%;
+        height: .93rem;
+        line-height: .93rem;
+        text-align: center;
+        color: white;
+        font-size: 0.24rem;
+        background: #ff0000;
+    }
+    
+    .shop {
+        width: 44%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        float: left;
+        border-right: .01rem solid #eee;
+    }
+    
+    .shop span {
+        display: block;
+        text-align: center;
+        color: #767676;
+    }
+    
+    .goodDetailFooter .left .shop i {
+        font-size: 0.45rem;
+        display: block;
+        text-align: center;
+    }
+    
+    .collection span {
+        font-size: .18rem;
+        line-height: 0.35rem;
+        color: #999999;
+        display: inline-block;
+    }
+    
+    .shop span {
+        color: #999999;
+        line-height: 0.35rem;
+    }
+    
+    .collection {
+        margin-top: .1rem;
+    }
+    
+    .shop {
+        font-size: .18rem;
+        margin-top: .1rem;
+    }
+    
+    .goodDetailFooter .left .collection i {
+        font-size: 0.45rem;
+        display: block;
+        text-align: center;
+    }
 </style>

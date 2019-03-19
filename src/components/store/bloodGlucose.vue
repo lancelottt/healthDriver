@@ -1,9 +1,9 @@
 <template>
     <div>
-       <DialRecord ref="child":minVal="minVal" :maxVal="maxVal" :rateValue="rateValue" @showDialog="showDialog" :headerText="headerText" :recordBtnText="recordBtnText" :dialTopText="dialTopText" :dialBottonText="dialBottonText"></DialRecord>
-       <el-dialog title="心率添加" :visible.sync="dialogFormVisible" width="80%" center >
+       <DialRecord ref="child" :minVal="minVal" :maxVal="maxVal" :rateValue="rateValue" @showDialog="showDialog" :headerText="headerText" :recordBtnText="recordBtnText" :dialTopText="dialTopText" :dialBottonText="dialBottonText"></DialRecord>
+       <el-dialog title="体温添加" :visible.sync="dialogFormVisible" width="80%" center >
           <el-form :model="heartForm">
-            <el-form-item label="心率" :label-width="formLabelWidth">
+            <el-form-item label="体温" :label-width="formLabelWidth">
                  <el-input v-model="heartForm.val" autocomplete="on"></el-input>
              </el-form-item> 
          </el-form>
@@ -23,13 +23,13 @@
         data() {
             return {
                 dialogFormVisible: false,
-                rateValue: 60, // 当前数据
-                headerText: '心率', // 导航标题
-                recordBtnText: '记录心率', // 记录按钮文字
+                rateValue: 35.5, // 当前数据
+                headerText: '血糖', // 导航标题
+                recordBtnText: '记录血糖', // 记录按钮文字
                 dialTopText: '', // 仪表标题1
-                dialBottonText: '次/分', // 仪表标题1
-                minVal: 40,
-                maxVal: 160,
+                dialBottonText: 'mmol/L', // 仪表标题1
+                minVal: 0,
+                maxVal: 100,
                 heartForm: {
                     val: '',
                     name: '',
@@ -45,10 +45,11 @@
         },
         methods: {
             getHeart() {
-                get('/health-web/modules/userDataRecord/latestInfo/heart_rate').then((res) => {
-                    this.rateValue = res.userLatestRecord.heartRateValue;
+                get('/health-web/modules/userDataRecord/latestInfo/blood_glucose').then((res) => {
+                    this.rateValue = res.userLatestRecord.bloodGlucoseValue;
+                    console.log(this.rateValue)
                     if (this.rateValue == null) {
-                        this.rateValue = 40;
+                        this.rateValue = 6.2;
                     }
                 })
             },
@@ -57,22 +58,22 @@
             },
             submit() {
                 this.dialogFormVisible = false;
-                if (this.heartForm.val >= 0) {
-                    this.upData(~~this.heartForm.val)
+                if (this.heartForm.val >= this.minVal && this.heartForm.val <= this.maxVal) {
+                    this.upData(this.heartForm.val)
                 }
             },
             upData(val) {
                 console.log(val)
                 get('/health-web/modules/userDataRecord/save', {
-                    heartRateValue: val
+                    bloodGlucoseValue: val
                 }).then((res) => {
                     if (res.code == 0) {
                         this.$message({
                             message: '提交成功 !',
                             type: 'success'
                         })
+                        this.getHeart();
                     }
-                    this.getHeart();
                 })
             }
         },

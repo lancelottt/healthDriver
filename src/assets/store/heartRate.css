@@ -1,123 +1,122 @@
-  .outerMain {
+.outerMain {
     padding-top: 1.7rem;
     background: #fff;
-  }
+}
 
-  .heartMain {
+.heartMain {
     background: #fff;
     position: relative;
-  }
+}
 
-  .heartArrows {
+.heartArrows {
     position: absolute;
     width: 126px;
     height: 126px;
     top: -2px;
     left: calc(50% - 63px);
-  }
+}
 
-  .heartArrows img {
+.heartArrows img {
     width: 0.33rem;
     height: 0.33rem;
-  }
+}
 
-  .heartTitle {
+.heartTitle {
     width: 2rem;
     position: absolute;
     top: 32px;
     left: 50%;
     margin-left: -1rem;
-  }
+}
 
-  h3 {
+h3 {
     font-size: 0.72rem;
-    color: #FF5E3A;
+    color: #ff5e3a;
     padding-bottom: 0.1rem;
-  }
+}
 
-  .rota {
+.rota {
     position: relative;
     transform: rotate(-90deg);
-  }
+}
 
-  .svg {
+.svg {
     position: absolute;
     top: 1.57rem;
     left: cale(50%-100);
-  }
+}
 
-  .Equitheader {
+.Equitheader {
     width: 100%;
-    height: .89rem;
+    height: 0.89rem;
     background: #fff;
     position: fixed;
     z-index: 1;
-    padding: 0 .2rem 0 .2rem;
+    padding: 0 0.2rem 0 0.2rem;
     box-sizing: border-box;
-  }
+}
 
-  .header-left {
+.header-left {
     width: 10%;
     height: 100%;
     float: left;
-  }
+}
 
-  i {
+i {
     font-size: 0.36rem;
-    line-height: .89rem;
+    line-height: 0.89rem;
     text-align: center;
     display: block;
-  }
+}
 
-  .header-in {
+.header-in {
     width: 80%;
     float: left;
     text-align: center;
     font-size: 0.28rem;
     line-height: 0.85rem;
     color: #333333;
-  }
+}
 
-  .header-rigth {
+.header-rigth {
     width: 10%;
     float: right;
-  }
+}
 
-  .pharmacyType {
+.pharmacyType {
     width: 100%;
     padding: 0 0.2rem;
     box-sizing: border-box;
     padding-top: 1rem;
     background: #fff;
-  }
+}
 
-  .pharmacyType ul {
+.pharmacyType ul {
     display: flex;
     display: -webkit-flex;
     justify-content: space-between;
     align-items: center;
     padding: 0.23rem;
-  }
+}
 
-  .pharmacyType ul:first-child {
+.pharmacyType ul:first-child {
     border-bottom: 1px solid #cccccc;
-  }
+}
 
-
-  .pharmacyType button img {
+.pharmacyType button img {
     width: 0.22rem;
     height: 0.24rem;
-  }
+}
 
-  .pharmacyType .nextBtn {
+.pharmacyType .nextBtn {
     width: 0.19rem;
     height: 0.31rem;
-  }
+}
 
-  .save {
+.save {
     width: 100%;
     height: 0.9rem;
-    background: linear-gradient(#FF5E3A, #FF9500);
+    background: linear-gradient(#ff5e3a, #ff9500);
     border: 0;
     font-size: 0.3rem;
     color: #fff;
@@ -125,18 +124,115 @@
     bottom: 0;
     left: 0;
     outline: medium;
-  }
+}
 
-  .test {
+.test {
     height: 0.56rem;
-    border: 1px solid #FF5E3A;
+    border: 1px solid #ff5e3a;
     border-radius: 20px;
     width: 1.6rem;
     font-size: 0.22rem;
-    color: #FF5E3A;
+    color: #ff5e3a;
     background: #fff;
     position: fixed;
     top: 1.5rem;
     right: -0.25rem;
     outline: medium;
-  }
+}
+
+.heartPlate {
+    width: 100%;
+    height: 5.47rem;
+    margin: 0 auto;
+}
+
+.recordBloodBtn {
+    width: 3.25rem;
+    height: .98rem;
+    margin: auto;
+    background: url(../../../static/images/recordBlood.png) no-repeat center;
+    background-size: 100% 100%;
+    font-size: .3rem;
+    color: #FFFFFF;
+    margin-top: .3rem;
+    line-height: .78rem;
+    text-align: center;
+}
+
+.rugUse {
+    width: 100%;
+    height: 3.58rem;
+    background: bisque;
+    background: url(../../../static/images/yongyaoImg.png) no-repeat center;
+    background-size: 100% 100%;
+    padding-top: .5rem;
+    box-sizing: border-box;
+    margin-top: 1.3rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.rugUseContent {
+    width: 65%;
+    height: 1.53rem;
+    margin: auto;
+    margin-top: .88rem;
+}
+
+.rugUseContent ul li {
+    width: 50%;
+    height: auto;
+    float: left;
+    font-size: .24rem;
+    color: #fff;
+}
+
+.medica {
+    width: 1.34rem;
+    height: 1.34rem;
+    background: url(../../../static/images/yongyao.png) no-repeat center;
+    background-size: 100% 100%;
+    margin: auto;
+}
+
+.remind {
+    width: 1.34rem;
+    height: 1.34rem;
+    background: url(../../../static/images/naozhong.png) no-repeat center;
+    background-size: 100% 100%;
+    margin: auto;
+}
+
+
+/*
+.heartTitle {
+    margin-top: 1.9rem;
+}
+
+.heartTitle h3 {
+    font-size: 0.48rem;
+    color: #ff5e3a;
+}
+
+.heartTitle h4 {
+    font-size: 0.22rem;
+    color: #999;
+}
+
+.heartArrows {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 2.24rem;
+    height: 2.24rem;
+    margin-left: -1rem;
+    margin-top: -1rem;
+}
+
+.heartArrows img {
+    width: 1.12rem;
+    height: 1.12rem;
+    float: left;
+    margin-top: 1.12rem;
+}*/

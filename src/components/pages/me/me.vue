@@ -64,8 +64,10 @@
                   <p>数据中心</p>
               </li>
               <li>
+                  <router-link to="/device">
                   <i class="iconfont shuju  icon-shuju1"></i>
                   <p>数据中心</p>
+                  </router-link>
               </li>
               <li @click="handlerMyFamily()">
                   <i class="iconfont shuju icon-ren"></i>
@@ -111,26 +113,30 @@
     </div>
 </template>
 <script>
-import FootTabbar from '../../foorterGuid/footerGuild'
-export default {
-  components:{
-      FootTabbar
-    },
-    data () {
-        return{
-        
+    import FootTabbar from '../../foorterGuid/footerGuild'
+    export default {
+        components: {
+            FootTabbar
+        },
+        data() {
+            return {
+
+            }
+        },
+        methods: {
+            handlerMyFamily() {
+                this.$router.push({
+                    name: 'family'
+                })
+            },
+            handlerMembership() {
+                this.$router.push({
+                    name: 'memCen'
+                })
+            }
         }
-    },
-    methods:{
-    	handlerMyFamily(){
-    		this.$router.push({name:'family'})
-    	},
-    	handlerMembership(){
-    		this.$router.push({name:'memCen'})
-    	}
     }
-}
 </script>
 <style scoped>
-@import './style/me.css';
+    @import './style/me.css';
 </style>

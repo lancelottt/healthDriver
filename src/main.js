@@ -28,11 +28,21 @@ import VideoPlayer from 'vue-video-player'
 require('video.js/dist/video-js.css')
 require('vue-video-player/src/custom-theme.css')
 
+import vueTouch from 'vue-plugin-touch';
+import echarts from 'echarts'
+Vue.prototype.$echarts = echarts;
+Vue.use(vueTouch);
+
+// import ECharts from 'vue-echarts/components/ECharts'
+// import 'echarts/lib/chart/line'
+// Vue.component('chart', ECharts)
 //import holdno from './utils/holdno'
 
 Vue.use(VideoPlayer)
+    // Vue.use(myCharts)
 
-//swiper4的vueAwesomeSwiper
+// Vue.prototype.$echarts = myCharts
+// swiper4的vueAwesomeSwiper
 Vue.use(VueAwesomeSwiper)
 
 //betterScroll已弃用
@@ -49,27 +59,27 @@ Vue.use(Mint);
 //Vue.prototype.holdno = holdno;
 
 Vue.config.productionTip = false
-/* eslint-disable no-new */
-// holdno是我自己定义的一个工具集 里面有各种操作方法
+    /* eslint-disable no-new */
+    // holdno是我自己定义的一个工具集 里面有各种操作方法
 
 new Vue({
-	el: '#app',
-	router,
-	store,
-	components: {
-		App
-	},
-	template: '<App/>',
+    el: '#app',
+    router,
+    store,
+    components: {
+        App
+    },
+    template: '<App/>',
 
 })
 router.beforeEach((to, from, next) => {
 
-	console.log(store.state.user.id)
-	if(!store.state.user.id && to.path != '/author') {
-		// 第一次进入项目
-		setCookie('beforeLoginUrl', to.fullPath) // 保存用户进入的url
-		next('/test')
-		return true
-	}
-	next()
+    console.log(store.state.user.id)
+    if (!store.state.user.id && to.path != '/author') {
+        // 第一次进入项目
+        setCookie('beforeLoginUrl', to.fullPath) // 保存用户进入的url
+        next('/test')
+        return true
+    }
+    next()
 })
