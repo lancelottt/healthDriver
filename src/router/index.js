@@ -33,6 +33,7 @@ import KwnoFood from '@/components/healthMarket/kwnoFood'
 import ChatLogin from '@/components/loginChat/chatLogin'
 import VerCode from '@/components/loginChat/verCode'
 import Healthy from '@/components/startUp/healthy'
+import Payment from '@/components/loginChat/payment'
 // 身体档案页面**
 import Uncertain from '@/components/uncertain/uncertain'
 // 身体档案中我的血压**
@@ -169,7 +170,6 @@ import HeartRate from '@/components/store/heartRate'
 
 import WechatLoginTest from '@/components/WeChatTest/weChatLoginTest';
 import Author from '@/components/WeChatTest/author'
-import MMlogin from '@/components/WeChatTest/mmlogin'
 
 
 Vue.use(Router)
@@ -236,6 +236,11 @@ export default new Router({
       path: '/loginChat/chatLogin',
       name: 'loginChat',
       component: ChatLogin
+    },
+    {
+      path: '/loginChat/payment',
+      name: 'payment',
+      component: Payment
     },
     {
       path: '/invitation',

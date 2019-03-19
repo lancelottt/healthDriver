@@ -66,10 +66,12 @@ new Vue({
 })
 router.beforeEach((to, from, next) => {
 
+
+//	console.log(store.state.user.id)
 	if(!store.state.user.id && to.path != '/author') {
 		// 第一次进入项目
 		setCookie('beforeLoginUrl', to.fullPath) // 保存用户进入的url
-		next('/test')
+		next('/loginChat/chatLogin')
 		return true
 	}
 	next()
