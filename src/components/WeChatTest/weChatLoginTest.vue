@@ -5,7 +5,7 @@
 				<-------------------------------</p>
 		</header>
 		<div id="loginWx" class="iconfont icon-weixin" style="{font-size: 1rem;color: green;}" @click="wxLogin()">微信登录</div>
-		<div class="iconfont icon-weixin" style="{font-size: 1rem;color: orangered;}" @click="handlerLogout()">注销登录</div>
+		<!--<div class="iconfont icon-weixin" style="{font-size: 1rem;color: orangered;}" @click="handlerLogout()">注销登录</div>-->
 	</div>
 </template>
 <script type="text/javascript">
@@ -150,6 +150,7 @@
 			//				//					
 			//				//				).catch()
 			//			},
+
 			//			handlerWxLogin() {
 			//				var aweixin = null
 			//				var auths = null;

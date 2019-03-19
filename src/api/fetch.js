@@ -1,7 +1,8 @@
 import axios from 'axios';
-const repUrl = 'http://192.168.1.170:8081'; //接口地址
+const repUrl = 'http://192.168.1.170:8081'; // 开发接口地址
 const headers = {
-    'token': 'faad5a64-2f11-4b4a-9136-f7f50c333947'
+    'Content-Type': 'application/x-www-form-urlencoded',
+    'token': 'faad5a64-2f11-4b4a-9136-f7f50c333947',
 }
 
 
@@ -18,12 +19,10 @@ export function get(url, params) {
         })
 }
 
-export function post(url, params) {
-    return axios.post(url, {
-            headers: headers,
-            params: params
-        })
-        .then((res) => {
+export function post(url, data) {
+    return axios.post(repUrl + url, data, {
+            headers: headers
+        }).then((res) => {
             return Promise.resolve(res.data)
         })
         .catch((err) => {
@@ -44,12 +43,11 @@ export function deletes(url, params) {
         })
 }
 
-export function put(url, params) {
-    return axios.put(url, {
-            headers: headers,
-            params: params
-        })
-        .then((res) => {
+
+export function put(url, data) {
+    return axios.put(repUrl + url, data, {
+            headers: headers
+        }).then((res) => {
             return Promise.resolve(res.data)
         })
         .catch((err) => {

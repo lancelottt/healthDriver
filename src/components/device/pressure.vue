@@ -22,7 +22,7 @@
 		<div class="recordBlood">记录血压</div>
 		</div>
 		<!--用药和提醒**-->
-		<div class="rugUse">
+		<!--<div class="rugUse">
 			<div class="rugUseContent">
 				<ul>
 					<li>
@@ -35,25 +35,25 @@
 					</li>
 				</ul>
 			</div>
-		</div>
+		</div>-->
 	</div>
 </template>
 
 <script>
-	export default {
-	data () {
-		      return {
-		       
-		      }
-    },
-    methods:{
-    	handPreTopLeft () {
-    		this.$router.back()
-    	}
+    export default {
+        data() {
+            return {
+
+            }
+        },
+        methods: {
+            handPreTopLeft() {
+                this.$router.back()
+            }
+        }
     }
-	}
 </script>
 
 <style>
-@import '../../assets/device/pressure.css'
+    @import '../../assets/device/pressure.css'
 </style>
