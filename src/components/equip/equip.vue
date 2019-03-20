@@ -1,4 +1,5 @@
 <template>
+	<div class="equipZ">
 	<div class="equip">
 		<Equip-Header title="健康设备"></Equip-Header>
 		<div class="equipMain">
@@ -6,26 +7,29 @@
 			   <span v-for="(list,index) in PartsUpper" class="list" :class="{active:index===partsIndex}" :key="index" @click="btn(index)" >{{list.name}}</span>
 			</div>
 			<div class="lower">
+				<div class="lowerZ">
 				<div class="lowerList" v-for="(list,index) in lowerList" :key="index" @click="handLower(list.id)">
 					 <img :src="list.images">
-					 <p>{{list.name}}</p>
-					 <p>{{list.dataWenzi}}</p>
-					 <p>
+					 <div>{{list.name}}</div>
+					 <div>{{list.dataWenzi}}</div>
+					 <div>
 					 	<span class="datashu">{{list.datashu}}</span>
 					 	+
 					 	<span class="dataQi">{{list.dataQi}}</span>
-					 </p>
-					 <p>
-					 	抵扣前：
-					 	<span>{{list.duction}}</span>
-					 	<span>销量：</span>
-					 	<span>{{list.volume}}</span>
-					 </p>
+					 </div>
+					 <div class="dikou">
+					 	<p>抵扣前：</p>
+					 	<p>{{list.duction}}</p>
+					 	<p>销量：</p>
+					 	<p>{{list.volume}}</p>
+					 </div>
+				</div>
 				</div>
         </div>
 		</div>
 		
 		
+	</div>
 	</div>
 </template>
 

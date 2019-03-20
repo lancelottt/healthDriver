@@ -1,4 +1,5 @@
 <template>
+	<div class="grayBg">
   <div class="knowFoodFruit">
     <vue-waterfall-easy :imgsArr="imgsArr" @scrollReachBottom="getData"  @click="goKnonwFoodMean">
       <div class="foodDes">
@@ -13,6 +14,7 @@
       </div>
     </vue-waterfall-easy>
   </div>
+	</div>
 </template>
 
 <script type="text/javascript">
@@ -54,10 +56,11 @@ import axios from 'axios';
 	}
 </script>
 <style type="text/css">
-  body {
-    background: #f2f2f2;
-  }
-
+	.grayBg{
+		height: 100%;
+		width: 100%;
+		background: #F2F2F2;
+	}
   .knowFoodFruit {
     width: 100%; 
     position: absolute;

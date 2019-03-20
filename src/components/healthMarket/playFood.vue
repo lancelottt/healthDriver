@@ -156,7 +156,8 @@
 					freeMode: true,
 					setWrapperSize: true,
 					slidesPerView: 1.687,
-				}
+				},
+				foods:''
 			}
 		},
 		beforeCreate() {

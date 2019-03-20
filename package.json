@@ -21,7 +21,7 @@
     "swiper": "^4.4.6",
     "vue": "^2.5.2",
     "vue-awesome-swiper": "^2.6.7",
-    "vue-radial-progress": "^0.2.10",
+    "vue-radial-progress": "^0.2.10", 
     "vue-router": "^3.0.1",
     "vue-video-player": "^5.0.2",
     "vue-waterfall-easy": "^2.4.3",

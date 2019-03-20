@@ -42,11 +42,12 @@
 .exper{
 	width: 100%;
     height: 1.4rem;
-    /*position: fixed;*/
-    /*z-index: 99;*/
-    /*top: 0;*/
-    /*right: 0;*/
-    /*left: 0;*/
+    position: fixed;
+    z-index: 99;
+    top: 0px;
+    right: 0;
+    left: 0;
+    bottom: 0;
 }
 .hotExpe:after{
 	 clear:both;content:'';display:block;width:0;height:0;visibility:hidden; 
@@ -98,10 +99,11 @@
 .hotLeft{
 	float: left;
     margin-top: .15rem;
+    width:7%;
 }
 .hotRight{
 	float: left;
-    width: 94%;
+    width: 93%;
     height: .63rem;
     position: relative;
 }

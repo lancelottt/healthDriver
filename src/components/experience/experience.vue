@@ -11,46 +11,46 @@
 					<div class="lowMar">
 					   <div class="lowerList">
 					   	  <img src="../../../static/images/expe01.png" alt="" />
-					      <p>【899价保双12】【热销爆款】</p>
+					      <div class="baojia">[899价保双12热销爆款]</div>
 					      <p> 125项青中老全面体检</p>
-					      <p>
-					      	<span> 12项肿瘤筛查</span>
-					      	<span> 脑TCD</span>
-					      	<span> 血流变</span>
-					      </p>
+					      <div class="jianKa">
+					      	<div> 12项肿瘤筛查</div>
+					      	<div> 脑TCD</div>
+					      	<div> 血流变</div>
+					      </div>
 					      <p>¥ 899</p>
 					   </div>
 					   <div class="lowerList" @click="handLower()">
 					   	  <img src="../../../static/images/expe02.png" alt="" />
-					      <p>【899价保双12】【热销爆款】</p>
+					        <div class="baojia">[899价保双12热销爆款]</div>
 					      <p> 125项青中老全面体检</p>
-					      <p>
-					      	<span> 12项肿瘤筛查</span>
-					      	<span> 脑TCD</span>
-					      	<span> 血流变</span>
-					      </p>
+					      <div class="jianKa"> 
+					      	<div> 12项肿瘤筛查</div>
+					      	<div> 脑TCD</div>
+					      	<div> 血流变</div>
+					      </div>
 					      <p>¥ 899</p>
 					   </div>
 					   <div class="lowerList">
 					   	  <img src="../../../static/images/expe03.png" alt="" />
-					      <p>【899价保双12】【热销爆款】</p>
+					        <div class="baojia">[899价保双12热销爆款]</div>
 					      <p> 125项青中老全面体检</p>
-					      <p>
-					      	<span> 12项肿瘤筛查</span>
-					      	<span> 脑TCD</span>
-					      	<span> 血流变</span>
-					      </p>
+					      <div class="jianKa">
+					      	<div> 12项肿瘤筛查</div>
+					      	<div> 脑TCD</div>
+					      	<div> 血流变</div>
+					      </div>
 					      <p>¥ 899</p>
 					   </div>
 					   <div class="lowerList">
 					   	  <img src="../../../static/images/expe04.png" alt="" />
-					      <p>【899价保双12】【热销爆款】</p>
+					       <div class="baojia">[899价保双12热销爆款]</div>
 					      <p> 125项青中老全面体检</p>
-					      <p>
-					      	<span> 12项肿瘤筛查</span>
-					      	<span> 脑TCD</span>
-					      	<span> 血流变</span>
-					      </p>
+					      <div class="jianKa">
+					      	<div> 12项肿瘤筛查</div>
+					      	<div> 脑TCD</div>
+					      	<div> 血流变</div>
+					      </div>
 					      <p>¥ 899</p>
 					   </div>
 				   </div>
