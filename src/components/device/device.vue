@@ -415,10 +415,12 @@
 
      <el-dialog title="运动添加" :visible.sync="sportsFormVisible" width="80%" center >
           <el-form :model="sportForm">
-            <el-form-item label="运动(千卡)" :label-width="formLabelWidth1">
+            <el-form-item label="步数(千卡)" :label-width="formLabelWidth1">
                  <el-input v-model="sportForm.val" autocomplete="on"></el-input>
              </el-form-item> 
-          
+			 <el-form-item label="时长(分钟)" :label-width="formLabelWidth1">
+                 <el-input v-model="sportForm.timeVal" autocomplete="on"></el-input>
+             </el-form-item> 
          </el-form>
   
          <div slot="footer" class="dialog-footer">
@@ -483,7 +485,8 @@
                 hours: 0,
                 minute: 0,
                 sportForm: {
-                    val: ''
+                    val: '',
+                    timeVal: ''
                 },
                 booldForm: {
                     lowVal: '',
@@ -516,7 +519,8 @@
                 this.sportsFormVisible = false;
                 if (this.sportForm.val >= 0) {
                     get('/health-web/modules/userDataRecord/save', {
-                        athleticHeatValue: this.sportForm.val
+                        athleticHeatValue: this.sportForm.val,
+                        athleticStepNum: this.sportForm.timeVal
                     }).then((res) => {
                         if (res.code == 0) {
                             this.$message({
