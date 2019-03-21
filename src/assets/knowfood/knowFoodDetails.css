@@ -1,140 +1,159 @@
-  body {
+.KnowFoodMean {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    width: 100%;
+    background: #fff;
+    padding: 0.35rem 0.32rem;
+    box-sizing: border-box;
+    color: #999;
+}
+
+section {
+    padding-top: 0.8rem;
+}
+
+.KnowFoodMean .knowFoodImg {
+    text-align: left;
+}
+
+.KnowFoodMean h3 {
+    padding-top: 0.3rem;
+}
+
+.KnowFoodMean .knowFoodImg img {
+    width: 0.6rem;
+    height: 0.6rem;
+    margin-right: 0.2rem;
+}
+
+.foodStart {
+    width: 1.8rem;
+    flex: 0 0 1.8rem;
+    padding-top: 0.2rem;
+}
+
+.foodStart img {
+    width: 0.2rem;
+    height: 0.2rem;
+}
+
+.meanTitle {
+    width: 100%;
     background: #f2f2f2;
-  }
- .KnowFoodMean {
-   display: flex;
-   display: -webkit-flex;
-   justify-content: space-between;
-   width: 100%;
-   background: #fff;
-   padding: 0.35rem 0.32rem;
-   box-sizing: border-box;
-   color: #999;
- }
+    text-align: left;
+}
 
- section {
-   padding-top: 0.8rem;
- }
+.meanTitle h3 {
+    color: #999;
+    padding: 0.2rem 0.32rem;
+}
 
- .KnowFoodMean .knowFoodImg {
-   text-align: left;
- }
+.ingredient {
+    display: flex;
+    display: -webkit-flex;
+    background: #fff;
+}
 
- .KnowFoodMean h3 {
-   padding-top: 0.3rem;
- }
+.ingredient div {
+    width: 25%;
+    color: #999;
+    padding: 0.38rem 0;
+    text-align: center;
+}
 
- .KnowFoodMean .knowFoodImg span {
-   vertical-align: middle;
- }
+.ingredient img {
+    width: 0.35rem;
+    height: 0.35rem;
+    margin-bottom: 0.1rem;
+}
 
- .KnowFoodMean .knowFoodImg img {
-   width: 0.6rem;
-   height: 0.6rem;
-   margin-right: 0.2rem;
- }
+.ingredient strong {
+    font-size: 0.36rem;
+    font-weight: bold;
+}
 
- .foodStart {
-   width: 1.8rem;
-   flex: 0 0 1.8rem;
-   padding-top: 0.2rem;
- }
+.ingredient h3 {
+    padding-top: 0.1rem
+}
 
- .foodStart img {
-   width: 0.2rem;
-   height: 0.2rem;
- }
+.ingredientNum {
+    width: 100%;
+    background: #fff;
+}
 
- .meanTitle {
-   width: 100%;
-   background: #f2f2f2;
-   text-align: left;
- }
+.ingredientNum li {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    color: #999;
+    border-bottom: 1px solid #f2f2f2;
+    box-sizing: border-box;
+    padding: 0.2rem 0.31rem;
+}
 
- .meanTitle h3 {
-   color: #999;
-   padding: 0.2rem 0.32rem;
- }
 
- .ingredient {
-   display: flex;
-   display: -webkit-flex;
-   background: #fff;
- }
+/*头部*/
 
- .ingredient div {
-   width: 25%;
-   color: #999;
-   padding: 0.38rem 0;
-   text-align: center;
- }
+.Equitheader {
+    width: 100%;
+    height: .89rem;
+    background: #fff;
+    position: fixed;
+    z-index: 1;
+    padding: 0 .2rem 0 .2rem;
+    box-sizing: border-box;
+}
 
- .ingredient img {
-   width: 0.35rem;
-   height: 0.35rem;
-   margin-bottom: 0.1rem;
- }
+.header-left {
+    width: 10%;
+    height: 100%;
+    float: left;
+}
 
- .ingredient strong {
-   font-size: 0.36rem;
-   font-weight: bold;
- }
+i {
+    font-size: 0.36rem;
+    line-height: .89rem;
+    text-align: center;
+    display: block;
+}
 
- .ingredient h3 {
-   padding-top: 0.1rem
- }
+.header-in {
+    width: 80%;
+    float: left;
+    text-align: center;
+    font-size: 0.28rem;
+    line-height: 0.85rem;
+    color: #333333;
+}
 
- .ingredientNum {
-   width: 100%;
-   background: #fff;
- }
+.header-rigth {
+    width: 10%;
+    height: 100%;
+    float: left;
+}
 
- .ingredientNum li {
-   display: flex;
-   display: -webkit-flex;
-   justify-content: space-between;
-   color: #999;
-   border-bottom: 1px solid #f2f2f2;
-   box-sizing: border-box;
-   padding: 0.2rem 0.31rem;
- }
+.FoodimgBg {
+    width: 100%;
+}
 
- /*头部*/
+.knowFoodImg h3 {
+    display: inline-block;
+    width: 4rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
- .Equitheader {
-   width: 100%;
-   height: .89rem;
-   background: #fff;
-   position: fixed;
-   z-index: 1;
-   padding: 0 .2rem 0 .2rem;
-   box-sizing: border-box;
- }
+.FoodimgBg {
+    display: flex;
+    align-items: center;
+}
 
- .header-left {
-   width: 10%;
-   height: 100%;
-   float: left;
- }
-
- i {
-   font-size: 0.36rem;
-   line-height: .89rem;
-   text-align: center;
-   display: block;
- }
-
- .header-in {
-   width: 80%;
-   float: left;
-   text-align: center;
-   font-size: 0.28rem;
-   line-height: 0.85rem;
-   color: #333333;
- }
-
- .header-rigth {
-   width: 10%;
-   height: 100%;
-   float: left;
- }
+.FoodimgBg span {
+    display: inline-block;
+    width: 2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

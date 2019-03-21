@@ -9,7 +9,8 @@ const state = {
 		id: "111"
 	},
 	address: [],
-	show: true
+	show: true,
+	token:'',
 }
 const getters = {
 

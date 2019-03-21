@@ -102,7 +102,7 @@ export default {
     },
     methods : {
    		handleStartUp(){
-   			this.$router.push({name:'verCode'})
+   			this.$router.push({name:'loginChat'})
    		}
     },
     created () {

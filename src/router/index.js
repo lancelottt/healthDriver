@@ -19,7 +19,6 @@ import HealthPlan from "@/components/healthPlan/healthPlan";
 import Count from "@/components/healthPlan/count";
 import Competition from "@/components/competition/competition";
 import CompetitionJoined from "@/components/competition/competitionJoined";
-
 import Zilv from "@/components/zilv/index";
 //健康商城
 import HealthMarketHome from "@/components/healthMarket/healthMarketHome";
@@ -30,9 +29,10 @@ import KwnoFood from "@/components/healthMarket/kwnoFood";
 //import Shuju from '@/components/shuju/index';
 //import Wode from '@/components/wode/index'
 //=======
-import ChatLogin from "@/components/loginChat/chatLogin";
-import VerCode from "@/components/loginChat/verCode";
-import Healthy from "@/components/startUp/healthy";
+import ChatLogin from '@/components/loginChat/chatLogin'
+import VerCode from '@/components/loginChat/verCode'
+import Healthy from '@/components/startUp/healthy'
+import Payment from '@/components/loginChat/payment'
 // 身体档案页面**
 import Uncertain from "@/components/uncertain/uncertain";
 // 身体档案中我的血压**
@@ -170,16 +170,15 @@ import AnimalHeat from "@/components/store/animalHeat";
 import BloodGlucose from "@/components/store/bloodGlucose";
 //血压
 import BloodPressure from "@/components/store/bloodPressure";
-
 // 记录体重
 import SetWeights from "@/components/store/weightVaule";
 
 import WechatLoginTest from "@/components/WeChatTest/weChatLoginTest";
 import Author from "@/components/WeChatTest/author";
-import MMlogin from "@/components/WeChatTest/mmlogin";
 
 Vue.use(Router);
 export default new Router({
+
     routes: [{
             path: "/",
             name: "Healthy",
@@ -556,7 +555,7 @@ export default new Router({
             ]
         },
         {
-            path: "/KwnoFood/fruit/details",
+            path: "/KwnoFood/fruit/details/:id",
             name: "",
             component: kwnoFoodDetails
         },
@@ -718,6 +717,18 @@ export default new Router({
             path: "/packageDetails",
             name: "packageDetails",
             component: PackageDetails
+        },
+        {
+            path: '/loginChat/payment',
+            name: 'payment',
+            component: Payment
+        },
+        //		通用设置**
+
+        {
+            path: '/setupTong',
+            name: 'setupTong',
+            component: SetupTong
         }
     ]
 });

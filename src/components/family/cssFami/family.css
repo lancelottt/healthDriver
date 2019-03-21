@@ -42,6 +42,7 @@
     float: right;
     margin-top: .2rem;
     border-radius: .1rem;
+    background:rgba(50,197,140,1);
 } 
 .headerFb img{
     width:100%;
@@ -64,6 +65,16 @@
     background-size: 100% 100%;
     margin-top: .2rem;
 }
+.friend{
+	width:.42rem;
+    height: .38rem;
+    background-size: 100% 100%;
+    margin-top: .1rem;
+}
+.friend img{
+	width:100%;
+	height: 100%;
+}
 .accRi{
     flex: 1;
     font-size: .3rem;
@@ -74,37 +85,83 @@
 }
 .mily{
     width:93%;
+    height: auto;
+    padding-bottom: .28rem;
+    box-sizing: border-box;
     margin: auto;
-    height: 3.3rem;
 }
 .father{
     width:100%;
-    height: 2rem;
+    height: auto;
 }
 .father ul li{
     width:100%;
-    border-bottom:0.01rem solid #999999;
+    border-bottom: 1px solid #cccccc;
     box-sizing: border-box;
     height: 1rem;
     line-height: 1rem;
 }
-.faCon{
+.faCon,.friendFaCon{
     float: left;
     font-size: .28rem;
     color: #666666;
+    text-align: left;
+    width: 72%;
+    padding-left: .2rem;
+    box-sizing: border-box;
 }
-.faQu,.moQu{
+.friendFaCon{
+	width: 75%;
+	height: 1rem;
+}
+.faCon input{
+	width: 83%;
+    height: .8rem;
+    outline: none;
+    color: #666;
+}
+.friendFaQu,.moQu{
    float:right;
-   width:1rem;
    height: 100%;
+   width: 25%;
 }
-.faQu span:nth-of-type(1){
-    display:inline-block;
-    width:.62rem;
-    height: .62rem;
-    background: url(../../../../static/images/father.png) no-repeat center;
-    background-size: 100% 100%;
-    margin-top: .15rem;
+.friendFaQu{
+    padding-top: .25rem;
+    box-sizing: border-box;
+}
+.renwuImg{
+	width:9%;
+	height: .62rem;
+	float: left;
+	margin-top: .2rem;
+	
+}
+.renwuImg img{
+	 width:.62rem;
+     height: .62rem;
+     border-radius: 50%;
+}
+.confirm{
+	width:.8rem;
+	height:.5rem;
+	background:rgba(255,94,58,1);
+	border-radius:.1rem;
+	float: left;
+	line-height: .5rem;
+	text-align: center;
+	font-size: .24rem;
+	color: #ffffff;
+}
+.refuse{
+	width:.8rem;
+	height:.5rem;
+	border:1px solid rgba(255,94,58,1);
+	border-radius:.1rem;
+	float: right;
+	line-height: .5rem;
+	text-align: center;
+	color:rgba(255,94,58,1);
+	font-size: .24rem;
 }
 .moQu span:nth-of-type(1){
     display:inline-block;
@@ -122,36 +179,61 @@
     background: url(../../../../static/images/jiantou.png) no-repeat center;
     background-size: 100% 100%;
 }
-.faQu span:nth-of-type(2){
-    width:.19rem;
+.faQu,.moQu{
+	float: right;
+    height: 100%;
+    width: 19%;
+    padding-top: .25rem;
+    box-sizing: border-box;
+    float: left;
+}
+.snajio{
+	width:.19rem;
     margin-left: .1rem;
     height: .31rem;
     display: inline-block;
     background: url(../../../../static/images/jiantou.png) no-repeat center;
     background-size: 100% 100%;
+    float: right;
+    margin-top: .1rem;
+}
+.jiechu{
+	width: .8rem;
+    height: .5rem;
+    background: rgba(255,94,58,1);
+    border-radius: .1rem;
+    float: left;
+    line-height: .5rem;
+    text-align: center;
+    font-size: .24rem;
+    color: #ffffff;
 }
 .statusCircl{
-    width:100%;
+	width: 91%;
+    margin: auto;
     font-size: .24rem;
     height:.8rem;
     color: #ff5e3a;
     box-sizing: border-box;
-    border-radius: .1rem;
-    border:.01rem solid #999999;
-    margin-top: .47rem
+    border:1px solid rgba(153,153,153,1);
+    border-radius:.05rem;
+    margin-top: .47rem;
+    background-size:contain;
 }
 .statusCircl ul {
     display: -webkit-box;
     display: flex;
-    width: 50%;
+    width: 100%;
     -webkit-display: flex;
     height: 100%;
     justify-content: center;
     -webkit-justify-content: center;
     align-items: center;
     margin: auto;
+    -webkit-appearance:none;
 }
- .statusCircl ul li{
+
+.statusCircl ul li{
      flex-direction:column;
     -webkit-flex-direction:column;
     justify-content:center;

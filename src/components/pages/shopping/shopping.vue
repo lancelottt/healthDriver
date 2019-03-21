@@ -5,6 +5,7 @@
 			<div class="hotExpeLeft">
 				
 			</div>
+			
 			<div class="hotExpeIn">
 				<div class="hotLeft">
 				  <i class="iconfont icon-icon-test"></i>
@@ -20,7 +21,21 @@
 	<div class="tabbar">
 		<div class="tabbarCon">
 		<div class="tab">
-           <div class="tabItem">
+			<swiper :options="swiperOption">
+				<swiper-slide v-for="(item,index) in foodMenuList":key="index">
+					<div  class="item-title">
+						<b :class="{'fruitActive': index == activeId}">{{item.foodMenuName}}</b>
+					</div>
+					</swiper-slide>
+			 </swiper>
+       </div>
+	 
+       </div> 
+       <div class="watch">
+       </div>
+       <!--健康管理**-->
+	     <!--<div>
+		     <div class="tabItem">
                <router-link to="/shopping">热销推荐</router-link>
            </div>
            <div class="tabItem">
@@ -35,12 +50,7 @@
            <div class="tabItem">
                <router-link to="/experience">体验套餐</router-link>
            </div>
-       </div>
-       </div>
-       <!--<router-view/> -->
-       <div class="watch">
-       </div>
-       <!--健康管理**-->
+	   </div>-->
        <div class="health">
        	<div class="healContent">
        	 <div class="healCon">健康管理</div>
@@ -104,167 +114,210 @@
     </div>
 </template>
 <script>
-import FootTabbar from '../../foorterGuid/footerGuild'
-
-export default {
-  components:{
-      FootTabbar
-      },
-  data(){
-    return{
-     
-     }
-  },
-}
+    import {
+        InfiniteScroll
+    } from 'mint-ui';
+    import FootTabbar from '../../foorterGuid/footerGuild'
+    import {get
+    } from '../../../api/fetch.js'
+    export default {
+        components: {
+            FootTabbar
+        },
+        data() {
+            return {
+                swiperOption: {
+                    spaceBetween: 10,
+                    freeMode: true,
+                    setWrapperSize: false,
+                    slidesPerView: 5,
+                },
+                activeId: 0,
+                foodMenuList: []
+            }
+        },
+        created() {
+            get('/health-web/sys/hfmfoodmenu/list', {
+                limit: this.limit,
+                currPage: this.currPage
+            }).then((res) => {
+                if (res.code == 0) {
+                    this.foodMenuList = res.page.list;
+                    console.log(this.foodMenuList)
+                }
+            })
+        }
+    }
 </script>
 <style lang="" scoped>
-@import '../../../assets/watchMove/watchMove.css';
-.shopCon{
-	position: absolute;
-    background: #fff;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    bottom: 0;
-    z-index: 999;
-}
-.tabbar{
-	width:100%;
-	height: auto;
-	margin-top: .9rem;
-}
-.exper{
-	width:100%;
-	height: .7rem;
-	position: fixed;
-	z-index: 99;
-	/*top: .15rem;*/
-	right:0;
-	background: #fff;
-	left:0;
-}
-.hotExpe:after{
-	 clear:both;content:'';display:block;width:0;height:0;visibility:hidden; 
-}
-.hotExpe{
-    width: 95%;
-    height: auto;
-    zoom: 1;
-    margin: auto;
-}
-.hotExpeLeft{
-    float: left;
-    background: url(../../../../static/images/sousuoR.png) no-repeat center;
-    background-size: 100% 100%;
-    width: 7%;
-    height: .43rem;
-    margin-right: .2rem;
-    margin-top: .1rem;
-}
-.hotExpeIn{
-	width: 77%;
-	height: .63rem;
-	float: left;
-	text-align: left;
-	background: #f2f2f2;
-	padding-left: .2rem;
-    box-sizing: border-box;
-}
-.hotExpeIn input{
-	width:100%;
-	outline: none;
-	height: .63rem;
-	background: none;
-	font-size: .24rem;
-	color: #333333;
-	padding-left: .2rem;
-	box-sizing: border-box;
-	line-height: .63rem;
-}
-.hotExpeRight{
-	    width: 7%;
-    height: .37rem;
-    background: url(../../../../static/images/gouwu.png) no-repeat center;
-    background-size: 100% 100%;
-    float: right;
-    margin-top: .1rem;
-    margin-right: .1rem;
-}
-.hotLeft{
-	float: left;
-    margin-top: .15rem;
-        width: 6%;
-}
-.hotRight{
-	float: left;
-    width: 94%;
-    height: .63rem;
-    position: relative;
-}
-.chahao{
-	width:.37rem;
-	height: .37rem;
-	background: url(../../../../static/images/chahao.png) no-repeat center;
-	background-size: 100% 100%;
-    position: absolute;
-    right: .15rem;
-    top: .15rem;
-}
-.contents{
-	width:100%;
-	height: auto;
-	line-height: 1.05rem;
-	color: #333333;
-	font-size: .4rem;
-	text-align: left;
-	padding-left: .3rem;
-	box-sizing: border-box;
-}
-.contents span:nth-of-type(2){
-    margin-left: .2rem;
-	display: inline-block;
-}
-.conSpan{
-	width:.41rem;
-	height: .33rem;
-	background: url(../../../../static/images/fanhui.png) no-repeat center;
-	background-size: 100% 100%;
-	display: inline-block;
-}
-.tab{
-    height: .92rem;
-    line-height: .92rem;
-    background: #fff;
-    width: 91%;
-    height: 100%;
-    background: #fff;
-    margin: auto;
-}
-.tabItem{
-    float: left;
-    width: 20%;
-    text-align: center;
-    font-size: .28rem;
-    color:rgb(77,85,93);
-}
-a{
-    display: block;
-    position: relative;
-}
-.router-link-active{
-    color: #ff5e3a;
-}
-.router-link-active::after{
-    content: '';
-    position: absolute;
-    left:50%;
-    bottom: .02rem;
-    width: 1.25rem;
-        height: .06rem;
-    transform: translateX(-50%);
-    background: #ff5e3a;
-}
-
+    @import '../../../assets/watchMove/watchMove.css';
+    .shopCon {
+        position: absolute;
+        background: #fff;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        bottom: 0;
+        z-index: 999;
+    }
     
-
+    .tabbar {
+        width: 100%;
+        height: auto;
+        margin-top: .9rem;
+    }
+    
+    .exper {
+        width: 100%;
+        position: fixed;
+        z-index: 99;
+        /*top: .15rem;*/
+        padding: 5px 0;
+        right: 0;
+        background: #fff;
+        left: 0;
+    }
+    
+    .hotExpe:after {
+        clear: both;
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        visibility: hidden;
+    }
+    
+    .hotExpe {
+        width: 95%;
+        height: auto;
+        zoom: 1;
+        margin: auto;
+    }
+    
+    .hotExpeLeft {
+        float: left;
+        background: url(../../../../static/images/sousuoR.png) no-repeat center;
+        background-size: 100% 100%;
+        width: 7%;
+        height: .43rem;
+        margin-right: .2rem;
+        margin-top: .1rem;
+    }
+    
+    .hotExpeIn {
+        width: 77%;
+        height: .63rem;
+        float: left;
+        text-align: left;
+        background: #f2f2f2;
+        padding-left: .2rem;
+        box-sizing: border-box;
+    }
+    
+    .hotExpeIn input {
+        width: 100%;
+        outline: none;
+        height: .63rem;
+        background: none;
+        font-size: .24rem;
+        color: #333333;
+        padding-left: .2rem;
+        box-sizing: border-box;
+        line-height: .63rem;
+    }
+    
+    .hotExpeRight {
+        width: 7%;
+        height: .37rem;
+        background: url(../../../../static/images/gouwu.png) no-repeat center;
+        background-size: 100% 100%;
+        float: right;
+        margin-top: .1rem;
+        margin-right: .1rem;
+    }
+    
+    .hotLeft {
+        float: left;
+        margin-top: .15rem;
+        width: 6%;
+    }
+    
+    .hotRight {
+        float: left;
+        width: 94%;
+        height: .63rem;
+        position: relative;
+    }
+    
+    .chahao {
+        width: .37rem;
+        height: .37rem;
+        background: url(../../../../static/images/chahao.png) no-repeat center;
+        background-size: 100% 100%;
+        position: absolute;
+        right: .15rem;
+        top: .15rem;
+    }
+    
+    .contents {
+        width: 100%;
+        height: auto;
+        line-height: 1.05rem;
+        color: #333333;
+        font-size: .4rem;
+        text-align: left;
+        padding-left: .3rem;
+        box-sizing: border-box;
+    }
+    
+    .contents span:nth-of-type(2) {
+        margin-left: .2rem;
+        display: inline-block;
+    }
+    
+    .conSpan {
+        width: .41rem;
+        height: .33rem;
+        background: url(../../../../static/images/fanhui.png) no-repeat center;
+        background-size: 100% 100%;
+        display: inline-block;
+    }
+    
+    .tab {
+        height: .92rem;
+        line-height: .92rem;
+        background: #fff;
+        width: 91%;
+        height: 100%;
+        background: #fff;
+        margin: auto;
+    }
+    
+    .tabItem {
+        float: left;
+        width: 20%;
+        text-align: center;
+        font-size: .28rem;
+        color: rgb(77, 85, 93);
+    }
+    
+    a {
+        display: block;
+        position: relative;
+    }
+    
+    .router-link-active {
+        color: #ff5e3a;
+    }
+    
+    .router-link-active::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: .02rem;
+        width: 1.25rem;
+        height: .06rem;
+        transform: translateX(-50%);
+        background: #ff5e3a;
+    }
 </style>

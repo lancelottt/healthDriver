@@ -41,7 +41,7 @@
     	          <div class="nominate">
     	          	<div class="nominateTop">为你推荐</div>
     	          	<div class="nominateImg">
-    	          		 <swiper :options="swiperOption" ref="mySwiper" @someSwiperEvent="callback">
+    	          		 <swiper :options="swiperOption" ref="mySwiper">
 						    <!-- slides -->
 						    <swiper-slide>
 						    	<img class="swiImg" src="../../../../static/images/niaocao.png" alt="" />

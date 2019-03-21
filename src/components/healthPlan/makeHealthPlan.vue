@@ -3,7 +3,7 @@
 		<header><span class="" @click="handleBack()"><img src="../../../static/img/arrow_03.png"/></span><span>制订你的健康计划</span><span></span></header>
 		<!--iconfont icon-xiangzuojiantou-->
 		<section class="makeHealthPlan-main">
-			<div class="healthManagement" @click="handleHealthManagementClick()">
+			<div class="healthManagement" >
 				<img src="../../../static/img/doc_03.png" />
 				<h2>定制健康管理</h2>
 				<span>
@@ -24,6 +24,9 @@
 					从体重管理专家的方案库中，自己选一套计划
 				</span>
 			</div>
+			<div class="makeHealthPlan-skip()" @click="handleHealthManagementClick()" style="margin-top: 1rem;color: #6C6C6C;">
+				跳过
+			</div>
 		</section>
 	</div>
 </template>
@@ -31,7 +34,9 @@
 <script>
 	export default {
 		data() {
-			return {};
+			return {
+				
+			};
 		},
 		methods: {
 			handleBack() {

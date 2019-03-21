@@ -30,6 +30,7 @@ require('vue-video-player/src/custom-theme.css')
 
 import vueTouch from 'vue-plugin-touch';
 import echarts from 'echarts'
+import './utils/filter'
 Vue.prototype.$echarts = echarts;
 Vue.use(vueTouch);
 
@@ -46,7 +47,7 @@ Vue.use(VideoPlayer)
 Vue.use(VueAwesomeSwiper)
 
 //betterScroll已弃用
-//import BScroll from 'better-scroll';
+import BScroll from 'better-scroll';
 //Vue.prototype.$BScroll = BScroll;
 
 //Vue.use(Cube)
@@ -73,12 +74,11 @@ new Vue({
 
 })
 router.beforeEach((to, from, next) => {
-
-    console.log(store.state.user.id)
+    //	console.log(store.state.user.id)
     if (!store.state.user.id && to.path != '/author') {
         // 第一次进入项目
         setCookie('beforeLoginUrl', to.fullPath) // 保存用户进入的url
-        next('/test')
+        next('/loginChat/chatLogin')
         return true
     }
     next()
