@@ -22,8 +22,8 @@
 							<div class="dataTime">{{healthData.athleticHeatTime|dateFormat}}</div>
 						</div>
 						<div class="DeviceButton">
-							<img  v-if="showId == 0 && show" :src="src" @click="DeviceUpButtonClick(0)"/>
-							<img v-else :src="images" class="add" @click="DeviceButtonClick(0)"/>
+							<img  v-if="showId == 0 && show"  src="../../../static/images/DaviCha.png" @click="DeviceUpButtonClick(0)"/>
+							<img v-else  src="../../../static/images/deviceJia.png" class="add" @click="DeviceButtonClick(0)"/>
 						</div>
 					</div>
 					<div class="Kcal" v-if="showId == 0 && show">
@@ -72,8 +72,8 @@
 							<div class="dataTime timer">{{healthData.sleepCreateTime|dateFormat}}</div>
 						</div>
 						<div class="DeviceButton" >
-							<img  v-if="showId == 1 && show" :src="src" @click="DeviceUpButtonClick(1)"/>
-						    <img  v-else :src="images"   class="add"  @click="DeviceButtonClick(1)"/>
+							<img  v-if="showId == 1 && show" src="../../../static/images/DaviCha.png"  @click="DeviceUpButtonClick(1)"/>
+						    <img  v-else src="../../../static/images/deviceJia.png"   class="add"  @click="DeviceButtonClick(1)"/>
 						</div>
 					</div>
 					<div class="Kcal" v-if="showId == 1 && show" >
@@ -120,8 +120,8 @@
 							<div class="dataTime timer">{{healthData.bloodPressureTime|dateFormat}}</div>
 						</div>
 					   <div class="DeviceButton">
-							<img  v-if="showId == 2  && show" :src="src" @click="DeviceUpButtonClick(2)"/>
-							<img v-else :src="images"   class="add"  @click="DeviceButtonClick(2)"/>
+							<img  v-if="showId == 2  && show" src="../../../static/images/DaviCha.png"  @click="DeviceUpButtonClick(2)"/>
+							<img v-else src="../../../static/images/deviceJia.png"   class="add"  @click="DeviceButtonClick(2)"/>
 						</div>
 					</div>
 					<div class="Kcal"  v-if="showId == 2  && show" >
@@ -169,8 +169,8 @@
 							<div class="dataTime timer">{{healthData.bloodGlucoseTime|dateFormat}}</div>
 						</div>
 						 <div class="DeviceButton">
-							<img  v-if="showId == 3  && show" :src="src" @click="DeviceUpButtonClick(3)"/>
-							<img v-else :src="images"   class="add"  @click="DeviceButtonClick(3)"/>
+							<img  v-if="showId == 3  && show"  src="../../../static/images/DaviCha.png"  @click="DeviceUpButtonClick(3)"/>
+							<img v-else src="../../../static/images/deviceJia.png"  class="add"  @click="DeviceButtonClick(3)"/>
 						</div>
 					</div>
 					<div class="Kcal" v-if="showId == 3 && show" >
@@ -220,8 +220,8 @@
 							<div class="dataTime timer">{{healthData.heartRateTime|dateFormat}}</div>
 						</div>
 						 <div class="DeviceButton">
-							<img  v-if="showId == 4  && show" :src="src" @click="DeviceUpButtonClick(4)"/>
-							<img v-else :src="images"   class="add"  @click="DeviceButtonClick(4)"/>
+							<img  v-if="showId == 4  && show"  src="../../../static/images/DaviCha.png"  @click="DeviceUpButtonClick(4)"/>
+							<img v-else src="../../../static/images/deviceJia.png" class="add"  @click="DeviceButtonClick(4)"/>
 						</div>
 					</div>
 					<div class="Kcal"  v-if="showId == 4  && show">
@@ -269,8 +269,8 @@
 							<div class="dataTime timer">{{healthData.weightTime|dateFormat}}</div>
 						</div>
 						<div class="DeviceButton" >
-							<img  v-if="showId == 5  && show" :src="src" @click="DeviceUpButtonClick(5)"/>
-							<img v-else :src="images"   class="add"  @click="DeviceButtonClick(5)"/>
+							<img  v-if="showId == 5  && show" src="../../../static/images/DaviCha.png"  @click="DeviceUpButtonClick(5)"/>
+							<img v-else src="../../../static/images/deviceJia.png"   class="add"  @click="DeviceButtonClick(5)"/>
 						</div>
 					</div>
 					<div class="Kcal" v-show="showId == 5  && show">
@@ -317,8 +317,8 @@
 							<div class="dataTime timer">{{healthData.fatRateTime|dateFormat}}</div>
 						</div>
 						<div class="DeviceButton" >
-							<img  v-if="showId == 6  && show" :src="src" @click="DeviceUpButtonClick(6)"/>
-							<img v-else :src="images"   class="add"  @click="DeviceButtonClick(6)"/>
+							<img  v-if="showId == 6  && show" src="../../../static/images/DaviCha.png"  @click="DeviceUpButtonClick(6)"/>
+							<img v-else src="../../../static/images/deviceJia.png"  class="add"  @click="DeviceButtonClick(6)"/>
 						</div>
 					</div>
 					<div class="Kcal"  v-if="showId == 6  && show" >
@@ -367,10 +367,10 @@
 							<div class="dataTime timer">{{healthData.animalHeatTime|dateFormat}}</div>
 						</div>
 						<div class="DeviceButton" >
-							<img  v-if="showId == 7 && show" :src="src" @click="DeviceUpButtonClick(7)"/>
-							<img v-else :src="images"   class="add"  @click="DeviceButtonClick(7)"/>
+							<img  v-if="showId == 7 && show"  src="../../../static/images/DaviCha.png"  @click="DeviceUpButtonClick(7)"/>
+							<img v-else src="../../../static/images/deviceJia.png"   class="add"  @click="DeviceButtonClick(7)"/>
 						</div>
-					</div>
+					</div> 
 					<div class="Kcal" v-if="showId == 7 && show">
 						<ul>
 							<li>

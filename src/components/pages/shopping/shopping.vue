@@ -39,6 +39,7 @@
                <router-link to="/shopping">热销推荐</router-link>
            </div>
            <div class="tabItem">
+
                <router-link to="/healthMana">健康管理</router-link>
            </div>
           <div class="tabItem">
@@ -319,5 +320,28 @@
         height: .06rem;
         transform: translateX(-50%);
         background: #ff5e3a;
+    }
+    
+    .item-title {
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: inline-block;
+        height: 45px;
+        line-height: 45px;
+        overflow: hidden;
+        text-align: center;
+    }
+    
+    .fruitActive:after {
+        position: absolute;
+        content: '';
+        display: inline-block;
+        width: 100%;
+        height: 40px;
+        top: 0;
+        left: 0;
+        border-bottom: 2px solid #FF5E3A;
     }
 </style>
