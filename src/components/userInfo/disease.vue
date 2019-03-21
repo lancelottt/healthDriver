@@ -9,7 +9,7 @@
 				<span>请根据您的实际情况做选择</span>
 			</div>
 
-			<div class="infoSelection">
+			<div class="infoSelection" >
 				<!--<input type="checkbox" name="" id="diseaseCheckBox1" value="高血压" v-model="disease" @activate="handleAct()"/>
 				<label for="diseaseCheckBox1" >
 					<button class='el-button-bigSelection modified-bigSelection' type="danger" round @click="">高血压</button>
@@ -33,15 +33,17 @@
 				</label>
 
 				<span>{{disease}}</span>-->
+				<div id="" v-for="(item,index) in myDiseaseList.children">
+					<button class='el-button-bigSelection modified-bigSelection' type="danger" round @click="handlerVal(item.navValue)">{{item.navValue}}</button>
+				</div>
+				<!--<button class='el-button-bigSelection modified-bigSelection' type="danger" round @click="">高血压</button>
 				<button class='el-button-bigSelection modified-bigSelection' type="danger" round @click="">高血压</button>
 				<button class='el-button-bigSelection modified-bigSelection' type="danger" round @click="">高血压</button>
 				<button class='el-button-bigSelection modified-bigSelection' type="danger" round @click="">高血压</button>
 				<button class='el-button-bigSelection modified-bigSelection' type="danger" round @click="">高血压</button>
 				<button class='el-button-bigSelection modified-bigSelection' type="danger" round @click="">高血压</button>
 				<button class='el-button-bigSelection modified-bigSelection' type="danger" round @click="">高血压</button>
-				<button class='el-button-bigSelection modified-bigSelection' type="danger" round @click="">高血压</button>
-				<button class='el-button-bigSelection modified-bigSelection' type="danger" round @click="">高血压</button>
-				<button class='el-button-bigSelection modified-bigSelection' type="danger" round @click="">高血压</button>
+				<button class='el-button-bigSelection modified-bigSelection' type="danger" round @click="">高血压</button>-->
 				<!--<el-button type="danger" round @click="handleIndentityConfirm()">确认</el-button>
 				<el-button type="danger" round @click="handleIndentityConfirm()">确认</el-button>-->
 			</div>
@@ -52,11 +54,28 @@
 </template>
 
 <script>
+	import { get } from '../../api/fetch.js'
 	export default {
 		data() {
 			return {
-				disease: [],
+				diseaseList: [],
+				myDiseaseList:[]
 			}
+		},
+		created() {
+			get('/health-web/sys/navDicWeb/navDicList', {}).then(
+				(res) => {
+					if(res.msg == 'success') {
+						this.diseaseList = res.data
+						console.log(this.diseaseList)
+						this.turnDiseaseList()
+					}
+				}
+			).catch(
+				(err) => {
+					console.log(err)
+				}
+			)
 		},
 		methods: {
 			handleSkip() {
@@ -68,12 +87,22 @@
 			handleNext() {
 				this.$router.push('/healthPlan/makeHealthPlan')
 			},
-
+			turnDiseaseList(){
+				for(let i in this.diseaseList){
+					if(this.diseaseList[i].navClassifyDicId == 2){
+						this.myDiseaseList = this.diseaseList[i]
+						console.log(this.myDiseaseList)
+					}
+					
+				}
+			},
+			handlerVal(params){
+				console.log(params)
+			}
 		}
 	}
 </script>
 
 <style>
-
 	@import '../../assets/userInfo/disease/disease.css';
 </style>

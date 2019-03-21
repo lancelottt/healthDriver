@@ -4,6 +4,7 @@
      display: flex;
      flex-direction: column;
      align-items: center;
+     position: relative;
      .infoHint {
          display: flex;
          flex-direction: column;
@@ -30,18 +31,20 @@
          }
      }
      .infoSelection {
-        margin-top: 0.6rem;
+         margin-top: 0.6rem;
          display: flex;
          flex-direction: column;
          align-items: center;
-         
      }
  }
-// 确认按钮
-.my-middle-el-button--danger{
-    margin-top:2.73rem; 
-    line-height:0.8rem ;
+ 
+ // 确认按钮
+ .my-middle-el-button--danger {
+     margin-top: 2.73rem;
+     line-height: 0.8rem;
  }
-// 选项框
-.el-button-bigSelection{margin-bottom: 0.33rem!important;}
-
+ 
+ // 选项框
+ .el-button-bigSelection {
+     margin-bottom: 0.33rem!important;
+ }

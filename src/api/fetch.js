@@ -1,7 +1,6 @@
 import axios from 'axios';
 const repUrl = 'http://192.168.1.170:8081'; // 开发接口地址
 const headers = {
-    'Content-Type': 'application/x-www-form-urlencoded',
     'token': 'faad5a64-2f11-4b4a-9136-f7f50c333947',
 }
 

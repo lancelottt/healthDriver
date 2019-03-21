@@ -83,7 +83,7 @@
 			//			邀请朋友注册
 			handleCompetitionJoinedBtn() {
 				let _this = this
-				alert("对方不想说话，并向你抛出了一个异常 ")
+				alert("111")
 				let t = setTimeout(function() {
 					_this.$router.push({
 						name: 'healthPlan'

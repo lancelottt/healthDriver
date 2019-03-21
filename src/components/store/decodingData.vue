@@ -1,4 +1,6 @@
 <template>
+	
+	<div class="grayBg">
   <div class="decodingData">
     <div class="Equitheader">
       <div class="header-left" @click="handleBack()">
@@ -76,6 +78,7 @@
         
       </ul>
     </div>
+	</div>
   </div>
 </template>
 <script type="text/javascript">
