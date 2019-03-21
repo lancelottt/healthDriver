@@ -19,11 +19,11 @@
 								<span>{{healthData.athleticHeatValue || 0}}</span>
 								<span>千卡</span>
 							</div>
-							<div class="dataTime">111/14 18:49</div>
+							<div class="dataTime">{{healthData.athleticHeatTime|dateFormat}}</div>
 						</div>
 						<div class="DeviceButton">
-							<img  v-if="showId == 0 && show" :src="src" @click="DeviceUpButtonClick(0)"/>
-							<img v-else :src="images" class="add" @click="DeviceButtonClick(0)"/>
+							<img  v-if="showId == 0 && show"  src="../../../static/images/DaviCha.png" @click="DeviceUpButtonClick(0)"/>
+							<img v-else  src="../../../static/images/deviceJia.png" class="add" @click="DeviceButtonClick(0)"/>
 						</div>
 					</div>
 					<div class="Kcal" v-if="showId == 0 && show">
@@ -69,11 +69,11 @@
 								<span>{{healthData.sleepMinuteValue || 0}}</span>
 								<span>分钟</span>
 							</div>
-							<div class="dataTime timer">今天 09:10</div>
+							<div class="dataTime timer">{{healthData.sleepCreateTime|dateFormat}}</div>
 						</div>
 						<div class="DeviceButton" >
-							<img  v-if="showId == 1 && show" :src="src" @click="DeviceUpButtonClick(1)"/>
-						    <img  v-else :src="images"   class="add"  @click="DeviceButtonClick(1)"/>
+							<img  v-if="showId == 1 && show" src="../../../static/images/DaviCha.png"  @click="DeviceUpButtonClick(1)"/>
+						    <img  v-else src="../../../static/images/deviceJia.png"   class="add"  @click="DeviceButtonClick(1)"/>
 						</div>
 					</div>
 					<div class="Kcal" v-if="showId == 1 && show" >
@@ -117,11 +117,11 @@
 								<span>{{healthData.bloodPressureHigh || 0}}/{{healthData.bloodPressureLow || 0}}</span>
 								<span>毫米汞柱</span>
 							</div>
-							<div class="dataTime timer">今天 09:10</div>
+							<div class="dataTime timer">{{healthData.bloodPressureTime|dateFormat}}</div>
 						</div>
 					   <div class="DeviceButton">
-							<img  v-if="showId == 2  && show" :src="src" @click="DeviceUpButtonClick(2)"/>
-							<img v-else :src="images"   class="add"  @click="DeviceButtonClick(2)"/>
+							<img  v-if="showId == 2  && show" src="../../../static/images/DaviCha.png"  @click="DeviceUpButtonClick(2)"/>
+							<img v-else src="../../../static/images/deviceJia.png"   class="add"  @click="DeviceButtonClick(2)"/>
 						</div>
 					</div>
 					<div class="Kcal"  v-if="showId == 2  && show" >
@@ -166,11 +166,11 @@
 								<span>{{healthData.bloodGlucoseValue || 0}}</span>
 								<span>mmol/L</span>
 							</div>
-							<div class="dataTime timer">今天 09:10</div>
+							<div class="dataTime timer">{{healthData.bloodGlucoseTime|dateFormat}}</div>
 						</div>
 						 <div class="DeviceButton">
-							<img  v-if="showId == 3  && show" :src="src" @click="DeviceUpButtonClick(3)"/>
-							<img v-else :src="images"   class="add"  @click="DeviceButtonClick(3)"/>
+							<img  v-if="showId == 3  && show"  src="../../../static/images/DaviCha.png"  @click="DeviceUpButtonClick(3)"/>
+							<img v-else src="../../../static/images/deviceJia.png"  class="add"  @click="DeviceButtonClick(3)"/>
 						</div>
 					</div>
 					<div class="Kcal" v-if="showId == 3 && show" >
@@ -217,11 +217,11 @@
 								<span>{{healthData.heartRateValue || 0 }}</span>
 								<span>次/分</span>
 							</div>
-							<div class="dataTime timer">今天 09:10</div>
+							<div class="dataTime timer">{{healthData.heartRateTime|dateFormat}}</div>
 						</div>
 						 <div class="DeviceButton">
-							<img  v-if="showId == 4  && show" :src="src" @click="DeviceUpButtonClick(4)"/>
-							<img v-else :src="images"   class="add"  @click="DeviceButtonClick(4)"/>
+							<img  v-if="showId == 4  && show"  src="../../../static/images/DaviCha.png"  @click="DeviceUpButtonClick(4)"/>
+							<img v-else src="../../../static/images/deviceJia.png" class="add"  @click="DeviceButtonClick(4)"/>
 						</div>
 					</div>
 					<div class="Kcal"  v-if="showId == 4  && show">
@@ -266,11 +266,11 @@
 								<span>{{healthData.weightValue  || 0}}</span>
 								<span>公斤</span>
 							</div>
-							<div class="dataTime timer">今天 09:10</div>
+							<div class="dataTime timer">{{healthData.weightTime|dateFormat}}</div>
 						</div>
 						<div class="DeviceButton" >
-							<img  v-if="showId == 5  && show" :src="src" @click="DeviceUpButtonClick(5)"/>
-							<img v-else :src="images"   class="add"  @click="DeviceButtonClick(5)"/>
+							<img  v-if="showId == 5  && show" src="../../../static/images/DaviCha.png"  @click="DeviceUpButtonClick(5)"/>
+							<img v-else src="../../../static/images/deviceJia.png"   class="add"  @click="DeviceButtonClick(5)"/>
 						</div>
 					</div>
 					<div class="Kcal" v-show="showId == 5  && show">
@@ -314,11 +314,11 @@
 								<span>{{healthData.fatRateValue || 0}}</span>
 								<span>%</span>
 							</div>
-							<div class="dataTime timer">今天 09:10</div>
+							<div class="dataTime timer">{{healthData.fatRateTime|dateFormat}}</div>
 						</div>
 						<div class="DeviceButton" >
-							<img  v-if="showId == 6  && show" :src="src" @click="DeviceUpButtonClick(6)"/>
-							<img v-else :src="images"   class="add"  @click="DeviceButtonClick(6)"/>
+							<img  v-if="showId == 6  && show" src="../../../static/images/DaviCha.png"  @click="DeviceUpButtonClick(6)"/>
+							<img v-else src="../../../static/images/deviceJia.png"  class="add"  @click="DeviceButtonClick(6)"/>
 						</div>
 					</div>
 					<div class="Kcal"  v-if="showId == 6  && show" >
@@ -364,13 +364,13 @@
 								<span>{{healthData.animalHeatValue || 0}}</span>
 								<span>摄氏度</span>
 							</div>
-							<div class="dataTime timer">今天 09:10</div>
+							<div class="dataTime timer">{{healthData.animalHeatTime|dateFormat}}</div>
 						</div>
 						<div class="DeviceButton" >
-							<img  v-if="showId == 7 && show" :src="src" @click="DeviceUpButtonClick(7)"/>
-							<img v-else :src="images"   class="add"  @click="DeviceButtonClick(7)"/>
+							<img  v-if="showId == 7 && show"  src="../../../static/images/DaviCha.png"  @click="DeviceUpButtonClick(7)"/>
+							<img v-else src="../../../static/images/deviceJia.png"   class="add"  @click="DeviceButtonClick(7)"/>
 						</div>
-					</div>
+					</div> 
 					<div class="Kcal" v-if="showId == 7 && show">
 						<ul>
 							<li>
@@ -415,10 +415,12 @@
 
      <el-dialog title="运动添加" :visible.sync="sportsFormVisible" width="80%" center >
           <el-form :model="sportForm">
-            <el-form-item label="运动(千卡)" :label-width="formLabelWidth1">
+            <el-form-item label="步数(千卡)" :label-width="formLabelWidth1">
                  <el-input v-model="sportForm.val" autocomplete="on"></el-input>
              </el-form-item> 
-          
+			 <el-form-item label="时长(分钟)" :label-width="formLabelWidth1">
+                 <el-input v-model="sportForm.timeVal" autocomplete="on"></el-input>
+             </el-form-item> 
          </el-form>
   
          <div slot="footer" class="dialog-footer">
@@ -443,23 +445,28 @@
                 showId: -1,
                 showCloseId: -1,
                 healthData: {
-                    "userDataRecordId": null,
-                    "userDataRecordCode": null,
-                    "userCode": "djry0004", //用户编码
                     "weightValue": null, //体重
+                    "weightTime": null,
                     "athleticPersistDay": null, //运动坚持天数
                     "athleticDurationValue": null, //运动时长
                     "athleticHeatValue": null, //运动热量值
+                    "athleticHeatTime": null, // 运动记录时间
                     "athleticStepNum": null, //运动步数
                     "athleticDistance": null, //运动距离
                     "sleepHourValue": null, //睡眠时长 - 小时
+                    "sleepCreateTime": null, // 睡眠记录时间
                     "sleepMinuteValue": null, //睡眠时长 - 分钟
                     "bloodPressureLow": null, //血压 - 低
                     "bloodPressureHigh": null, //血压 - 高 
-                    "bloodGlucoseValue": null, //血糖 
+                    "bloodPressureTime": null,
+                    "bloodGlucoseValue": null, //血糖
+                    "bloodGlucoseTime": null,
                     "heartRateValue": null, //心率
+                    "heartRateTime": null,
                     "fatRateValue": null, // 体脂 
+                    "fatRateTime": null,
                     "animalHeatValue": null, //体温
+                    "animalHeatTime": null,
                 },
                 dialogFormVisible: false,
                 sportsFormVisible: false,
@@ -483,7 +490,8 @@
                 hours: 0,
                 minute: 0,
                 sportForm: {
-                    val: ''
+                    val: '',
+                    timeVal: ''
                 },
                 booldForm: {
                     lowVal: '',
@@ -516,7 +524,8 @@
                 this.sportsFormVisible = false;
                 if (this.sportForm.val >= 0) {
                     get('/health-web/modules/userDataRecord/save', {
-                        athleticHeatValue: this.sportForm.val
+                        athleticHeatValue: this.sportForm.val,
+                        athleticStepNum: this.sportForm.timeVal
                     }).then((res) => {
                         if (res.code == 0) {
                             this.$message({
@@ -549,7 +558,6 @@
                 }
                 this.hours = values[0],
                     this.minute = values[1];
-                console.log(this.hours, this.minute)
             },
             DeviceButtonClick(id) {
                 this.showId = id;
@@ -563,51 +571,57 @@
                 this.$router.push('/KwnoFood/fruit/voiceInputs')
             },
             goSetWeight() {
-                console.log(12)
                 this.$router.push('/device/SetWeight')
             },
             WeightData() {
                 get('/health-web/modules/userDataRecord/latestInfo/weight_value').then((res) => {
                     this.healthData.weightValue = res.userLatestRecord.weightValue;
+                    this.healthData.weightTime = res.userLatestRecord.createTime;
                 })
             },
             athleticData() {
                 get('/health-web/modules/userDataRecord/latestInfo/athletic').then((res) => {
                     this.healthData.athleticHeatValue = res.userLatestRecord.athleticHeatValue;
-                    console.log(this.healthData.athleticHeatValue)
+                    this.healthData.athleticHeatTime = res.userLatestRecord.createTime;
                 })
             },
             sleepData() {
                 get('/health-web/modules/userDataRecord/latestInfo/sleep').then((res) => {
                     this.healthData.sleepHourValue = res.userLatestRecord.sleepHourValue;
-
                     this.healthData.sleepMinuteValue = res.userLatestRecord.sleepMinuteValue;
+                    this.healthData.sleepCreateTime = res.userLatestRecord.createTime;
                 })
             },
             bloodPressureData() {
                 get('/health-web/modules/userDataRecord/latestInfo/blood_pressure').then((res) => {
                     this.healthData.bloodPressureLow = res.userLatestRecord.bloodPressureLow;
                     this.healthData.bloodPressureHigh = res.userLatestRecord.bloodPressureHigh;
+                    this.healthData.bloodPressureTime = res.userLatestRecord.createTime;
                 })
             },
             bloodGlucoseData() {
                 get('/health-web/modules/userDataRecord/latestInfo/blood_glucose').then((res) => {
-                    this.healthData.bloodGlucoseValue = res.userLatestRecord.bloodGlucoseValue;;
+                    this.healthData.bloodGlucoseValue = res.userLatestRecord.bloodGlucoseValue;
+                    this.healthData.bloodGlucoseTime = res.userLatestRecord.createTime;
                 })
             },
             fatRateData() {
                 get('/health-web/modules/userDataRecord/latestInfo/fat_rate').then((res) => {
-                    this.healthData.fatRateValue = res.userLatestRecord.fatRateValue;;
+                    this.healthData.fatRateValue = res.userLatestRecord.fatRateValue;
+                    this.healthData.fatRateTime = res.userLatestRecord.createTime;
                 })
             },
             heartRateData() {
                 get('/health-web/modules/userDataRecord/latestInfo/heart_rate').then((res) => {
                     this.healthData.heartRateValue = res.userLatestRecord.heartRateValue;
+                    this.healthData.heartRateTime = res.userLatestRecord.createTime;
                 })
             },
             animalHeatData() {
                 get('/health-web/modules/userDataRecord/latestInfo/animal_heat').then((res) => {
                     this.healthData.animalHeatValue = res.userLatestRecord.animalHeatValue;
+                    this.healthData.animalHeatTime = res.userLatestRecord.createTime;
+
                 })
             }
         }
