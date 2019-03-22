@@ -2,8 +2,7 @@
 	<div class="healthCon">
 		 <div class="healthTop">
 		 	<span class="fanhui" @click="handFanhui()">
-		 		<span class="fhAnniu"></span>
-		 		<span>返回</span>
+		 		<span class="fhAnniu"></span> 
 		 	</span>
 		 	<span class="healMana">健康管理</span>
 		 	<span class="healRi">
@@ -238,55 +237,57 @@
 </template>
 
 <script>
-	export default{
-		data () {
-			return {
-			    scrollTop: 0,
-		        time: 0,
-		        dParams: 20,
-		        scrollState: 0
-		    }
-		},
-	 methods: {
-	      toTop(e) {
-	        if(!!this.scrollState){
-	          return;
-	        }
-	        this.scrollState = 1;
-	        e.preventDefault();
-	        let distance = document.documentElement.scrollTop || document.body.scrollTop;
-	        let _this = this;
-	        this.time = setInterval(function(){ _this.gotoTop(_this.scrollTop-_this.dParams) }, 20);
-	      },
-	      gotoTop(distance){
-	        this.dParams += 20;
-	        distance = distance>0 ? distance : 0;
-	        document.documentElement.scrollTop = document.body.scrollTop = window.pageYOffset = distance;
-	        if(this.scrollTop < 10){
-	          clearInterval(this.time);
-	          this.dParams = 20;
-	          this.scrollState = 0;
-	        }
-	      },
-	      getScrollTop() {
-	        this.scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-	      },
-	      handFanhui () {
-	      	this.$router.go(-1);
-	      }
-          },
-	 computed:{
-	      showTop: function(){
-	        let value = this.scrollTop>50?true:false;
-	        return value;
-	      },
-    },
-    mounted() {
-      window.addEventListener('scroll', this.getScrollTop);
+    export default {
+        data() {
+            return {
+                scrollTop: 0,
+                time: 0,
+                dParams: 20,
+                scrollState: 0
+            }
+        },
+        methods: {
+            toTop(e) {
+                if (!!this.scrollState) {
+                    return;
+                }
+                this.scrollState = 1;
+                e.preventDefault();
+                let distance = document.documentElement.scrollTop || document.body.scrollTop;
+                let _this = this;
+                this.time = setInterval(function() {
+                    _this.gotoTop(_this.scrollTop - _this.dParams)
+                }, 20);
+            },
+            gotoTop(distance) {
+                this.dParams += 20;
+                distance = distance > 0 ? distance : 0;
+                document.documentElement.scrollTop = document.body.scrollTop = window.pageYOffset = distance;
+                if (this.scrollTop < 10) {
+                    clearInterval(this.time);
+                    this.dParams = 20;
+                    this.scrollState = 0;
+                }
+            },
+            getScrollTop() {
+                this.scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+            },
+            handFanhui() {
+                this.$router.go(-1);
+            }
+        },
+        computed: {
+            showTop: function() {
+                let value = this.scrollTop > 50 ? true : false;
+                return value;
+            },
+        },
+        mounted() {
+            window.addEventListener('scroll', this.getScrollTop);
+        }
     }
-	}
 </script>
 
 <style scoped="scoped">
-@import '../../../../assets/sports/healthMana.css';
+    @import '../../../../assets/sports/healthMana.css';
 </style>

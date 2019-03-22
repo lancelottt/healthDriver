@@ -33,7 +33,7 @@ export function post(url, data) {
 export function deletes(url, params) {
     return axios.delete(url, {
             headers: headers,
-            params: params
+            data: params
         })
         .then((res) => {
             return Promise.resolve(res.data)

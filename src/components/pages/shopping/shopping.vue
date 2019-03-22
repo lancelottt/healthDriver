@@ -34,7 +34,7 @@
        <div class="watch">
        </div>
        <!--健康管理**-->
-	     <!--<div>
+	     <div>
 		     <div class="tabItem">
                <router-link to="/shopping">热销推荐</router-link>
            </div>
@@ -51,7 +51,7 @@
            <div class="tabItem">
                <router-link to="/experience">体验套餐</router-link>
            </div>
-	   </div>-->
+	   </div>
        <div class="health">
        	<div class="healContent">
        	 <div class="healCon">健康管理</div>
