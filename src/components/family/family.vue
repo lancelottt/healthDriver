@@ -189,16 +189,22 @@
 					}
 				})
 			},
-			//      解除按钮**
+		//      解除按钮**
 			jiechu(i, id) {
+				MessageBox.confirm('确定解除吗?').then(action => {
 				const params = {
 					bUserCode: id
 				}
-				get('/health-web/modules/userFamilyRelation/update', params).then((res) => {
-					if(res.code == 0) {
-						this.userFamilyList.splice(i, 1);
-					}
-				})
+					get('/health-web/modules/userFamilyRelation/update', params).then((res) => {
+						if(res.code == 0) {
+							this.userFamilyList.splice(i, 1);
+							Toast({
+								message: '解除成功',
+								duration: 1500
+							});
+						}
+					})
+                 });
 			},
 			sanJIao(i,nameVal) {
 				this.$router.push({

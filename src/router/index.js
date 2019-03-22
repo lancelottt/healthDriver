@@ -187,7 +187,7 @@ export default new Router({
         // 身体档案**
         {
             path: "/Archi",
-            name: "",
+            name: "archi",
             component: Uncertain
         },
         // 我的家人**

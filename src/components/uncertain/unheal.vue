@@ -3,7 +3,7 @@
         <div class="had">
             <div>
                 <div class="componentHeader-header">
-                    <div class="Tp">
+                    <div class="Tp" @click="handBack()">
                         <i class="iconfont Tpi icon-jiantou-left"></i>
                     </div>
                     <div class="headerAmic">身体档案</div>
@@ -16,6 +16,16 @@
 </template>
 <script>
 export default {
+	data () {
+		return {
+			
+		}
+	},
+	methods:{
+		handBack(){
+			this.$router.back()
+		}
+	}
     
 }
 </script>
