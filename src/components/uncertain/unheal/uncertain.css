@@ -187,12 +187,12 @@
 }
 .highLeft{
   float: left;
-  width:40%;
+  width:30%;
   height: 100%;
 }
 .hightRight{
   float: right;
-  width:60%;
+  width:70%;
   height: 100%;
   padding-top: .2rem;
   box-sizing: border-box;

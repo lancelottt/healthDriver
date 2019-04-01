@@ -36,10 +36,10 @@
 				<div class="statusConO">
 					<div class="myCon">我的体重</div>
 					<div class="statusMyTet">
-						<p>69.1</P>
+						<p>{{weightValue}}</p>
 						<P>当前体重(kg)</p>
 					</div>
-					<div class="statusCircl">
+					<div class="statusCircl" @click="handStatus()">
 						<ul>
 							<li></li>
 							<li>记录体重</li>
@@ -98,16 +98,16 @@
 						<div class="highLeft"></div>
 						<div class="hightRight">
 							<div class="hiL">
-								<p>0.0</p>
+								<p>{{bloodPressureHigh}}</p>
 								<p>高压mmHg</p>
 							</div>
 							<div class="hiR">
-								<p>0.0</p>
+								<p>{{bloodPressureLow}}</p>
 								<p>低压mmHg</p>
 							</div>
 						</div>
 					</div>
-					<div class="statusCircl">
+					<div class="statusCircl" @click="handBlood()">
 						<ul>
 							<li></li>
 							<li>记录血压</li>
@@ -123,25 +123,21 @@
 						<div class="highLeft"></div>
 						<div class="hightRight">
 							<div class="hiL">
-								<p>0.0</p>
-								<p>高压mmHg</p>
-							</div>
-							<div class="hiR">
-								<p>0.0</p>
-								<p>低压mmHg</p>
+								<p>{{bloodGlucoseValue}}</p>
+								<p>mmol/L</p>
 							</div>
 						</div>
 					</div>
-					<div class="statusCircl">
+					<div class="statusCircl" @click="statusHandbloodGlucose()">
 						<ul>
 							<li></li>
-							<li>记录血压</li>
+							<li>记录血糖</li>
 						</ul>
 					</div>
 				</div>
 			</div>
 			<!-- 我的脂肪称** -->
-			<div class="fat">
+			<!--<div class="fat">
 				<div class="fatZ">
 					<div class="fatO">我的脂肪称</div>
 					<div class="fatT">
@@ -199,14 +195,29 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div>-->
 		</div>
 		<div class="cation" v-show="showTop" @click="toTop"></div>
+		<el-dialog title="我的血压" :visible.sync="dialogFormVisible">
+				  <el-form :model="formBlood">
+				    <el-form-item label="高压(mmHg)" :label-width="formLabelWidth">
+				      <el-input v-model="formBlood.high" autocomplete="off"></el-input>
+				    </el-form-item>
+				    <el-form-item label="低压(mmHg)" :label-width="formLabelWidth">
+				      <el-input v-model="formBlood.low " autocomplete="off"></el-input>
+				    </el-form-item>
+				  </el-form>
+				  <div slot="footer" class="dialog-footer">
+				    <el-button @click="dialogFormVisible = false">取 消</el-button>
+				    <el-button type="primary" @click="Determine()">确 定</el-button>
+				  </div>
+		</el-dialog>
 	</div>
 </template>
 <script>
-	import { get } from '../../api/fetch.js';
-	import { Toast } from 'mint-ui';
+	import qs from 'qs';
+	import { get ,deletes,post} from '../../api/fetch.js';
+	import { Toast, MessageBox } from 'mint-ui';
 	import Unheal from './unheal'
 	export default {
 		components: {
@@ -223,7 +234,18 @@
 				headerImg: {
 					token: 'faad5a64-2f11-4b4a-9136-f7f50c333947'
 				},
-				fileList: []
+				fileList: [],
+				weightValue:'',
+				dialogFormVisible: false,  //取消弹窗
+				formBlood:{
+					  high:'',
+					  low: '',
+			          type: [],
+				},
+				formLabelWidth: '89px',
+				bloodPressureHigh:'',
+				bloodPressureLow:'',
+				bloodGlucoseValue:''
 			}
 		},
 		methods: {
@@ -243,12 +265,73 @@
 			},
 //			删除事件**
             handleRemove(file, fileList) {
-            	const arrayA=[{
-            		userCompImgCodes:file.name
-            	}];
-            	get('/health-web/modules/userCompImg/delete',arrayA).then((res)=>{
-            		console.log(1)
+            	alert("确认取消吗？")
+//          	return;
+            	deletes('/health-web/modules/userCompImg/delete?userCompImgCodes='+file.name).then((res)=>{
+            		if(res.code == 0) {
+							Toast({
+								message: '删除成功',
+								duration: 1500
+							});
+						}else{
+							Toast({
+								message: res.msg,
+								duration: 1500
+							});
+						}
             	})
+            },
+            //			点击记录体重**
+            handStatus(){
+            	MessageBox({
+					    $type:'prompt',
+					    message:'请填写您的最新体重',
+					    showCancelButton:true,
+					    showInput:true
+					}).then(({ value, action }) => {
+					post('/health-web/modules/userDataRecord/save?weightValue=' + value).then((res) => {
+						if(res.code == 0) {
+							 this.$message({
+                                message: '记录体重成功 !',
+                                type: 'success'
+                            })
+//							this.weightValue= value
+                             this.saveHandle();
+						}else{
+							Toast({
+								message: res.msg,
+								duration: 1500
+							});
+						}
+//						 this.$router.go(0); /**刷新整个页面**/
+					})
+					});
+            },
+//          记录血糖**
+            statusHandbloodGlucose(){
+            	    	MessageBox({
+					    $type:'prompt',
+					    message:'请记录您的最新血压',
+					    showCancelButton:true,
+					    showInput:true
+					}).then(({ value, action }) => {
+					post('/health-web/modules/userDataRecord/save?bloodGlucoseValue=' + value).then((res) => {
+						if(res.code == 0) {
+							 this.$message({
+                                message: '记录体重成功 !',
+                                type: 'success'
+                            })
+//							this.weightValue= value
+                             this.bloodGlucose();
+						}else{
+							Toast({
+								message: res.msg,
+								duration: 1500
+							});
+						}
+//						 this.$router.go(0); /**刷新整个页面**/
+					})
+					});
             },
 			handlePictureCardPreview(file) {
 				this.dialogImageUrl = file.url;
@@ -293,7 +376,55 @@
 						this.fileList = imgPathList
 					}
 				})
-			}
+			},
+			saveHandle(){
+				get('/health-web/modules/userDataRecord/latestInfo/weight_value').then((res) => {
+					 if(res.code==0){
+					 	this.weightValue = res.userLatestRecord.weightValue
+					 }
+				});
+			},
+//			添加血压**
+            handBlood () {
+            	this.dialogFormVisible = true
+            },
+//          点击确定**
+            Determine(){
+            	this.dialogFormVisible = false
+//          	if(this.formBlood.val>=0){
+            		get('/health-web/modules/userDataRecord/save',{
+            			bloodPressureLow:this.formBlood.low,
+            			bloodPressureHigh:this.formBlood.high
+            		}).then((res)=>{
+            			if(res.code==0){
+            				this.$message({
+            					message:'记录血压成功',
+            					type:'success'
+            				})
+            				this.bloodPressure();
+            			}
+            		})
+//          	}
+            	
+            	
+            },
+//          一进页面调血压接口**
+            bloodPressure(){
+            	get('/health-web/modules/userDataRecord/latestInfo/blood_pressure').then((res) => {
+            		if(res.code == 0) {
+            			this.bloodPressureHigh=res.userLatestRecord.bloodPressureHigh
+            			this.bloodPressureLow=res.userLatestRecord.bloodPressureLow
+            		}
+            	})
+            },
+//     我的血糖**
+            bloodGlucose(){
+            	get('/health-web/modules/userDataRecord/latestInfo/blood_glucose').then((res) => {
+            		if(res.code == 0) {
+            			this.bloodGlucoseValue=res.userLatestRecord.bloodGlucoseValue
+            		}
+            	})
+            }
 		},
 		computed: {
 			showTop: function() {
@@ -305,7 +436,12 @@
 			window.addEventListener('scroll', this.getScrollTop);
 		},
 		created() {
-			this.userCompImgList()
+			this.userCompImgList();
+			this.saveHandle();
+//			血压**
+           this.bloodPressure();
+//         我的血糖**
+           this.bloodGlucose();
 		}
 	}
 </script>
@@ -360,4 +496,20 @@
 		width: .45rem;
 		height: .4rem;
 	}
+	.unheaZ >>> .el-dialog {
+    position: relative;
+    margin: 0 auto 50px;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.3);
+    box-shadow: 0 1px 3px rgba(0,0,0,.3);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 86%;
+}
+.unheaZ >>>.el-dialog__footer{
+	    padding: 10px 20px 20px;
+}
+.unheaZ >>>.el-form-item__content{
+	    margin-left: 90px;
+}
 </style>

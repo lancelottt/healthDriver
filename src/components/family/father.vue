@@ -2,7 +2,7 @@
 	<div class="conZ">
 		<div class="conclu">
 			<div class="conHea">
-				<div class="had">
+				<div class="hadHeader">
 					<div>
 						<div class="componentHeader-header">
 							<div class="Tp" @click="handlerBack()">
@@ -47,7 +47,7 @@
 				</div>
 				<div class="shuJul">
 					<ul>
-						<li>
+						<li @click="handBloodVal(userLatestRecord.userCode)">
 							<div class="press">
 								<div class="pressL">
 									<div class="preSp">
@@ -72,7 +72,7 @@
 							</div>
 						</li>
 						<!--血糖**-->
-						<li :style="liPro">
+						<li :style="liPro" @click="handsugar(userLatestRecord.userCode)">
 							<div class="press" :style="pressObject">
 								<div class="pressL">
 									<div class="preSp">
@@ -94,7 +94,7 @@
 							</div>
 						</li>
 						<!--睡眠**-->
-						<li>
+						<li @click="handSleep(userLatestRecord.userCode)">
 							<div class="press">
 								<div class="pressL">
 									<div class="preSp">
@@ -115,7 +115,7 @@
 							</div>
 						</li>
 						<!--体重**-->
-						<li :style="liProWeight" @click="handWeight()">
+						<li :style="liProWeight" @click="handWeight(userLatestRecord.userCode)">
 							<div class="press">
 								<div class="pressL">
 									<div class="preSp">
@@ -207,8 +207,41 @@
 				this.$router.back()
 			},
 //			体重跳转**
-            handWeight(){
-            	this.$router.push("/wei")
+            handWeight(userCode){
+            	this.$router.push({
+            		path:'/wei',
+            		query:{
+            			userCode:userCode
+            		}
+            	})
+            	
+            },
+//          血糖跳转**
+            handsugar(userCode){
+            	this.$router.push({
+            		path:'/bloodSu',
+            		query:{
+            			userCode:userCode
+            		}
+            	})
+            },
+//          血压**
+             handBloodVal(userCode){
+             	this.$router.push({
+            		path:'/familyBlood',
+            		query:{
+            			userCode:userCode
+            		}
+            	})
+             },
+//           睡眠跳转                                                                                                                         **
+            handSleep(userCode) {
+//          	this.$router.push({
+//          		path:'/familyBlood',
+//          		query:{
+//          			userCode:userCode
+//          		}
+//          	})
             },
 			userInfo() {
 				const paramsa = {

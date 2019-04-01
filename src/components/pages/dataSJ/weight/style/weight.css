@@ -21,18 +21,40 @@
     width:100%;
     height: 100%;
 }
+.weiInitial p:nth-of-type(1){
+	font-size:.36rem;
+	font-family:HelveticaNeue;
+	font-weight:400;
+	color:rgba(153,153,153,1);
+}
+.chushi{
+	font-size:.2rem;
+	font-family:PingFangSC-Light;
+	font-weight:300;
+	color:rgba(153,153,153,1);
+	margin-top: .1rem;
+}
+.endValue p:nth-of-type(1){
+	font-size:.36rem;
+	font-family:HelveticaNeue;
+	font-weight:400;
+	color:rgba(153,153,153,1);
+}
 .jiLw{
     width: 1.64rem;
     height: .51rem;
-    float: left;
+    position: absolute;
     line-height: .51rem;
-    border: .01rem solid #ff5e3a;
+    border:1px solid #ff5e3a;
     color: #ff5e3a;
     text-align: center;
-    margin-left: 1.4rem;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     border-radius: .3rem;
+    margin: auto;
+    left:0;
+    right:0;
+    top:12px;
 }
 .dataT{
     height: auto;
@@ -76,7 +98,7 @@
     width:100%;
     height: 2rem;
     border-top: 0.01rem solid #cccccc;
-    margin-top: .5rem;
+    margin-top: 2.5rem;
 }
 .dataCon p{
     font-size: .30rem;
