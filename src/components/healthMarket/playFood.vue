@@ -76,10 +76,10 @@
     export default {
         data() {
             return {
-                //				视频控制参数
+                // 视频控制参数
                 playerOptions: {
                     playbackRates: [0.5, 1.0, 1.5, 2.0], //播放速度
-                    autoplay: true, //如果true,浏览器准备好时开始回放。
+                    autoplay: true, // 如果true,浏览器准备好时开始回放。
                     muted: false, // 默认情况下将会消除任何音频。
                     loop: true, // 导致视频一结束就重新开始。
                     preload: 'auto', // 建议浏览器在<video>加载元素后是否应该开始下载视频数据。auto浏览器选择最佳行为,立即开始加载视频（如果浏览器支持）
@@ -88,7 +88,7 @@
                     fluid: true, // 当true时，Video.js player将拥有流体大小。换句话说，它将按比例缩放以适应其容器。
                     sources: [{
                         type: "",
-                        src: "https://ip1871531384.mobgslb.tbcache.com/6773012649734714F75BA2757/03000801005C7F5A03A30AD31566007A5F0D14-17B2-4611-802E-B67C5BCEF897.mp4?ccode=0501&duration=141&expire=18000&psid=5f8367693281494e427ea824eb23f678&ups_client_netip=7ccc2aba&ups_ts=1551861089&ups_userid=&utid=1aj%2BFPUcHmUCAXzMKrqYnIaL&vid=XNDA4NzQ4NjY1Mg&vkey=Ac7f6adaa8fc7de1b06d4a271ac08458d&sp=&ali_redirect_domain=ykugc.cp31.ott.cibntv.net&ali_redirect_ex_ftag=563baf575b6a7ab9d6000fe6a0a2ca768d139d712d43c315&ali_redirect_ex_tmining_ts=1551861096&ali_redirect_ex_tmining_expire=3600&ali_redirect_ex_hot=0" //url地址
+                        src: "http://vjs.zencdn.net/v/oceans.mp4" //url地址
                     }],
                     poster: "../../static/images/test.jpg", //你的封面地址
                     // width: document.documentElement.clientWidth,

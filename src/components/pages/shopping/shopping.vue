@@ -22,7 +22,7 @@
 		<div class="tabbarCon">
 		<div class="tab">
 			<swiper :options="swiperOption">
-				<swiper-slide v-for="(item,index) in foodMenuList":key="index">
+				<swiper-slide v-for="(item,index) in foodMenuList" :key="index">
 					<div  class="item-title">
 						<b :class="{'fruitActive': index == activeId}">{{item.foodMenuName}}</b>
 					</div>

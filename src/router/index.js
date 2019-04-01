@@ -172,7 +172,15 @@ import BloodGlucose from "@/components/store/bloodGlucose";
 import BloodPressure from "@/components/store/bloodPressure";
 // 记录体重
 import SetWeights from "@/components/store/weightVaule";
+// 蜕变故事
+import HealStory from "@/components/healthMarket/healthStory";
+import HealthStoryMain from "@/components/healthMarket/healthStoryMain";
+// 恢复指标
+import HealtTargetMore from "@/components/healthMarket/healthTargetMore";
+import HealtTarget from "@/components/healthMarket/healtTarget";
+import HealthTargetMain from "@/components/healthMarket/healthTargetMain";
 
+//打卡页面 
 import WechatLoginTest from "@/components/WeChatTest/weChatLoginTest";
 import Author from "@/components/WeChatTest/author";
 
@@ -187,8 +195,25 @@ export default new Router({
         // 身体档案**
         {
             path: "/Archi",
-            name: "",
+            name: "archi",
             component: Uncertain
+        },
+        // 蜕变故事**
+        {
+            path: "/healthyZ/HealStory",
+            name: "HealStory",
+            component: HealStory
+        },
+        // 故事详情**
+        {
+            path: "/healthyZ/HealStory/HealthStoryMain",
+            name: "HealthStoryMain",
+            component: HealthStoryMain
+        },
+        {
+            path: "/healthyZ/HealtTargetMore",
+            name: "HealtTargetMore",
+            component: HealtTargetMore
         },
         // 我的家人**
         {
@@ -299,6 +324,16 @@ export default new Router({
             component: Count
         },
         {
+            path: "/healthPlan/HealtTarget",
+            name: "HealtTarget",
+            component: HealtTarget
+        },
+        {
+            path: "/healthPlan/HealthTargetMain",
+            name: "HealthTargetMain",
+            component: HealthTargetMain
+        },
+        {
             path: "/competition/competition",
             name: "competition",
             component: Competition
@@ -332,6 +367,7 @@ export default new Router({
             name: "healthMarketHome",
             component: HealthMarketHome
         },
+
         //引入商城
         {
             path: "/shopping",
@@ -565,6 +601,7 @@ export default new Router({
             name: "",
             component: Store
         },
+
         // 在线问
         {
             path: "/KwnoFood/fruit/Airlines/:id",

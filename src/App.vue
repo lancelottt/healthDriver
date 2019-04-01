@@ -43,6 +43,9 @@
 
 <style>
     @import 'assets/common/scss/common.css';
+    img{
+        max-width: 100%;
+    }
     html {
         height: 100%;
         width: 100%;
@@ -162,6 +165,15 @@
     
     .el-message {
         min-width: 0;
+    }
+    /*视频按钮样式修改*/
+    
+    .video-js .vjs-big-play-button {
+        border-radius: 50%;
+        width: 2em;
+        height: 2em;
+        line-height: 1em !important;
+        margin-left: -1em !important;
     }
     /* .footer_guide{
     position: fixed;

@@ -16,7 +16,7 @@
 					<div id="loginWx" @click="wxLogin()">
 						<img src="../../../static/img/weixin.png" alt="">
 					</div>
-					<span>点击微信快捷登录</span>
+					<span>微信登录</span>
 					<span @click="next1()">111</span>
 				</div>
 
@@ -29,16 +29,19 @@
 	</div>
 </template>
 <script>
+	import bus from '@/utils/bus.js'
 	import axios from 'axios'
 	import store from '@/store/index'
 	import vue from 'vue'
+	import Vuex from 'vuex'
 	import { setCookie, getCookie, delCookie } from '@/utils/holdno';
 	export default {
 		name: 'loginChat',
 		data() {
 			return {
 				weixinCode: '',
-				weChatServices: {}
+				weChatServices: {},
+				id:''
 			}
 		},
 		beforeCreate() {
@@ -55,6 +58,11 @@
 				plus.device.beep();
 			}
 			// 监听plusready事件  
+		},
+		computed: {
+			...Vuex.mapState({
+				id: state => state.id
+			})
 		},
 		methods: {
 			wxLogin() {
@@ -90,6 +98,10 @@
 											//												code: _this.weixinCode
 											//											}
 										}).then(function(response) {
+											console.log('从服务器接收成功' + JSON.stringify(response))
+											console.log(response.data.user.id)
+											_this.id = response.data.user.id
+											_this.sendInfo()
 											switch(response.data.user.ompleteStatus) {
 												case 0:
 													_this.$router.push({
@@ -116,8 +128,11 @@
 												default:
 													break;
 											}
-											console.log('从服务器接收成功' + JSON.stringify(response))
-											_this.$store.disptch(response.token)
+											
+//											_this.saveUserInfo()
+//											_this.saveCookie(response.data.user.id)
+											
+											
 										}).catch(function(response) {
 											console.log('从服务器接收失败 ' + JSON.stringify(response))
 										})
@@ -191,10 +206,32 @@
 				this.$router.push({
 					name: 'payment'
 				})
-			}
+			},
+			sendInfo(){
+				console.log(_this.id)
+				bus.$emit('txt',_this.id)
+			},
+//			saveUserInfo(){
+//				console.log(_this.$store)
+////				_this.$store.dispatch("handlerModify",response.data.user.id)
+//				_this.store.commit('implement',response.data.user.id)
+//				console.log(store.state)
+//			},
+//			saveCookie(sad){
+//				console.log(_this.id)
+//				console.log(this.id)
+//				console.log(sad)
+//				console.log(response.data)
+//				console.log(response.data.user.id)
+//				setCookie('idCookie',response.data.user.id,30)
+//				setCookie('idCookie',sad,30)
+//				setCookie('idCookie',_this.id,30)
+//				setCookie('idCookie',this.id,30)
+//			}
 		}
 	}
 </script>
+
 <style scoped>
-	@import '../../assets/chatLogin/chatLogin.css'
+	@import '../../assets/chatLogin/chatLogin.css';
 </style>
