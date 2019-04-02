@@ -12,10 +12,10 @@
 				<div>zyd</div>
 			</div>
 			<el-row>
-				<el-button type="danger" round class="inviteInfoRight" @click="handleInviteInfoRight()">主要按钮</el-button>
+				<el-button type="danger" round class="inviteInfoRight" @click="handleInviteInfoRight()">确认</el-button>
 			</el-row>
 			<el-row>
-				<el-button type="danger" round class="inviteInfoWrong" @click="handleInviteWrong()">主要按钮</el-button>
+				<el-button type="danger" round class="inviteInfoWrong" @click="handleInviteWrong()" style="border: 1px  solid;">取消</el-button>
 			</el-row>
 
 			<h2 class="varifyCodeHint">“邀请码是健康驾校为会员用户提供的专属
@@ -44,7 +44,9 @@
 				})
 			},
 			handleInviteWrong() {
-				console.log(2)
+				this.$router.push({
+					name:'Invitation'
+				})
 			}
 		}
 	}

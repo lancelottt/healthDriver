@@ -12,12 +12,16 @@ const state = {
 	address: [],
 	show: true,
 	token: '',
-	id: ''
+	ids: ''
 }
 const getters = {
 
 }
 const mutations = {
+	handlerCommit(state,params){
+		console.log(params)
+		state.ids = params
+	}
 //	handleEditTabStatus(state, params) {
 //		if(!params) {
 //			state.show = !state.show;
@@ -34,9 +38,6 @@ const mutations = {
 //	handlerMessage(state, params) {
 //		state.id = params
 //	},
-	implement(state, params){
-		state.id = params
-	}
 
 }
 const actions = {
@@ -50,6 +51,10 @@ const actions = {
 		commit
 	}, params) {
 		commit("handlerMessage", params)
+	},
+	handlerDispatch({commit},params){
+		console.log({commit},params)
+		commit("handlerCommit",params)
 	}
 }
 
@@ -58,7 +63,7 @@ const store = new Vuex.Store({
 	getters,
 	mutations,
 	actions,
-	module: {
+	modules: {
 		userInfoStore
 	}
 })

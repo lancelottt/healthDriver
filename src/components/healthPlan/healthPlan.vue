@@ -279,8 +279,8 @@
 					}]
 
 				});
-				plus.audio.createPlayer('http://demo.dcloud.net.cn/test/audio/apple.mp3').play()
-				plus.device.beep(3);
+				plus.audio.createPlayer('http://m10.music.126.net/20190309164554/0f2e61523df4fde1282c1043fd8f3eca/ymusic/4848/dc50/3355/62726df9ee5a0d1a95fe0950271cebbc.mp3').play()
+				plus.device.beep();
 			}
 			if(window.plus) {
 				plusReady(

@@ -8,21 +8,35 @@ const state = {
 	inputHeight: '',
 	inputCurrentWeight: '',
 	inputTargetWeight: '',
-	id:''
+	ids:'sub_store',
+	userInfoFirst:'',
+	userInfoLast:[]
 }
 const actions = {
 	handlerInfo({commit},params){
-		commit('handlerInfoUpdate',111)
+		commit('handlerInfoUpdate',params)
+	},
+	handlerIdentityInfo({commit,state},params){
+		console.log({commit,state},params)
+		commit('handlerIdentityInfoUpdate',params)
 	}
 }
 const mutations = {
 	handlerInfoUpdate(state,params){
+		state.ids = params
 		state.gender = params
+	},
+//	身份页面数据
+	handlerIdentityInfoUpdate(state,params){
+		if(params){
+			state.userInfoFirst =  params  
+		}
 	}
 }
-const Store = new Vuex.Store({
+
+export default {
+	nameSpace:true,
 	state,
 	actions,
 	mutations
-})
-export default Store
+}

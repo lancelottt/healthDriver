@@ -88,12 +88,13 @@
         }
     }
      .el-button-bigSelection{
+         display: block;
          width:1.8rem!important;
          height: 0.8rem!important;
          margin-left: 0!important;
          box-sizing: border-box!important;
          border: 0.02rem solid #ff5e3a!important;
-         
+         line-height: 0.8rem;
          font-size: 0.26rem!important;
          color: #ff5e3a!important;
          margin-bottom: 0.33rem!important;
@@ -102,11 +103,11 @@
  }
 } 
 
-.infoSelection label{
-    width: 100px;
-    height: 100px;background: pink;
-    border-radius: 10px;
-}
+//.infoSelection label{
+//  width: 100px;
+//  height: 100px;background: pink;
+//  border-radius: 10px;
+//}
 .modified-bigSelection:hover{
     animation: rubberBand 1s;
     box-sizing: border-box;

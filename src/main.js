@@ -19,6 +19,7 @@ import App from './App'
 import Mint from 'mint-ui';
 import 'mint-ui/lib/style.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import observer from './utils/observer.js'
 
 import { setCookie, getCookie, delCookie } from '@/utils/holdno';
 // require styles
@@ -32,6 +33,7 @@ import vueTouch from 'vue-plugin-touch';
 import echarts from 'echarts'
 import './utils/filter'
 Vue.prototype.$echarts = echarts;
+//Vue.portotype.observer = new Vue()
 Vue.use(vueTouch);
 
 // import ECharts from 'vue-echarts/components/ECharts'
@@ -45,6 +47,7 @@ Vue.use(VideoPlayer)
 // Vue.prototype.$echarts = myCharts
 // swiper4的vueAwesomeSwiper
 Vue.use(VueAwesomeSwiper)
+//把observer挂载到prototype上
 
 //betterScroll已弃用
 import BScroll from 'better-scroll';

@@ -17,7 +17,7 @@
 				<span class="item_icon">
                 	<i class="iconfont  icon-shangcheng1" :style="styleObj"></i><!--icon-waimai-->
             	</span>
-				<span class="shopping">商城</span>
+				<span class="shopping">生活方式</span>
 			</a>
 			<a href="javascript:;" :style="objCol" class="guide_item" :class="{on:'/dataSj/weight'===$route.path}" @click="goTo('/dataSj/weight')">
 				<span class="item_icon">

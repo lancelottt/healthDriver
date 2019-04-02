@@ -17,7 +17,7 @@
 						<img src="../../../static/img/weixin.png" alt="">
 					</div>
 					<span>微信登录</span>
-					<span @click="next1()">111</span>
+					<span @click="next1()">1<i>{{ids}}</i></span>
 				</div>
 
 			</div>
@@ -29,7 +29,7 @@
 	</div>
 </template>
 <script>
-	import bus from '@/utils/bus.js'
+	//	import bus from '@/utils/bus.js'
 	import axios from 'axios'
 	import store from '@/store/index'
 	import vue from 'vue'
@@ -61,7 +61,7 @@
 		},
 		computed: {
 			...Vuex.mapState({
-				id: state => state.id
+				ids: state => state.ids
 			})
 		},
 		methods: {
@@ -99,8 +99,8 @@
 											//											}
 										}).then(function(response) {
 											console.log('从服务器接收成功' + JSON.stringify(response))
-											console.log(response.data.user.id)
 											_this.id = response.data.user.id
+
 											_this.sendInfo()
 											switch(response.data.user.ompleteStatus) {
 												case 0:
@@ -128,11 +128,8 @@
 												default:
 													break;
 											}
-											
-//											_this.saveUserInfo()
-//											_this.saveCookie(response.data.user.id)
-											
-											
+											//											_this.saveUserInfo()
+											//											_this.saveCookie(response.data.user.id)
 										}).catch(function(response) {
 											console.log('从服务器接收失败 ' + JSON.stringify(response))
 										})
@@ -197,7 +194,7 @@
 						},
 						function(e) {
 							plus.nativeUI.toast('第三方登录插件获取失败');
-							console.log(JSON.stringify(e));
+							console.log('第三方登录插件获取失败' + JSON.stringify(e));
 						}
 					);
 				});
@@ -207,27 +204,28 @@
 					name: 'payment'
 				})
 			},
-			sendInfo(){
-				console.log(_this.id)
-				bus.$emit('txt',_this.id)
+			sendInfo() {
+				console.log(this.id)
+				//				this.observer.$emit('change',this.id)
+				this.$store.dispatch("handlerDispatch", this.id)
 			},
-//			saveUserInfo(){
-//				console.log(_this.$store)
-////				_this.$store.dispatch("handlerModify",response.data.user.id)
-//				_this.store.commit('implement',response.data.user.id)
-//				console.log(store.state)
-//			},
-//			saveCookie(sad){
-//				console.log(_this.id)
-//				console.log(this.id)
-//				console.log(sad)
-//				console.log(response.data)
-//				console.log(response.data.user.id)
-//				setCookie('idCookie',response.data.user.id,30)
-//				setCookie('idCookie',sad,30)
-//				setCookie('idCookie',_this.id,30)
-//				setCookie('idCookie',this.id,30)
-//			}
+			//			saveUserInfo(){
+			//				console.log(_this.$store)
+			////				_this.$store.dispatch("handlerModify",response.data.user.id)
+			//				_this.store.commit('implement',response.data.user.id)
+			//				console.log(store.state)
+			//			},
+			//			saveCookie(sad){
+			//				console.log(_this.id)
+			//				console.log(this.id)
+			//				console.log(sad)
+			//				console.log(response.data)
+			//				console.log(response.data.user.id)
+			//				setCookie('idCookie',response.data.user.id,30)
+			//				setCookie('idCookie',sad,30)
+			//				setCookie('idCookie',_this.id,30)
+			//				setCookie('idCookie',this.id,30)
+			//			}
 		}
 	}
 </script>

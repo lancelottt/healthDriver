@@ -1,6 +1,6 @@
 <template>
 	<div id="userInfo-identity">
-		<header><span class="" @click="handleBack()"><img src="../../../static/img/arrow_03.png"/></span><span>制订你的健康计划</span><span class="skip" @click="handleSkip()">跳过</span></header>
+		<header><span class="" @click="handleBack()"><img src="../../../static/img/arrow_03.png"/></span><span>您的基本状况</span><span class="skip" @click="handleSkip()">跳过</span></header>
 		<!--iconfont icon-xiangzuojiantou-->
 		<section class="identity-con">
 			<div class="infoHint">

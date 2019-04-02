@@ -119,15 +119,15 @@
                     }
                 },
                 swiperSlides: [{
-                    src: "../../../static/img/drink_14.png"
+                    src: "http://lorempixel.com/400/200/sports"
                 }, {
-                    src: "../../../static/img/sport_15.png"
+                    src: "http://lorempixel.com/400/200/sports/C7SKY-COM"
                 }, {
-                    src: "../../../static/img/drink_14.png"
+                    src: "http://lorempixel.com/400/200/sports"
                 }, {
-                    src: "../../../static/img/sport_15.png"
+                    src: "http://lorempixel.com/400/200/sports/C7SKY-COM"
                 }, {
-                    src: "../../../static/img/drink_14.png"
+                    src: "http://lorempixel.com/400/200/sports"
                 }],
                 show: true,
                 restaurants: [],
@@ -166,31 +166,31 @@
             },
             loadAll() {
                 return [{
-                    "value": "三全鲜食（北新泾店）",
+                    "value": "北京大学第三医院",
                     "address": "长宁区新渔路144号"
                 }, {
-                    "value": "Hot honey 首尔炸鸡（仙霞路）",
+                    "value": "北京466医院",
                     "address": "上海市长宁区淞虹路661号"
                 }, {
-                    "value": "新旺角茶餐厅",
+                    "value": "中国中医科学院西苑医院",
                     "address": "上海市普陀区真北路988号创邑金沙谷6号楼113"
                 }, {
-                    "value": "泷千家(天山西路店)",
+                    "value": "北京肿瘤医院",
                     "address": "天山西路438号"
                 }, {
-                    "value": "胖仙女纸杯蛋糕（上海凌空店）",
+                    "value": "解放军总医院第二附属医院",
                     "address": "上海市长宁区金钟路968号1幢18号楼一层商铺18-101"
                 }, {
-                    "value": "贡茶",
+                    "value": "中国人民解放军空军总医院",
                     "address": "上海市长宁区金钟路633号"
                 }, {
-                    "value": "豪大大香鸡排超级奶爸",
+                    "value": "海军总医院",
                     "address": "上海市嘉定区曹安公路曹安路1685号"
                 }, {
-                    "value": "茶芝兰（奶茶，手抓饼）",
+                    "value": "北京世纪坛医院",
                     "address": "上海市普陀区同普路1435号"
                 }, {
-                    "value": "十二泷町",
+                    "value": "北京大学口腔医院",
                     "address": "上海市北翟路1444弄81号B幢-107"
                 }, {
                     "value": "星移浓缩咖啡",

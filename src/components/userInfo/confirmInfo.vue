@@ -1,6 +1,6 @@
 <template>
 	<div id="userInfo-confirmInfo">
-		<header><span class="" @click="handleBack()"><img src="../../../static/img/arrow_03.png"/></span><span>制订你的健康计划</span><span></span></header>
+		<header><span class="" @click="handleBack()"><img src="../../../static/img/arrow_03.png"/></span><span>填写你的基本信息</span><span></span></header>
 		<!--iconfont icon-xiangzuojiantou-->
 		<section class="confirmInfo-main">
 			<!--<i-switch style='{width: 6rem!important;}' name="slider">
@@ -41,7 +41,7 @@
 				</div>
 				<!--				<h2>你选的是：<br />身高：<i>{{inputHeight}}</i><br />生日：<i>{{inputBirth}}</i><br />性别：<i>{{gender}}</i><br />当前体重 ：<i>{{inputCurrentWeight}}</i><br />目标体重：<i>{{inputTargetWeight}}</i></h2>
 --></div>
-			<h2>userId:{{userId}}</h2>
+			<h2>userId:{{ids}}</h2>
 			<button class="my-big-el-button--danger" @click="handleGo()"><span>确认</span></button>
 		</section>
 		<!--<footer><span @click="handleGo()">下一步</span></footer>-->
@@ -58,11 +58,13 @@
 </template>
 
 <script>
+	import Vuex from 'vuex';
+	import store from '@/store/index'
 	import { setCookie, getCookie, delCookie } from '@/utils/holdno';
-	import bus from '@/utils/bus.js'
+	//	import bus from '@/utils/bus.js'
 	import { get, post } from '../../api/fetch'
 	//	import Vuex from 'Vuex'
-	//	import userInfoStore from '@/store/userInfoStore'
+	import userInfoStore from '@/store/userInfoStore'
 	export default {
 		data() {
 			return {
@@ -74,44 +76,51 @@
 				inputCurrentWeight: '',
 				inputTargetWeight: '',
 				checkbox: true,
-				userId:''
+				id:''
 			}
 		},
-//		created() {
-//			var newIdCookie = getCookie('idCookie')
-//			this.userId = newIdCookie
-//			console.log(newIdCookie)
-//			console.log(this.userId)
-//		},
+		computed: {
+			...Vuex.mapState({
+				ids: state => state.ids
+			})
+		},
+		created() {
+			this.judgeGender()
+			//			var newIdCookie = getCookie('idCookie')
+			//			this.userId = newIdCookie
+			//			console.log(newIdCookie)
+			//			console.log(this.userId)
+		},
 		methods: {
 			handleBack() {
 				this.$router.back()
 			},
 			handleGo() {
-				this.judgeGender()
-				console.log(this.gender)
-				console.log(parseInt(this.inputBirth))
-				console.log(this.inputHeight)
-				console.log(this.inputCurrentWeight)
-				console.log(this.inputTargetWeight)
+				console.log(this.$store.state.ids)
+//				var healData = {
+//					'isGirl': this.isGirl
+//				}
+//				var updata = JSON.stringify(healData);
+//				console.log(updata)
+				console.log(parseInt(this.gender))
+				console.log(JSON.stringify(this.inputBirth))
+				console.log(parseInt(this.inputHeight))
+				console.log(parseInt(this.inputCurrentWeight))
+				console.log(parseInt(this.inputTargetWeight))
 				post('/health-web/modules/umsmember/update', {
-					contentType: "application/json",
-					data: JSON.stringify({
-						"gender": parseInt(this.gender),
-						"birthday": this.inputBirth,
-						'stature': parseInt(this.inputHeight),
-						'currWeight': parseInt(this.inputCurrentWeight),
-						'targetWeight': parseInt(this.inputTargetWeight),
-						'omplete_status': 3,
-					})
-				}).then(
-					(res) => {
-						console.log(res)
-						this.$router.push({
-							path: '/userInfo/identity'
-						})
-					}
-				).catch()
+					'id':parseInt(this.$store.state.ids),
+					'gender': parseInt(this.gender),
+					'stature': parseInt(this.inputHeight),
+					'currWeight': parseInt(this.inputCurrentWeight),
+					'targetWeight': parseInt(this.inputTargetWeight),
+					'omplete_status':parseInt(3),
+					'birthday': this.inputBirth,
+				},{
+				}).then((res) => {
+					console.log(res)
+					this.$router.push({name:"identity"})
+				}).catch(
+				)
 
 			},
 			judgeGender() {
@@ -125,13 +134,13 @@
 			//				this.$store.dispatch("handlerInfo",111)
 			//			}
 		},
-		created(){
-			bus.$on('txt',function(val){
-				console.log(val)
-				this.userId = val
-				console.log(JSON.stringify(val))
-			})
-		}
+		//		created(){
+		//			bus.$on('txt',function(val){
+		//				console.log(val)
+		//				this.userId = val
+		//				console.log(JSON.stringify(val))
+		//			})
+		//		}
 
 	}
 </script>

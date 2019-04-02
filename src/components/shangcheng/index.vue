@@ -13,8 +13,8 @@
 		<section class="healthMarketHome-con">
 			<el-tabs v-model="activeName" @tab-click="handleClick" stretch tab-position=top>
 				<el-tab-pane label="热销推荐" name="first">热销推荐</el-tab-pane>
-				<el-tab-pane label="健康管理" name="second">健康管理</el-tab-pane>
-				<el-tab-pane label="健康设备" name="third">健康设备</el-tab-pane>
+				<el-tab-pane label="管理方案" name="second">管理方案</el-tab-pane>
+				<el-tab-pane label="生活周边" name="third">生活周边</el-tab-pane>
 				<el-tab-pane label="运动装备" name="fourth">运动装备</el-tab-pane>
 			</el-tabs>
 		</section>
