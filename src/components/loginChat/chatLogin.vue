@@ -229,6 +229,7 @@
 		}
 	}
 </script>
+
 <style scoped>
-	@import '../../assets/chatLogin/chatLogin.css'
+	@import '../../assets/chatLogin/chatLogin.css';
 </style>

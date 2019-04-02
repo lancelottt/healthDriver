@@ -11,10 +11,6 @@
                         <i class="iconfont icon-shoucang"></i>
                         <span>收藏</span>
                     </div>
-                    <!--<div class="collection-box">
-                        <i class="iconfont icon-shoucangxuanzhong1" style="color:red"></i>
-                        <span style="color:red">取消</span>
-                    </div>-->
                 </div>
             </div>
            <div class="rigth">

@@ -41,6 +41,10 @@
 	   </div>
 			<!--<swiper :options="swiperOption">
 				<swiper-slide v-for="(item,index) in foodMenuList":key="index">
+=======
+			<swiper :options="swiperOption">
+				<swiper-slide v-for="(item,index) in foodMenuList" :key="index">
+>>>>>>> origin/c
 					<div  class="item-title">
 						<b :class="{'fruitActive': index == activeId}">{{item.foodMenuName}}</b>
 					</div>
@@ -52,24 +56,7 @@
        <div class="watch">
        </div>
        <!--健康管理**-->
-	     <!--<div>
-		     <div class="tabItem">
-               <router-link to="/shopping">热销推荐</router-link>
-           </div>
-           <div class="tabItem">
-
-               <router-link to="/healthMana">健康管理</router-link>
-           </div>
-          <div class="tabItem">
-               <router-link to="/equip">健康设备</router-link>
-           </div>
-           <div class="tabItem">
-               <router-link to="/experience">运动装备</router-link>
-           </div>
-           <div class="tabItem">
-               <router-link to="/experience">体验套餐</router-link>
-           </div>
-	   </div>-->
+	
        <div class="health">
        	<div class="healContent">
        	 <div class="healCon">健康管理</div>

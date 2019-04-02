@@ -76,10 +76,10 @@
     export default {
         data() {
             return {
-                //				视频控制参数
+                // 视频控制参数
                 playerOptions: {
                     playbackRates: [0.5, 1.0, 1.5, 2.0], //播放速度
-                    autoplay: true, //如果true,浏览器准备好时开始回放。
+                    autoplay: true, // 如果true,浏览器准备好时开始回放。
                     muted: false, // 默认情况下将会消除任何音频。
                     loop: true, // 导致视频一结束就重新开始。
                     preload: 'auto', // 建议浏览器在<video>加载元素后是否应该开始下载视频数据。auto浏览器选择最佳行为,立即开始加载视频（如果浏览器支持）
@@ -88,7 +88,7 @@
                     fluid: true, // 当true时，Video.js player将拥有流体大小。换句话说，它将按比例缩放以适应其容器。
                     sources: [{
                         type: "",
-                        src: "http://vodkgeyttp8.vod.126.net/cloudmusic/MTAhMDAgMDAwNGE0MDEgJA==/mv/505795/7a4200821d8988285664c2ef4d08d506.mp4?wsSecret=9967ad23d412741d98f71c267cb477b9&wsTime=1553223950" //url地址
+                        src: "http://vjs.zencdn.net/v/oceans.mp4" //url地址
                     }],
                     poster: "https://music.163.com/m/mv?id=505795", //你的封面地址
                     // width: document.documentElement.clientWidth,

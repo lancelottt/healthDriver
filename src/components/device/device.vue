@@ -32,7 +32,7 @@
 								<div class="kcalImg">
 									<img src="../../../static/images/shebei.png" alt="" />
 								</div>
-								<p>设备0</p>
+								<p>设备</p>
 							</li>
 							<li>
 								<div class="kcalImg">
@@ -82,7 +82,7 @@
 								<div class="kcalImg">
 									<img src="../../../static/images/shebei.png" alt="" />
 								</div>
-								<p>设备1</p>
+								<p>设备</p>
 							</li>
 							<li>
 								<div class="kcalImg">
@@ -428,6 +428,7 @@
             <el-button type="" @click="submitSports" class="submitBTn">确 定</el-button>
            </div>
        </el-dialog>
+	   
 	</div>
 </template>
 
@@ -436,6 +437,10 @@
     import {get,
         post
     } from '../../api/fetch.js'
+    import {
+        mapActions,
+        mapGetters
+    } from 'vuex';
     export default {
         data() {
             return {

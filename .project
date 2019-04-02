@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
+	<name>fork</name>
+=======
 	<name>kk</name>
+>>>>>>> cf5f538fb5c38e8cf9773d74d92af2a3810317c6
 	<comment></comment>
 	<projects>
 	</projects>
@@ -22,7 +26,11 @@
 	</natures>
 	<filteredResources>
 		<filter>
+<<<<<<< HEAD
+			<id>1552554435570</id>
+=======
 			<id>1553184555500</id>
+>>>>>>> cf5f538fb5c38e8cf9773d74d92af2a3810317c6
 			<name></name>
 			<type>26</type>
 			<matcher>

@@ -1,10 +1,10 @@
 <template>
 	<div id="kwnoFood">
-		<header><span class="" @click="handleBack()"><img src="../../../static/img/arrow_03.png"/></span><span>制订你的健康计划</span><span></span></header>
+		<header><span class="" @click="handleBack()"><img src="../../../static/img/arrow_03.png"/></span><span>玩转食物</span><span></span></header>
 		<div class="kwnoFoodHeader">
 		  <div class="kwnoFoodHeaderMain">
 	         <swiper :options="swiperOption">
-				<swiper-slide v-for="(item,index) in foodMenuList":key="index">
+				<swiper-slide v-for="(item,index) in foodMenuList" :key="index">
 					<div  @click="checkFruit(item.foodMenuId,index)" class="item-title">
 						<b :class="{'fruitActive': index == activeId}">{{item.foodMenuName}}</b>
 					</div>
@@ -50,7 +50,8 @@
         },
         methods: {
             handleBack() {
-                this.$router.push('/healthMarket/playFood')
+                // this.$router.push('/healthMarket/playFood')
+                this.$router.push('/healthyZ')
             },
             checkFruit(foodId, index) {
                 this.activeId = index;
@@ -110,7 +111,7 @@
 
     }
 </script>
-<style type="text/css">
+<style type="text/css" scoped>
     @import '../../assets/common/scss/common.css';
     @import '../../assets/healthMarket/playFood/kwnoFood/kwnoFood.css';
     .kwnoFoodHeader {

@@ -31,3 +31,18 @@ Vue.filter("dateFormat", dataStr => {
         // timeAdd0(s)
     );
 });
+
+//时间差
+Vue.filter("difftime", completeTime => {
+    var stime = Date.parse(new Date());
+    var etime = Date.parse(new Date(completeTime));
+    //两个时间戳相差的毫秒数
+    var usedTime = etime - stime;
+    var days = -Math.floor(usedTime / (24 * 3600 * 1000));
+    var leave1 = usedTime % (24 * 3600 * 1000);
+    var hours = Math.floor(leave1 / (3600 * 1000));
+    var leave2 = leave1 % (3600 * 1000);
+    var minutes = Math.floor(leave2 / (60 * 1000));
+    // var time = days + "天" + hours + "时" + minutes + "分";
+    return days;
+});
