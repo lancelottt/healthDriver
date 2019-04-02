@@ -167,7 +167,7 @@
 
 <style>
 	@import '../../assets/userInfo/disease/disease.css';
-	input{
+	/*input{
 		width: 5rem;
 		height: 2rem;
 		background: pink;
@@ -176,5 +176,5 @@
 		background: red;
 		width: 5rem;
 		height: 2rem;
-	}
+	}*/
 </style>

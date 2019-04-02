@@ -1,5 +1,5 @@
 <template>
-  <div class="meData">
+	<div class="meData">
 		<div>
 			<div class="meHeader">
 				我的
@@ -9,7 +9,7 @@
 				<!-- 新人报道** -->
 				<div class="report">
 					<div class="reportZ">
-						<div class="reportRen">
+						<div class="reportRen" @click="meHeader()">
 							<img src="./img/ren.png" alt="">
 						</div>
 						<div class="reportCon">
@@ -106,7 +106,7 @@
 						<p>
 							<img src="../../../../static/images/me09.png" alt="" />
 						</p>
-						<p>我的会员</p>
+						<p>我的团队</p>
 					</li>
 				</ul>
 			</div>
@@ -161,17 +161,21 @@
 					}
 				})
 			},
-//			身体档案**
-           handHealday (){
-           	    this.$router.push({
-           	    	name:'archi'
-           	    })
-           },
-           xitong(){
-           	this.$router.push({
-           		name:'setUp'
-           	})
-           }
+			//			添加照片**
+			meHeader() {
+             alert(1)
+			},
+			//			身体档案**
+			handHealday() {
+				this.$router.push({
+					name: 'archi'
+				})
+			},
+			xitong() {
+				this.$router.push({
+					name: 'setUp'
+				})
+			}
 		},
 		created() {
 			this.getUser();
@@ -179,5 +183,5 @@
 	}
 </script>
 <style scoped>
-@import './style/me.css';
+	@import './style/me.css';
 </style>

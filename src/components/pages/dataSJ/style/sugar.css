@@ -1,0 +1,164 @@
+.weight{
+    width:100%;
+    height: auto;
+}
+.danW{
+    height: .63rem;
+    line-height: .63rem;
+    text-align: right;
+    width:97%;
+    font-size: .25rem;
+    color: #999999;
+    margin-right: .3rem;
+}
+.weiImg{
+    width: 81%;
+    height: 2.56rem;
+    margin: auto;
+    position: relative;
+}
+.weiImg img{
+    width:100%;
+    height: 100%;
+}
+.weiInitial p:nth-of-type(1){
+	font-size:.36rem;
+	font-family:HelveticaNeue;
+	font-weight:400;
+	color:rgba(153,153,153,1);
+}
+.chushi{
+	font-size:.2rem;
+	font-family:PingFangSC-Light;
+	font-weight:300;
+	color:rgba(153,153,153,1);
+	margin-top: .1rem;
+}
+.endValue p:nth-of-type(1){
+	font-size:.36rem;
+	font-family:HelveticaNeue;
+	font-weight:400;
+	color:rgba(153,153,153,1);
+}
+.jiLw{
+    width: 1.64rem;
+    height: .51rem;
+    position: absolute;
+    line-height: .51rem;
+    border:1px solid #ff5e3a;
+    color: #ff5e3a;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: .3rem;
+    margin: auto;
+    left:0;
+    right:0;
+    top:12px;
+}
+.dataT{
+    height: auto;
+    width:100%;
+    margin-top: .3rem;
+}
+.dataQ{
+    width: 60%;
+    margin: auto;
+    height: .56rem;
+}
+.dataQ ul li{
+    width:50%;
+    height: .56rem;
+    text-align: center;
+    line-height: .56rem;
+    font-size: .28rem;
+    color: #ff5e3a;
+    border-bottom: .01rem solid #ff5e3a;
+    float: left;
+}
+.dataQ ul li.active{
+    background: #ff5e3a;
+    color: #ffffff;
+}
+.tab-con .light {
+    display: block;
+  }
+.dataC{
+    width:100%;
+    height: auto;
+}
+.dataImg{
+    height: 5.99rem;
+}
+.dataImg img{
+    width:100%;
+    height: 100%;
+}
+.dataCon{
+    width:100%;
+    height: 2rem;
+    border-top: 0.01rem solid #cccccc;
+}
+.dataCon p{
+    font-size: .30rem;
+    display: inline-block;
+    width: 93%;
+    margin-top: .3rem;
+    height: .6rem;
+    text-align: left;
+    line-height: .6rem;
+    color: #999999;
+}
+.xinW{
+      height: 1rem;
+      margin-top: .3rem;
+      width:96%;
+      margin: auto;
+      margin-top: .4rem;
+}
+.xinWo{
+    width:30%;
+    height: 100%;
+    float: left;
+}
+.xinWo img{
+    width:.68rem;
+    height: .75rem;
+}
+.xinImg{
+    float: left;
+}
+.xinWei{
+    float: right;
+    width: 62%;
+    font-size: .30rem;
+    color: #999999;
+}
+.xinWt{
+    width:40%;
+    height: 100%;
+    font-size: .30rem;
+    float: left;
+    font-weight: 100;
+}
+.xinP{
+    margin-top: .1rem;
+    text-align: left;
+    margin-left: .1rem;
+}
+.xinWs{
+    width:30%;
+    position: relative;
+    height: 100%;
+    float: right;
+    font-family: Light;
+    line-height: 1.22rem;
+}
+.eait{
+    font-size: .72rem;
+}
+.xinSub{
+    position: absolute;
+    top:-.18rem;
+    right:0;
+}

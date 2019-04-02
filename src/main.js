@@ -18,6 +18,9 @@ import App from './App'
 //import Cube from 'cube-ui'
 import Mint from 'mint-ui';
 import 'mint-ui/lib/style.css'
+
+import $ from 'jquery'
+
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import observer from './utils/observer.js'
 
@@ -31,9 +34,11 @@ require('vue-video-player/src/custom-theme.css')
 
 import vueTouch from 'vue-plugin-touch';
 import echarts from 'echarts'
+import VCharts from 'v-charts'
 import './utils/filter'
 Vue.prototype.$echarts = echarts;
 //Vue.portotype.observer = new Vue()
+Vue.use(VCharts)
 Vue.use(vueTouch);
 
 // import ECharts from 'vue-echarts/components/ECharts'

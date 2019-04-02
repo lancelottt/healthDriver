@@ -101,6 +101,8 @@ import Father from "@/components/family/father";
 import Wei from "@/components/family/wei";
 // 家人中的血糖**
 import BloodSu from "@/components/family/bloodSu";
+// 家人中的血压**
+import FamilyBlood from "@/components/family/familyBlood";
 // 会员中心**
 import MemCen from "@/components/memCen/memCen";
 //我的预计收入**
@@ -376,7 +378,6 @@ export default new Router({
 			//			  }
 			//			]
 		},
-
 		// 引入数据**
 		{
 			path: "/dataSj/weight",
