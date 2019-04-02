@@ -30,11 +30,11 @@
                <router-link to="/healthMana">健康管理</router-link>
            </div>
           <div class="tabItem">
-               <router-link to="/equip">健康设备</router-link>
+               <router-link to="/equip">生活周边</router-link>
            </div>
-           <div class="tabItem">
+           <!--<div class="tabItem">
                <router-link to="/experience">运动装备</router-link>
-           </div>
+           </div>-->
            <div class="tabItem">
                <router-link to="/experience">体验套餐</router-link>
            </div>

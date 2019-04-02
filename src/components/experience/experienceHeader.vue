@@ -53,6 +53,7 @@
 	 clear:both;content:'';display:block;width:0;height:0;visibility:hidden; 
 }
 .hotExpe{
+	background: #fff;
 	width: 100%;
 	height:auto;
 	zoom:1;

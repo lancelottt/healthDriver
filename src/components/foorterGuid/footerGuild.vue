@@ -15,7 +15,7 @@
 			</a>
 			<a href="javascript:;" :style="objCol" class="guide_item" :class="{on:'/shopping'===$route.path}" @click="goTo('/shopping')">
 				<span class="item_icon">
-                	<i class="iconfont  icon-shangcheng1" :style="styleObj"></i>
+                	<i class="iconfont  icon-icon" :style="styleObj"></i>
             	</span>
 				<span class="shopping">生活方式</span>
 			</a>

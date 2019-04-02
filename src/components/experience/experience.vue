@@ -3,9 +3,9 @@
 		<Experience-Header></Experience-Header>
 		<!--全部，销量，价格**-->
 		<div class="whole">
-		    <div class="upperList">
+		    <!--<div class="upperList">
 			   <span v-for="(list,index) in PartsUpper" class="list" :class="{active:index===partsIndex}" :key="index" @click="btn(index)" >{{list.name}}</span>
-			</div>
+			</div>-->
 			<!--<div class="lower">-->
 				<div class="lowContent">
 					<div class="lowMar">
