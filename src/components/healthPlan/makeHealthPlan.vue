@@ -6,11 +6,15 @@
 			<div class="makeHealthPlanBanner">
 				<swiper :options="swiperOption">
 					<swiper-slide v-for="(item,index) in makeHealthPlanBanner" :key='index'>
+						
 						<div>
+							<router-link to='/self'>
 							<img :src=item.src />
 							<b>{{item.content1}}</b>
 							<i>{{item.content2}}</i>
+							</router-link>
 						</div>
+						
 					</swiper-slide>
 				</swiper>
 			</div>

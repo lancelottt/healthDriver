@@ -11,7 +11,7 @@
 			<div class="healthPlan-con">
 				<Tabs value="name1">
 					<!--	-------------------------------------------我的计划------------------------------------------->
-					<TabPane label="我的计划" name="name1" class='hitCard'>
+					<!--<TabPane label="我的计划" name="name1" class='hitCard'>
 						<h1>健康自律养成计划</h1>
 						<h2>1/28天</h2>
 						<div class="myPlan" @click="handleJoinCompetition()">
@@ -29,7 +29,6 @@
 						</div>
 
 						<div class="myPlan">
-							<!--<button id="alarm"> 插入闹铃</button> -->
 							<img src="../../../static/img/sport_15.png" alt="" />
 							<div class="healthPlan-mask">
 								<div class="mask-left">
@@ -56,150 +55,216 @@
 								</div>
 							</div>
 						</div>
-					</TabPane>
+					</TabPane>-->
 
 					<!--		------------------------------------------------健康导航 -----------------------------------------	-->
-					<TabPane label="健康导航" name="name2" class='healthGuide'>
-						<div class="healthPlanHitCardDot" ref="homePage">
-							<img src="../../../static/img/competition-coin.png" />
-						</div>
+					<TabPane label="健康导航" name="name1" class='healthGuide'>
 						<div class="healthGuide-con">
-							<div class="loop">
-								<!--------------------------------------------left------------------------------------------>
-								<div class="healthGuideSlot1" @click="handleHealthPlanGo1($event)" v-model="moveDistance" ref="move" value="666">
-									<div>07:00</div>
-									<div></div>
-									<div>起床</div>
-								</div>
-								<div class="healthGuideSlot2" @click="handleHealthPlanGo2()">
-									<div>07:00</div>
-									<div></div>
-									<div>撒是</div>
-								</div>
-								<div class="healthGuideSlot3" @click="handleHealthPlanGo3()">
-									<div>07:00</div>
-									<div></div>
-									<div>吃 </div>
-								</div>
+							<!--1-->
+							<div class="">
+								<img src="../../../static/hulu/pieces1.png" />
+								<div class="healthGuide-con-dot">
+									<div class="healthGuide-con-dot-concret">
 
-								<div class="healthGuideSlot4" @click="handleHealthPlanGo4()">
-									<div>07:00</div>
-									<div></div>
-									<div>喝</div>
+									</div>
 								</div>
+								<div class="healthGuide-con-footprint">
+									<img src="../../../static/hulu/jiaoying.png" />
+								</div>
+							</div>
+							<!--2-->
+							<div class="">
+								<div class="healthGuide-con-dot">
+									<div class="healthGuide-con-dot-concret">
 
-								<div class="healthGuideSlot5" @click="handleHealthPlanGo5()">
-									<div>07:00</div>
-									<div></div>
-									<div>啦是</div>
+									</div>
 								</div>
-								<!------------------------------------------top----------------------------------------->
-								<div class="healthGuideSlot6" @click="handleHealthPlanGo6()">
-									<div>07:00</div>
-									<div><img src="" /></div>
-									<div>真香</div>
+								<div class="healthGuide-con-footprint">
+									<img src="../../../static/hulu/jiaoying.png" />
 								</div>
-								<div class="healthGuideSlot7" @click="handleHealthPlanGo7()">
-									<div>07:00</div>
-									<div><img src="" /></div>
-									<div>鞍山市</div>
-								</div>
-								<!----------------------------------------------right-------------------------------------->
-								<div class="healthGuideSlot8" @click="handleHealthPlanGo8()">
-									<div>请问</div>
-									<div><img src="" /></div>
-									<div>07:00</div>
-								</div>
-								<div class="healthGuideSlot9" @click="handleHealthPlanGo9()">
-									<div>请问</div>
-									<div><img src="" /></div>
-									<div>07:00</div>
-								</div>
-								<div class="healthGuideSlot10" @click="handleHealthPlanGo10()">
-									<div>请问</div>
-									<div><img src="" /></div>
-									<div>07:00</div>
-								</div>
-								<div class="healthGuideSlot11" @click="handleHealthPlanGo11()">
-									<div>请问</div>
-									<div><img src="" /></div>
-									<div>07:00</div>
-								</div>
-								<div class="healthGuideSlot12" @click="handleHealthPlanGo12()">
-									<div>请问</div>
-									<div><img src="" /></div>
-									<div>07:00</div>
-								</div>
-								<div class="healthGuideSlot13" @click="handleHealthPlanGo13()">
-									<div>请问</div>
-									<div><img src="" /></div>
-									<div>07:00</div>
-								</div>
-								<div class="healthGuideSlot14" @click="handleHealthPlanGo14()">
-									<div>请问</div>
-									<div><img src="" /></div>
-									<div>07:00</div>
-								</div>
-								<div class="healthGuideSlot15" @click="handleHealthPlanGo15()">
-									<div>请问</div>
-									<div><img src="" /></div>
-									<div>07:00</div>
-								</div>
-								<div class="healthGuideSlot16" @click="handleHealthPlanGo16()">
-									<div>请问</div>
-									<div><img src="" /></div>
-									<div>07:00</div>
-								</div>
-								<div class="healthGuideSlot17">
-									<div>请问</div>
-									<div><img src="" /></div>
-									<div>07:00</div>
-								</div>
-								<!---------------------------------bottom--------------------------------------------->
-								<div class="healthGuideSlot18">
-									<div>真香</div>
-									<div><img src="" /></div>
-									<div>07:00</div>
-								</div>
-								<div class="healthGuideSlot19">
-									<div>鞍山</div>
-									<div><img src="" /></div>
-									<div>07:00</div>
-								</div>
-								<!---------------------------------------left---------------------------------------->
-								<div class="healthGuideSlot20">
-									<div>07:00</div>
-									<div></div>
-									<div>起床</div>
-								</div>
-								<div class="healthGuideSlot21">
-									<div>07:00</div>
-									<div></div>
-									<div>撒是</div>
-								</div>
-								<div class="healthGuideSlot22">
-									<div>07:00</div>
-									<div></div>
-									<div>吃 </div>
-								</div>
+							</div>
+							<!--3-->
+							<div class="">
+								<img src="../../../static/hulu/pieces3.png" />
+								<div class="healthGuide-con-dot">
+									<div class="healthGuide-con-dot-concret">
 
-								<div class="healthGuideSlot23">
-									<div>07:00</div>
-									<div></div>
-									<div>喝</div>
+									</div>
 								</div>
+								<div class="healthGuide-con-footprint">
+									<img src="../../../static/hulu/jiaoying.png" />
+								</div>
+							</div>
+							<!--4-->
+							<div class="">
+								<img src="../../../static/hulu/pieces4.png" />
+								<div class="healthGuide-con-dot">
+									<div class="healthGuide-con-dot-concret">
 
-								<div class="healthGuideSlot24">
-									<div>07:00</div>
-									<div></div>
-									<div>啦是</div>
+									</div>
+								</div>
+								<div class="healthGuide-con-footprint">
+									<img src="../../../static/hulu/jiaoying.png" />
+								</div>
+							</div>
+							<!--5-->
+							<div class="">
+								<img src="../../../static/hulu/pieces2.png" />
+								<div class="healthGuide-con-dot">
+									<div class="healthGuide-con-dot-concret">
+
+									</div>
+								</div>
+								<div class="healthGuide-con-footprint">
+									<img src="../../../static/hulu/jiaoying.png" />
+								</div>
+							</div>
+							<!--6-->
+							<div class="">
+								<div class="healthGuide-con-dot">
+									<div class="healthGuide-con-dot-concret">
+
+									</div>
+								</div>
+								<div class="healthGuide-con-footprint">
+									<img src="../../../static/hulu/jiaoying.png" />
+								</div>
+							</div>
+							<!--7-->
+							<div class="">
+								<img src="../../../static/hulu/pieces5.png" />
+								<div class="healthGuide-con-dot">
+									<div class="healthGuide-con-dot-concret">
+
+									</div>
+								</div>
+								<div class="healthGuide-con-footprint">
+									<img src="../../../static/hulu/jiaoying.png" />
+								</div>
+							</div>
+							<!--8-->
+							<div class="">
+								<div class="healthGuide-con-dot">
+									<div class="healthGuide-con-dot-concret">
+
+									</div>
+								</div>
+								<div class="healthGuide-con-footprint">
+									<img src="../../../static/hulu/jiaoying.png" />
+								</div>
+							</div>
+							<!--9-->
+							<div class="">
+								<div class="healthGuide-con-dot">
+									<div class="healthGuide-con-dot-concret">
+
+									</div>
+								</div>
+								<div class="healthGuide-con-footprint">
+									<img src="../../../static/hulu/jiaoying.png" />
+								</div>
+							</div>
+							<!--10-->
+							<div class="">
+								<img src="../../../static/hulu/pieces7.png" />
+								<div class="healthGuide-con-dot">
+									<div class="healthGuide-con-dot-concret">
+
+									</div>
+								</div>
+								<div class="healthGuide-con-footprint">
+									<img src="../../../static/hulu/jiaoying.png" />
+								</div>
+							</div>
+							<!--11-->
+							<div class="11">
+								<div class="healthGuide-con-dot">
+									<div class="healthGuide-con-dot-concret">
+
+									</div>
+								</div>
+								<div class="healthGuide-con-footprint">
+									<img src="../../../static/hulu/jiaoying.png" />
+								</div>
+							</div>
+							<!--12-->
+							<div class="">
+								<img src="../../../static/hulu/pieces8.png" />
+								<div class="healthGuide-con-dot">
+									<div class="healthGuide-con-dot-concret">
+
+									</div>
+								</div>
+								<div class="healthGuide-con-footprint">
+										<img src="../../../static/hulu/jiaoying.png"/>
+								</div>
+							</div>
+							<!--13-->
+							<div class="13">
+								<div class="healthGuide-con-dot">
+									<div class="healthGuide-con-dot-concret">
+
+									</div>
+								</div>
+								<div class="healthGuide-con-footprint">
+										<img src="../../../static/hulu/jiaoying.png"/>
+								</div>
+							</div>
+							<!--14-->
+							<div class="">
+								<div class="healthGuide-con-dot">
+									<div class="healthGuide-con-dot-concret">
+
+									</div>
+								</div>
+								<div class="healthGuide-con-footprint">
+										<img src="../../../static/hulu/jiaoying.png"/>
+								</div>
+							</div>
+							<!--15-->
+							<div class="">
+								<div class="healthGuide-con-dot">
+									<div class="healthGuide-con-dot-concret">
+
+									</div>
+								</div>
+								<div class="healthGuide-con-footprint">
+										<img src="../../../static/hulu/jiaoying.png"/>
+								</div>
+							</div>
+							<!--16-->
+							<div class="">
+								<img src="../../../static/hulu/pieces6.png" />
+								<div class="healthGuide-con-dot">
+									<div class="healthGuide-con-dot-concret">
+
+									</div>
+								</div>
+								<div class="healthGuide-con-footprint">
+										<img src="../../../static/hulu/jiaoying.png"/>
+								</div>
+							</div>
+							<div class="sun">
+								<img src="../../../static/hulu/taiyang.png" />
+								<div class="healthGuide-con-dot">
+									<div class="healthGuide-con-dot-concret">
+
+									</div>
+								</div>
+							</div>
+							<div class="moon">
+								<img src="../../../static/hulu/yueliang.png" />
+								<div class="healthGuide-con-dot">
+									<div class="healthGuide-con-dot-concret">
+
+									</div>
 								</div>
 							</div>
 						</div>
 					</TabPane>
 
 					<!--				----------------------------------我的提醒------------------------------------------>
-					<TabPane label="我的提醒" name="name3" class='hitCard'>
+					<TabPane label="我的提醒" name="name2" class='hitCard'>
 
 						<h1>健康自律养成计划</h1>
 						<h2>1/28天</h2>
@@ -270,6 +335,7 @@
 		},
 		beforeCreate() {
 			var _this = this;
+
 			function plusReady() {
 				void plus.push.createMessage('success', {
 					"MessageOptions": [{
@@ -372,320 +438,7 @@
 			changeFixed(clientHeight) { //动态修改样式
 				this.$refs.homePage.style.height = clientHeight + 'px';
 			},
-			handleHealthPlanGo1(e) {
-				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				while(OffSetTop.top > 350 && OffSetTop.top < 360 && OffSetTop.left > 50 && OffSetTop.left < 100) {
-					return new Promise((resolve) => {
-						anime({
-							targets: '.healthPlanHitCardDot',
-							translateX: 0,
-							translateY: -this.clientHeight / 17,
-							rotateY: [0, 0],
-							duration: 1000,
-							easing: 'easeInOutQuart',
-							//						complete: () => {
-							//							anime({
-							//								targets: '.healthPlanHitCardDot',
-							//								translateX: 0,
-							//								translateY: 0,
-							//								rotateY: [0, 120],
-							//								complete: () => {
-							//									anime({
-							//										targets: '.healthPlanHitCardDot',
-							//										translateX: 200,
-							//										translateY: 100,
-							//										rotateY: [0, 120],
-							//										complete: () => {
-							//
-							//											resolve(true)
-							//										}
-							//									})
-							//								}
-							//							})
-							//						}
-						})
-					})
-				}
 
-			},
-			handleHealthPlanGo2() {
-				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				while(OffSetTop.top > 300 && OffSetTop.top < 310 && OffSetTop.left > 50 && OffSetTop.left < 100) {
-					return new Promise((resolve) => {
-						anime({
-							targets: '.healthPlanHitCardDot',
-							translateX: 0,
-							translateY: -this.clientHeight / 9 - 1,
-							rotateY: [0, 0],
-							duration: 1000,
-							easing: 'easeInOutQuart',
-
-						})
-					})
-				}
-			},
-			handleHealthPlanGo3() {
-				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				while(OffSetTop.top > 200 && OffSetTop.top < 270 && OffSetTop.left > 50 && OffSetTop.left < 100) {
-					return new Promise((resolve) => {
-						anime({
-							targets: '.healthPlanHitCardDot',
-							translateX: 0,
-							translateY: -this.clientHeight / 6 - 2,
-							rotateY: [0, 0],
-							duration: 1000,
-							easing: 'easeInOutQuart',
-
-						})
-					})
-				}
-			},
-			handleHealthPlanGo4() {
-				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				if(OffSetTop.top > 220 && OffSetTop.top < 230 && OffSetTop.left > 50 && OffSetTop.left < 100) {
-					return new Promise((resolve) => {
-						anime({
-							targets: '.healthPlanHitCardDot',
-							translateX: 0,
-							translateY: -OffSetTop.top + 59,
-							rotateY: [0, 0],
-							duration: 1000,
-							easing: 'easeInOutQuart',
-
-						})
-					})
-				}
-			},
-			handleHealthPlanGo5() {
-				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				if(OffSetTop.top > 180 && OffSetTop.top < 190 && OffSetTop.left > 50 && OffSetTop.left < 100) {
-					return new Promise((resolve) => {
-						anime({
-							targets: '.healthPlanHitCardDot',
-							translateX: OffSetTop.top / 6 - 10,
-							translateY: -OffSetTop.top,
-							rotateY: [0, 0],
-							duration: 500,
-							easing: 'linear',
-							complete: () => {
-								anime({
-									targets: '.healthPlanHitCardDot',
-									translateX: OffSetTop.top / 6 + 10,
-									translateY: -OffSetTop.top - 2,
-									duration: 500,
-									easing: 'linear',
-									complete: () => {
-										anime({
-											targets: '.healthPlanHitCardDot',
-											translateX: OffSetTop.top / 6 + 40,
-											translateY: -OffSetTop.top - 3,
-											duration: 700,
-											easing: 'linear',
-											//											complete: () => {
-											//
-											//												resolve(true)
-											//											}
-										})
-									}
-								})
-							}
-						})
-					})
-				}
-
-			},
-			handleHealthPlanGo6() {
-				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				if(OffSetTop.top > 160 && OffSetTop.top < 170) {
-					return new Promise((resolve) => {
-						anime({
-							targets: '.healthPlanHitCardDot',
-							translateX: OffSetTop.top / 6 + 118,
-							translateY: -OffSetTop.top - 20,
-							rotateY: [0, 0],
-							duration: 1000,
-							easing: 'easeInOutQuart',
-
-						})
-					})
-				}
-			},
-			handleHealthPlanGo7() {
-				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				if(OffSetTop.top > 160 && OffSetTop.top < 170) {
-					return new Promise((resolve) => {
-						anime({
-							targets: '.healthPlanHitCardDot',
-							translateX: OffSetTop.top + 20,
-							translateY: -OffSetTop.top - 20,
-							rotateY: [0, 0],
-							duration: 1000,
-							easing: 'linear',
-							complete: () => {
-								anime({
-									targets: '.healthPlanHitCardDot',
-									translateX: OffSetTop.top + 30,
-									translateY: -OffSetTop.top - 20,
-									duration: 700,
-									easing: 'linear',
-									complete: () => {
-										anime({
-											targets: '.healthPlanHitCardDot',
-											translateX: OffSetTop.top + 50,
-											translateY: -OffSetTop.top - 0,
-											duration: 700,
-											easing: 'linear',
-										})
-									}
-								})
-							}
-						})
-					})
-				}
-			},
-			handleHealthPlanGo8() {
-				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				if(OffSetTop.top > 180 && OffSetTop.top < 190 && OffSetTop.left > 300 && OffSetTop.left < 350) {
-					return new Promise((resolve) => {
-						anime({
-							targets: '.healthPlanHitCardDot',
-							translateX: OffSetTop.top + 32,
-							translateY: OffSetTop.top / 10 - 145,
-							rotateY: [0, 0],
-							duration: 1000,
-							easing: 'linear',
-						})
-					})
-				}
-			},
-			handleHealthPlanGo9() {
-				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				if(OffSetTop.top > 220 && OffSetTop.top < 230 && OffSetTop.left > 300 && OffSetTop.left < 350) {
-					return new Promise((resolve) => {
-						anime({
-							targets: '.healthPlanHitCardDot',
-							translateX: OffSetTop.left - 90,
-							translateY: OffSetTop.top / 10 - 105,
-							rotateY: [0, 0],
-							duration: 1000,
-							easing: 'easeInOutQuart',
-
-						})
-					})
-				}
-			},
-			handleHealthPlanGo10() {
-				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				if(OffSetTop.top > 260 && OffSetTop.top < 270 && OffSetTop.left > 300 && OffSetTop.left < 350) {
-					return new Promise((resolve) => {
-						anime({
-							targets: '.healthPlanHitCardDot',
-							translateX: OffSetTop.left - 90,
-							translateY: OffSetTop.top / 10 - 70,
-							rotateY: [0, 0],
-							duration: 1000,
-							easing: 'easeInOutQuart',
-
-						})
-					})
-				}
-			},
-			handleHealthPlanGo11() {
-				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				if(OffSetTop.top > 300 && OffSetTop.top < 310 && OffSetTop.left > 300 && OffSetTop.left < 350) {
-					return new Promise((resolve) => {
-						anime({
-							targets: '.healthPlanHitCardDot',
-							translateX: OffSetTop.left - 88,
-							translateY: OffSetTop.top / 10 - 30,
-							rotateY: [0, 0],
-							duration: 1000,
-							easing: 'easeInOutQuart',
-
-						})
-					})
-				}
-			},
-			handleHealthPlanGo12() {
-				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				if(OffSetTop.top > 350 && OffSetTop.top < 360 && OffSetTop.left > 300 && OffSetTop.left < 350) {
-					return new Promise((resolve) => {
-						anime({
-							targets: '.healthPlanHitCardDot',
-							translateX: OffSetTop.left - 88,
-							translateY: OffSetTop.top / 10 + 5,
-							rotateY: [0, 0],
-							duration: 1000,
-							easing: 'easeInOutQuart',
-
-						})
-					})
-				}
-			},
-			handleHealthPlanGo13() {
-				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				if(OffSetTop.top > 390 && OffSetTop.top < 400 && OffSetTop.left > 300 && OffSetTop.left < 350) {
-					return new Promise((resolve) => {
-						anime({
-							targets: '.healthPlanHitCardDot',
-							translateX: OffSetTop.left - 88,
-							translateY: OffSetTop.top / 10 + 45,
-							rotateY: [0, 0],
-							duration: 1000,
-							easing: 'easeInOutQuart',
-
-						})
-					})
-				}
-			},
-			handleHealthPlanGo14() {
-				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				if(OffSetTop.top > 430 && OffSetTop.top < 440 && OffSetTop.left > 300 && OffSetTop.left < 350) {
-					return new Promise((resolve) => {
-						anime({
-							targets: '.healthPlanHitCardDot',
-							translateX: OffSetTop.left - 88,
-							translateY: OffSetTop.top / 10 + 80,
-							rotateY: [0, 0],
-							duration: 1000,
-							easing: 'easeInOutQuart',
-
-						})
-					})
-				}
-			},
-			handleHealthPlanGo15() {
-				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				if(OffSetTop.top > 470 && OffSetTop.top < 480 && OffSetTop.left > 300 && OffSetTop.left < 350) {
-					return new Promise((resolve) => {
-						anime({
-							targets: '.healthPlanHitCardDot',
-							translateX: OffSetTop.left - 88,
-							translateY: OffSetTop.top / 10 + 120,
-							rotateY: [0, 0],
-							duration: 1000,
-							easing: 'easeInOutQuart',
-
-						})
-					})
-				}
-			},
-			handleHealthPlanGo16() {
-				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				if(OffSetTop.top > 510 && OffSetTop.top < 520 && OffSetTop.left > 300 && OffSetTop.left < 350) {
-					return new Promise((resolve) => {
-						anime({
-							targets: '.healthPlanHitCardDot',
-							translateX: OffSetTop.left - 88,
-							translateY: OffSetTop.top / 10 + 155,
-							rotateY: [0, 0],
-							duration: 1000,
-							easing: 'easeInOutQuart',
-
-						})
-					})
-				}
-			},
 			//			下拉跳转打卡记录页面
 			loadTop() {
 
@@ -711,14 +464,7 @@
 			}
 		},
 		mounted() {
-			var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-			// 获取浏览器可视区域高度
-			var Oheight = this.$refs.homePage.offsetHeight
-			this.clientHeight = `${document.documentElement.clientHeight}` //document.body.clientWidth;
-			//console.log(self.clientHeight);
-			window.onresize = function temp() {
-				this.clientHeight = `${document.documentElement.clientHeight}`;
-			};
+
 		},
 		watch: {
 			// 如果 `clientHeight` 发生改变，这个函数就会运行

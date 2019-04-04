@@ -22,15 +22,16 @@
 				<div>
 					会员权益
 				</div>
-				<button class="my-middle-el-button--danger"  @click="handlerWxPay()"><p>开通会员</p></button>
+				<div class="my-middle-el-button--danger payButton"  @click="handlerWxPay()"><p>开通会员</p></div>
 
 				<!--<div class="iconfont icon-weixin" >
 					微信支付
 				</div>-->
-				<div class="nextBtn" @click="handlerNext()">
+				
+			</section>
+			<div class="nextBtn" @click="handlerNext()">
 					next
 				</div>
-			</section>
 		</article>
 	</div>
 </template>
