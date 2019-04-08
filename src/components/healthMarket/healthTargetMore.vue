@@ -10,19 +10,12 @@
     </div>
 
     <div class="story-list">
-      <!-- <ul v-for="(list,index) in targetList" :key="index" >
-         <img :src="list.icon" alt>
-      </ul>-->
       <div>
         <ul v-for="(list,index) in targetList" :key="index">
           <li class="list-mg"  @click="goMeaunLsit(list.id, list.name)">
             <img :src="list.icon" alt>
             <h3>{{list.name}}</h3>
           </li>
-          <!-- <li>
-            <h3>{{list.name}}</h3>
-            <h4>{{list.source}} {{list.creatTime | dateFormat}}</h4>
-          </li>-->
         </ul>
       </div>
     </div>
@@ -59,12 +52,10 @@ export default {
         query: { id: id, name: name }
       });
     },
-    getTargetList(id) {
-      console.log("12313");
+    getTargetList(id) { 
       get("/health-web/modules/hfmprogramcategory/list?parentId=" + id).then(
         res => {
-          this.targetList = res.list;
-          console.log(res);
+          this.targetList = res.list; 
         }
       );
     }

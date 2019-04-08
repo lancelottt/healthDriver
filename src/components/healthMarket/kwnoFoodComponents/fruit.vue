@@ -4,7 +4,6 @@
     <vue-waterfall-easy :imgsArr="foodList" @scrollReachBottom="getData" :linkRange="'card'">
       <div class="foodDes"  slot-scope="props"  @click="goKnonwFoodMean(props.value.foodId)">
       <div class="fallbg"></div>
-          
         <span>{{props.value.info}}</span>
         <div class="foodStart">
           <img src="../../../../static/images/stary.gif" v-for="item in props.value.start"/>
@@ -16,7 +15,7 @@
           <div slot="loading" v-if="isFirstLoad">
               <img src="../../../../static/images/loading.gif"/>
           </div>
-          <div v-else="v-else">
+          <div v-else>
               <img src="../../../../static/images/loading.gif"/>
           </div>
       </div>

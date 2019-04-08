@@ -137,8 +137,7 @@ import Experience from "@/components/experience/experience";
 
 //套餐详情
 import PackageDetails from "@/components/experience/packageDetails";
-//认识食物
-import KwnoFoodIndex from "@/components/healthMarket/kwnoFoodComponents/index";
+//认识食物 
 import KnowFoodCarBon from "@/components/healthMarket/kwnoFoodComponents/carbon";
 import KnowFoodEggWhite from "@/components/healthMarket/kwnoFoodComponents/eggWhite";
 import KnowFoodVegetable from "@/components/healthMarket/kwnoFoodComponents/vegetable";
@@ -559,11 +558,6 @@ export default new Router({
             name: "",
             component: KwnoFood,
             children: [{
-                    path: "/KwnoFood/index",
-                    name: "",
-                    component: KwnoFoodIndex
-                },
-                {
                     path: "/KwnoFood/carbon",
                     name: "",
                     component: KnowFoodCarBon

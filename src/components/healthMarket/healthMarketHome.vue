@@ -1,7 +1,7 @@
 <template>
   <div id="healthMarketHome" class="page">
     <tab-com></tab-com>
-    <header style="padding: 5px 0;">
+    <!-- <header style="padding: 5px 0;">
       <div>
         <i class="iconfont icon-tianjiahaoyou"></i>
       </div>
@@ -18,11 +18,11 @@
       <div>
         <i class="iconfont icon-tixing"></i>
       </div>
-    </header>
+    </header> -->
     <div class="wrapper" ref="wrapper">
       <div class="content">
         <div>
-          <div class="health-header" style="padding-top: 0.8rem;">
+          <div class="health-header">
             <ul>
               <li @click="checkedHeader(0)">
                 <b :class="{'fruitActive': index == 0}">健康驾校</b>

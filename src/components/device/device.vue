@@ -2,7 +2,7 @@
 	<div class="device">
 		<mt-header fixed title="健康数据">
             <router-link to="/me" slot="left">
-                 <mt-button icon=""><img class="deviceTopArrowImg"src="../../../static/images/ShareIcon.png" alt="" /></mt-button>
+                 <mt-button icon=""><img class="deviceTopArrowImg" src="../../../static/images/ShareIcon.png" alt="" /></mt-button>
             </router-link>
             <mt-button icon="" slot="right" class="deviceBtn">智能设备</mt-button>
         </mt-header>
