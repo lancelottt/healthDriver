@@ -340,12 +340,12 @@ swiperSlides: [{
     //   tap: true
     // });
     this.restaurants = this.loadAll();
-    setInterval(() => {
-      console.log("simulate async data");
-      if (this.swiperSlides.length < 5) {
-        this.swiperSlides.push(this.swiperSlides.length + 1);
-      }
-    }, 3000);
+//  setInterval(() => {
+//    console.log("simulate async data");
+//    if (this.swiperSlides.length < 5) {
+//      this.swiperSlides.push(this.swiperSlides.length + 1);
+//    }
+//  }, 3000);
   }
 };
 </script>

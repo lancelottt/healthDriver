@@ -9,9 +9,8 @@
 			<div class="healthPlanHeader"><span>下拉查看日签</span></div>
 			<!--iconfont icon-xiangzuojiantou-->
 			<div class="healthPlan-con">
-				<Tabs value="name1">
-					<!--	-------------------------------------------我的计划------------------------------------------->
-					<!--<TabPane label="我的计划" name="name1" class='hitCard'>
+				<!--	-------------------------------------------我的计划------------------------------------------->
+				<!--<TabPane label="我的计划" name="name1" class='hitCard'>
 						<h1>健康自律养成计划</h1>
 						<h2>1/28天</h2>
 						<div class="myPlan" @click="handleJoinCompetition()">
@@ -57,260 +56,256 @@
 						</div>
 					</TabPane>-->
 
-					<!--		------------------------------------------------健康导航 -----------------------------------------	-->
-					<TabPane label="健康导航" name="name1" class='healthGuide'>
-						<div class="healthGuide-con">
-							<!--1-->
-							<div class="">
-								<img src="../../../static/hulu/pieces1.png" />
-								<div class="healthGuide-con-dot">
-									<div class="healthGuide-con-dot-concret">
-
+				<!--		------------------------------------------------健康导航 -----------------------------------------	-->
+				<div class='healthGuide'>
+					<div class="healthGuide-con">
+						<article>
+							<div id="">
+								<img src="../../../static/hulu/tree.png" />
+							</div>
+							<div id="">
+								<img src="../../../static/hulu/ellipsise.png" />
+							</div>
+						</article>
+						<section>
+							<div class="healthGuide-con-right">
+								<div class="">
+									<div>
+										<img src="../../../static/hulu/biao.png" />
 									</div>
+									<p>提醒</p>
 								</div>
-								<div class="healthGuide-con-footprint">
-									<img src="../../../static/hulu/jiaoying.png" />
+								<ul v-for="(item,index) in this.schemeList" :key=index>
+									<li>{{item.remindItemName}}</li>
+									<li>{{item.remindTime}}</li>
+								</ul>
+							</div>
+							<div class="healthGuide-con-left">
+								<div class="avatar">
+									<div>
+										<img src="../../../static/hulu/biao.png" />
+									</div>
+									<div>
+										<img src="../../../static/hulu/hulu.png" />
+									</div>
+									<p>×<i>5</i></p>
+								</div>
+								<div class="myMsg">
+									<img src="../../../static/hulu/laba.png" />
+									<b>消息</b>
+								</div>
+								<div class="clock">
+									<div>
+										<img src="../../../static/hulu/bitch.png" />
+									</div>
+									<p>距下次打卡：<b>05:16:20</b></p>
 								</div>
 							</div>
-							<!--2-->
-							<div class="">
-								<div class="healthGuide-con-dot">
-									<div class="healthGuide-con-dot-concret">
+						</section>
+						<!--1-->
+						<div class="1" ref='block1'>
+							<img src="../../../static/hulu/pieces1.png" />
+							<div class="healthGuide-con-dot" v-show="this.showBox.indexOf('06')>-1?true:false">
+								<div class="healthGuide-con-dot-concret">
 
-									</div>
-								</div>
-								<div class="healthGuide-con-footprint">
-									<img src="../../../static/hulu/jiaoying.png" />
 								</div>
 							</div>
-							<!--3-->
-							<div class="">
-								<img src="../../../static/hulu/pieces3.png" />
-								<div class="healthGuide-con-dot">
-									<div class="healthGuide-con-dot-concret">
+							<div class="healthGuide-con-footprint" v-show="this.showBox.indexOf('06')>-1?true:false">
+								<img src="../../../static/hulu/jiaoying.png" />
+							</div>
+						</div>
+						<!--2-->
+						<div class="2" ref='block2'>
+							<div class="healthGuide-con-dot" v-show="this.showBox.indexOf('07')>-1?true:false">
+								<div class="healthGuide-con-dot-concret">
 
-									</div>
-								</div>
-								<div class="healthGuide-con-footprint">
-									<img src="../../../static/hulu/jiaoying.png" />
 								</div>
 							</div>
-							<!--4-->
-							<div class="">
-								<img src="../../../static/hulu/pieces4.png" />
-								<div class="healthGuide-con-dot">
-									<div class="healthGuide-con-dot-concret">
+							<div class="healthGuide-con-footprint" v-show="this.showBox.indexOf('07')>-1?true:false">
+								<img src="../../../static/hulu/jiaoying.png" />
+							</div>
+						</div>
+						<!--3-->
+						<div class="3">
+							<img src="../../../static/hulu/pieces3.png" />
+							<div class="healthGuide-con-dot" v-show="this.showBox.indexOf('08')>-1?true:false">
+								<div class="healthGuide-con-dot-concret">
 
-									</div>
-								</div>
-								<div class="healthGuide-con-footprint">
-									<img src="../../../static/hulu/jiaoying.png" />
 								</div>
 							</div>
-							<!--5-->
-							<div class="">
-								<img src="../../../static/hulu/pieces2.png" />
-								<div class="healthGuide-con-dot">
-									<div class="healthGuide-con-dot-concret">
+							<div class="healthGuide-con-footprint" v-show="this.showBox.indexOf('08')>-1?true:false">
+								<img src="../../../static/hulu/jiaoying.png" />
+							</div>
+						</div>
+						<!--4-->
+						<div class="4">
+							<img src="../../../static/hulu/pieces4.png" />
+							<div class="healthGuide-con-dot" v-show="this.showBox.indexOf('09')>-1?true:false">
+								<div class="healthGuide-con-dot-concret">
 
-									</div>
-								</div>
-								<div class="healthGuide-con-footprint">
-									<img src="../../../static/hulu/jiaoying.png" />
 								</div>
 							</div>
-							<!--6-->
-							<div class="">
-								<div class="healthGuide-con-dot">
-									<div class="healthGuide-con-dot-concret">
+							<div class="healthGuide-con-footprint" v-show="this.showBox.indexOf('09')>-1?true:false">
+								<img src="../../../static/hulu/jiaoying.png" />
+							</div>
+						</div>
+						<!--5-->
+						<div class="5">
+							<img src="../../../static/hulu/pieces2.png" />
+							<div class="healthGuide-con-dot" v-show="this.showBox.indexOf('10')>-1?true:false">
+								<div class="healthGuide-con-dot-concret">
 
-									</div>
-								</div>
-								<div class="healthGuide-con-footprint">
-									<img src="../../../static/hulu/jiaoying.png" />
 								</div>
 							</div>
-							<!--7-->
-							<div class="">
-								<img src="../../../static/hulu/pieces5.png" />
-								<div class="healthGuide-con-dot">
-									<div class="healthGuide-con-dot-concret">
+							<div class="healthGuide-con-footprint" v-show="this.showBox.indexOf('10')>-1?true:false">
+								<img src="../../../static/hulu/jiaoying.png" />
+							</div>
+						</div>
+						<!--6-->
+						<div class="6">
+							<div class="healthGuide-con-dot" v-show="this.showBox.indexOf('11')>-1?true:false">
+								<div class="healthGuide-con-dot-concret">
 
-									</div>
-								</div>
-								<div class="healthGuide-con-footprint">
-									<img src="../../../static/hulu/jiaoying.png" />
 								</div>
 							</div>
-							<!--8-->
-							<div class="">
-								<div class="healthGuide-con-dot">
-									<div class="healthGuide-con-dot-concret">
+							<div class="healthGuide-con-footprint" v-show="this.showBox.indexOf('11')>-1?true:false">
+								<img src="../../../static/hulu/jiaoying.png" />
+							</div>
+						</div>
+						<!--7-->
+						<div class="">
+							<img src="../../../static/hulu/pieces5.png" />
+							<div class="healthGuide-con-dot" v-show="this.showBox.indexOf('12')>-1||this.showBox.indexOf('13')>-1?true:false">
+								<div class="healthGuide-con-dot-concret">
 
-									</div>
-								</div>
-								<div class="healthGuide-con-footprint">
-									<img src="../../../static/hulu/jiaoying.png" />
 								</div>
 							</div>
-							<!--9-->
-							<div class="">
-								<div class="healthGuide-con-dot">
-									<div class="healthGuide-con-dot-concret">
+							<div class="healthGuide-con-footprint" v-show="this.showBox.indexOf('12')>-1||this.showBox.indexOf('13')>-1?true:false">
+								<img src="../../../static/hulu/jiaoying.png" />
+							</div>
+						</div>
+						<!--8-->
+						<div class="">
+							<div class="healthGuide-con-dot" v-show="this.showBox.indexOf('14')>-1||this.showBox.indexOf('15')>-1?true:false">
+								<div class="healthGuide-con-dot-concret">
 
-									</div>
-								</div>
-								<div class="healthGuide-con-footprint">
-									<img src="../../../static/hulu/jiaoying.png" />
 								</div>
 							</div>
-							<!--10-->
-							<div class="">
-								<img src="../../../static/hulu/pieces7.png" />
-								<div class="healthGuide-con-dot">
-									<div class="healthGuide-con-dot-concret">
+							<div class="healthGuide-con-footprint" v-show="this.showBox.indexOf('14')>-1||this.showBox.indexOf('15')>-1?true:false">
+								<img src="../../../static/hulu/jiaoying.png" />
+							</div>
+						</div>
+						<!--9-->
+						<div class="">
+							<div class="healthGuide-con-dot" v-show="this.showBox.indexOf('16')>-1||this.showBox.indexOf('17')>-1?true:false">
+								<div class="healthGuide-con-dot-concret">
 
-									</div>
-								</div>
-								<div class="healthGuide-con-footprint">
-									<img src="../../../static/hulu/jiaoying.png" />
 								</div>
 							</div>
-							<!--11-->
-							<div class="11">
-								<div class="healthGuide-con-dot">
-									<div class="healthGuide-con-dot-concret">
+							<div class="healthGuide-con-footprint" v-show="this.showBox.indexOf('16')>-1||this.showBox.indexOf('17')>-1?true:false">
+								<img src="../../../static/hulu/jiaoying.png" />
+							</div>
+						</div>
+						<!--10-->
+						<div class="">
+							<img src="../../../static/hulu/pieces7.png" />
+							<div class="healthGuide-con-dot" v-show="this.showBox.indexOf('18')>-1||this.showBox.indexOf('19')>-1?true:false">
+								<div class="healthGuide-con-dot-concret">
 
-									</div>
-								</div>
-								<div class="healthGuide-con-footprint">
-									<img src="../../../static/hulu/jiaoying.png" />
 								</div>
 							</div>
-							<!--12-->
-							<div class="">
-								<img src="../../../static/hulu/pieces8.png" />
-								<div class="healthGuide-con-dot">
-									<div class="healthGuide-con-dot-concret">
+							<div class="healthGuide-con-footprint" v-show="this.showBox.indexOf('18')>-1||this.showBox.indexOf('19')>-1?true:false">
+								<img src="../../../static/hulu/jiaoying.png" />
+							</div>
+						</div>
+						<!--11-->
+						<div class="11">
+							<div class="healthGuide-con-dot" v-show="this.showBox.indexOf('20')>-1||this.showBox.indexOf('21')>-1?true:false">
+								<div class="healthGuide-con-dot-concret">
 
-									</div>
-								</div>
-								<div class="healthGuide-con-footprint">
-										<img src="../../../static/hulu/jiaoying.png"/>
 								</div>
 							</div>
-							<!--13-->
-							<div class="13">
-								<div class="healthGuide-con-dot">
-									<div class="healthGuide-con-dot-concret">
+							<div class="healthGuide-con-footprint" v-show="this.showBox.indexOf('20')>-1||this.showBox.indexOf('21')>-1?true:false">
+								<img src="../../../static/hulu/jiaoying.png" />
+							</div>
+						</div>
+						<!--12-->
+						<div class="">
+							<img src="../../../static/hulu/pieces8.png" />
+							<div class="healthGuide-con-dot" v-show="this.showBox.indexOf('22')>-1||this.showBox.indexOf('23')>-1?true:false">
+								<div class="healthGuide-con-dot-concret">
 
-									</div>
-								</div>
-								<div class="healthGuide-con-footprint">
-										<img src="../../../static/hulu/jiaoying.png"/>
 								</div>
 							</div>
-							<!--14-->
-							<div class="">
-								<div class="healthGuide-con-dot">
-									<div class="healthGuide-con-dot-concret">
+							<div class="healthGuide-con-footprint" v-show="this.showBox.indexOf('22')>-1||this.showBox.indexOf('23')>-1?true:false">
+								<img src="../../../static/hulu/jiaoying.png" />
+							</div>
+						</div>
+						<!--13略略略-->
+						<div class="13lueluelue">
+							<div class="healthGuide-con-dot">
+								<div class="healthGuide-con-dot-concret">
 
-									</div>
-								</div>
-								<div class="healthGuide-con-footprint">
-										<img src="../../../static/hulu/jiaoying.png"/>
 								</div>
 							</div>
-							<!--15-->
-							<div class="">
-								<div class="healthGuide-con-dot">
-									<div class="healthGuide-con-dot-concret">
+							<div class="healthGuide-con-footprint">
+								<!--<img src="../../../static/hulu/jiaoying.png"/>-->
+							</div>
+						</div>
+						<!--14-->
+						<div class="">
+							<div class="healthGuide-con-dot" v-show="this.showBox.indexOf('00')>-1||this.showBox.indexOf('01')>-1?true:false">
+								<div class="healthGuide-con-dot-concret">
 
-									</div>
-								</div>
-								<div class="healthGuide-con-footprint">
-										<img src="../../../static/hulu/jiaoying.png"/>
 								</div>
 							</div>
-							<!--16-->
-							<div class="">
-								<img src="../../../static/hulu/pieces6.png" />
-								<div class="healthGuide-con-dot">
-									<div class="healthGuide-con-dot-concret">
+							<div class="healthGuide-con-footprint" v-show="this.showBox.indexOf('00')>-1||this.showBox.indexOf('01')>-1?true:false">
+								<img src="../../../static/hulu/jiaoying.png" />
+							</div>
+						</div>
+						<!--15-->
+						<div class="">
+							<div class="healthGuide-con-dot" v-show="this.showBox.indexOf('02')>-1||this.showBox.indexOf('03')>-1?true:false">
+								<div class="healthGuide-con-dot-concret">
 
-									</div>
-								</div>
-								<div class="healthGuide-con-footprint">
-										<img src="../../../static/hulu/jiaoying.png"/>
 								</div>
 							</div>
-							<div class="sun">
-								<img src="../../../static/hulu/taiyang.png" />
-								<div class="healthGuide-con-dot">
-									<div class="healthGuide-con-dot-concret">
+							<div class="healthGuide-con-footprint" v-show="this.showBox.indexOf('02')>-1||this.showBox.indexOf('03')>-1?true:false">
+								<img src="../../../static/hulu/jiaoying.png" />
+							</div>
+						</div>
+						<!--16-->
+						<div class="">
+							<img src="../../../static/hulu/pieces6.png" />
+							<div class="healthGuide-con-dot" v-show="this.showBox.indexOf('04')>-1||this.showBox.indexOf('05')>-1?true:false">
+								<div class="healthGuide-con-dot-concret">
 
-									</div>
 								</div>
 							</div>
-							<div class="moon">
-								<img src="../../../static/hulu/yueliang.png" />
-								<div class="healthGuide-con-dot">
-									<div class="healthGuide-con-dot-concret">
+							<div class="healthGuide-con-footprint" v-show="this.showBox.indexOf('04')>-1||this.showBox.indexOf('05')>-1?true:false">
+								<img src="../../../static/hulu/jiaoying.png" />
+							</div>
+						</div>
+						<div class="sun">
+							<img src="../../../static/hulu/taiyang.png" />
+							<div class="healthGuide-con-dot">
+								<div class="healthGuide-con-dot-concret">
 
-									</div>
 								</div>
 							</div>
 						</div>
-					</TabPane>
+						<div class="moon">
+							<img src="../../../static/hulu/yueliang.png" />
+							<div class="healthGuide-con-dot">
+								<div class="healthGuide-con-dot-concret">
 
-					<!--				----------------------------------我的提醒------------------------------------------>
-					<TabPane label="我的提醒" name="name2" class='hitCard'>
-
-						<h1>健康自律养成计划</h1>
-						<h2>1/28天</h2>
-						<div class="myPlan">
-							<img src="../../../static/img/sleep_10.png" alt="" />
-							<div class="healthPlan-mask">
-								<div class="mask-left">
-									<h1>早起打卡</h1>
-									<h2>现在开始早起打卡计划</h2>
-								</div>
-								<div class="mask-right">
-									<span>0%</span>
-									<i>完成进度</i>
 								</div>
 							</div>
 						</div>
+					</div>
+				</div>
 
-						<div class="myPlan">
-							<img src="../../../static/img/sport_15.png" alt="" />
-							<div class="healthPlan-mask">
-								<div class="mask-left">
-									<h1>早起打卡</h1>
-									<h2>现在开始早起打卡计划</h2>
-								</div>
-								<div class="mask-right">
-									<span>0%</span>
-									<i>完成进度</i>
-								</div>
-							</div>
-						</div>
-
-						<div class="myPlan">
-							<img src="../../../static/img/drink_14.png" alt="" />
-							<div class="healthPlan-mask">
-								<div class="mask-left">
-									<h1>早起打卡</h1>
-									<h2>现在开始早起打卡计划</h2>
-								</div>
-								<div class="mask-right">
-									<span>0%</span>
-									<i>完成进度</i>
-								</div>
-							</div>
-						</div>
-					</TabPane>
-				</Tabs>
+				<!--				----------------------------------我的提醒------------------------------------------>
 			</div>
 		</mt-loadmore>
 
@@ -320,7 +315,8 @@
 
 <script>
 	import anime from 'animejs'
-	import FootTabbar from '../foorterGuid/footerGuild'
+	import FootTabbar from '../foorterGuid/footerGuild';
+	import { get, post } from '../../api/fetch'
 	//	import tab from '@/components/home/Home'
 	export default {
 		components: {
@@ -331,6 +327,25 @@
 			return {
 				moveDistance: this.offsetHeight,
 				Oheight: "",
+				reminder: [{
+					info: '吃饭',
+					time: '14:41'
+				}, {
+					info: '敲敲敲asd',
+					time: '15:41'
+				}, {
+					info: '吃吃吃',
+					time: '16:41'
+				}, {
+					info: '拍拍拍',
+					time: '17:41'
+				}, {
+					info: '揉揉绕',
+					time: '18:41'
+				}],
+				schemeList: [],
+				//				show:false
+				showBox: []
 			}
 		},
 		beforeCreate() {
@@ -363,7 +378,6 @@
 				// 添加监听从系统消息中心点击某条消息启动应用事件
 				plus.push.addEventListener("receive", function(msg) {
 					// 分析msg.payload处理业务逻辑 
-
 					alert("You clicked: " + msg.content);
 				}, false);
 			}, false);
@@ -452,11 +466,11 @@
 			//				this.$router.back()
 			//			},
 			//			跳转参加竞赛页面
-			handleJoinCompetition() {
-				this.$router.push({
-					name: 'competition'
-				})
-			},
+			//			handleJoinCompetition() {
+			//				this.$router.push({
+			//					name: 'competition'
+			//				})
+			//			},
 		},
 		computed: {
 			computedHeight: function() {
@@ -464,7 +478,29 @@
 			}
 		},
 		mounted() {
-
+			get('/health-web/frontMemberScheme/healthCorona', {}).then(
+				(res) => {
+					this.schemeList = res.memberRemindScheme.memberRemindSchemeItemList;
+					console.log(this.schemeList)
+					var reg = /^(20|21|22|23|[0-1]\d):[0-5]\d:[0-5]\d$/;
+					var regExp = new RegExp(reg);
+					for(var i = 0; i < this.schemeList.length; i++) {
+						var subHour = this.schemeList[i].remindTime.substr(0, 2)
+						this.showBox.push(subHour)
+						//方法 1.switch case挨个判断           方法2.放到数组里，属于数组为真，否则为假
+						if(!regExp.test(this.schemeList[i].remindTime)) {　
+							console.log("时间格式不正确，正确格式为：12:00:00");　　
+							return;
+						} else {}
+					}
+						console.log(subHour)
+						console.log(this.showBox)
+				}
+			).catch(
+				(err) => {
+					console.log(err)
+				}
+			)
 		},
 		watch: {
 			// 如果 `clientHeight` 发生改变，这个函数就会运行

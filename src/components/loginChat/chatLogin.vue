@@ -93,7 +93,7 @@
 									wxLoginObj.login(function(e) {
 										plus.nativeUI.toast('登陆成功 ' + JSON.stringify(e))
 										console.log('登陆成功 ' + JSON.stringify(e))
-										axios.get("http://192.168.1.170:8081/health-web/modules/wxThirdParty/login?code=" + weixinCode, {
+										axios.get("http://192.168.1.119:8081/health-web/modules/wxThirdParty/login?code=" + weixinCode, {
 											//											params: {
 											//												code: _this.weixinCode
 											//											}

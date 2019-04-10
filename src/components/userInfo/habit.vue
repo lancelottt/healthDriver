@@ -9,10 +9,10 @@
 			</div>
 
 			<div class="infoSelection">
-				<button class="el-button-bigSelection" type="danger" round @click="">确认</button>
-				<button class="el-button-bigSelection" type="danger" round @click="">确认</button>
-				<button class="el-button-bigSelection" type="danger" round @click="">确认</button>
-				<button class="el-button-bigSelection" type="danger" round @click="">确认</button>
+				<button class="el-button-bigSelection" type="danger" round @click="">少吃多动</button>
+				<button class="el-button-bigSelection" type="danger" round @click="">正常吃、多动</button>
+				<button class="el-button-bigSelection" type="danger" round @click="">少吃少动</button>
+				<button class="el-button-bigSelection" type="danger" round @click="">多吃少动</button>
 				
 			</div>
 			<button class="my-middle-el-button--danger" @click="handleNext()"><span>下一步</span></button>
