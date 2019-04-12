@@ -1,24 +1,32 @@
-
-.equip{
-	position: absolute;
-    background: #fff;
+.equip {
+    position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     bottom: 0;
-    z-index: 999;
+    z-index: 0;
+    background: #f4f4f4;
 }
-.equipMain{
-	margin-top: .89rem;
+
+.lowerZ {
+    margin-top: 88px;
 }
+
+.equipMain {
+    /* margin-top: .89rem; */
+}
+
 .upper {
     width: 100%;
-    height:.91rem;
-    line-height: .91rem;
+    /* height: .91rem;
+    line-height: .91rem; */
     position: fixed;
     z-index: 1;
     background: #fff;
+    top: 0;
+    left: 0;
 }
+
 .list {
     float: left;
     text-align: center;
@@ -26,22 +34,31 @@
     font-size: 0.28rem;
     color: #999999;
 }
+
+.swiper-slide {
+    height: 40px;
+    line-height: 40px;
+}
+
 .active {
     color: #ff5e3a;
     border-bottom: .06rem solid #ff5e3a;
 }
+
 .lower {
-    position: relative;
+    /* position: relative; */
     top: 1.2rem;
     border-bottom: 1px solid #f4f4f4;
+    overflow: hidden;
 }
-.lowerList{
+
+.lowerList {
     background: white;
     float: left;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     width: 51%;
-    height:auto;
+    height: auto;
     border-right: .13rem solid #f4f4f4;
     border-bottom: .13rem solid #f4f4f4;
     float: left;
@@ -50,49 +67,60 @@
     box-sizing: border-box;
     text-align: left;
 }
-.lowerList:nth-child(even){
-	 /*border-right: 0;*/
-	border-right: none;
-	 /*padding-left: .15rem;*/
-	 width:49%;
-	margin-right: 0;
+
+.lowerList:nth-child(even) {
+    /*border-right: 0;*/
+    border-right: none;
+    /*padding-left: .15rem;*/
+    width: 49%;
+    margin-right: 0;
     box-sizing: border-box;
 }
-.lowerList div{
-	display: inline-block;
-	box-sizing: border-box;
-	margin-bottom: .15rem;
-	color: #999999;
-	font-size: .2rem;
+
+.lowerList div {
+    display: inline-block;
+    box-sizing: border-box;
+    margin-bottom: .15rem;
+    color: #999999;
+    font-size: .2rem;
 }
-.lowerList img{
-	width:3.4rem;
-	height: 3.6rem;
-	display: block;
+
+.lowerList img {
+    width: 3.4rem;
+    height: 3.6rem;
+    display: block;
     margin: auto;
 }
-.lowerList div:nth-of-type(1){
-	font-size: .24rem;
-	color: #666666;
+
+.lowerList div:nth-of-type(1) {
+    font-size: .24rem;
+    color: #666666;
 }
-.lowerList div:nth-of-type(2){
-	font-size: .2rem;
-	color: #999999;
-	overflow: hidden;/*内容超出后隐藏*/
-	text-overflow: ellipsis;/* 超出内容显示为省略号*/
-	white-space: nowrap;/*文本不进行换行*/
+
+.lowerList div:nth-of-type(2) {
+    font-size: .2rem;
+    color: #999999;
+    overflow: hidden;
+    /*内容超出后隐藏*/
+    text-overflow: ellipsis;
+    /* 超出内容显示为省略号*/
+    white-space: nowrap;
+    /*文本不进行换行*/
 }
-.dikou p{
-	float: left;
+
+.dikou p {
+    float: left;
 }
-.datashu{
-	color: #ff5e3a;
-	font-size: .24rem;
-	display: inline-block;
+
+.datashu {
+    color: #ff5e3a;
+    font-size: .24rem;
+    display: inline-block;
 }
-.dataQi{
-	 color: #999999;
-	 font-size: .24rem;
-	 display: inline-block;
-	 margin-left: .2rem;
+
+.dataQi {
+    color: #999999;
+    font-size: .24rem;
+    display: inline-block;
+    margin-left: .2rem;
 }

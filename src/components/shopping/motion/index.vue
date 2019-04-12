@@ -1,8 +1,5 @@
 <template>
     <div>
-        <!-- <div class="sports-video">
- <video-player class="video-player vjs-custom-skin playFoodVideo" ref="videoPlayer" :playsinline="true" :options="playerOptions"></video-player>
-        </div> -->
         <div class="punch-card">
             <div class="card-top">
                 <h3>{{sportMain.itemName}} <span>{{sportMain.itemDuration}}分钟</span></h3>
@@ -15,7 +12,7 @@
                 <button @click="showCard()">打卡</button>
             </div>
         </div>
-        <SignIn  :isShow='isShow' @closeCard="closeCard" :cardDay="cardDay"></signin>
+        <SignIn :isShow='isShow' @closeCard="closeCard" :cardDay="cardDay"></signin>
     </div>
 </template>
 <script type="text/javascript">
@@ -72,12 +69,6 @@
                 foods: ''
             }
         },
-        beforeCreate() {
-
-        },
-        mounted() {
-
-        },
         components: {
             SignIn
         },
@@ -94,7 +85,6 @@
                     if (res.code == 0) {
                         this.cardDay = this.cardMain.recordsNum;
                         this.isShow = true;
-                        console.log(this.cardDay)
                         this.$parent.getSportsMain(this.userItemCode);
                     }
                     if (res.code == 10000021) {

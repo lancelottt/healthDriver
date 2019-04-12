@@ -4,7 +4,6 @@ const headers = {
     'token': 'faad5a64-2f11-4b4a-9136-f7f50c333947',
 }
 
-
 export function get(url, params, data = {}) {
     return axios.get(repUrl + url, {
             headers: headers,

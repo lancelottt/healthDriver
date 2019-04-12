@@ -1,24 +1,6 @@
 <template>
   <div id="healthMarketHome" class="page">
     <tab-com></tab-com>
-    <!-- <header style="padding: 5px 0;">
-      <div>
-        <i class="iconfont icon-tianjiahaoyou"></i>
-      </div>
-      <div class="healthMarketHome-searchBar">
-        <i class="iconfont icon-sousuo"></i>
-        <el-autocomplete
-          v-model="state4"
-          :fetch-suggestions="querySearchAsync"
-          placeholder="请输入商品名称或 店铺名称"
-          @select="handleSelect"
-        ></el-autocomplete>
-        <i class="iconfont icon-huiseyuancha" @click="handleHealthMarketHomeCancelInput()"></i>
-      </div>
-      <div>
-        <i class="iconfont icon-tixing"></i>
-      </div>
-    </header> -->
     <div class="wrapper" ref="wrapper">
       <div class="content">
         <div>
@@ -63,18 +45,19 @@
                 <h2>{{list.name}}</h2>
                 <span @click="healthMore(list.id, list.name)">查看更多>></span>
               </div>
-              <div class="healthMarketHomeXWrapper" ref="healthMarketHomeXWrapper">
-                <div class="healthMarketHomeXContent">
-                  <div
-                    v-for="value in  list.categoryList"
-                    :key="value.index"
-                    @click="goMeaunLsit(value.id, value.name)"
-                  >
-                    <img :src="value.icon">
+
+              <swiper :options="swiperOption1" class="healthMarketHomeXWrapper1">
+                <swiper-slide
+                  v-for="value in  list.categoryList"
+                  :key="value.index"
+                  class="healthMarketHomeXContent1" id="healthMarketHomeXContent1" 
+                >
+                  <div  @click="goMeaunLsit(value.id, value.name)">
+                    <img :src="value.icon" style="width: 3.5rem;height: 2.3rem;">
                     <span>{{value.name}}</span>
                   </div>
-                </div>
-              </div>
+                </swiper-slide>
+              </swiper>
             </div>
           </article>
         </div>
@@ -96,6 +79,11 @@ export default {
   },
   data() {
     return {
+      swiperOption1: {
+        freeMode: true,
+        setWrapperSize: true,
+        slidesPerView: 1.8
+      },
       index: 0,
       healthPointList: [],
       swiperOption: {
@@ -126,7 +114,6 @@ export default {
       ],
       show: true,
       restaurants: [],
-      state4: "",
       timeout: null,
       activeName: "second"
     };
@@ -143,16 +130,16 @@ export default {
       );
     },
     goMeaunLsit(id, name) {
+      console.log(id)
       this.$router.push({
-        path: "/healthPlan/HealtTarget", 
-        query: { id: id, name:name}
+        path: "/healthPlan/HealtTarget",
+        query: { id: id, name: name }
       });
-     
     },
     healthMore(id, name) {
       this.$router.push({
         path: "/healthyZ/HealtTargetMore",
-        query:{ moreId: id, title: name}
+        query: { moreId: id, title: name }
       });
       get("/health-web/modules/hfmprogramcategory/list?parentId=" + id).then(
         res => {
@@ -183,9 +170,6 @@ export default {
     },
     handlerToNews() {
       this.$router.push({ path: "/healthyZ/HealStory", query: { type: 2 } });
-    },
-    handleHealthMarketHomeCancelInput() {
-      this.state4 = "";
     },
     handleClick(tab, event) {
       console.log(tab, event);
@@ -232,7 +216,7 @@ export default {
     this.scroll.on("pullingDown", () => {
       console.log("触顶了");
     });
-    // this.XScroll = new BScroll(this.$refs.healthMarketHomeXWrapper, {
+    // this.XScroll = new BScroll(this.$refs.healWrapper, {
     //   scrollX: true,
     //   freeScroll: true,
     //   startX: 0,
@@ -251,6 +235,30 @@ export default {
 
 <style>
 @import "../../assets/healthMarket/healthMarketHome.css";
+.healthMarketHomeXWrapper1 {
+  width: 100%;
+  height: 2rem;
+}
+.healthMarketHomeXContent1 {
+  width: 3.5rem;
+  height: 2.3rem; 
+  border-radius: 0.1rem;
+  position: relative;
+}
+#healthMarketHomeXContent1 .swiper-container img {
+  width: 3.5rem !important;
+  height: 2.3rem !important;
+}
+#healthMarketHomeXContent1 .swiper-container .swiper-slide {
+  width: 3.5rem;
+}
+#healthMarketHomeXContent1 > div {
+  width: 3.5rem;
+}
+#healthMarketHomeXContent1 > div>img {
+  width: 3.5rem;
+  height: 2.3rem;
+}
 .healthMarketHome-navigate > div {
   width: 25% !important;
 }
@@ -277,6 +285,7 @@ export default {
   line-height: 45px;
   position: relative;
 }
+
 .fruitActive:after {
   position: absolute;
   content: "";

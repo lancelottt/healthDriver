@@ -132,8 +132,6 @@ import SetUp from "@/components/szsetUp/setUp";
 import Equip from "@/components/equip/equip";
 //健康管理**
 import HealthMana from "@/components/pages/shopping/shopTabbar/healthMana";
-//体验套餐**
-import Experience from "@/components/experience/experience";
 
 //套餐详情
 import PackageDetails from "@/components/experience/packageDetails";
@@ -178,11 +176,12 @@ import HealthStoryMain from "@/components/healthMarket/healthStoryMain";
 import HealtTargetMore from "@/components/healthMarket/healthTargetMore";
 import HealtTarget from "@/components/healthMarket/healtTarget";
 import HealthTargetMain from "@/components/healthMarket/healthTargetMain";
-
+import ExperienceList from '@/components/equip/experienceList'
 //打卡页面 
 import WechatLoginTest from "@/components/WeChatTest/weChatLoginTest";
 import Author from "@/components/WeChatTest/author";
-
+// h5商城
+import ShopHerf from '@/components/pages/shopping/shopHerf';
 Vue.use(Router);
 export default new Router({
 
@@ -366,40 +365,44 @@ export default new Router({
             name: "healthMarketHome",
             component: HealthMarketHome
         },
-
+        {
+            path: '/shopherf',
+            component: ShopHerf
+        },
         //引入商城
         {
             path: "/shopping",
             name: "",
-            component: Shopping
-                //			,
-                //			children:[
-                //			  {
-                //			  	path:'/shopping/sale',
-                //			  	name:'sale',
-                //			  	component:Sale
-                //			  },
-                //			  {
-                //			  	path:'/shopping/healthMana',
-                //			  	name:'healthMana',
-                //			  	component:HealthMana
-                //			  },
-                //			  {
-                //			  	path:'/shopping/healthEquip',
-                //			  	name:'healthEquip',
-                //			  	component:HealthEquip
-                //			  },
-                //			  {
-                //			  	path:'/shopping/sportsEquip',
-                //			  	name:'sportsEquip',
-                //			  	component:SportsEquip
-                //			  },
-                //			  {
-                //			  	path:'/shopping/exper',
-                //			  	name:'exper',
-                //			  	component:Exper
-                //			  }
-                //			]
+            component: Shopping,
+
+            //			,
+            //			children:[
+            //			  {
+            //			  	path:'/shopping/sale',
+            //			  	name:'sale',
+            //			  	component:Sale
+            //			  },
+            //			  {
+            //			  	path:'/shopping/healthMana',
+            //			  	name:'healthMana',
+            //			  	component:HealthMana
+            //			  },
+            //			  {
+            //			  	path:'/shopping/healthEquip',
+            //			  	name:'healthEquip',
+            //			  	component:HealthEquip
+            //			  },
+            //			  {
+            //			  	path:'/shopping/sportsEquip',
+            //			  	name:'sportsEquip',
+            //			  	component:SportsEquip
+            //			  },
+            //			  {
+            //			  	path:'/shopping/exper',
+            //			  	name:'exper',
+            //			  	component:Exper
+            //			  }
+            //			]
         },
 
         // 引入数据**
@@ -591,7 +594,7 @@ export default new Router({
         },
         // 支持门店
         {
-            path: "/KwnoFood/fruit/store",
+            path: "/store",
             name: "",
             component: Store
         },
@@ -702,22 +705,13 @@ export default new Router({
             name: "equip",
             component: Equip
         },
-        {
-            path: "/experience",
-            name: "experience",
-            component: Experience
-        },
         //      健康管理**
         {
             path: "/healthMana",
             name: "healthMana",
             component: HealthMana
         },
-        {
-            path: "/experience",
-            name: "experience",
-            component: Experience
-        },
+
         {
             path: "/equipDetails",
             name: "equipDetails",
@@ -760,6 +754,10 @@ export default new Router({
             path: '/setupTong',
             name: 'setupTong',
             component: SetupTong
+        },
+        {
+            path: '/experienceList',
+            component: ExperienceList
         }
     ]
 });

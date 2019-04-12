@@ -111,6 +111,7 @@ export default {
           if (res.code == 0) {
             this.cardMain = res.userAthleticRecords;
             this.cardCode = res.count;
+            console.log(res)
           }
         }
       );

@@ -1,17 +1,13 @@
-<template>
-    <!-- <div class="shopCom"> -->
+<template> 
         <div class="hadHea">
         <div class="had">
             <div class="componentHeader-header">
                 <div class="Tp" @click="handlerBack()"> 
                 </div>
-                <div class="headerAmic">我的运动</div>
-                <div class="headerFb">    
-                </div>
+                <div class="headerAmic">我的运动1</div> 
             </div>
         </div>
-       </div>
-    <!-- </div> -->
+       </div> 
 </template>
 <script>
     export default {
@@ -22,6 +18,7 @@
         },
         methods: {
             handlerBack() {
+                console.log('132')
                 this.$router.back()
             }
         }
@@ -49,8 +46,7 @@
     }
     
     .componentHeader-header {
-        width: 96%;
-        /* height: .87rem; */
+        width: 96%; 
         box-sizing: border-box;
         color: black;
         line-height: .87rem;
@@ -65,6 +61,7 @@
         background: url(../../../static/images/ShareIcon.png) no-repeat center;
         background-size: 100% 100%;
         margin-top: .3rem;
+        margin-right: 0.3rem;
     }
     
     .Tpi {
