@@ -176,12 +176,16 @@ import HealthStoryMain from "@/components/healthMarket/healthStoryMain";
 import HealtTargetMore from "@/components/healthMarket/healthTargetMore";
 import HealtTarget from "@/components/healthMarket/healtTarget";
 import HealthTargetMain from "@/components/healthMarket/healthTargetMain";
-import ExperienceList from '@/components/equip/experienceList'
+import ExperienceList from '@/components/equip/experienceList';
+import ChargeList from '@/components/equip/ChargeList';
+
 //打卡页面 
 import WechatLoginTest from "@/components/WeChatTest/weChatLoginTest";
 import Author from "@/components/WeChatTest/author";
 // h5商城
 import ShopHerf from '@/components/pages/shopping/shopHerf';
+// 健康方案
+import ChargetListDetail from "@/components/experience/ChargetListDetail";
 Vue.use(Router);
 export default new Router({
 
@@ -758,6 +762,13 @@ export default new Router({
         {
             path: '/experienceList',
             component: ExperienceList
+        },
+        {
+            path: '/ChargeList',
+            component: ChargeList
+        }, {
+            path: '/ChargetListDetail',
+            component: ChargetListDetail
         }
     ]
 });

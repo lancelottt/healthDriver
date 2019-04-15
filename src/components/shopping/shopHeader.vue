@@ -4,7 +4,7 @@
             <div class="componentHeader-header">
                 <div class="Tp" @click="handlerBack()"> 
                 </div>
-                <div class="headerAmic">我的运动1</div> 
+                <div class="headerAmic">我的运动</div> 
             </div>
         </div>
        </div> 

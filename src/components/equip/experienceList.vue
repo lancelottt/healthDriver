@@ -181,7 +181,7 @@ export default {
     },
     handLower(id) {
       this.$router.push({
-        path: "packageDetails",
+        path: "ChargetListDetail",
         query: { id: id }
       });
     }

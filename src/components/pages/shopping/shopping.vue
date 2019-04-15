@@ -131,7 +131,7 @@ export default {
         },
         {
           name: "健康管理",
-          path: "/healthMana"
+          path: "/ChargeList"
         }
       ]
     };

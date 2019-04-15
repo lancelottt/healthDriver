@@ -80,7 +80,7 @@ export default {
         if (res.code == 0) {
           this.foodMenuList = res.page.list;
           this.menuId = this.foodMenuList[0].foodMenuId;
-          this.getFoodList(this.foodMenuList[0].foodMenuId);
+          this.getFoodList('');
         }
       });
     },
@@ -93,7 +93,6 @@ export default {
       }).then(res => {
         if (res.code == 0) {
           var _this = this;
-
           var arr = res.page.list;
           this.foodList.push(...this.filterData(arr));
           this.currPageF++;
@@ -101,7 +100,6 @@ export default {
             Toast("提示信息");
             return;
           }
-          console.log("currPageF" + this.currPageF);
         }
       });
     },
