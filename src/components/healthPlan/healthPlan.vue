@@ -347,7 +347,6 @@
 				schemeList: [],
 				//				show:false
 				showBox: [],
-				nowTime: '',
 				beginTime: '',
 				endTime: '',
 				hitCardStatus0: '',
@@ -374,7 +373,11 @@
 				hitCardStatus21: '',
 				hitCardStatus22: '',
 				hitCardStatus23: '',
-				hitCardStatus: ''
+				hitCardStatus: '',
+				failedStatus: [],
+				curHour: '',
+				curMinutes: '',
+
 			}
 		},
 		beforeCreate() {
@@ -486,12 +489,10 @@
 			//				console.log(this.nowTime); // 修改数据date
 			//			}, 1000)
 			var _this = this; //声明一个变量指向Vue实例this，保证作用域一致
-			this.timer = setInterval(function() {
-				var curHour = new Date().getHours() < 10 ? "0" + new Date().getHours() : new Date().getHours();
-				var curMinutes = new Date().getMinutes() < 10 ? "0" + new Date().getMinutes() : new Date().getMinutes();
-				_this.nowTime = curHour + ':' + curMinutes //修改数据date
-				//				console.log(_this.nowTime)
-			}, 1000)
+			this.curHour = new Date().getHours() < 10 ? "0" + new Date().getHours() : new Date().getHours();
+			this.curMinutes = new Date().getMinutes() < 10 ? "0" + new Date().getMinutes() : new Date().getMinutes();
+			//				this.nowTimer = curHour + ':' + curMinutes //修改数据dater
+			console.log(this.nowTimer)
 			this.timer = setInterval(function() {
 				var del5 = new Date().getSeconds() - 300
 				if(del5 < 0 && del5 > -60) {
@@ -526,7 +527,7 @@
 				//				}
 				//				if当前小时==接口小时&&当前分钟和接口分钟之差的绝对值小于等于5   || 当前小时和接口 小时只差小于1&&当前分钟和接口分钟之差的绝对值大于等于55
 				if(item.isFinish == 0) {
-					if(item.remindTime.substr(0, 2) == this.nowTime.substr(0, 2) && Math.abs(item.remindTime.substr(3, 2) - this.nowTime.substr(3, 2)) <= 5 || Math.abs(item.remindTime.substr(0, 2) - this.nowTime.substr(0, 2)) <= 1 && Math.abs(item.remindTime.substr(3, 2) - this.nowTime.substr(3, 2)) >= 55) {
+					if(item.remindTime.substr(0, 2) == this.nowTimer.substr(0, 2) && Math.abs(item.remindTime.substr(3, 2) - this.nowTimer.substr(3, 2)) <= 5 || Math.abs(item.remindTime.substr(0, 2) - this.nowTimer.substr(0, 2)) <= 1 && Math.abs(item.remindTime.substr(3, 2) - this.nowTimer.substr(3, 2)) >= 55) {
 
 						//					/frontMemberScheme/memberClockRecord?clockTime=打卡时间&memberRemindSchemeCode=方案code&memberRemindSchemeItemCode=打卡项code&remindTime=正常打卡时间&remindItemName=打卡项名称
 					} else {
@@ -569,6 +570,9 @@
 			//			},
 		},
 		computed: {
+			nowTimer: function() {
+				return this.curHour + ':' + this.curMinutes
+			},
 			computedHeight: function() {
 
 			}
@@ -940,31 +944,32 @@
 				}
 			)
 		},
-		beforeUpdate() {
-			console.log(this.schemeList)
+		beforUpdate() {
+
+		},
+		destroyed() {
 			this.schemeList.map((item) => {
-				if(item.remindTime == 0) {
-					if(this.nowTime.substr(3, 2) - item.remindTime.substr(3, 2) > 5) {
+				if(item.isFinish == 0) {
+					console.log('daka时间'+item.remindTime.substr(3, 2))
+					console.log(item + '未打卡项')
+					if(Number(this.nowTimer.substr(3, 2)) - item.remindTime.substr(3, 2) > 5) {
 						this.hitCardStatus = 2;
+						this.failedStatus.push(this.hitCardStatus);
+						console.log(failedStatus+'failedStatus')
 						console.log(item.remindTime + '打卡超时' + this.hitCardStatus)
 					}
 				}
 			})
 		},
-		beforeDestroyed() {
-			this.schemeList.map((item) => {
-				get('/health-web/frontMemberScheme/memberClockRecord?clockTime=' + this.nowTime + '&memberRemindSchemeCode=' + this.response.memberRemindScheme.memberRemindSchemeCode + '&memberRemindSchemeItemCode=' + item.memberRemindSchemeItemCode + '&remindTime=' + item.remindTime + '&remindItemName=' + item.remindItemName + '&status=' + this.hitCardStatus, {}).then(
-					(suc) => {
-						alert('向服务器发送 成功 ' + suc)
-					}
-				).catch(
-					(err) => {
-						alert(err + '向服务器发送失败 ')
-					}
-				)
-			})
-		},
 		watch: {
+			curHour: function(newVal) {
+				this.curHour = newVal
+				console.log(this.curHour)
+			},
+			curMinutes: function(modVal) {
+				this.curMinutes = modVal
+				console.log(this.curMinutes)
+			},
 			// 如果 `clientHeight` 发生改变，这个函数就会运行
 			clientHeight: function() {
 				this.changeFixed(this.clientHeight)

@@ -212,7 +212,6 @@
           position: absolute;
           right: 0;
           margin: auto;
-          background: rgba(255, 255, 25, 0.5);
           left: -45%;
           top: 30%; }
           #healthPlan .healthPlan-con .healthGuide .healthGuide-con > div:nth-of-type(2) .healthGuide-con-footprint {
@@ -348,8 +347,7 @@
           height: 1.05rem;
           position: absolute;
           top: 30%;
-          left: 64.7%;
-          background: rgba(255, 255, 25, 0.5); }
+          left: 64.7%; }
           #healthPlan .healthPlan-con .healthGuide .healthGuide-con > div:nth-of-type(6) .healthGuide-con-footprint {
             width: 0.25rem;
             height: 0.31rem;
@@ -416,8 +414,7 @@
           height: 1.07rem;
           position: absolute;
           top: 56.4%;
-          left: 12.15%;
-          background: rgba(255, 255, 25, 0.5); }
+          left: 12.15%; }
           #healthPlan .healthPlan-con .healthGuide .healthGuide-con > div:nth-of-type(8) .healthGuide-con-footprint {
             width: 0.25rem;
             height: 0.31rem;
@@ -449,8 +446,7 @@
           height: 0.91rem;
           position: absolute;
           top: 66.8%;
-          left: 12.3%;
-          background: rgba(255, 255, 25, 0.5); }
+          left: 12.3%; }
           #healthPlan .healthPlan-con .healthGuide .healthGuide-con > div:nth-of-type(9) .healthGuide-con-footprint {
             width: 0.25rem;
             height: 0.31rem;
@@ -517,8 +513,7 @@
           height: 0.91rem;
           position: absolute;
           top: 78.1%;
-          left: 40.6%;
-          background: rgba(255, 255, 25, 0.5); }
+          left: 40.6%; }
           #healthPlan .healthPlan-con .healthGuide .healthGuide-con > div:nth-of-type(11) .healthGuide-con-footprint {
             width: 0.25rem;
             height: 0.31rem;
@@ -585,8 +580,7 @@
           height: 0.91rem;
           position: absolute;
           top: 66.9%;
-          left: 69.3%;
-          background: rgba(255, 255, 25, 0.5); }
+          left: 69.3%; }
           #healthPlan .healthPlan-con .healthGuide .healthGuide-con > div:nth-of-type(14) .healthGuide-con-footprint {
             width: 0.25rem;
             height: 0.31rem;
@@ -618,8 +612,7 @@
           height: 1.07rem;
           position: absolute;
           top: 56.5%;
-          left: 72.55%;
-          background: rgba(255, 255, 25, 0.5); }
+          left: 72.55%; }
           #healthPlan .healthPlan-con .healthGuide .healthGuide-con > div:nth-of-type(15) .healthGuide-con-footprint {
             width: 0.25rem;
             height: 0.31rem;
