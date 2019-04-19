@@ -6,5 +6,6 @@ export default  [
      {
 		path:'/healthPlan/myReminder',
 		component:MyReminder
-     },
+     }
+     
 ]

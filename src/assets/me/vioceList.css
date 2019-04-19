@@ -1,0 +1,160 @@
+.headList{
+	width:100%;
+	height: auto;
+	padding-bottom: 2.25rem;
+	background: #F2F2F2;
+}
+.headHeader{
+	width:100%;
+	height: .84rem;
+	background: #FFFFFF;
+}
+.headContent{
+	width:94%;
+	height: .84rem;
+	background: yellow;
+	margin: auto;
+}
+.handVioce{
+	width:100%;
+	height: auto;
+    padding-bottom: 3.2rem;
+	background: #F2F2F2;
+}
+.handBack,.vioContent{
+    box-sizing: border-box;
+	width:100%;
+	height: auto;
+	background: #FFFFFF;
+	margin-top: .04rem;
+}
+.voiceHeader{
+	width:92%;
+	height: .84rem;
+	margin: auto;
+}
+.voiceHeaderLeft{
+    width:10%;
+    float: left;
+}
+.voiceHeaderLeft img{
+    width:.41rem;
+	height: .33rem;
+	margin-top: .2rem;
+	background-size: 1005 100%;
+}
+.voiceHeaderRight{
+	width:90%;
+	float: right;
+	font-size: .28rem;
+	height: .84rem;
+	line-height: .84rem;
+	text-align: center;
+	color: #333333;
+}
+.vioceCon{
+	width:92%;
+	margin: auto;
+	border-bottom: 1px solid #f2f2f2;
+	box-sizing: border-box;
+}
+.vioceConVioce{
+	width:1.62rem;
+	height: 2.12rem;
+	margin: auto;
+}
+.vioceConVioce img{
+	width:100%;
+	height: 100%;
+}
+.headContent{
+	background: #FFFFFF;
+	width:100%;
+	height: 3rem;
+	margin-top: .03rem;
+}
+.headUl{
+	width:92%;
+	height: auto;
+	margin: auto;
+	text-align: left;
+}
+.headContent{
+	width:92%;
+	height: auto;
+	margin: auto;
+}
+.headUl{
+	width:100%;
+	height: 1rem;
+}
+.liOne,.liOne1{
+	float: left;
+	width: .4rem;
+	height: .4rem;
+	margin-top: .1rem;
+	margin-top: .3rem;
+	background: url(../../../static/images/biguan.png) no-repeat center;
+	background-size:100% 100% ;
+}
+.liOne1{
+	background: url(../../../static/images/kaiguan.png) no-repeat center;
+	background-size:100% 100% ;
+}
+.liOne img{
+	width:.4rem;
+	height: .4rem;
+	background-size: 100% 100%;
+}
+.liTwo{
+	float: left;
+	margin-top: .3rem;
+	margin-left: .2rem;
+	width: 70%;
+	color:rgba(102,102,102,1);
+	font-size: .28rem;
+}
+.liTree{
+	float: right;
+    margin-top: .25rem;
+    width: 14%;
+	height: .45rem;
+	background:rgba(50,197,140,1);
+    border-radius:10px;
+    color: #FFFFFF;
+    line-height: .45rem;
+    text-align: center;
+}
+.headZong{
+	width:100%;
+	height: auto;
+	background: #FFFFFF;
+}
+.dialog_fixed{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	right: 0;
+	background: rgba(0,0,0,.3);
+}
+.dialog_fixed_play{
+	width: 2rem;
+	height: 2rem;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+.dialog_fixed_play img{
+	width:100%;
+	height:100%;
+}
+.noData{
+	padding:.2rem 0;
+	text-align: center;
+	color: #ccc;
+	font-size: .28rem;
+}

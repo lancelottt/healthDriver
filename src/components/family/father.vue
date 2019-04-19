@@ -94,7 +94,7 @@
 							</div>
 						</li>
 						<!--睡眠**-->
-						<li @click="handSleep(userLatestRecord.userCode)">
+						<!--<li @click="handSleep(userLatestRecord.userCode)">
 							<div class="press">
 								<div class="pressL">
 									<div class="preSp">
@@ -113,7 +113,7 @@
 							<div class="press">
 								<div class="preWight"></div>
 							</div>
-						</li>
+						</li>-->
 						<!--体重**-->
 						<li :style="liProWeight" @click="handWeight(userLatestRecord.userCode)">
 							<div class="press">

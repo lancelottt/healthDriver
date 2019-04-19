@@ -243,6 +243,11 @@ export default new Router({
 			name: "",
 			component: Bloodmy
 		},
+		{
+			path: "/familyBlood",
+			name: "",
+			component: FamilyBlood
+		},
 		// {
 		// 	path: '/*any',
 		// 	redirect: 'Home'
