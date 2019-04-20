@@ -8,7 +8,7 @@
                         <div class="meImg"></div>
                     </div>
                     <div class="memCe">
-                        会员中心
+                                                                             团队中心
                     </div>
                     <div class="memRi">
                         <div></div>

@@ -109,7 +109,7 @@
     height: .66rem;
     margin-top: .29rem;
     border-radius: .3rem;
-    border:.01rem solid #d3b888;
+    border:1px solid #d3b888;
     box-sizing: border-box;
 }
 .codeLe{

@@ -83,11 +83,11 @@
     border-color: #32C58C;
     background-color: #32C58C;
 }
-.switch>>>.mint-cell {
+.bluetooth >>>.mint-cell {
     margin-top: .15rem;
 }
-.bluetooth>>>.mint-cell {
-    margin-top: .15rem;
+.notifica >>>.mint-cell{
+	min-height: 39px !important;
 }
 .bluetooth >>>.mint-switch-input:checked + .mint-switch-core {
     border-color: #32C58C;

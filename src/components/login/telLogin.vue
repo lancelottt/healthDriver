@@ -5,7 +5,7 @@
 		<!--iconfont icon-xiangzuojiantou-->
 
 		<section class="telLogin">
-			<div class="headImg" @click="handlerUp()">
+			<div class="headImg">
 				<img src="../../../static/img/telLogin2.png" />
 			</div>
 			<div class="slogan"><img src="../../../static/img/telLogin.png" /></div>
@@ -15,10 +15,10 @@
 				<span>验证码</span>
 				<el-row class='telLogin-getVarifyCode'>
 					<el-input v-model="inputVarifyCode" placeholder="请输入验证码  "></el-input>
-					<a href="javascript:;" @click="handlerToWx()">获取验证码</a>
+					<a href="javascript:;">获取验证码</a>
 				</el-row>
 			</div>
-			<span>为了保证您的账户安全，请绑定手机号，绑定成功后即可获得新人专享礼券</span>
+			<span>为了保证您的账户安全，请绑定手机号<!--，绑定成功后即可获得新人专享礼券--></span>
 			<el-button type="danger" round @click="handleTelLoginConfirm()">确认</el-button>
 		</section>
 
@@ -42,12 +42,6 @@
 					path: '/userInfo/confirmInfo'
 				})
 			},
-			handlerToWx(){
-				this.$router.push('/test')
-			},
-			handlerUp(){
-				this.$router.push('/author')
-			}
 		}
 	}
 </script>

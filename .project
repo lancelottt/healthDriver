@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-<<<<<<< HEAD
 	<name>fork</name>
-=======
-	<name>kk</name>
->>>>>>> cf5f538fb5c38e8cf9773d74d92af2a3810317c6
 	<comment></comment>
 	<projects>
 	</projects>
 	<buildSpec>
+		<buildCommand>
+			<name>com.aptana.editor.php.aptanaPhpBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
 		<buildCommand>
 			<name>com.aptana.ide.core.unifiedBuilder</name>
 			<arguments>
@@ -17,14 +18,38 @@
 	</buildSpec>
 	<natures>
 		<nature>com.aptana.projects.webnature</nature>
+		<nature>com.aptana.editor.php.phpNature</nature>
 	</natures>
 	<filteredResources>
 		<filter>
-<<<<<<< HEAD
-			<id>1552554435570</id>
-=======
-			<id>1553184555500</id>
->>>>>>> cf5f538fb5c38e8cf9773d74d92af2a3810317c6
+			<id>1554282806572</id>
+			<name></name>
+			<type>26</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-node_modules</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1555567273753</id>
+			<name></name>
+			<type>26</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-node_modules</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1555571382133</id>
+			<name></name>
+			<type>26</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-node_modules</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1555667838748</id>
 			<name></name>
 			<type>26</type>
 			<matcher>

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div>self</div>
+     <div>self</div>
      <foot-tabbar></foot-tabbar>
     </div>
 </template>

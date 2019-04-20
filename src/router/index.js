@@ -1,5 +1,9 @@
 import Vue from "vue";
 import Router from "vue-router";
+import wqyRouters from './wqyRouters.js'
+import xycRouters from './xycRouters.js'
+import zydRouters from './zydRouters.js'
+
 //<<<<<<< HEAD
 //import Home from '@/components/home/Home'
 //=======
@@ -58,7 +62,7 @@ import ModityDetails from "@/components/equip/details/modityDetails";
 ////引入商城中运动手表首页运动装备**
 //import SportsEquip from '@/components/pages/shopping/shopTabbar/sportsEquip'
 ////引入商城中运动手表首页体验套餐**
-//import Exper from '@/components/pages/shopping/shopTabbar/experience'
+// import Exper from '@/components/pages/shopping/shopTabbar/experience'
 // 引入数据组件**
 import DataSj from "@/components/pages/datasj/datasj";
 // 体重**
@@ -69,7 +73,7 @@ import Blood from "@/components/pages/datasj/blood/blood";
 import Sugar from "@/components/pages/datasj/sugar/sugar";
 // 运动**
 import Motion from "@/components/pages/datasj/motion/motion";
-// 心率**
+// 心率**s
 import Heart from "@/components/pages/datasj/heart/heart";
 // 引入我的组件**
 import Me from "@/components/pages/me/me";
@@ -97,6 +101,8 @@ import Father from "@/components/family/father";
 import Wei from "@/components/family/wei";
 // 家人中的血糖**
 import BloodSu from "@/components/family/bloodSu";
+// 家人中的血压**
+import FamilyBlood from "@/components/family/familyBlood";
 // 会员中心**
 import MemCen from "@/components/memCen/memCen";
 //我的预计收入**
@@ -136,6 +142,7 @@ import HealthMana from "@/components/pages/shopping/shopTabbar/healthMana";
 //套餐详情
 import PackageDetails from "@/components/experience/packageDetails";
 //认识食物 
+// import KwnoFoodIndex from "@/components/healthMarket/kwnoFoodComponents/index";
 import KnowFoodCarBon from "@/components/healthMarket/kwnoFoodComponents/carbon";
 import KnowFoodEggWhite from "@/components/healthMarket/kwnoFoodComponents/eggWhite";
 import KnowFoodVegetable from "@/components/healthMarket/kwnoFoodComponents/vegetable";
@@ -186,10 +193,18 @@ import Author from "@/components/WeChatTest/author";
 import ShopHerf from '@/components/pages/shopping/shopHerf';
 // 健康方案
 import ChargetListDetail from "@/components/experience/ChargetListDetail";
-Vue.use(Router);
-export default new Router({
+import MeOrder from "@/components/pages/me/MeOrder";
+import Collections from "@/components/pages/me/Collections";
 
-    routes: [{
+Vue.use(Router);
+//let routes = new Set([...wqyRouters, ...xycRouters, ...zydRouters]);
+export default new Router({
+    routes: [
+        //引入xyc路由 wqy路由zyd路由
+        ...xycRouters,
+        ...wqyRouters,
+        ...zydRouters,
+        {
             path: "/",
             name: "Healthy",
             component: Healthy
@@ -199,23 +214,6 @@ export default new Router({
             path: "/Archi",
             name: "archi",
             component: Uncertain
-        },
-        // 蜕变故事**
-        {
-            path: "/healthyZ/HealStory",
-            name: "HealStory",
-            component: HealStory
-        },
-        // 故事详情**
-        {
-            path: "/healthyZ/HealStory/HealthStoryMain",
-            name: "HealthStoryMain",
-            component: HealthStoryMain
-        },
-        {
-            path: "/healthyZ/HealtTargetMore",
-            name: "HealtTargetMore",
-            component: HealtTargetMore
         },
         // 我的家人**
         {
@@ -326,16 +324,6 @@ export default new Router({
             component: Count
         },
         {
-            path: "/healthPlan/HealtTarget",
-            name: "HealtTarget",
-            component: HealtTarget
-        },
-        {
-            path: "/healthPlan/HealthTargetMain",
-            name: "HealthTargetMain",
-            component: HealthTargetMain
-        },
-        {
             path: "/competition/competition",
             name: "competition",
             component: Competition
@@ -369,46 +357,40 @@ export default new Router({
             name: "healthMarketHome",
             component: HealthMarketHome
         },
-        {
-            path: '/shopherf',
-            component: ShopHerf
-        },
         //引入商城
         {
             path: "/shopping",
             name: "",
-            component: Shopping,
-
-            //			,
-            //			children:[
-            //			  {
-            //			  	path:'/shopping/sale',
-            //			  	name:'sale',
-            //			  	component:Sale
-            //			  },
-            //			  {
-            //			  	path:'/shopping/healthMana',
-            //			  	name:'healthMana',
-            //			  	component:HealthMana
-            //			  },
-            //			  {
-            //			  	path:'/shopping/healthEquip',
-            //			  	name:'healthEquip',
-            //			  	component:HealthEquip
-            //			  },
-            //			  {
-            //			  	path:'/shopping/sportsEquip',
-            //			  	name:'sportsEquip',
-            //			  	component:SportsEquip
-            //			  },
-            //			  {
-            //			  	path:'/shopping/exper',
-            //			  	name:'exper',
-            //			  	component:Exper
-            //			  }
-            //			]
+            component: Shopping
+                //			,
+                //			children:[
+                //			  {
+                //			  	path:'/shopping/sale',
+                //			  	name:'sale',
+                //			  	component:Sale
+                //			  },
+                //			  {
+                //			  	path:'/shopping/healthMana',
+                //			  	name:'healthMana',
+                //			  	component:HealthMana
+                //			  },
+                //			  {
+                //			  	path:'/shopping/healthEquip',
+                //			  	name:'healthEquip',
+                //			  	component:HealthEquip
+                //			  },
+                //			  {
+                //			  	path:'/shopping/sportsEquip',
+                //			  	name:'sportsEquip',
+                //			  	component:SportsEquip
+                //			  },
+                //			  {
+                //			  	path:'/shopping/exper',
+                //			  	name:'exper',
+                //			  	component:Exper
+                //			  }
+                //			]
         },
-
         // 引入数据**
         {
             path: "/dataSj/weight",
@@ -446,7 +428,6 @@ export default new Router({
                 }
             ]
         },
-
         // 引入我的**
         {
             path: "/me",
@@ -522,11 +503,11 @@ export default new Router({
             name: "",
             component: WechatLoginTest
         },
-        {
-            path: "/author",
-            name: "",
-            component: Author
-        },
+        //		{
+        //			path: "/author",
+        //			name: "",
+        //			component: Author
+        //		},
         // 我的运动**
         {
             path: "/mymotion",
@@ -564,7 +545,13 @@ export default new Router({
             path: "/KwnoFood",
             name: "",
             component: KwnoFood,
-            children: [{
+            children: [
+                // {
+                //     path: "/KwnoFood/index",
+                //     name: "",
+                //     component: KwnoFoodIndex
+                // },
+                {
                     path: "/KwnoFood/carbon",
                     name: "",
                     component: KnowFoodCarBon
@@ -598,11 +585,10 @@ export default new Router({
         },
         // 支持门店
         {
-            path: "/store",
+            path: "/KwnoFood/fruit/store",
             name: "",
             component: Store
         },
-
         // 在线问
         {
             path: "/KwnoFood/fruit/Airlines/:id",
@@ -715,7 +701,11 @@ export default new Router({
             name: "healthMana",
             component: HealthMana
         },
-
+        // {
+        //     path: "/experience",
+        //     name: "experience",
+        //     component: Experience
+        // },
         {
             path: "/equipDetails",
             name: "equipDetails",
@@ -760,15 +750,53 @@ export default new Router({
             component: SetupTong
         },
         {
-            path: '/experienceList',
-            component: ExperienceList
+            path: "/healthPlan/HealtTarget",
+            name: "HealtTarget",
+            component: HealtTarget
+        },
+
+        {
+            path: "/healthPlan/HealthTargetMain",
+            name: "HealthTargetMain",
+            component: HealthTargetMain
+        },
+
+        // 蜕变故事**
+        {
+            path: "/healthyZ/HealStory",
+            name: "HealStory",
+            component: HealStory
+        },
+        // 故事详情**
+        {
+            path: "/healthyZ/HealStory/HealthStoryMain",
+            name: "HealthStoryMain",
+            component: HealthStoryMain
+        },
+        {
+            path: "/healthyZ/HealtTargetMore",
+            name: "HealtTargetMore",
+            component: HealtTargetMore
+        },
+        {
+            path: '/shopherf',
+            component: ShopHerf
+        },
+        {
+            path: '/ChargetListDetail',
+            component: ChargetListDetail
+        },
+        {
+            path: '/MeOrder',
+            component: MeOrder
+        },
+        {
+            path: '/Collections',
+            component: Collections
         },
         {
             path: '/ChargeList',
             component: ChargeList
-        }, {
-            path: '/ChargetListDetail',
-            component: ChargetListDetail
         }
     ]
 });

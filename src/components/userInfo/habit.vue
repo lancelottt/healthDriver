@@ -1,6 +1,6 @@
 <template>
 	<div id="userInfo-identity">
-		<header><span class="" @click="handleBack()"><img src="../../../static/img/arrow_03.png"/></span><span>制订你的健康计划</span><span class="skip" @click="handleSkip()">跳过</span></header>
+		<header><span class="" @click="handleBack()"><img src="../../../static/img/arrow_03.png"/></span><span>您的基本状况</span><span class="skip" @click="handleSkip()">跳过</span></header>
 		<!--iconfont icon-xiangzuojiantou-->
 		<section class="identity-con">
 			<div class="infoHint">
@@ -9,10 +9,10 @@
 			</div>
 
 			<div class="infoSelection">
-				<button class="el-button-bigSelection" type="danger" round @click="">确认</button>
-				<button class="el-button-bigSelection" type="danger" round @click="">确认</button>
-				<button class="el-button-bigSelection" type="danger" round @click="">确认</button>
-				<button class="el-button-bigSelection" type="danger" round @click="">确认</button>
+				<button class="el-button-bigSelection" type="danger" round @click="">少吃多动</button>
+				<button class="el-button-bigSelection" type="danger" round @click="">正常吃、多动</button>
+				<button class="el-button-bigSelection" type="danger" round @click="">少吃少动</button>
+				<button class="el-button-bigSelection" type="danger" round @click="">多吃少动</button>
 				
 			</div>
 			<button class="my-middle-el-button--danger" @click="handleNext()"><span>下一步</span></button>

@@ -218,6 +218,7 @@ export default {
       });
     },
     getIfCollect() {
+      console.log(this.$route.params.id)
       get("/health-web/modules/userCollect/ifCollect", {
         collectClassify: 1,
         collectCode: this.$route.params.id

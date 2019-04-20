@@ -9,9 +9,8 @@
 			<div class="healthPlanHeader"><span>下拉查看日签</span></div>
 			<!--iconfont icon-xiangzuojiantou-->
 			<div class="healthPlan-con">
-				<Tabs value="name1">
-					<!--	-------------------------------------------我的计划------------------------------------------->
-					<TabPane label="我的计划" name="name1" class='hitCard'>
+				<!--	-------------------------------------------我的计划------------------------------------------->
+				<!--<TabPane label="我的计划" name="name1" class='hitCard'>
 						<h1>健康自律养成计划</h1>
 						<h2>1/28天</h2>
 						<div class="myPlan" @click="handleJoinCompetition()">
@@ -29,7 +28,6 @@
 						</div>
 
 						<div class="myPlan">
-							<!--<button id="alarm"> 插入闹铃</button> -->
 							<img src="../../../static/img/sport_15.png" alt="" />
 							<div class="healthPlan-mask">
 								<div class="mask-left">
@@ -56,196 +54,258 @@
 								</div>
 							</div>
 						</div>
-					</TabPane>
+					</TabPane>-->
 
-					<!--		------------------------------------------------健康导航 -----------------------------------------	-->
-					<TabPane label="健康导航" name="name2" class='healthGuide'>
-						<div class="healthPlanHitCardDot" ref="homePage">
-							<img src="../../../static/img/competition-coin.png" />
+				<!--		------------------------------------------------健康导航 -----------------------------------------	-->
+				<div class='healthGuide'>
+					<div class="healthGuide-con">
+						<article>
+							<div id="">
+								<img src="../../../static/hulu/tree.png" />
+							</div>
+							<div id="">
+								<img src="../../../static/hulu/ellipsise.png" />
+							</div>
+						</article>
+						<section>
+							<div class="healthGuide-con-right">
+								<div class="">
+									<div>
+										<img src="../../../static/hulu/biao.png" />
+									</div>
+									<p>提醒</p>
+								</div>
+								<ul v-for="(item,index) in this.schemeList" :key='index' @click="handlerHitCardClick(item)">
+									<li>{{item.remindItemName}}</li>
+									<li>{{item.remindTime}}</li>
+								</ul>
+							</div>
+							<div class="healthGuide-con-left">
+								<div class="avatar">
+									<div>
+										<img src="../../../static/hulu/biao.png" />
+									</div>
+									<div>
+										<img src="../../../static/hulu/hulu.png" />
+									</div>
+									<p>×<i>5</i></p>
+								</div>
+								<div class="myMsg">
+									<img src="../../../static/hulu/laba.png" />
+									<b>消息</b>
+								</div>
+								<div class="clock">
+									<div>
+										<img src="../../../static/hulu/bitch.png" />
+									</div>
+									<p>距下次打卡：<b>05:16:20</b></p>
+								</div>
+							</div>
+						</section>
+						<!--1,6-->
+						<div class="1" ref='sixO'>
+							<img src="../../../static/hulu/pieces1.png" />
+							<div class="healthGuide-con-dot" v-show="this.showBox.indexOf('06')>-1?true:false">
+								<div class="healthGuide-con-dot-concret">
+
+								</div>
+							</div>
+							<div class="healthGuide-con-footprint" v-show="this.showBox.indexOf('06')>-1?true:false">
+								<img src="../../../static/hulu/jiaoying.png" />
+							</div>
 						</div>
-						<div class="healthGuide-con">
-							<div class="loop">
-								<!--------------------------------------------left------------------------------------------>
-								<div class="healthGuideSlot1" @click="handleHealthPlanGo1($event)" v-model="moveDistance" ref="move" value="666">
-									<div>07:00</div>
-									<div></div>
-									<div>起床</div>
-								</div>
-								<div class="healthGuideSlot2" @click="handleHealthPlanGo2()">
-									<div>07:00</div>
-									<div></div>
-									<div>撒是</div>
-								</div>
-								<div class="healthGuideSlot3" @click="handleHealthPlanGo3()">
-									<div>07:00</div>
-									<div></div>
-									<div>吃 </div>
-								</div>
+						<!--2,7-->
+						<div class="2" ref='sevenO'>
+							<div class="healthGuide-con-dot" v-show="this.showBox.indexOf('07')>-1?true:false">
+								<div class="healthGuide-con-dot-concret">
 
-								<div class="healthGuideSlot4" @click="handleHealthPlanGo4()">
-									<div>07:00</div>
-									<div></div>
-									<div>喝</div>
 								</div>
+							</div>
+							<div class="healthGuide-con-footprint" v-show="this.showBox.indexOf('07')>-1?true:false">
+								<img src="../../../static/hulu/jiaoying.png" />
+							</div>
+						</div>
+						<!--3,8-->
+						<div class="3" ref='eightO'>
+							<img src="../../../static/hulu/pieces3.png" />
+							<div class="healthGuide-con-dot" v-show="this.showBox.indexOf('08')>-1?true:false">
+								<div class="healthGuide-con-dot-concret">
 
-								<div class="healthGuideSlot5" @click="handleHealthPlanGo5()">
-									<div>07:00</div>
-									<div></div>
-									<div>啦是</div>
 								</div>
-								<!------------------------------------------top----------------------------------------->
-								<div class="healthGuideSlot6" @click="handleHealthPlanGo6()">
-									<div>07:00</div>
-									<div><img src="" /></div>
-									<div>真香</div>
-								</div>
-								<div class="healthGuideSlot7" @click="handleHealthPlanGo7()">
-									<div>07:00</div>
-									<div><img src="" /></div>
-									<div>鞍山市</div>
-								</div>
-								<!----------------------------------------------right-------------------------------------->
-								<div class="healthGuideSlot8" @click="handleHealthPlanGo8()">
-									<div>请问</div>
-									<div><img src="" /></div>
-									<div>07:00</div>
-								</div>
-								<div class="healthGuideSlot9" @click="handleHealthPlanGo9()">
-									<div>请问</div>
-									<div><img src="" /></div>
-									<div>07:00</div>
-								</div>
-								<div class="healthGuideSlot10" @click="handleHealthPlanGo10()">
-									<div>请问</div>
-									<div><img src="" /></div>
-									<div>07:00</div>
-								</div>
-								<div class="healthGuideSlot11" @click="handleHealthPlanGo11()">
-									<div>请问</div>
-									<div><img src="" /></div>
-									<div>07:00</div>
-								</div>
-								<div class="healthGuideSlot12" @click="handleHealthPlanGo12()">
-									<div>请问</div>
-									<div><img src="" /></div>
-									<div>07:00</div>
-								</div>
-								<div class="healthGuideSlot13" @click="handleHealthPlanGo13()">
-									<div>请问</div>
-									<div><img src="" /></div>
-									<div>07:00</div>
-								</div>
-								<div class="healthGuideSlot14" @click="handleHealthPlanGo14()">
-									<div>请问</div>
-									<div><img src="" /></div>
-									<div>07:00</div>
-								</div>
-								<div class="healthGuideSlot15" @click="handleHealthPlanGo15()">
-									<div>请问</div>
-									<div><img src="" /></div>
-									<div>07:00</div>
-								</div>
-								<div class="healthGuideSlot16" @click="handleHealthPlanGo16()">
-									<div>请问</div>
-									<div><img src="" /></div>
-									<div>07:00</div>
-								</div>
-								<div class="healthGuideSlot17">
-									<div>请问</div>
-									<div><img src="" /></div>
-									<div>07:00</div>
-								</div>
-								<!---------------------------------bottom--------------------------------------------->
-								<div class="healthGuideSlot18">
-									<div>真香</div>
-									<div><img src="" /></div>
-									<div>07:00</div>
-								</div>
-								<div class="healthGuideSlot19">
-									<div>鞍山</div>
-									<div><img src="" /></div>
-									<div>07:00</div>
-								</div>
-								<!---------------------------------------left---------------------------------------->
-								<div class="healthGuideSlot20">
-									<div>07:00</div>
-									<div></div>
-									<div>起床</div>
-								</div>
-								<div class="healthGuideSlot21">
-									<div>07:00</div>
-									<div></div>
-									<div>撒是</div>
-								</div>
-								<div class="healthGuideSlot22">
-									<div>07:00</div>
-									<div></div>
-									<div>吃 </div>
-								</div>
+							</div>
+							<div class="healthGuide-con-footprint" v-show="this.showBox.indexOf('08')>-1?true:false">
+								<img src="../../../static/hulu/jiaoying.png" />
+							</div>
+						</div>
+						<!--4,9-->
+						<div class="4" ref='nineO'>
+							<img src="../../../static/hulu/pieces4.png" />
+							<div class="healthGuide-con-dot" v-show="this.showBox.indexOf('09')>-1?true:false">
+								<div class="healthGuide-con-dot-concret">
 
-								<div class="healthGuideSlot23">
-									<div>07:00</div>
-									<div></div>
-									<div>喝</div>
 								</div>
+							</div>
+							<div class="healthGuide-con-footprint" v-show="this.showBox.indexOf('09')>-1?true:false">
+								<img src="../../../static/hulu/jiaoying.png" />
+							</div>
+						</div>
+						<!--5,10-->
+						<div class="5" ref='tenO'>
+							<img src="../../../static/hulu/pieces2.png" />
+							<div class="healthGuide-con-dot" v-show="this.showBox.indexOf('10')>-1?true:false">
+								<div class="healthGuide-con-dot-concret">
 
-								<div class="healthGuideSlot24">
-									<div>07:00</div>
-									<div></div>
-									<div>啦是</div>
+								</div>
+							</div>
+							<div class="healthGuide-con-footprint" v-show="this.showBox.indexOf('10')>-1?true:false">
+								<img src="../../../static/hulu/jiaoying.png" />
+							</div>
+						</div>
+						<!--6,11-->
+						<div class="6" ref='elevenO'>
+							<div class="healthGuide-con-dot" v-show="this.showBox.indexOf('11')>-1?true:false">
+								<div class="healthGuide-con-dot-concret">
+
+								</div>
+							</div>
+							<div class="healthGuide-con-footprint" v-show="this.showBox.indexOf('11')>-1?true:false">
+								<img src="../../../static/hulu/jiaoying.png" />
+							</div>
+						</div>
+						<!--7,1213-->
+						<div class="" ref='twelveO'>
+							<img src="../../../static/hulu/pieces5.png" />
+							<div class="healthGuide-con-dot" v-show="this.showBox.indexOf('12')>-1||this.showBox.indexOf('13')>-1?true:false">
+								<div class="healthGuide-con-dot-concret">
+
+								</div>
+							</div>
+							<div class="healthGuide-con-footprint" v-show="this.showBox.indexOf('12')>-1||this.showBox.indexOf('13')>-1?true:false">
+								<img src="../../../static/hulu/jiaoying.png" />
+							</div>
+						</div>
+						<!--8,1415-->
+						<div class="" ref='forthO'>
+							<div class="healthGuide-con-dot" v-show="this.showBox.indexOf('14')>-1||this.showBox.indexOf('15')>-1?true:false">
+								<div class="healthGuide-con-dot-concret">
+
+								</div>
+							</div>
+							<div class="healthGuide-con-footprint" v-show="this.showBox.indexOf('14')>-1||this.showBox.indexOf('15')>-1?true:false">
+								<img src="../../../static/hulu/jiaoying.png" />
+							</div>
+						</div>
+						<!--9,1617-->
+						<div class="" ref='sixteenO'>
+							<div class="healthGuide-con-dot" v-show="this.showBox.indexOf('16')>-1||this.showBox.indexOf('17')>-1?true:false">
+								<div class="healthGuide-con-dot-concret">
+
+								</div>
+							</div>
+							<div class="healthGuide-con-footprint" v-show="this.showBox.indexOf('16')>-1||this.showBox.indexOf('17')>-1?true:false">
+								<img src="../../../static/hulu/jiaoying.png" />
+							</div>
+						</div>
+						<!--10,1819-->
+						<div class="" ref='eighteenO'>
+							<img src="../../../static/hulu/pieces7.png" />
+							<div class="healthGuide-con-dot" v-show="this.showBox.indexOf('18')>-1||this.showBox.indexOf('19')>-1?true:false">
+								<div class="healthGuide-con-dot-concret">
+
+								</div>
+							</div>
+							<div class="healthGuide-con-footprint" v-show="this.showBox.indexOf('18')>-1||this.showBox.indexOf('19')>-1?true:false">
+								<img src="../../../static/hulu/jiaoying.png" />
+							</div>
+						</div>
+						<!--11,2021-->
+						<div class="11" ref='twentyO'>
+							<div class="healthGuide-con-dot" v-show="this.showBox.indexOf('20')>-1||this.showBox.indexOf('21')>-1?true:false">
+								<div class="healthGuide-con-dot-concret">
+
+								</div>
+							</div>
+							<div class="healthGuide-con-footprint" v-show="this.showBox.indexOf('20')>-1||this.showBox.indexOf('21')>-1?true:false">
+								<img src="../../../static/hulu/jiaoying.png" />
+							</div>
+						</div>
+						<!--12,2223-->
+						<div class="12" ref='twentyTwoO'>
+							<img src="../../../static/hulu/pieces8.png" />
+							<div class="healthGuide-con-dot" v-show="this.showBox.indexOf('22')>-1||this.showBox.indexOf('23')>-1?true:false">
+								<div class="healthGuide-con-dot-concret">
+
+								</div>
+							</div>
+							<div class="healthGuide-con-footprint" v-show="this.showBox.indexOf('22')>-1||this.showBox.indexOf('23')>-1?true:false">
+								<img src="../../../static/hulu/jiaoying.png" />
+							</div>
+						</div>
+						<!--13略略略-->
+						<div class="13lueluelue">
+							<div class="healthGuide-con-dot">
+								<div class="healthGuide-con-dot-concret">
+
+								</div>
+							</div>
+							<div class="healthGuide-con-footprint">
+								<!--<img src="../../../static/hulu/jiaoying.png"/>-->
+							</div>
+						</div>
+						<!--14,01-->
+						<div class="14" ref='zeroO'>
+							<div class="healthGuide-con-dot" v-show="this.showBox.indexOf('00')>-1||this.showBox.indexOf('01')>-1?true:false">
+								<div class="healthGuide-con-dot-concret">
+
+								</div>
+							</div>
+							<div class="healthGuide-con-footprint" v-show="this.showBox.indexOf('00')>-1||this.showBox.indexOf('01')>-1?true:false">
+								<img src="../../../static/hulu/jiaoying.png" />
+							</div>
+						</div>
+						<!--15,23-->
+						<div class="15" ref='twoO'>
+							<div class="healthGuide-con-dot" v-show="this.showBox.indexOf('02')>-1||this.showBox.indexOf('03')>-1?true:false">
+								<div class="healthGuide-con-dot-concret">
+
+								</div>
+							</div>
+							<div class="healthGuide-con-footprint" v-show="this.showBox.indexOf('02')>-1||this.showBox.indexOf('03')>-1?true:false">
+								<img src="../../../static/hulu/jiaoying.png" />
+							</div>
+						</div>
+						<!--16,45-->
+						<div class="16" ref='foreO'>
+							<img src="../../../static/hulu/pieces6.png" />
+							<div class="healthGuide-con-dot" v-show="this.showBox.indexOf('04')>-1||this.showBox.indexOf('05')>-1?true:false">
+								<div class="healthGuide-con-dot-concret">
+
+								</div>
+							</div>
+							<div class="healthGuide-con-footprint" v-show="this.showBox.indexOf('04')>-1||this.showBox.indexOf('05')>-1?true:false">
+								<img src="../../../static/hulu/jiaoying.png" />
+							</div>
+						</div>
+						<div class="sun">
+							<img src="../../../static/hulu/taiyang.png" />
+							<div class="healthGuide-con-dot">
+								<div class="healthGuide-con-dot-concret">
+
 								</div>
 							</div>
 						</div>
-					</TabPane>
+						<div class="moon">
+							<img src="../../../static/hulu/yueliang.png" />
+							<div class="healthGuide-con-dot">
+								<div class="healthGuide-con-dot-concret">
 
-					<!--				----------------------------------我的提醒------------------------------------------>
-					<TabPane label="我的提醒" name="name3" class='hitCard'>
-
-						<h1>健康自律养成计划</h1>
-						<h2>1/28天</h2>
-						<div class="myPlan">
-							<img src="../../../static/img/sleep_10.png" alt="" />
-							<div class="healthPlan-mask">
-								<div class="mask-left">
-									<h1>早起打卡</h1>
-									<h2>现在开始早起打卡计划</h2>
-								</div>
-								<div class="mask-right">
-									<span>0%</span>
-									<i>完成进度</i>
 								</div>
 							</div>
 						</div>
+					</div>
+				</div>
 
-						<div class="myPlan">
-							<img src="../../../static/img/sport_15.png" alt="" />
-							<div class="healthPlan-mask">
-								<div class="mask-left">
-									<h1>早起打卡</h1>
-									<h2>现在开始早起打卡计划</h2>
-								</div>
-								<div class="mask-right">
-									<span>0%</span>
-									<i>完成进度</i>
-								</div>
-							</div>
-						</div>
-
-						<div class="myPlan">
-							<img src="../../../static/img/drink_14.png" alt="" />
-							<div class="healthPlan-mask">
-								<div class="mask-left">
-									<h1>早起打卡</h1>
-									<h2>现在开始早起打卡计划</h2>
-								</div>
-								<div class="mask-right">
-									<span>0%</span>
-									<i>完成进度</i>
-								</div>
-							</div>
-						</div>
-					</TabPane>
-				</Tabs>
+				<!--				----------------------------------我的提醒------------------------------------------>
 			</div>
 		</mt-loadmore>
 
@@ -255,7 +315,8 @@
 
 <script>
 	import anime from 'animejs'
-	import FootTabbar from '../foorterGuid/footerGuild'
+	import FootTabbar from '../foorterGuid/footerGuild';
+	import { get, post } from '../../api/fetch'
 	//	import tab from '@/components/home/Home'
 	export default {
 		components: {
@@ -266,10 +327,59 @@
 			return {
 				moveDistance: this.offsetHeight,
 				Oheight: "",
+				reminder: [{
+					info: '吃饭',
+					time: '14:41'
+				}, {
+					info: '敲敲敲asd',
+					time: '15:41'
+				}, {
+					info: '吃吃吃',
+					time: '16:41'
+				}, {
+					info: '拍拍拍',
+					time: '17:41'
+				}, {
+					info: '揉揉绕',
+					time: '18:41'
+				}],
+				response: [],
+				schemeList: [],
+				//				show:false
+				showBox: [],
+				nowTime: '',
+				beginTime: '',
+				endTime: '',
+				hitCardStatus0: '',
+				hitCardStatus1: '',
+				hitCardStatus2: '',
+				hitCardStatus3: '',
+				hitCardStatus4: '',
+				hitCardStatus5: '',
+				hitCardStatus6: '',
+				hitCardStatus7: '',
+				hitCardStatus8: '',
+				hitCardStatus9: '',
+				hitCardStatus10: '',
+				hitCardStatus11: '',
+				hitCardStatus12: '',
+				hitCardStatus13: '',
+				hitCardStatus14: '',
+				hitCardStatus15: '',
+				hitCardStatus16: '',
+				hitCardStatus17: '',
+				hitCardStatus18: '',
+				hitCardStatus19: '',
+				hitCardStatus20: '',
+				hitCardStatus21: '',
+				hitCardStatus22: '',
+				hitCardStatus23: '',
+				hitCardStatus: ''
 			}
 		},
 		beforeCreate() {
 			var _this = this;
+
 			function plusReady() {
 				void plus.push.createMessage('success', {
 					"MessageOptions": [{
@@ -279,8 +389,8 @@
 					}]
 
 				});
-				plus.audio.createPlayer('http://demo.dcloud.net.cn/test/audio/apple.mp3').play()
-				plus.device.beep(3);
+				plus.audio.createPlayer('http://m10.music.126.net/20190309164554/0f2e61523df4fde1282c1043fd8f3eca/ymusic/4848/dc50/3355/62726df9ee5a0d1a95fe0950271cebbc.mp3').play()
+				plus.device.beep();
 			}
 			if(window.plus) {
 				plusReady(
@@ -297,7 +407,6 @@
 				// 添加监听从系统消息中心点击某条消息启动应用事件
 				plus.push.addEventListener("receive", function(msg) {
 					// 分析msg.payload处理业务逻辑 
-
 					alert("You clicked: " + msg.content);
 				}, false);
 			}, false);
@@ -368,324 +477,78 @@
 			//}
 
 		},
+		created() {
+			//			var h = new Date().getHours();
+			//			var m = new Date().getMinutes();
+			//			this.nowTime = h + ':' + m
+			//			let _this = this; // 声明一个变量指向Vue实例this，保证作用域一致
+			//			this.timer = setInterval(() => {
+			//				console.log(this.nowTime); // 修改数据date
+			//			}, 1000)
+			var _this = this; //声明一个变量指向Vue实例this，保证作用域一致
+			this.timer = setInterval(function() {
+				var curHour = new Date().getHours() < 10 ? "0" + new Date().getHours() : new Date().getHours();
+				var curMinutes = new Date().getMinutes() < 10 ? "0" + new Date().getMinutes() : new Date().getMinutes();
+				_this.nowTime = curHour + ':' + curMinutes //修改数据date
+				//				console.log(_this.nowTime)
+			}, 1000)
+			this.timer = setInterval(function() {
+				var del5 = new Date().getSeconds() - 300
+				if(del5 < 0 && del5 > -60) {
+					this.beginTime = new Date().getMinutes() - 1
+				}
+				if(del5 < -60 && del5 > -120) {
+					this.beginTime = new Date().getMinutes() - 2
+				}
+
+				if(del5 < -120 && del5 > -180) {
+					this.beginTime = new Date().getMinutes() - 3
+				}
+				if(del5 < -180 && del5 > -240) {
+					this.beginTime = new Date().getMinutes() - 4
+				}
+				if(del5 < -240 && del5 > -300) {
+					this.beginTime = new Date().getMinutes() - 5
+				}
+			}, 1000)
+			this.timer = setInterval(function() {
+				//				var del5 = new Date().getSeconds() + 300
+				this.endTime = new Date().getMinutes() + 5
+			}, 1000)
+
+		},
 		methods: {
+			handlerHitCardClick(item) {
+				console.log(item)
+				//				switch(item.remindTime.substr(0, 2)) {
+				//					case '16':
+				//						break;
+				//				}
+				//				if当前小时==接口小时&&当前分钟和接口分钟之差的绝对值小于等于5   || 当前小时和接口 小时只差小于1&&当前分钟和接口分钟之差的绝对值大于等于55
+				if(item.isFinish == 0) {
+					if(item.remindTime.substr(0, 2) == this.nowTime.substr(0, 2) && Math.abs(item.remindTime.substr(3, 2) - this.nowTime.substr(3, 2)) <= 5 || Math.abs(item.remindTime.substr(0, 2) - this.nowTime.substr(0, 2)) <= 1 && Math.abs(item.remindTime.substr(3, 2) - this.nowTime.substr(3, 2)) >= 55) {
+
+						//					/frontMemberScheme/memberClockRecord?clockTime=打卡时间&memberRemindSchemeCode=方案code&memberRemindSchemeItemCode=打卡项code&remindTime=正常打卡时间&remindItemName=打卡项名称
+					} else {
+						alert('打卡时间有误')
+					}
+				}
+			},
+			//			超时情况
+			isCard(time) {
+				var finishVal = '';
+				this.schemeList.map((item) => {
+					if(item.remindTime.substr(0, 2) == time) {
+						finishVal = item.isFinish;
+					}
+				})
+				return finishVal;
+
+			},
 			changeFixed(clientHeight) { //动态修改样式
 				this.$refs.homePage.style.height = clientHeight + 'px';
 			},
-			handleHealthPlanGo1(e) {
-				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				while(OffSetTop.top > 350 && OffSetTop.top < 360 && OffSetTop.left > 50 && OffSetTop.left < 100) {
-					return new Promise((resolve) => {
-						anime({
-							targets: '.healthPlanHitCardDot',
-							translateX: 0,
-							translateY: -this.clientHeight / 17,
-							rotateY: [0, 0],
-							duration: 1000,
-							easing: 'easeInOutQuart',
-							//						complete: () => {
-							//							anime({
-							//								targets: '.healthPlanHitCardDot',
-							//								translateX: 0,
-							//								translateY: 0,
-							//								rotateY: [0, 120],
-							//								complete: () => {
-							//									anime({
-							//										targets: '.healthPlanHitCardDot',
-							//										translateX: 200,
-							//										translateY: 100,
-							//										rotateY: [0, 120],
-							//										complete: () => {
-							//
-							//											resolve(true)
-							//										}
-							//									})
-							//								}
-							//							})
-							//						}
-						})
-					})
-				}
 
-			},
-			handleHealthPlanGo2() {
-				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				while(OffSetTop.top > 300 && OffSetTop.top < 310 && OffSetTop.left > 50 && OffSetTop.left < 100) {
-					return new Promise((resolve) => {
-						anime({
-							targets: '.healthPlanHitCardDot',
-							translateX: 0,
-							translateY: -this.clientHeight / 9 - 1,
-							rotateY: [0, 0],
-							duration: 1000,
-							easing: 'easeInOutQuart',
-
-						})
-					})
-				}
-			},
-			handleHealthPlanGo3() {
-				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				while(OffSetTop.top > 200 && OffSetTop.top < 270 && OffSetTop.left > 50 && OffSetTop.left < 100) {
-					return new Promise((resolve) => {
-						anime({
-							targets: '.healthPlanHitCardDot',
-							translateX: 0,
-							translateY: -this.clientHeight / 6 - 2,
-							rotateY: [0, 0],
-							duration: 1000,
-							easing: 'easeInOutQuart',
-
-						})
-					})
-				}
-			},
-			handleHealthPlanGo4() {
-				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				if(OffSetTop.top > 220 && OffSetTop.top < 230 && OffSetTop.left > 50 && OffSetTop.left < 100) {
-					return new Promise((resolve) => {
-						anime({
-							targets: '.healthPlanHitCardDot',
-							translateX: 0,
-							translateY: -OffSetTop.top + 59,
-							rotateY: [0, 0],
-							duration: 1000,
-							easing: 'easeInOutQuart',
-
-						})
-					})
-				}
-			},
-			handleHealthPlanGo5() {
-				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				if(OffSetTop.top > 180 && OffSetTop.top < 190 && OffSetTop.left > 50 && OffSetTop.left < 100) {
-					return new Promise((resolve) => {
-						anime({
-							targets: '.healthPlanHitCardDot',
-							translateX: OffSetTop.top / 6 - 10,
-							translateY: -OffSetTop.top,
-							rotateY: [0, 0],
-							duration: 500,
-							easing: 'linear',
-							complete: () => {
-								anime({
-									targets: '.healthPlanHitCardDot',
-									translateX: OffSetTop.top / 6 + 10,
-									translateY: -OffSetTop.top - 2,
-									duration: 500,
-									easing: 'linear',
-									complete: () => {
-										anime({
-											targets: '.healthPlanHitCardDot',
-											translateX: OffSetTop.top / 6 + 40,
-											translateY: -OffSetTop.top - 3,
-											duration: 700,
-											easing: 'linear',
-											//											complete: () => {
-											//
-											//												resolve(true)
-											//											}
-										})
-									}
-								})
-							}
-						})
-					})
-				}
-
-			},
-			handleHealthPlanGo6() {
-				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				if(OffSetTop.top > 160 && OffSetTop.top < 170) {
-					return new Promise((resolve) => {
-						anime({
-							targets: '.healthPlanHitCardDot',
-							translateX: OffSetTop.top / 6 + 118,
-							translateY: -OffSetTop.top - 20,
-							rotateY: [0, 0],
-							duration: 1000,
-							easing: 'easeInOutQuart',
-
-						})
-					})
-				}
-			},
-			handleHealthPlanGo7() {
-				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				if(OffSetTop.top > 160 && OffSetTop.top < 170) {
-					return new Promise((resolve) => {
-						anime({
-							targets: '.healthPlanHitCardDot',
-							translateX: OffSetTop.top + 20,
-							translateY: -OffSetTop.top - 20,
-							rotateY: [0, 0],
-							duration: 1000,
-							easing: 'linear',
-							complete: () => {
-								anime({
-									targets: '.healthPlanHitCardDot',
-									translateX: OffSetTop.top + 30,
-									translateY: -OffSetTop.top - 20,
-									duration: 700,
-									easing: 'linear',
-									complete: () => {
-										anime({
-											targets: '.healthPlanHitCardDot',
-											translateX: OffSetTop.top + 50,
-											translateY: -OffSetTop.top - 0,
-											duration: 700,
-											easing: 'linear',
-										})
-									}
-								})
-							}
-						})
-					})
-				}
-			},
-			handleHealthPlanGo8() {
-				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				if(OffSetTop.top > 180 && OffSetTop.top < 190 && OffSetTop.left > 300 && OffSetTop.left < 350) {
-					return new Promise((resolve) => {
-						anime({
-							targets: '.healthPlanHitCardDot',
-							translateX: OffSetTop.top + 32,
-							translateY: OffSetTop.top / 10 - 145,
-							rotateY: [0, 0],
-							duration: 1000,
-							easing: 'linear',
-						})
-					})
-				}
-			},
-			handleHealthPlanGo9() {
-				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				if(OffSetTop.top > 220 && OffSetTop.top < 230 && OffSetTop.left > 300 && OffSetTop.left < 350) {
-					return new Promise((resolve) => {
-						anime({
-							targets: '.healthPlanHitCardDot',
-							translateX: OffSetTop.left - 90,
-							translateY: OffSetTop.top / 10 - 105,
-							rotateY: [0, 0],
-							duration: 1000,
-							easing: 'easeInOutQuart',
-
-						})
-					})
-				}
-			},
-			handleHealthPlanGo10() {
-				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				if(OffSetTop.top > 260 && OffSetTop.top < 270 && OffSetTop.left > 300 && OffSetTop.left < 350) {
-					return new Promise((resolve) => {
-						anime({
-							targets: '.healthPlanHitCardDot',
-							translateX: OffSetTop.left - 90,
-							translateY: OffSetTop.top / 10 - 70,
-							rotateY: [0, 0],
-							duration: 1000,
-							easing: 'easeInOutQuart',
-
-						})
-					})
-				}
-			},
-			handleHealthPlanGo11() {
-				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				if(OffSetTop.top > 300 && OffSetTop.top < 310 && OffSetTop.left > 300 && OffSetTop.left < 350) {
-					return new Promise((resolve) => {
-						anime({
-							targets: '.healthPlanHitCardDot',
-							translateX: OffSetTop.left - 88,
-							translateY: OffSetTop.top / 10 - 30,
-							rotateY: [0, 0],
-							duration: 1000,
-							easing: 'easeInOutQuart',
-
-						})
-					})
-				}
-			},
-			handleHealthPlanGo12() {
-				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				if(OffSetTop.top > 350 && OffSetTop.top < 360 && OffSetTop.left > 300 && OffSetTop.left < 350) {
-					return new Promise((resolve) => {
-						anime({
-							targets: '.healthPlanHitCardDot',
-							translateX: OffSetTop.left - 88,
-							translateY: OffSetTop.top / 10 + 5,
-							rotateY: [0, 0],
-							duration: 1000,
-							easing: 'easeInOutQuart',
-
-						})
-					})
-				}
-			},
-			handleHealthPlanGo13() {
-				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				if(OffSetTop.top > 390 && OffSetTop.top < 400 && OffSetTop.left > 300 && OffSetTop.left < 350) {
-					return new Promise((resolve) => {
-						anime({
-							targets: '.healthPlanHitCardDot',
-							translateX: OffSetTop.left - 88,
-							translateY: OffSetTop.top / 10 + 45,
-							rotateY: [0, 0],
-							duration: 1000,
-							easing: 'easeInOutQuart',
-
-						})
-					})
-				}
-			},
-			handleHealthPlanGo14() {
-				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				if(OffSetTop.top > 430 && OffSetTop.top < 440 && OffSetTop.left > 300 && OffSetTop.left < 350) {
-					return new Promise((resolve) => {
-						anime({
-							targets: '.healthPlanHitCardDot',
-							translateX: OffSetTop.left - 88,
-							translateY: OffSetTop.top / 10 + 80,
-							rotateY: [0, 0],
-							duration: 1000,
-							easing: 'easeInOutQuart',
-
-						})
-					})
-				}
-			},
-			handleHealthPlanGo15() {
-				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				if(OffSetTop.top > 470 && OffSetTop.top < 480 && OffSetTop.left > 300 && OffSetTop.left < 350) {
-					return new Promise((resolve) => {
-						anime({
-							targets: '.healthPlanHitCardDot',
-							translateX: OffSetTop.left - 88,
-							translateY: OffSetTop.top / 10 + 120,
-							rotateY: [0, 0],
-							duration: 1000,
-							easing: 'easeInOutQuart',
-
-						})
-					})
-				}
-			},
-			handleHealthPlanGo16() {
-				var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-				if(OffSetTop.top > 510 && OffSetTop.top < 520 && OffSetTop.left > 300 && OffSetTop.left < 350) {
-					return new Promise((resolve) => {
-						anime({
-							targets: '.healthPlanHitCardDot',
-							translateX: OffSetTop.left - 88,
-							translateY: OffSetTop.top / 10 + 155,
-							rotateY: [0, 0],
-							duration: 1000,
-							easing: 'easeInOutQuart',
-
-						})
-					})
-				}
-			},
 			//			下拉跳转打卡记录页面
 			loadTop() {
 
@@ -699,11 +562,11 @@
 			//				this.$router.back()
 			//			},
 			//			跳转参加竞赛页面
-			handleJoinCompetition() {
-				this.$router.push({
-					name: 'competition'
-				})
-			},
+			//			handleJoinCompetition() {
+			//				this.$router.push({
+			//					name: 'competition'
+			//				})
+			//			},
 		},
 		computed: {
 			computedHeight: function() {
@@ -711,14 +574,395 @@
 			}
 		},
 		mounted() {
-			var OffSetTop = this.$refs.homePage.getBoundingClientRect()
-			// 获取浏览器可视区域高度
-			var Oheight = this.$refs.homePage.offsetHeight
-			this.clientHeight = `${document.documentElement.clientHeight}` //document.body.clientWidth;
-			//console.log(self.clientHeight);
-			window.onresize = function temp() {
-				this.clientHeight = `${document.documentElement.clientHeight}`;
-			};
+			get('/health-web/frontMemberScheme/healthCorona', {}).then(
+				(res) => {
+					this.response = res
+					this.schemeList = res.memberRemindScheme.memberRemindSchemeItemList;
+					//					console.log(this.schemeList)
+					var reg = /^(20|21|22|23|[0-1]\d):[0-5]\d:[0-5]\d$/;
+					var regExp = new RegExp(reg);
+					for(var i = 0; i < this.schemeList.length; i++) {
+						var subHour = this.schemeList[i].remindTime.substr(0, 2)
+						this.showBox.push(subHour)
+						//方法 1.switch case挨个判断           方法2.放到数组里，属于数组为真，否则为假
+						if(!regExp.test(this.schemeList[i].remindTime)) {　
+							console.log("时间格式不正确，正确格式为：12:00:00");　　
+							return;
+						} else {
+							var _this = this;
+							//							console.log(subHour)
+							switch(subHour) {
+								case '00':
+									this.$refs.zeroO.value = this.isCard('00');
+									this.hitCardStatus0 = this.isCard('00')
+									console.log(this.$refs.zeroO.value);
+									if(this.$refs.zeroO.value == 0) {
+										console.log('00待打卡')
+									}
+									if(this.$refs.zeroO.value == 1) {
+										console.log('00已打卡')
+									}
+									if(this.$refs.zeroO.value == 2) {
+										console.log('00未打卡')
+									}
+									break;
+								case '01':
+									this.$refs.zeroO.nodeValue = this.isCard('01');
+									this.hitCardStatus1 = this.isCard('01')
+									console.log(this.$refs.zeroO.nodeValue);
+									if(this.$refs.zeroO.nodeValue == 0) {
+										console.log('01待打卡')
+									}
+									if(this.$refs.zeroO.nodeValue == 1) {
+										console.log('01已打卡')
+									}
+									if(this.$refs.zeroO.nodeValue == 2) {
+										console.log('01未打卡')
+									}
+									break;
+								case '02':
+									this.$refs.twoO.value = this.isCard('02');
+									this.hitCardStatus2 = this.isCard('02')
+									console.log(this.$refs.twoO.value);
+									if(this.$refs.twoO.value == 0) {
+										console.log('02待打卡')
+									}
+									if(this.$refs.twoO.value == 1) {
+										console.log('02已打卡')
+									}
+									if(this.$refs.twoO.value == 2) {
+										console.log('02未打卡')
+									}
+									break;
+								case '03':
+									this.$refs.twoO.nodeValue = this.isCard('03');
+									this.hitCardStatus3 = this.isCard('03')
+									console.log(this.$refs.twoO.nodeValue);
+									if(this.$refs.twoO.nodeValue == 0) {
+										console.log('03待打卡')
+									}
+									if(this.$refs.twoO.nodeValue == 1) {
+										console.log('03已打卡')
+									}
+									if(this.$refs.twoO.nodeValue == 2) {
+										console.log('03未打卡')
+									}
+									break;
+								case '04':
+									this.$refs.foreO.value = this.isCard('04');
+									this.hitCardStatus4 = this.isCard('04')
+									console.log(this.$refs.foreO.value);
+									if(this.$refs.foreO.value == 0) {
+										console.log('04待打卡')
+									}
+									if(this.$refs.foreO.value == 1) {
+										console.log('04已打卡')
+									}
+									if(this.$refs.foreO.value == 2) {
+										console.log('04未打卡')
+									}
+									break;
+								case '05':
+									this.$refs.foreO.nodeValue = this.isCard('05');
+									this.hitCardStatus5 = this.isCard('05')
+									console.log(this.$refs.foreO.nodeValue);
+									if(this.$refs.foreO.nodeValue == 0) {
+										console.log('05待打卡')
+									}
+									if(this.$refs.foreO.nodeValue == 1) {
+										console.log('05已打卡')
+									}
+									if(this.$refs.foreO.nodeValue == 2) {
+										console.log('05未打卡')
+									}
+									break;
+								case '06':
+									this.$refs.sixO.value = this.isCard('06');
+									this.hitCardStatus6 = this.isCard('06')
+									console.log(this.$refs.sixO.value);
+									if(this.$refs.sixO.value == 0) {
+										console.log('06待打卡')
+									}
+									if(this.$refs.sixO.value == 1) {
+										console.log('06已打卡')
+									}
+									if(this.$refs.sixO.value == 2) {
+										console.log('06未打卡')
+									}
+									break;
+								case '07':
+									this.$refs.sevenO.value = this.isCard('07');
+									this.hitCardStatus7 = this.isCard('07')
+									console.log(this.$refs.sevenO.value);
+									if(this.$refs.sevenO.value == 0) {
+										console.log('07待打卡')
+									}
+									if(this.$refs.sevenO.value == 1) {
+										console.log('07已打卡')
+									}
+									if(this.$refs.sevenO.value == 2) {
+										console.log('07未打卡')
+									}
+									break;
+								case '08':
+									this.$refs.eightO.value = this.isCard('08');
+									this.hitCardStatus8 = this.isCard('08')
+									console.log(this.$refs.eightO.value);
+									if(this.$refs.eightO.value == 0) {
+										console.log('08待打卡')
+									}
+									if(this.$refs.eightO.value == 1) {
+										console.log('08已打卡')
+									}
+									if(this.$refs.eightO.value == 2) {
+										console.log('08未打卡')
+									}
+									break;
+								case '09':
+									this.$refs.nineO.value = this.isCard('09');
+									this.hitCardStatus9 = this.isCard('09')
+									console.log(this.$refs.nineO.value);
+									if(this.$refs.nineO.value == 0) {
+										console.log('09待打卡')
+									}
+									if(this.$refs.nineO.value == 1) {
+										console.log('09已打卡')
+									}
+									if(this.$refs.nineO.value == 2) {
+										console.log('09未打卡')
+									}
+									break;
+								case '10':
+									this.$refs.tenO.value = this.isCard('10');
+									this.hitCardStatus10 = this.isCard('10')
+									console.log(this.$refs.tenO.value);
+									if(this.$refs.tenO.value == 0) {
+										console.log('10待打卡')
+									}
+									if(this.$refs.tenO.value == 1) {
+										console.log('10已打卡')
+									}
+									if(this.$refs.tenO.value == 2) {
+										console.log('10未打卡')
+									}
+									break;
+								case '11':
+									this.$refs.elevenO.value = this.isCard('11');
+									this.hitCardStatus11 = this.isCard('11')
+									console.log(this.$refs.elevenO.value);
+									if(this.$refs.elevenO.value == 0) {
+										console.log('11待打卡')
+									}
+									if(this.$refs.elevenO.value == 1) {
+										console.log('11已打卡')
+									}
+									if(this.$refs.elevenO.value == 2) {
+										console.log('11未打卡')
+									}
+									break;
+								case '12':
+									this.$refs.twelveO.value = this.isCard('12');
+									this.hitCardStatus12 = this.isCard('12')
+									console.log(this.$refs.twelveO.value);
+									if(this.$refs.twelveO.value == 0) {
+										console.log('12待打卡')
+									}
+									if(this.$refs.twelveO.value == 1) {
+										console.log('12已打卡')
+									}
+									if(this.$refs.twelveO.value == 2) {
+										console.log('12未打卡')
+									}
+									break;
+								case '13':
+									this.$refs.twelveO.nodeValue = this.isCard('13');
+									this.hitCardStatus13 = this.isCard('13')
+									console.log(this.$refs.twelveO.nodeValue);
+									if(this.$refs.twelveO.nodeValue == 0) {
+										console.log('13待打卡')
+									}
+									if(this.$refs.twelveO.nodeValue == 1) {
+										console.log('13已打卡')
+									}
+									if(this.$refs.twelveO.nodeValue == 2) {
+										console.log('13未打卡')
+									}
+									break;
+								case '14':
+									this.$refs.forthO.value = this.isCard('14');
+									this.hitCardStatus14 = this.isCard('14')
+									console.log(this.$refs.forthO.value);
+									if(this.$refs.forthO.value == 0) {
+										console.log('14待打卡')
+									}
+									if(this.$refs.forthO.value == 1) {
+										console.log('14已打卡')
+									}
+									if(this.$refs.forthO.value == 2) {
+										console.log('14未打卡')
+									}
+									break;
+								case '15':
+									this.$refs.forthO.nodeValue = this.isCard('15');
+									this.hitCardStatus15 = this.isCard('15')
+									console.log(this.$refs.forthO.nodeValue);
+									if(this.$refs.forthO.nodeValue == 0) {
+										console.log('15待打卡')
+									}
+									if(this.$refs.forthO.nodeValue == 1) {
+										console.log('15已打卡')
+									}
+									if(this.$refs.forthO.nodeValue == 2) {
+										console.log('15未打卡')
+									}
+									console.log(this.hitCardStatus15 + '!!!')
+									break;
+								case '16':
+									this.$refs.sixteenO.part.value = this.isCard('16');
+									this.hitCardStatus16 = this.isCard('16')
+									console.log(this.$refs.sixteenO.part.value);
+									if(this.$refs.sixteenO.part.value == 0) {
+										console.log('16待打卡')
+									}
+									if(this.$refs.sixteenO.part.value == 1) {
+										console.log('16已打卡')
+									}
+									if(this.$refs.sixteenO.part.value == 2) {
+										console.log('16未打卡')
+									}
+									break;
+								case '17':
+									this.$refs.sixteenO.nodeValue = this.isCard('17');
+									this.hitCardStatus17 = this.isCard('17')
+									console.log(this.$refs.sixteenO.nodeValue);
+									if(this.$refs.sixteenO.nodeValue == 0) {
+										console.log('17待打卡')
+									}
+									if(this.$refs.sixteenO.nodeValue == 1) {
+										console.log('17已打卡')
+									}
+									if(this.$refs.sixteenO.nodeValue == 2) {
+										console.log('17未打卡')
+									}
+									break;
+								case '18':
+									this.$refs.eighteenO.value = this.isCard('18');
+									this.hitCardStatus18 = this.isCard('18')
+									console.log(this.$refs.eighteenO.value);
+									if(this.$refs.eighteenO.value == 0) {
+										console.log('18待打卡')
+									}
+									if(this.$refs.eighteenO.value == 1) {
+										console.log('18已打卡')
+									}
+									if(this.$refs.eighteenO.value == 2) {
+										console.log('18未打卡')
+									}
+									break;
+								case '19':
+									this.$refs.eighteenO.nodeValue = this.isCard('19');
+									this.hitCardStatus19 = this.isCard('19')
+									console.log(this.$refs.eighteenO.nodeValue);
+									if(this.$refs.eighteenO.nodeValue == 0) {
+										console.log('19待打卡')
+									}
+									if(this.$refs.eighteenO.nodeValue == 1) {
+										console.log('19已打卡')
+									}
+									if(this.$refs.eighteenO.nodeValue == 2) {
+										console.log('19未打卡')
+									}
+									break;
+								case '20':
+									this.$refs.twentyO.value = this.isCard('20');
+									this.hitCardStatus20 = this.isCard('20')
+									console.log(this.$refs.twentyO.value);
+									if(this.$refs.twentyO.value == 0) {
+										console.log('20待打卡')
+									}
+									if(this.$refs.twentyO.value == 1) {
+										console.log('20已打卡')
+									}
+									if(this.$refs.twentyO.value == 2) {
+										console.log('20未打卡')
+									}
+									break;
+								case '21':
+									this.$refs.twentyO.nodeValue = this.isCard('21');
+									this.hitCardStatus21 = this.isCard('21')
+									console.log(this.$refs.twentyO.nodeValue);
+									if(this.$refs.twentyO.nodeValue == 0) {
+										console.log('21待打卡')
+									}
+									if(this.$refs.twentyO.nodeValue == 1) {
+										console.log('21已打卡')
+									}
+									if(this.$refs.twentyO.nodeValue == 2) {
+										console.log('21未打卡')
+									}
+									break;
+								case '22':
+									this.$refs.twentyTwoO.value = this.isCard('22');
+									this.hitCardStatus22 = this.isCard('22')
+									console.log(this.$refs.twentyTwoO.value);
+									if(this.$refs.twentyTwoO.value == 0) {
+										console.log('22待打卡')
+									}
+									if(this.$refs.twentyTwoO.value == 1) {
+										console.log('22已打卡')
+									}
+									if(this.$refs.twentyTwoO.value == 2) {
+										console.log('22未打卡')
+									}
+									break;
+								case '23':
+									this.$refs.twentyTwoO.nodeValue = this.isCard('23');
+									this.hitCardStatus23 = this.isCard('23')
+									console.log(this.$refs.twentyTwoO.nodeValue);
+									if(this.$refs.twentyTwoO.nodeValue == 0) {
+										console.log('23待打卡')
+									}
+									if(this.$refs.twentyTwoO.nodeValue == 1) {
+										console.log('23已打卡')
+									}
+									if(this.$refs.twentyTwoO.nodeValue == 2) {
+										console.log('23未打卡')
+									}
+									break;
+							}
+						}
+					}
+					//						console.log(this.showBox)
+				}
+			).catch(
+				(err) => {
+					console.log(err)
+				}
+			)
+		},
+		beforeUpdate() {
+			console.log(this.schemeList)
+			this.schemeList.map((item) => {
+				if(item.remindTime == 0) {
+					if(this.nowTime.substr(3, 2) - item.remindTime.substr(3, 2) > 5) {
+						this.hitCardStatus = 2;
+						console.log(item.remindTime + '打卡超时' + this.hitCardStatus)
+					}
+				}
+			})
+		},
+		beforeDestroyed() {
+			this.schemeList.map((item) => {
+				get('/health-web/frontMemberScheme/memberClockRecord?clockTime=' + this.nowTime + '&memberRemindSchemeCode=' + this.response.memberRemindScheme.memberRemindSchemeCode + '&memberRemindSchemeItemCode=' + item.memberRemindSchemeItemCode + '&remindTime=' + item.remindTime + '&remindItemName=' + item.remindItemName + '&status=' + this.hitCardStatus, {}).then(
+					(suc) => {
+						alert('向服务器发送 成功 ' + suc)
+					}
+				).catch(
+					(err) => {
+						alert(err + '向服务器发送失败 ')
+					}
+				)
+			})
 		},
 		watch: {
 			// 如果 `clientHeight` 发生改变，这个函数就会运行

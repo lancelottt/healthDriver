@@ -1,2 +1,290 @@
-﻿#competitionJoined{flex-direction:column;display:flex;height:100%}#competitionJoined .competition-main{height:88%;display:flex;flex-direction:column;flex:1;width:100%;position:relative}#competitionJoined .competition-main img{width:100%;height:100%;display:block}#competitionJoined .competition-main button{border:none;outline:none;position:absolute;left:0;right:0;margin:auto;top:85%;width:5.84rem;height:1.39rem;background:linear-gradient(0deg, #fe3e43, #fe7e4a);box-shadow:0px 5px 12px 0px #fff77f,0px -2px 8px 0px rgba(236,0,33,0.8);border-radius:0.1rem}#competitionJoined .competition-main button span{position:relative;display:flex;justify-content:center;width:2.67rem;height:0.28rem;margin:0 auto}#competitionJoined .competition-main button span img:nth-of-type(1){display:block;width:2.67rem;height:0.28rem}#competitionJoined .competition-main button span img:nth-of-type(2){width:0.75rem;height:0.12rem;position:absolute;left:-24%;top:120%}#competitionJoined .competition-main .competition-text span{position:absolute;top:0}#competitionJoined .competition-main .competition-text span:nth-of-type(1){top:8.4%;left:0;right:0;font-size:0.28rem;font-family:HiraginoSansGB-W3;font-weight:normal;color:#c77900}#competitionJoined .competition-main .competition-text span:nth-of-type(2){top:19.92%;left:0;right:0;font-size:0.3rem;font-family:PingFangSC-Regular;color:#fff}#competitionJoined .competition-main .competition-text span:nth-of-type(3){top:25%;left:33%;right:0;font-size:0.24rem}#competitionJoined .competition-main .competition-text span:nth-of-type(3) b{font-size:0.2rem;position:absolute;top:25%;left:0;right:0}#competitionJoined .competition-main .competition-text span:nth-of-type(3) p{display:inline;font-family:'Lobster';text-align:center;font-size:20vmin;line-height:40vmin;color:#fff;cursor:pointer}#competitionJoined .competition-main .competition-text span:nth-of-type(3) p:hover{color:#fff}#competitionJoined .competition-main .competition-text span:nth-of-type(3) .pink{line-height:2.64rem;display:block;width:2.64rem;height:2.64rem;background:#f2cd44;font-size:0.48rem;border-radius:50%;filter:brightness(110%);box-shadow:0 0 5px 7px #feba9f, 0 0 10px #feba9f, 0 0 15px #feba9f, 0 0 20px #feba9f, 0 0 35px #feba9f, 0 0 40px #feba9f, 0 0 50px #feba9f, 0 0 75px 3px #feba9f;text-shadow:0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff;animation:pink 1.5s ease-in-out infinite alternate}#competitionJoined .competition-main .competition-text span:nth-of-type(3) .orange{color:#ff5722}#competitionJoined .competition-main .competition-text span:nth-of-type(3) .orange:hover{animation:orange 1.5s ease-in-out infinite alternate}#competitionJoined .competition-main .competition-text span:nth-of-type(3) .yellow{color:#ffeb3b}#competitionJoined .competition-main .competition-text span:nth-of-type(3) .yellow:hover{animation:yellow 1.5s ease-in-out infinite alternate}@keyframes pink{to{text-shadow:0 0 10px #f8de7c, 0 0 20px #f8de7c, 0 0 30px #f8de7c, 0 0 40px #f8de7c;box-shadow:0 0 10px #feba9f, 0 0 20px #feba9f, 0 0 30px #feba9f, 0 0 40px #feba9f, 0 0 70px #feba9f, 0 0 80px #feba9f, 0 0 100px #feba9f, 0 0 150px #feba9f}}@keyframes orange{to{text-shadow:0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff5722, 0 0 70px #ff5722, 0 0 80px #ff5722, 0 0 100px #ff5722, 0 0 150px #ff5722}from{filter:brightness(110%);text-shadow:0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff5722, 0 0 35px #ff5722, 0 0 40px #ff5722, 0 0 50px #ff5722, 0 0 75px #ff5722}}@keyframes yellow{to{text-shadow:0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ffeb3b, 0 0 70px #ffeb3b, 0 0 80px #ffeb3b, 0 0 100px #ffeb3b, 0 0 150px #ffeb3b}from{filter:brightness(110%);text-shadow:0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ffeb3b, 0 0 35px #ffeb3b, 0 0 40px #ffeb3b, 0 0 50px #ffeb3b, 0 0 75px #ffeb3b}}#competitionJoined .competition-main .competition-text span:nth-of-type(4){top:49%;left:0;right:0;font-size:0.24rem;font-family:HYk1gj;font-weight:400;color:#fff}#competitionJoined .competition-main .competition-text span:nth-of-type(5){top:73.12%;left:0;right:0;font-size:0.24rem;font-family:PingFangSC-Regular;font-weight:400;color:#ffd942}#competitionJoined .competition-main .competition-text>img:nth-of-type(1){width:1.05rem;height:0.75rem;position:absolute;top:6.3%}#competitionJoined .competition-main .competition-text>img:nth-of-type(2){position:absolute;top:24.59%;right:1.51%;width:0.85rem;height:0.57rem}#competitionJoined .competition-main .competition-text .account-balance{width:1.93rem;height:0.83rem;background:#ffaa26;border-radius:0.27rem 0px 0px 0.27rem;position:absolute;top:3.3%;right:0;text-align:center}#competitionJoined .competition-main .competition-text .account-balance span{line-height:0.36rem;font-size:0.28rem;font-family:HiraginoSansGB-W3;font-weight:bold;color:#fff;font-weight:normal}#competitionJoined .competition-main .competition-text .competition-guide{width:5.84rem;height:1.39rem;position:absolute;top:58%;left:0;right:0;margin:auto;background:#ea3a35;display:flex;flex-direction:row;box-shadow:-0.05rem 7px 10px 3px #c8312d inset;border-radius:0.1rem}#competitionJoined .competition-main .competition-text .competition-guide div{display:flex;flex-direction:column;justify-content:space-around;color:#fff;font-weight:bold;font-size:0.35rem}#competitionJoined .competition-main .competition-text .competition-guide div:nth-of-type(1){float:left;width:50%;height:100%}#competitionJoined .competition-main .competition-text .competition-guide div:nth-of-type(1) p:nth-of-type(2){font-size:0.18rem}#competitionJoined .competition-main .competition-text .competition-guide div:nth-of-type(2){width:50%;height:100%;float:left}#competitionJoined .competition-main .competition-text .competition-guide div:nth-of-type(2) p:nth-of-type(2){font-size:0.18rem}@media (max-width: 768px){#competitionJoined .competition-main .ivu-modal{width:auto !important;margin:0 !important;background:pink;border-radius:0;height:58.5%;top:41.5%;bottom:0}#competitionJoined .competition-main .ivu-modal .ivu-modal-content{width:100%;height:100%;border-radius:0;bottom:0}#competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-body{padding:0;height:88%}#competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-body h2{font-size:0.28rem;font-family:PingFangSC-Regular;font-weight:400;color:#999;line-height:0.7rem}#competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-body .modal-con{padding:0.5rem}#competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-body .modal-con div:nth-of-type(1) span{font-size:0.36rem;font-family:PingFangSC-Regular;font-weight:400;color:#ff5e3a;line-height:0.7rem}#competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-body .modal-con div:nth-of-type(1) i{font-style:normal;font-size:0.28rem;font-family:PingFangSC-Regular;font-weight:400;color:#999;line-height:0.7rem}#competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-body .modal-con div:nth-of-type(2) span{font-size:0.28rem;font-family:PingFangSC-Regular;font-weight:400;color:#333}#competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-body .modal-con div:nth-of-type(3){margin-top:0.2rem}#competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-body .modal-con div:nth-of-type(4){margin-top:0.2rem}#competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-body .modal-con div:nth-of-type(4) .ivu-radio-group{width:70%;display:flex;justify-content:space-between}#competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-body .modal-con div:nth-of-type(4) .ivu-radio-group span{color:#000;font-size:0.32rem}#competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-body .modal-con div:nth-of-type(4) .ivu-radio-group span i{font-size:0.34rem;color:green}#competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-body .modal-con div:nth-of-type(5){border-top:0.02rem solid #e5e5e5}#competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-body .modal-con .ivu-radio-inner{border-color:#fe6431}#competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-body .modal-con .ivu-radio-inner::after{background-color:#fe6431}#competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-body .modal-con .ivu-icon{display:none}#competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-footer{padding:0;display:none}#competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-footer button:nth-of-type(1){display:none}#competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-footer button:nth-of-type(2){display:none;content:'支付';margin:0;width:100%;height:100%;outline:none;border:none;background:#fff;color:#000}#competitionJoined .competition-main .ivu-modal .pay-confirm{border-top:0.02rem solid #e5e5e5;width:100%;height:11.14%;position:absolute;bottom:0;text-align:center;line-height:0.87rem;font-size:0.28rem;font-family:PingFangSC-Regular;font-weight:400;color:#ff5e3a}}
+@charset "UTF-8";
+#competitionJoined {
+  flex-direction: column;
+  display: flex;
+  height: 100%; }
+  #competitionJoined .competition-main {
+    height: 88%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    position: relative; }
+    #competitionJoined .competition-main img {
+      width: 100%;
+      height: 100%;
+      display: block; }
+    #competitionJoined .competition-main button {
+      border: none;
+      outline: none;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      top: 85%;
+      width: 5.84rem;
+      height: 1.39rem;
+      background: linear-gradient(0deg, #fe3e43, #fe7e4a);
+      box-shadow: 0px 5px 12px 0px #fff77f, 0px -2px 8px 0px rgba(236, 0, 33, 0.8);
+      border-radius: 0.1rem; }
+      #competitionJoined .competition-main button span {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        width: 2.67rem;
+        height: 0.28rem;
+        margin: 0 auto; }
+        #competitionJoined .competition-main button span img:nth-of-type(1) {
+          display: block;
+          width: 2.67rem;
+          height: 0.28rem; }
+        #competitionJoined .competition-main button span img:nth-of-type(2) {
+          width: 0.75rem;
+          height: 0.12rem;
+          position: absolute;
+          left: -24%;
+          top: 120%; }
+    #competitionJoined .competition-main .competition-text span {
+      position: absolute;
+      top: 0; }
+    #competitionJoined .competition-main .competition-text span:nth-of-type(1) {
+      top: 8.4%;
+      left: 0;
+      right: 0;
+      font-size: 0.28rem;
+      font-family: HiraginoSansGB-W3;
+      font-weight: normal;
+      color: #c77900; }
+    #competitionJoined .competition-main .competition-text span:nth-of-type(2) {
+      top: 19.92%;
+      left: 0;
+      right: 0;
+      font-size: 0.3rem;
+      font-family: PingFangSC-Regular;
+      color: white; }
+    #competitionJoined .competition-main .competition-text span:nth-of-type(3) {
+      top: 25%;
+      left: 33%;
+      right: 0;
+      font-size: 0.24rem; }
+      #competitionJoined .competition-main .competition-text span:nth-of-type(3) b {
+        font-size: 0.2rem;
+        position: absolute;
+        top: 25%;
+        left: 0;
+        right: 0; }
+      #competitionJoined .competition-main .competition-text span:nth-of-type(3) p {
+        display: inline;
+        font-family: 'Lobster';
+        text-align: center;
+        font-size: 20vmin;
+        line-height: 40vmin;
+        color: #fff;
+        cursor: pointer; }
+        #competitionJoined .competition-main .competition-text span:nth-of-type(3) p:hover {
+          color: #fff; }
+      #competitionJoined .competition-main .competition-text span:nth-of-type(3) .pink {
+        line-height: 2.64rem;
+        display: block;
+        width: 2.64rem;
+        height: 2.64rem;
+        background: #f2cd44;
+        font-size: 0.48rem;
+        border-radius: 50%;
+        filter: brightness(110%);
+        box-shadow: 0 0 5px 7px #feba9f, 0 0 10px #feba9f, 0 0 15px #feba9f, 0 0 20px #feba9f, 0 0 35px #feba9f, 0 0 40px #feba9f, 0 0 50px #feba9f, 0 0 75px 3px #feba9f;
+        text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff;
+        animation: pink 1.5s ease-in-out infinite alternate; }
+      #competitionJoined .competition-main .competition-text span:nth-of-type(3) .orange {
+        color: #ff5722; }
+      #competitionJoined .competition-main .competition-text span:nth-of-type(3) .orange:hover {
+        animation: orange 1.5s ease-in-out infinite alternate; }
+      #competitionJoined .competition-main .competition-text span:nth-of-type(3) .yellow {
+        color: #ffeb3b; }
+      #competitionJoined .competition-main .competition-text span:nth-of-type(3) .yellow:hover {
+        animation: yellow 1.5s ease-in-out infinite alternate; }
+@keyframes pink {
+  to {
+    text-shadow: 0 0 10px #f8de7c, 0 0 20px #f8de7c, 0 0 30px #f8de7c, 0 0 40px #f8de7c;
+    box-shadow: 0 0 10px #feba9f, 0 0 20px #feba9f, 0 0 30px #feba9f, 0 0 40px #feba9f, 0 0 70px #feba9f, 0 0 80px #feba9f, 0 0 100px #feba9f, 0 0 150px #feba9f; } }
+@keyframes orange {
+  to {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff5722, 0 0 70px #ff5722, 0 0 80px #ff5722, 0 0 100px #ff5722, 0 0 150px #ff5722; }
+  from {
+    filter: brightness(110%);
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff5722, 0 0 35px #ff5722, 0 0 40px #ff5722, 0 0 50px #ff5722, 0 0 75px #ff5722; } }
+@keyframes yellow {
+  to {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ffeb3b, 0 0 70px #ffeb3b, 0 0 80px #ffeb3b, 0 0 100px #ffeb3b, 0 0 150px #ffeb3b; }
+  from {
+    filter: brightness(110%);
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ffeb3b, 0 0 35px #ffeb3b, 0 0 40px #ffeb3b, 0 0 50px #ffeb3b, 0 0 75px #ffeb3b; } }
+    #competitionJoined .competition-main .competition-text span:nth-of-type(4) {
+      top: 49%;
+      left: 0;
+      right: 0;
+      font-size: 0.24rem;
+      font-family: HYk1gj;
+      font-weight: 400;
+      color: #fff; }
+    #competitionJoined .competition-main .competition-text span:nth-of-type(5) {
+      top: 73.12%;
+      left: 0;
+      right: 0;
+      font-size: 0.24rem;
+      font-family: PingFangSC-Regular;
+      font-weight: 400;
+      color: #ffd942; }
+    #competitionJoined .competition-main .competition-text > img:nth-of-type(1) {
+      width: 1.05rem;
+      height: 0.75rem;
+      position: absolute;
+      top: 6.3%; }
+    #competitionJoined .competition-main .competition-text > img:nth-of-type(2) {
+      position: absolute;
+      top: 24.59%;
+      right: 1.51%;
+      width: 0.85rem;
+      height: 0.57rem; }
+    #competitionJoined .competition-main .competition-text .account-balance {
+      width: 1.93rem;
+      height: 0.83rem;
+      background: #ffaa26;
+      border-radius: 0.27rem 0px 0px 0.27rem;
+      position: absolute;
+      top: 3.3%;
+      right: 0;
+      text-align: center; }
+      #competitionJoined .competition-main .competition-text .account-balance span {
+        line-height: 0.36rem;
+        font-size: 0.28rem;
+        font-family: HiraginoSansGB-W3;
+        font-weight: bold;
+        color: white;
+        font-weight: normal; }
+    #competitionJoined .competition-main .competition-text .competition-guide {
+      width: 5.84rem;
+      height: 1.39rem;
+      position: absolute;
+      top: 58%;
+      left: 0;
+      right: 0;
+      margin: auto;
+      background: #ea3a35;
+      display: flex;
+      flex-direction: row;
+      box-shadow: -0.05rem 7px 10px 3px #c8312d inset;
+      border-radius: 0.1rem; }
+      #competitionJoined .competition-main .competition-text .competition-guide div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        color: #fff;
+        font-weight: bold;
+        font-size: 0.35rem; }
+      #competitionJoined .competition-main .competition-text .competition-guide div:nth-of-type(1) {
+        float: left;
+        width: 50%;
+        height: 100%; }
+        #competitionJoined .competition-main .competition-text .competition-guide div:nth-of-type(1) p:nth-of-type(2) {
+          font-size: 0.18rem; }
+      #competitionJoined .competition-main .competition-text .competition-guide div:nth-of-type(2) {
+        width: 50%;
+        height: 100%;
+        float: left; }
+        #competitionJoined .competition-main .competition-text .competition-guide div:nth-of-type(2) p:nth-of-type(2) {
+          font-size: 0.18rem; }
+    @media (max-width: 768px) {
+      #competitionJoined .competition-main .ivu-modal {
+        width: auto !important;
+        margin: 0 !important;
+        background: pink;
+        border-radius: 0;
+        height: 58.5%;
+        top: 41.5%;
+        bottom: 0; }
+        #competitionJoined .competition-main .ivu-modal .ivu-modal-content {
+          width: 100%;
+          height: 100%;
+          border-radius: 0;
+          bottom: 0; }
+          #competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-body {
+            padding: 0;
+            height: 88%; }
+            #competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-body h2 {
+              font-size: 0.28rem;
+              font-family: PingFangSC-Regular;
+              font-weight: 400;
+              color: #999999;
+              line-height: 0.7rem; }
+            #competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-body .modal-con {
+              padding: 0.5rem; }
+              #competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-body .modal-con div:nth-of-type(1) span {
+                font-size: 0.36rem;
+                font-family: PingFangSC-Regular;
+                font-weight: 400;
+                color: #ff5e3a;
+                line-height: 0.7rem; }
+              #competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-body .modal-con div:nth-of-type(1) i {
+                font-style: normal;
+                font-size: 0.28rem;
+                font-family: PingFangSC-Regular;
+                font-weight: 400;
+                color: #999999;
+                line-height: 0.7rem; }
+              #competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-body .modal-con div:nth-of-type(2) span {
+                font-size: 0.28rem;
+                font-family: PingFangSC-Regular;
+                font-weight: 400;
+                color: #333333; }
+              #competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-body .modal-con div:nth-of-type(3) {
+                margin-top: 0.2rem; }
+              #competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-body .modal-con div:nth-of-type(4) {
+                margin-top: 0.2rem; }
+                #competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-body .modal-con div:nth-of-type(4) .ivu-radio-group {
+                  width: 70%;
+                  display: flex;
+                  justify-content: space-between; }
+                  #competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-body .modal-con div:nth-of-type(4) .ivu-radio-group span {
+                    color: #000;
+                    font-size: 0.32rem; }
+                    #competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-body .modal-con div:nth-of-type(4) .ivu-radio-group span i {
+                      font-size: 0.34rem;
+                      color: green; }
+              #competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-body .modal-con div:nth-of-type(5) {
+                border-top: 0.02rem solid #e5e5e5; }
+              #competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-body .modal-con .ivu-radio-inner {
+                border-color: #fe6431; }
+              #competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-body .modal-con .ivu-radio-inner::after {
+                background-color: #fe6431; }
+              #competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-body .modal-con .ivu-icon {
+                display: none; }
+          #competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-footer {
+            padding: 0;
+            display: none; }
+            #competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-footer button:nth-of-type(1) {
+              display: none; }
+            #competitionJoined .competition-main .ivu-modal .ivu-modal-content .ivu-modal-footer button:nth-of-type(2) {
+              display: none;
+              content: '支付';
+              margin: 0;
+              width: 100%;
+              height: 100%;
+              outline: none;
+              border: none;
+              background: #fff;
+              color: #000; }
+        #competitionJoined .competition-main .ivu-modal .pay-confirm {
+          border-top: 0.02rem solid #e5e5e5;
+          width: 100%;
+          height: 11.14%;
+          position: absolute;
+          bottom: 0;
+          text-align: center;
+          line-height: 0.87rem;
+          font-size: 0.28rem;
+          font-family: PingFangSC-Regular;
+          font-weight: 400;
+          color: #ff5e3a; } }
+
 /*# sourceMappingURL=competitionJoined.css.map */

@@ -90,11 +90,15 @@
 		methods: {
 			//添加家人**
 			handFamily() {
-				MessageBox.prompt('请输入手机号').then(({
-					value,
-					action
-				}) => {
-					const params1 = {
+				MessageBox({
+					    $type:'prompt',
+					    message:'请填写您的手机号',
+					    inputPattern: /^1[0123456789]\d{9}$/,    //正则条件
+					    inputErrorMessage:'请输入正确的手机号',
+					    showCancelButton:true,
+					    showInput:true
+					}).then(({ value, action }) => {
+					    const params1 = {
 						inviteeMobile: value
 					};
 					get('/health-web/modules/userFamilyRelationExamine/save', params1).then((res) => {
@@ -103,14 +107,16 @@
 								message: '添加成功',
 								duration: 1500
 							});
+						 
 						}else{
 							Toast({
 								message: res.msg,
 								duration: 1500
 							});
 						}
+						 this.$router.go(0); /**刷新整个页面**/
 					})
-				});
+					});
 			},
 			handlerBack() {
 				this.$router.back()

@@ -32,6 +32,7 @@ export default {
 <style>
 header {
   padding: 5px 0;
+  height: 0.8rem !important;
 }
 .search_input {
   width: 100%;
@@ -42,6 +43,7 @@ header {
   padding: 0 26px;
   box-sizing: border-box;
   outline: none;
+  display: inline-block;
 }
 #kwnoFood > header {
   height: auto;
@@ -55,6 +57,7 @@ header {
 .in_main {
   width: 75%;
   position: relative;
+  height: 30px;
 }
 .in_main i {
   position: absolute;

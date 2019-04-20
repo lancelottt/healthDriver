@@ -42,12 +42,12 @@
         "Maps" : {
             "description" : "管理地图插件"
         },
-        "Speech" : {
-            "description" : "语音输入"
-        },
         "OAuth" : {
             "description" : "登录鉴权"
-        }
+        },
+        "Payment" : {},
+        "Push" : {},
+        "VideoPlayer" : {}
     },
     "plus" : {
         "splashscreen" : {
@@ -69,10 +69,20 @@
                         "appsecret" : " 189a61ba487957636b8c7ae796a0d237"
                     }
                 },
-                "speech" : {
-                    "ifly" : {}
+                "speech" : {},
+                "maps" : {},
+                "payment" : {
+                    "weixin" : {
+                        "appid" : "wxb7a73ac2a23fe04b"
+                    }
                 },
-                "maps" : {}
+                "push" : {
+                    "igexin" : {
+                        "appid" : "wxb7a73ac2a23fe04b",
+                        "appkey" : "wxb7a73ac2a23fe04b",
+                        "appsecret" : "wxb7a73ac2a23fe04b"
+                    }
+                }
             },
             "apple" : {
                 "appid" : "",
@@ -103,6 +113,7 @@
                     "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
                     "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
                     "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
                     "<uses-permission android:name=\"android.permission.CAMERA\"/>",
                     "<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
                     "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
@@ -114,7 +125,11 @@
                     "<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>",
                     "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
                     "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.RECEIVE_BOOT_COMPLETED\"/>",
                     "<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
+                    "<uses-permission android:name=\"android.permission.SYSTEM_ALERT_WINDOW\"/>",
+                    "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+                    "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
                     "<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>",
                     "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>",
                     "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
@@ -147,7 +162,15 @@
                         /*iPhone4设置页面程序图标，分辨率：29x29*/
                         "settings-retina" : "",
                         /*iPhone4S/5/6设置页面程序图标，分辨率：58x58*/
-                        "settings-retina8" : ""
+                        "settings-retina8" : "",
+                        "app@2x" : "unpackage/res/icons/120x120.png",
+                        "app@3x" : "unpackage/res/icons/180x180.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "notification@3x" : "unpackage/res/icons/60x60.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "settings@3x" : "unpackage/res/icons/87x87.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png",
+                        "spotlight@3x" : "unpackage/res/icons/120x120.png"
                     },
                     "ipad" : {
                         "normal" : "",
@@ -168,19 +191,30 @@
                         /*iPad iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
                         "settings-normal" : "",
                         /*iPad设置页面程序图标，分辨率：29x29*/
-                        "settings-retina" : ""
-                    }
+                        "settings-retina" : "",
+                        "app" : "unpackage/res/icons/76x76.png",
+                        "app@2x" : "unpackage/res/icons/152x152.png",
+                        "notification" : "unpackage/res/icons/20x20.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "proapp@2x" : "unpackage/res/icons/167x167.png",
+                        "settings" : "unpackage/res/icons/29x29.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "spotlight" : "unpackage/res/icons/40x40.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png"
+                    },
+                    "appstore" : "F:/林渡相关/148833447827954856.png"
                 },
                 "android" : {
-                    "mdpi" : "",
+                    "mdpi" : "unpackage/res/icons/48x48.png",
                     /*普通屏程序图标，分辨率：48x48*/
-                    "ldpi" : "",
+                    "ldpi" : "unpackage/res/icons/48x48.png",
                     /*大屏程序图标，分辨率：48x48*/
-                    "hdpi" : "",
+                    "hdpi" : "unpackage/res/icons/72x72.png",
                     /*高分屏程序图标，分辨率：72x72*/
-                    "xhdpi" : "",
+                    "xhdpi" : "unpackage/res/icons/96x96.png",
                     /*720P高分屏程序图标，分辨率：96x96*/
-                    "xxhdpi" : ""
+                    "xxhdpi" : "unpackage/res/icons/144x144.png",
+                    "xxxhdpi" : "unpackage/res/icons/192x192.png"
                 }
             },
             "splashscreen" : {

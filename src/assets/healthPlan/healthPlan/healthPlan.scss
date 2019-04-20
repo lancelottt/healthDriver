@@ -50,6 +50,7 @@
         .ivu-tabs-bar {
             //      box-shadow: -2px 0px 1px #2C3E50!important;
             box-shadow: 0 0.04rem 0.08rem 0 rgba(22, 23, 23, 0.1);
+            margin: 0;
         }
         .ivu-tabs-tab:hover {
             color: none;
@@ -81,1036 +82,794 @@
             transition: color .3s ease-in-out
         }
         //  .ivu-tabs-ink-bar{margin-left: 0.48rem;width: 2.1rem!important;}
-        .hitCard {
-            height: 100%;
-            h1 {
-                margin-left: 0.3rem;
-                font-size: 0.3rem;
-                font-family: Adobe Heiti Std R;
-                font-weight: normal;
-                color: rgba(51, 51, 51, 1);
-                text-align: left;
-            }
-            h2 {
-                margin: 0.28rem 0 0.28rem 0.3rem;
-                text-align: left;
-                font-size: 0.3rem;
-                font-family: PingFangSC-Regular;
-                font-weight: 400;
-                color: rgba(153, 153, 153, 1);
-            }
-            .myPlan {
-                margin-top: 0.2rem!important;
-                width: 6.88rem;
-                height: 2.56rem;
-                border-radius: 0.12rem;
-                margin: 0 auto;
-                position: relative;
-                img {
-                    width: 100%;
-                    height: 100%;
-                }
-                .healthPlan-mask {
-                    width: 5.42rem;
-                    height: 1.71rem;
-                    background: #ccc;
-                    z-index: 10;
-                    position: absolute;
-                    top: 0.39rem;
-                    left: 0.69rem;
-                    background: rgba(0, 0, 0, 0.23);
-                    .mask-left {
-                        width: 70%;
-                        height: 100%;
-                        float: left;
-                        h1 {
-                            margin: 0.47rem 0 0 0.29rem;
-                            font-size: 0.36rem;
-                            font-family: PingFangSC-Regular;
-                            font-weight: 400;
-                            color: rgba(254, 254, 254, 1);
-                        }
-                        h2 {
-                            margin: 0.17rem 0 0 0.29rem;
-                            font-size: 0.28rem;
-                            font-family: PingFangSC-Regular;
-                            font-weight: 400;
-                            color: rgba(254, 254, 254, 1);
-                        }
-                    }
-                    .mask-right {
-                        width: 30%;
-                        height: 100%;
-                        float: left;
-                        text-align: right;
-                        span {
-                            display: block;
-                            margin: 0.5rem 0.5rem 0 0rem;
-                            margin-top: 0.5rem!important;
-                            font-size: 0.36rem;
-                            font-family: PingFangSC-Regular;
-                            font-weight: 400;
-                            color: rgba(254, 254, 254, 1);
-                        }
-                        i {
-                            display: block;
-                            margin: 0.17rem 0.38rem 0 0rem;
-                            font-size: 0.24rem;
-                            font-family: PingFangSC-Regular;
-                            font-weight: 400;
-                            color: rgba(254, 254, 254, 1);
-                        }
-                    }
-                }
-            }
-        }
         .healthGuide {
             height: 100%;
             width: 100%;
+            background: rgba(233, 247, 250, 1);
             .healthGuide-con {
-                width: 6.91rem;
-                height: 9.5rem;
-                background: #f9f7f8;
-                margin: 0 auto;
-                padding-top: 1rem;
-                .loop {
-                    width: 4.01rem;
-                    height: 7.73rem;
-                    border-radius: 0.66rem;
-                    border: 0.1rem solid rgba(197, 190, 191, 1);
-                    margin: 0 auto;
-                    line-height: 7.73rem;
-                    position: relative;
-                    //  ---------------------left----------------------------------------
-                    .healthGuideSlot1 {
-                        width: 2.30rem;
-                        height: 0.33rem;
+                width: 100%;
+                height: 11.88rem;
+                background: url(../../../../static/hulu/dahulu.png) no-repeat;
+                background-clip: no-clip;
+                background-size: 75%;
+                background-position-x: center;
+                background-position-y: 2rem;
+                position: relative;
+                >article {
+                    width: 100%;
+                    height: 0.97rem;
+                    display: flex;
+                    flex-direction: row;
+                    flex: 1;
+                    >div:nth-of-type(1) {
+                        margin-left: -0.36rem;
+                        width: 5rem;
+                        height: 0.97rem;
+                    }
+                    >div:nth-of-type(2) {
+                        width: 1.15rem;
+                        height: 0.41rem;
+                        margin-left: 1.41rem;
+                        margin-top: 0.28rem;
+                    }
+                }
+                >section {
+                    .healthGuide-con-right {
+                        width: 0.68rem;
+                        min-height: 0.98rem;
+                        margin-left: 6.52rem;
+                        margin-top: 0.3rem;
+                        >div {
+                            width: 0.68rem;
+                            min-height: 0.98rem;
+                            font-size: 0.22rem;
+                            color: #AC7A39;
+                            margin-bottom: 0.19rem;
+                            img {
+                                width: 100%;
+                            }
+                        }
+                        >ul {
+                            width: 0.69rem;
+                            background: #ffe957;
+                            margin-bottom: 0.3rem;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-around;
+                            align-content: center;
+                            border-radius: 20%;
+                            border: 0.1rem solid #ffc55a;
+                            box-sizing: content-box;
+                            font-size: 0.16rem;
+                        }
+                    }
+                    .healthGuide-con-left {
+                        min-width: 0.59rem;
+                        height: 3.28rem;
                         position: absolute;
-                        left: -35%;
-                        top: 42%;
-                        display: block;
-                        div {
-                            width: 0.46rem;
-                            height: 0.23rem;
-                            float: left;
-                            font-size: 0.23rem;
-                            line-height: 0.23rem;
+                        top: 15.07%;
+                        left: 4.13%;
+                        >.avatar {
+                            margin-bottom: 0.35rem;
+                            width: 1.39rem;
+                            height: 0.59rem;
+                            background: #d3e3ab;
+                            border-radius: 25% 25% 25% 25% / 50% 50% 50% 50%;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            align-content: center;
+                            >div:nth-of-type(1) {
+                                width: 0.59rem;
+                                height: 0.59rem;
+                            }
+                            >div:nth-of-type(2) {
+                                width: 0.24rem;
+                                height: 0.4rem;
+                                margin-top: 0.1rem;
+                                margin-left: -0.05rem;
+                            }
+                            >p {
+                                font-size: 0.28rem;
+                                width: 0.44rem;
+                                height: 0.59rem;
+                                margin-top: 0.15rem;
+                                margin-left: -0.1rem;
+                                color: #FF5E3A;
+                            }
                         }
-                        div:nth-of-type(1) {
-                            width: 1.01rem;
-                            height: 0.33rem;
-                            border-bottom: 0.02rem solid rgba(227, 225, 226, 1);
-                            text-align: center;
-                            line-height: 0.33rem;
-                            margin-right: 0.1rem;
+                        >.myMsg {
+                            width: 0.68rem;
+                            min-height: 0.68rem;
+                            margin-bottom: 0.25rem;
+                            color: #BB8845;
                         }
-                        div:nth-of-type(2) {
-                            width: 0.33rem;
-                            height: 0.33rem;
-                            border-radius: 50%;
-                            //                      background: rgba(27, 149, 213, 1);
+                        >.clock {
+                            margin-left: -0.3rem;
+                            width: 1.4rem;
+                            min-height: 1.08rem;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            align-content: center;
+                            color: #BB8845;
+                            >div {
+                                margin-left: 0.3rem;
+                                width: 0.68rem;
+                                height: 0.68rem;
+                                img{
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                            }
+                            >p{
+                                display: block;
+                                width: 1.5rem;
+                                height: 0.3rem;
+                                >b{
+                                    color: #000;
+                                }
+                            }
+                        }
+                    }
+                }
+                >div:nth-of-type(1) {
+                    width: 3.9rem;
+                    height: 1.17rem;
+                    position: absolute;
+                    top: 40%;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    .healthGuide-con-footprint {
+                        width: 0.25rem;
+                        height: 0.31rem;
+                        position: absolute;
+                        top: 38%;
+                        left: 30%;
+                        transform: rotate(-20deg);
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    .healthGuide-con-dot {
+                        position: absolute;
+                        top: 44%;
+                        left: 45%;
+                        width: 0.28rem;
+                        height: 0.28rem;
+                        border: 0.02rem solid #000;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .healthGuide-con-dot-concret {
+                            width: 0.15rem;
+                            height: 0.15rem;
                             background: #000;
-                        }
-                        div:nth-of-type(3) {
-                            width: 0.66rem;
-                            height: 0.33rem;
-                            font-size: 0.24rem;
-                            font-family: PingFangSC-Regular;
-                            font-weight: 400;
-                            color: rgba(51, 51, 51, 1);
-                            line-height: 0.33rem;
+                            border-radius: 50%;
                         }
                     }
-                    .healthGuideSlot2 {
-                        width: 2.30rem;
-                        height: 0.33rem;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                >div:nth-of-type(2) {
+                    width: 1.02rem;
+                    height: 1.05rem;
+                    position: absolute;
+                    right: 0;
+                    margin: auto;
+                    background: rgba(255, 255, 25, 0.5);
+                    left: -45%;
+                    top: 30%;
+                    .healthGuide-con-footprint {
+                        width: 0.25rem;
+                        height: 0.31rem;
                         position: absolute;
-                        left: -35%;
-                        top: 32%;
-                        display: block;
-                        div {
-                            width: 0.46rem;
-                            height: 0.23rem;
-                            float: left;
-                            font-size: 0.23rem;
-                            line-height: 0.23rem;
-                        }
-                        div:nth-of-type(1) {
-                            width: 1.01rem;
-                            height: 0.33rem;
-                            border-bottom: 0.02rem solid rgba(227, 225, 226, 1);
-                            text-align: center;
-                            line-height: 0.33rem;
-                            margin-right: 0.1rem;
-                        }
-                        div:nth-of-type(2) {
-                            width: 0.33rem;
-                            height: 0.33rem;
-                            border-radius: 50%;
-                            background: rgba(27, 149, 213, 1);
-                        }
-                        div:nth-of-type(3) {
-                            width: 0.66rem;
-                            height: 0.33rem;
-                            font-size: 0.24rem;
-                            font-family: PingFangSC-Regular;
-                            font-weight: 400;
-                            color: rgba(51, 51, 51, 1);
-                            line-height: 0.33rem;
+                        top: 8%;
+                        left: 40%;
+                        transform: rotate(10deg);
+                        img {
+                            width: 100%;
+                            height: 100%;
                         }
                     }
-                    .healthGuideSlot3 {
-                        width: 2.30rem;
-                        height: 0.33rem;
+                    .healthGuide-con-dot {
                         position: absolute;
-                        left: -35%;
-                        top: 22%;
-                        display: block;
-                        div {
-                            width: 0.46rem;
-                            height: 0.23rem;
-                            float: left;
-                            font-size: 0.23rem;
-                            line-height: 0.23rem;
-                        }
-                        div:nth-of-type(1) {
-                            width: 1.01rem;
-                            height: 0.33rem;
-                            border-bottom: 0.02rem solid rgba(227, 225, 226, 1);
-                            text-align: center;
-                            line-height: 0.33rem;
-                            margin-right: 0.1rem;
-                        }
-                        div:nth-of-type(2) {
-                            width: 0.33rem;
-                            height: 0.33rem;
+                        top: 44%;
+                        left: 45%;
+                        width: 0.28rem;
+                        height: 0.28rem;
+                        border: 0.02rem solid #000;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .healthGuide-con-dot-concret {
+                            width: 0.15rem;
+                            height: 0.15rem;
+                            background: #000;
                             border-radius: 50%;
-                            background: rgba(27, 149, 213, 1);
-                        }
-                        div:nth-of-type(3) {
-                            width: 0.66rem;
-                            height: 0.33rem;
-                            font-size: 0.24rem;
-                            font-family: PingFangSC-Regular;
-                            font-weight: 400;
-                            color: rgba(51, 51, 51, 1);
-                            line-height: 0.33rem;
                         }
                     }
-                    .healthGuideSlot4 {
-                        width: 2.30rem;
-                        height: 0.33rem;
+                }
+                >div:nth-of-type(3) {
+                    width: 1.3rem;
+                    height: 1.28rem;
+                    position: absolute;
+                    top: 18.2%;
+                    left: 22.6%;
+                    .healthGuide-con-footprint {
+                        width: 0.25rem;
+                        height: 0.31rem;
                         position: absolute;
-                        left: -35%;
-                        top: 12%;
-                        display: block;
-                        div {
-                            width: 0.46rem;
-                            height: 0.23rem;
-                            float: left;
-                            font-size: 0.23rem;
-                            line-height: 0.23rem;
-                        }
-                        div:nth-of-type(1) {
-                            width: 1.01rem;
-                            height: 0.33rem;
-                            border-bottom: 0.02rem solid rgba(227, 225, 226, 1);
-                            text-align: center;
-                            line-height: 0.33rem;
-                            margin-right: 0.1rem;
-                        }
-                        div:nth-of-type(2) {
-                            width: 0.33rem;
-                            height: 0.33rem;
-                            border-radius: 50%;
-                            background: rgba(27, 149, 213, 1);
-                        }
-                        div:nth-of-type(3) {
-                            width: 0.66rem;
-                            height: 0.33rem;
-                            font-size: 0.24rem;
-                            font-family: PingFangSC-Regular;
-                            font-weight: 400;
-                            color: rgba(51, 51, 51, 1);
-                            line-height: 0.33rem;
+                        top: 28%;
+                        left: 70%;
+                        transform: rotate(40deg);
+                        img {
+                            width: 100%;
+                            height: 100%;
                         }
                     }
-                    .healthGuideSlot5 {
-                        width: 2.30rem;
-                        height: 0.33rem;
+                    .healthGuide-con-dot {
                         position: absolute;
-                        left: -35%;
-                        top: 2%;
-                        display: block;
-                        div {
-                            width: 0.46rem;
-                            height: 0.23rem;
-                            float: left;
-                            font-size: 0.23rem;
-                            line-height: 0.23rem;
-                        }
-                        div:nth-of-type(1) {
-                            width: 1.01rem;
-                            height: 0.33rem;
-                            border-bottom: 0.02rem solid rgba(227, 225, 226, 1);
-                            text-align: center;
-                            line-height: 0.33rem;
-                            margin-right: 0.1rem;
-                        }
-                        div:nth-of-type(2) {
-                            width: 0.33rem;
-                            height: 0.33rem;
+                        top: 44%;
+                        left: 45%;
+                        width: 0.28rem;
+                        height: 0.28rem;
+                        border: 0.02rem solid #000;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .healthGuide-con-dot-concret {
+                            width: 0.15rem;
+                            height: 0.15rem;
+                            background: #000;
                             border-radius: 50%;
-                            background: rgba(27, 149, 213, 1);
-                        }
-                        div:nth-of-type(3) {
-                            width: 0.66rem;
-                            height: 0.33rem;
-                            font-size: 0.24rem;
-                            font-family: PingFangSC-Regular;
-                            font-weight: 400;
-                            color: rgba(51, 51, 51, 1);
-                            line-height: 0.33rem;
                         }
                     }
-                    //   -----------------------top-------------------------
-                    .healthGuideSlot6 {
-                        width: 1.01rem;
-                        height: 1.1rem;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                >div:nth-of-type(4) {
+                    width: 1.28rem;
+                    height: 0.97rem;
+                    position: absolute;
+                    top: 17.2%;
+                    left: 41.7%;
+                    .healthGuide-con-footprint {
+                        width: 0.25rem;
+                        height: 0.31rem;
                         position: absolute;
-                        left: 19%;
-                        top: -9%;
-                        display: block;
-                        div:nth-of-type(1) {
-                            font-size: 0.22rem;
-                            font-family: PingFangSC-Regular;
-                            font-weight: 400;
-                            color: rgba(102, 102, 102, 1);
-                            line-height: 0.33rem;
-                            width: 1.01rem;
-                            height: 0.33rem;
-                            border-bottom: 0.02rem solid rgba(227, 225, 226, 1);
-                            text-align: center;
-                            line-height: 0.33rem;
-                            margin-bottom: 0.15rem;
-                        }
-                        div:nth-of-type(2) {
-                            font-size: 0.44rem;
-                            width: 0.33rem;
-                            height: 0.33rem;
-                            border-radius: 50%;
-                            background: rgba(27, 149, 213, 1);
-                            color: #1B95D5;
-                            margin-left: 0.35rem;
-                        }
-                        div:nth-of-type(3) {
-                            width: 0.66rem;
-                            height: 0.33rem;
-                            font-size: 0.24rem;
-                            font-family: PingFangSC-Regular;
-                            font-weight: 400;
-                            color: rgba(51, 51, 51, 1);
-                            line-height: 0.33rem;
-                            text-align: center;
-                            margin-left: 0.18rem;
+                        top: 28%;
+                        left: 77%;
+                        transform: rotate(90deg);
+                        img {
+                            width: 100%;
+                            height: 100%;
                         }
                     }
-                    .healthGuideSlot7 {
-                        width: 1.01rem;
-                        height: 1.1rem;
+                    .healthGuide-con-dot {
                         position: absolute;
-                        left: 54%;
-                        top: -9%;
-                        display: block;
-                        div:nth-of-type(1) {
-                            font-size: 0.22rem;
-                            font-family: PingFangSC-Regular;
-                            font-weight: 400;
-                            color: rgba(102, 102, 102, 1);
-                            line-height: 0.33rem;
-                            width: 1.01rem;
-                            height: 0.33rem;
-                            border-bottom: 0.02rem solid rgba(227, 225, 226, 1);
-                            text-align: center;
-                            line-height: 0.33rem;
-                            margin-bottom: 0.15rem;
-                        }
-                        div:nth-of-type(2) {
-                            font-size: 0.44rem;
-                            width: 0.33rem;
-                            height: 0.33rem;
+                        top: 44%;
+                        left: 45%;
+                        width: 0.28rem;
+                        height: 0.28rem;
+                        border: 0.02rem solid #000;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .healthGuide-con-dot-concret {
+                            width: 0.15rem;
+                            height: 0.15rem;
+                            background: #000;
                             border-radius: 50%;
-                            background: rgba(27, 149, 213, 1);
-                            color: #1B95D5;
-                            margin-left: 0.35rem;
-                        }
-                        div:nth-of-type(3) {
-                            width: 0.66rem;
-                            height: 0.33rem;
-                            font-size: 0.24rem;
-                            font-family: PingFangSC-Regular;
-                            font-weight: 400;
-                            color: rgba(51, 51, 51, 1);
-                            line-height: 0.33rem;
-                            text-align: center;
-                            margin-left: 0.18rem;
                         }
                     }
-                    //   ---------------------right--------------------------
-                    .healthGuideSlot8 {
-                        width: 2.30rem;
-                        height: 0.33rem;
+                }
+                >div:nth-of-type(5) {
+                    width: 1.2rem;
+                    height: 1.24rem;
+                    position: absolute;
+                    top: 18.1%;
+                    left: 61%;
+                    .healthGuide-con-footprint {
+                        width: 0.25rem;
+                        height: 0.31rem;
                         position: absolute;
-                        left: 79%;
-                        top: 2%;
-                        display: block;
-                        div {
-                            width: 0.46rem;
-                            height: 0.23rem;
-                            float: left;
-                            font-size: 0.23rem;
-                            line-height: 0.23rem;
-                        }
-                        div:nth-of-type(3) {
-                            width: 1.01rem;
-                            height: 0.33rem;
-                            border-bottom: 0.02rem solid rgba(227, 225, 226, 1);
-                            text-align: center;
-                            line-height: 0.33rem;
-                            margin-right: 0.1rem;
-                        }
-                        div:nth-of-type(2) {
-                            width: 0.33rem;
-                            height: 0.33rem;
-                            border-radius: 50%;
-                            background: rgba(27, 149, 213, 1);
-                        }
-                        div:nth-of-type(1) {
-                            width: 0.66rem;
-                            height: 0.33rem;
-                            font-size: 0.24rem;
-                            font-family: PingFangSC-Regular;
-                            font-weight: 400;
-                            color: rgba(51, 51, 51, 1);
-                            line-height: 0.33rem;
+                        top: 68%;
+                        left: 60%;
+                        transform: rotate(150deg);
+                        img {
+                            width: 100%;
+                            height: 100%;
                         }
                     }
-                    .healthGuideSlot9 {
-                        width: 2.30rem;
-                        height: 0.33rem;
+                    .healthGuide-con-dot {
                         position: absolute;
-                        left: 79%;
-                        top: 12%;
-                        display: block;
-                        div {
-                            width: 0.46rem;
-                            height: 0.23rem;
-                            float: left;
-                            font-size: 0.23rem;
-                            line-height: 0.23rem;
-                        }
-                        div:nth-of-type(3) {
-                            width: 1.01rem;
-                            height: 0.33rem;
-                            border-bottom: 0.02rem solid rgba(227, 225, 226, 1);
-                            text-align: center;
-                            line-height: 0.33rem;
-                            margin-right: 0.1rem;
-                        }
-                        div:nth-of-type(2) {
-                            width: 0.33rem;
-                            height: 0.33rem;
+                        top: 44%;
+                        left: 45%;
+                        width: 0.28rem;
+                        height: 0.28rem;
+                        border: 0.02rem solid #000;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .healthGuide-con-dot-concret {
+                            width: 0.15rem;
+                            height: 0.15rem;
+                            background: #000;
                             border-radius: 50%;
-                            background: rgba(27, 149, 213, 1);
-                        }
-                        div:nth-of-type(1) {
-                            width: 0.66rem;
-                            height: 0.33rem;
-                            font-size: 0.24rem;
-                            font-family: PingFangSC-Regular;
-                            font-weight: 400;
-                            color: rgba(51, 51, 51, 1);
-                            line-height: 0.33rem;
                         }
                     }
-                    .healthGuideSlot10 {
-                        width: 2.30rem;
-                        height: 0.33rem;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                >div:nth-of-type(6) {
+                    width: 1.02rem;
+                    height: 1.05rem;
+                    position: absolute;
+                    top: 30%;
+                    left: 64.7%;
+                    background: rgba(255, 255, 25, 0.5);
+                    .healthGuide-con-footprint {
+                        width: 0.25rem;
+                        height: 0.31rem;
                         position: absolute;
-                        left: 79%;
-                        top: 22%;
-                        display: block;
-                        div {
-                            width: 0.46rem;
-                            height: 0.23rem;
-                            float: left;
-                            font-size: 0.23rem;
-                            line-height: 0.23rem;
-                        }
-                        div:nth-of-type(3) {
-                            width: 1.01rem;
-                            height: 0.33rem;
-                            border-bottom: 0.02rem solid rgba(227, 225, 226, 1);
-                            text-align: center;
-                            line-height: 0.33rem;
-                            margin-right: 0.1rem;
-                        }
-                        div:nth-of-type(2) {
-                            width: 0.33rem;
-                            height: 0.33rem;
-                            border-radius: 50%;
-                            background: rgba(27, 149, 213, 1);
-                        }
-                        div:nth-of-type(1) {
-                            width: 0.66rem;
-                            height: 0.33rem;
-                            font-size: 0.24rem;
-                            font-family: PingFangSC-Regular;
-                            font-weight: 400;
-                            color: rgba(51, 51, 51, 1);
-                            line-height: 0.33rem;
+                        top: 68%;
+                        left: 70%;
+                        transform: rotate(220deg);
+                        img {
+                            width: 100%;
+                            height: 100%;
                         }
                     }
-                    .healthGuideSlot11 {
-                        width: 2.30rem;
-                        height: 0.33rem;
+                    .healthGuide-con-dot {
                         position: absolute;
-                        left: 79%;
-                        top: 32%;
-                        display: block;
-                        div {
-                            width: 0.46rem;
-                            height: 0.23rem;
-                            float: left;
-                            font-size: 0.23rem;
-                            line-height: 0.23rem;
-                        }
-                        div:nth-of-type(3) {
-                            width: 1.01rem;
-                            height: 0.33rem;
-                            border-bottom: 0.02rem solid rgba(227, 225, 226, 1);
-                            text-align: center;
-                            line-height: 0.33rem;
-                            margin-right: 0.1rem;
-                        }
-                        div:nth-of-type(2) {
-                            width: 0.33rem;
-                            height: 0.33rem;
+                        top: 44%;
+                        left: 45%;
+                        width: 0.28rem;
+                        height: 0.28rem;
+                        border: 0.02rem solid #000;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .healthGuide-con-dot-concret {
+                            width: 0.15rem;
+                            height: 0.15rem;
+                            background: #000;
                             border-radius: 50%;
-                            background: rgba(27, 149, 213, 1);
-                        }
-                        div:nth-of-type(1) {
-                            width: 0.66rem;
-                            height: 0.33rem;
-                            font-size: 0.24rem;
-                            font-family: PingFangSC-Regular;
-                            font-weight: 400;
-                            color: rgba(51, 51, 51, 1);
-                            line-height: 0.33rem;
                         }
                     }
-                    .healthGuideSlot12 {
-                        width: 2.30rem;
-                        height: 0.33rem;
+                }
+                >div:nth-of-type(7) {
+                    width: 2.03rem;
+                    height: 1.02rem;
+                    position: absolute;
+                    top: 46.7%;
+                    left: 15.5%;
+                    .healthGuide-con-footprint {
+                        width: 0.25rem;
+                        height: 0.31rem;
                         position: absolute;
-                        left: 79%;
-                        top: 42%;
-                        display: block;
-                        div {
-                            width: 0.46rem;
-                            height: 0.23rem;
-                            float: left;
-                            font-size: 0.23rem;
-                            line-height: 0.23rem;
-                        }
-                        div:nth-of-type(3) {
-                            width: 1.01rem;
-                            height: 0.33rem;
-                            border-bottom: 0.02rem solid rgba(227, 225, 226, 1);
-                            text-align: center;
-                            line-height: 0.33rem;
-                            margin-right: 0.1rem;
-                        }
-                        div:nth-of-type(2) {
-                            width: 0.33rem;
-                            height: 0.33rem;
-                            border-radius: 50%;
-                            background: rgba(27, 149, 213, 1);
-                        }
-                        div:nth-of-type(1) {
-                            width: 0.66rem;
-                            height: 0.33rem;
-                            font-size: 0.24rem;
-                            font-family: PingFangSC-Regular;
-                            font-weight: 400;
-                            color: rgba(51, 51, 51, 1);
-                            line-height: 0.33rem;
+                        top: 70%;
+                        left: 30%;
+                        transform: rotate(250deg);
+                        img {
+                            width: 100%;
+                            height: 100%;
                         }
                     }
-                    .healthGuideSlot13 {
-                        width: 2.30rem;
-                        height: 0.33rem;
+                    .healthGuide-con-dot {
                         position: absolute;
-                        left: 79%;
-                        top: 52%;
-                        display: block;
-                        div {
-                            width: 0.46rem;
-                            height: 0.23rem;
-                            float: left;
-                            font-size: 0.23rem;
-                            line-height: 0.23rem;
-                        }
-                        div:nth-of-type(3) {
-                            width: 1.01rem;
-                            height: 0.33rem;
-                            border-bottom: 0.02rem solid rgba(227, 225, 226, 1);
-                            text-align: center;
-                            line-height: 0.33rem;
-                            margin-right: 0.1rem;
-                        }
-                        div:nth-of-type(2) {
-                            width: 0.33rem;
-                            height: 0.33rem;
+                        top: 44%;
+                        left: 45%;
+                        width: 0.28rem;
+                        height: 0.28rem;
+                        border: 0.02rem solid #000;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .healthGuide-con-dot-concret {
+                            width: 0.15rem;
+                            height: 0.15rem;
+                            background: #000;
                             border-radius: 50%;
-                            background: rgba(27, 149, 213, 1);
-                        }
-                        div:nth-of-type(1) {
-                            width: 0.66rem;
-                            height: 0.33rem;
-                            font-size: 0.24rem;
-                            font-family: PingFangSC-Regular;
-                            font-weight: 400;
-                            color: rgba(51, 51, 51, 1);
-                            line-height: 0.33rem;
                         }
                     }
-                    .healthGuideSlot14 {
-                        width: 2.30rem;
-                        height: 0.33rem;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                >div:nth-of-type(8) {
+                    width: 1.13rem;
+                    height: 1.07rem;
+                    position: absolute;
+                    top: 56.4%;
+                    left: 12.15%;
+                    background: rgba(255, 255, 25, 0.5);
+                    .healthGuide-con-footprint {
+                        width: 0.25rem;
+                        height: 0.31rem;
                         position: absolute;
-                        left: 79%;
-                        top: 62%;
-                        display: block;
-                        div {
-                            width: 0.46rem;
-                            height: 0.23rem;
-                            float: left;
-                            font-size: 0.23rem;
-                            line-height: 0.23rem;
-                        }
-                        div:nth-of-type(3) {
-                            width: 1.01rem;
-                            height: 0.33rem;
-                            border-bottom: 0.02rem solid rgba(227, 225, 226, 1);
-                            text-align: center;
-                            line-height: 0.33rem;
-                            margin-right: 0.1rem;
-                        }
-                        div:nth-of-type(2) {
-                            width: 0.33rem;
-                            height: 0.33rem;
-                            border-radius: 50%;
-                            background: rgba(27, 149, 213, 1);
-                        }
-                        div:nth-of-type(1) {
-                            width: 0.66rem;
-                            height: 0.33rem;
-                            font-size: 0.24rem;
-                            font-family: PingFangSC-Regular;
-                            font-weight: 400;
-                            color: rgba(51, 51, 51, 1);
-                            line-height: 0.33rem;
+                        top: 68%;
+                        left: 30%;
+                        transform: rotate(210deg);
+                        img {
+                            width: 100%;
+                            height: 100%;
                         }
                     }
-                    .healthGuideSlot15 {
-                        width: 2.30rem;
-                        height: 0.33rem;
+                    .healthGuide-con-dot {
                         position: absolute;
-                        left: 79%;
-                        top: 72%;
-                        display: block;
-                        div {
-                            width: 0.46rem;
-                            height: 0.23rem;
-                            float: left;
-                            font-size: 0.23rem;
-                            line-height: 0.23rem;
-                        }
-                        div:nth-of-type(3) {
-                            width: 1.01rem;
-                            height: 0.33rem;
-                            border-bottom: 0.02rem solid rgba(227, 225, 226, 1);
-                            text-align: center;
-                            line-height: 0.33rem;
-                            margin-right: 0.1rem;
-                        }
-                        div:nth-of-type(2) {
-                            width: 0.33rem;
-                            height: 0.33rem;
+                        top: 44%;
+                        left: 45%;
+                        width: 0.28rem;
+                        height: 0.28rem;
+                        border: 0.02rem solid #000;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .healthGuide-con-dot-concret {
+                            width: 0.15rem;
+                            height: 0.15rem;
+                            background: #000;
                             border-radius: 50%;
-                            background: rgba(27, 149, 213, 1);
-                        }
-                        div:nth-of-type(1) {
-                            width: 0.66rem;
-                            height: 0.33rem;
-                            font-size: 0.24rem;
-                            font-family: PingFangSC-Regular;
-                            font-weight: 400;
-                            color: rgba(51, 51, 51, 1);
-                            line-height: 0.33rem;
                         }
                     }
-                    .healthGuideSlot16 {
-                        width: 2.30rem;
-                        height: 0.33rem;
+                }
+                >div:nth-of-type(9) {
+                    width: 1.34rem;
+                    height: 0.91rem;
+                    position: absolute;
+                    top: 66.8%;
+                    left: 12.3%;
+                    background: rgba(255, 255, 25, 0.5);
+                    .healthGuide-con-footprint {
+                        width: 0.25rem;
+                        height: 0.31rem;
                         position: absolute;
-                        left: 79%;
-                        top: 82%;
-                        display: block;
-                        div {
-                            width: 0.46rem;
-                            height: 0.23rem;
-                            float: left;
-                            font-size: 0.23rem;
-                            line-height: 0.23rem;
-                        }
-                        div:nth-of-type(3) {
-                            width: 1.01rem;
-                            height: 0.33rem;
-                            border-bottom: 0.02rem solid rgba(227, 225, 226, 1);
-                            text-align: center;
-                            line-height: 0.33rem;
-                            margin-right: 0.1rem;
-                        }
-                        div:nth-of-type(2) {
-                            width: 0.33rem;
-                            height: 0.33rem;
-                            border-radius: 50%;
-                            background: rgba(27, 149, 213, 1);
-                        }
-                        div:nth-of-type(1) {
-                            width: 0.66rem;
-                            height: 0.33rem;
-                            font-size: 0.24rem;
-                            font-family: PingFangSC-Regular;
-                            font-weight: 400;
-                            color: rgba(51, 51, 51, 1);
-                            line-height: 0.33rem;
+                        top: 68%;
+                        left: 40%;
+                        transform: rotate(170deg);
+                        img {
+                            width: 100%;
+                            height: 100%;
                         }
                     }
-                    .healthGuideSlot17 {
-                        width: 2.30rem;
-                        height: 0.33rem;
+                    .healthGuide-con-dot {
                         position: absolute;
-                        left: 79%;
-                        top: 92%;
-                        display: block;
-                        div {
-                            width: 0.46rem;
-                            height: 0.23rem;
-                            float: left;
-                            font-size: 0.23rem;
-                            line-height: 0.23rem;
-                        }
-                        div:nth-of-type(3) {
-                            width: 1.01rem;
-                            height: 0.33rem;
-                            border-bottom: 0.02rem solid rgba(227, 225, 226, 1);
-                            text-align: center;
-                            line-height: 0.33rem;
-                            margin-right: 0.1rem;
-                        }
-                        div:nth-of-type(2) {
-                            width: 0.33rem;
-                            height: 0.33rem;
+                        top: 44%;
+                        left: 45%;
+                        width: 0.28rem;
+                        height: 0.28rem;
+                        border: 0.02rem solid #000;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .healthGuide-con-dot-concret {
+                            width: 0.15rem;
+                            height: 0.15rem;
+                            background: #000;
                             border-radius: 50%;
-                            background: rgba(27, 149, 213, 1);
-                        }
-                        div:nth-of-type(1) {
-                            width: 0.66rem;
-                            height: 0.33rem;
-                            font-size: 0.24rem;
-                            font-family: PingFangSC-Regular;
-                            font-weight: 400;
-                            color: rgba(51, 51, 51, 1);
-                            line-height: 0.33rem;
                         }
                     }
-                    //---------------------------------------------------bottom---------------------------------------
-                    .healthGuideSlot18 {
-                        width: 1.01rem;
-                        height: 1.1rem;
+                }
+                >div:nth-of-type(10) {
+                    width: 1.52rem;
+                    height: 1.06rem;
+                    position: absolute;
+                    top: 75.8%;
+                    left: 17.8%;
+                    .healthGuide-con-footprint {
+                        width: 0.25rem;
+                        height: 0.31rem;
                         position: absolute;
-                        left: 19%;
-                        top: 94%;
-                        display: block;
-                        div:nth-of-type(3) {
-                            font-size: 0.22rem;
-                            font-family: PingFangSC-Regular;
-                            font-weight: 400;
-                            color: rgba(102, 102, 102, 1);
-                            line-height: 0.33rem;
-                            width: 1.01rem;
-                            height: 0.33rem;
-                            border-bottom: 0.02rem solid rgba(227, 225, 226, 1);
-                            text-align: center;
-                            line-height: 0.33rem;
-                            margin-top: 0.15rem;
-                        }
-                        div:nth-of-type(2) {
-                            font-size: 0.44rem;
-                            width: 0.33rem;
-                            height: 0.33rem;
-                            border-radius: 50%;
-                            background: rgba(27, 149, 213, 1);
-                            color: #1B95D5;
-                            margin-left: 0.35rem;
-                        }
-                        div:nth-of-type(1) {
-                            width: 0.66rem;
-                            height: 0.33rem;
-                            font-size: 0.24rem;
-                            font-family: PingFangSC-Regular;
-                            font-weight: 400;
-                            color: rgba(51, 51, 51, 1);
-                            line-height: 0.33rem;
-                            text-align: center;
-                            margin-left: 0.18rem;
+                        top: 45%;
+                        left: 70%;
+                        transform: rotate(130deg);
+                        img {
+                            width: 100%;
+                            height: 100%;
                         }
                     }
-                    .healthGuideSlot19 {
-                        font-size: 0.22rem;
-                        font-family: PingFangSC-Regular;
-                        font-weight: 400;
-                        color: rgba(102, 102, 102, 1);
-                        line-height: 0.33rem;
-                        width: 1.01rem;
-                        height: 1.1rem;
+                    .healthGuide-con-dot {
                         position: absolute;
-                        left: 54%;
-                        top: 94%;
-                        display: block;
-                        div:nth-of-type(3) {
-                            width: 1.01rem;
-                            height: 0.33rem;
-                            border-bottom: 0.02rem solid rgba(227, 225, 226, 1);
-                            text-align: center;
-                            line-height: 0.33rem;
-                            margin-top: 0.15rem;
-                        }
-                        div:nth-of-type(2) {
-                            font-size: 0.44rem;
-                            width: 0.33rem;
-                            height: 0.33rem;
+                        top: 44%;
+                        left: 45%;
+                        width: 0.28rem;
+                        height: 0.28rem;
+                        border: 0.02rem solid #000;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .healthGuide-con-dot-concret {
+                            width: 0.15rem;
+                            height: 0.15rem;
+                            background: #000;
                             border-radius: 50%;
-                            background: rgba(27, 149, 213, 1);
-                            color: #1B95D5;
-                            margin-left: 0.35rem;
-                        }
-                        div:nth-of-type(1) {
-                            display: inline;
-                            text-align: center;
-                            width: 0.66rem;
-                            height: 0.33rem;
-                            font-size: 0.24rem;
-                            font-family: PingFangSC-Regular;
-                            font-weight: 400;
-                            color: rgba(51, 51, 51, 1);
-                            line-height: 0.33rem;
-                            text-align: center;
                         }
                     }
-                    //              ------------------------left-----------------------------
-                    .healthGuideSlot20 {
-                        width: 2.30rem;
-                        height: 0.33rem;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                >div:nth-of-type(11) {
+                    width: 1.34rem;
+                    height: 0.91rem;
+                    position: absolute;
+                    top: 78.1%;
+                    left: 40.6%;
+                    background: rgba(255, 255, 25, 0.5);
+                    .healthGuide-con-footprint {
+                        width: 0.25rem;
+                        height: 0.31rem;
                         position: absolute;
-                        left: -35%;
-                        top: 52%;
-                        display: block;
-                        div {
-                            width: 0.46rem;
-                            height: 0.23rem;
-                            float: left;
-                            font-size: 0.23rem;
-                            line-height: 0.23rem;
-                        }
-                        div:nth-of-type(1) {
-                            width: 1.01rem;
-                            height: 0.33rem;
-                            border-bottom: 0.02rem solid rgba(227, 225, 226, 1);
-                            text-align: center;
-                            line-height: 0.33rem;
-                            margin-right: 0.1rem;
-                        }
-                        div:nth-of-type(2) {
-                            width: 0.33rem;
-                            height: 0.33rem;
-                            border-radius: 50%;
-                            background: rgba(27, 149, 213, 1);
-                        }
-                        div:nth-of-type(3) {
-                            width: 0.66rem;
-                            height: 0.33rem;
-                            font-size: 0.24rem;
-                            font-family: PingFangSC-Regular;
-                            font-weight: 400;
-                            color: rgba(51, 51, 51, 1);
-                            line-height: 0.33rem;
+                        top: 40%;
+                        left: 75%;
+                        transform: rotate(90deg);
+                        img {
+                            width: 100%;
+                            height: 100%;
                         }
                     }
-                    .healthGuideSlot21 {
-                        width: 2.30rem;
-                        height: 0.33rem;
+                    .healthGuide-con-dot {
                         position: absolute;
-                        left: -35%;
-                        top: 62%;
-                        display: block;
-                        div {
-                            width: 0.46rem;
-                            height: 0.23rem;
-                            float: left;
-                            font-size: 0.23rem;
-                            line-height: 0.23rem;
-                        }
-                        div:nth-of-type(1) {
-                            width: 1.01rem;
-                            height: 0.33rem;
-                            border-bottom: 0.02rem solid rgba(227, 225, 226, 1);
-                            text-align: center;
-                            line-height: 0.33rem;
-                            margin-right: 0.1rem;
-                        }
-                        div:nth-of-type(2) {
-                            width: 0.33rem;
-                            height: 0.33rem;
+                        top: 44%;
+                        left: 45%;
+                        width: 0.28rem;
+                        height: 0.28rem;
+                        border: 0.02rem solid #000;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .healthGuide-con-dot-concret {
+                            width: 0.15rem;
+                            height: 0.15rem;
+                            background: #000;
                             border-radius: 50%;
-                            background: rgba(27, 149, 213, 1);
-                        }
-                        div:nth-of-type(3) {
-                            width: 0.66rem;
-                            height: 0.33rem;
-                            font-size: 0.24rem;
-                            font-family: PingFangSC-Regular;
-                            font-weight: 400;
-                            color: rgba(51, 51, 51, 1);
-                            line-height: 0.33rem;
                         }
                     }
-                    .healthGuideSlot22 {
-                        width: 2.30rem;
-                        height: 0.33rem;
+                }
+                >div:nth-of-type(12) {
+                    width: 1.52rem;
+                    height: 1.06rem;
+                    position: absolute;
+                    top: 75.8%;
+                    left: 60.8%;
+                    .healthGuide-con-footprint {
+                        width: 0.25rem;
+                        height: 0.31rem;
                         position: absolute;
-                        left: -35%;
-                        top: 72%;
-                        display: block;
-                        div {
-                            width: 0.46rem;
-                            height: 0.23rem;
-                            float: left;
-                            font-size: 0.23rem;
-                            line-height: 0.23rem;
-                        }
-                        div:nth-of-type(1) {
-                            width: 1.01rem;
-                            height: 0.33rem;
-                            border-bottom: 0.02rem solid rgba(227, 225, 226, 1);
-                            text-align: center;
-                            line-height: 0.33rem;
-                            margin-right: 0.1rem;
-                        }
-                        div:nth-of-type(2) {
-                            width: 0.33rem;
-                            height: 0.33rem;
-                            border-radius: 50%;
-                            background: rgba(27, 149, 213, 1);
-                        }
-                        div:nth-of-type(3) {
-                            width: 0.66rem;
-                            height: 0.33rem;
-                            font-size: 0.24rem;
-                            font-family: PingFangSC-Regular;
-                            font-weight: 400;
-                            color: rgba(51, 51, 51, 1);
-                            line-height: 0.33rem;
+                        top: 10%;
+                        left: 60%;
+                        transform: rotate(50deg);
+                        img {
+                            width: 100%;
+                            height: 100%;
                         }
                     }
-                    .healthGuideSlot23 {
-                        width: 2.30rem;
-                        height: 0.33rem;
+                    .healthGuide-con-dot {
                         position: absolute;
-                        left: -35%;
-                        top: 82%;
-                        display: block;
-                        div {
-                            width: 0.46rem;
-                            height: 0.23rem;
-                            float: left;
-                            font-size: 0.23rem;
-                            line-height: 0.23rem;
-                        }
-                        div:nth-of-type(1) {
-                            width: 1.01rem;
-                            height: 0.33rem;
-                            border-bottom: 0.02rem solid rgba(227, 225, 226, 1);
-                            text-align: center;
-                            line-height: 0.33rem;
-                            margin-right: 0.1rem;
-                        }
-                        div:nth-of-type(2) {
-                            width: 0.33rem;
-                            height: 0.33rem;
+                        top: 44%;
+                        left: 45%;
+                        width: 0.28rem;
+                        height: 0.28rem;
+                        border: 0.02rem solid #000;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .healthGuide-con-dot-concret {
+                            width: 0.15rem;
+                            height: 0.15rem;
+                            background: #000;
                             border-radius: 50%;
-                            background: rgba(27, 149, 213, 1);
-                        }
-                        div:nth-of-type(3) {
-                            width: 0.66rem;
-                            height: 0.33rem;
-                            font-size: 0.24rem;
-                            font-family: PingFangSC-Regular;
-                            font-weight: 400;
-                            color: rgba(51, 51, 51, 1);
-                            line-height: 0.33rem;
                         }
                     }
-                    .healthGuideSlot24 {
-                        width: 2.30rem;
-                        height: 0.33rem;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                //              >div:nth-of-type(13) {
+                //                  width: 1.34rem;
+                //                  height: 0.91rem;
+                //                  position: absolute;
+                //                  top: 69.8%;
+                //                  left: 40.6%;
+                //                  background: rgba(255, 255, 25, 0.5);
+                //                  position: absolute;
+                //                  .healthGuide-con-footprint {
+                //                      width: 0.25rem;
+                //                      height: 0.31rem;
+                //                      position: absolute;
+                //                      top: 45%;
+                //                      left: 70%;
+                //                      transform: rotate(130deg);
+                //                      img {
+                //                          width: 100%;
+                //                          height: 100%;
+                //                      }
+                //                  }
+                //                  .healthGuide-con-dot {
+                //                      position: absolute;
+                //                      top: 44%;
+                //                      left: 45%;
+                //                      width: 0.28rem;
+                //                      height: 0.28rem;
+                //                      border: 0.02rem solid #000;
+                //                      border-radius: 50%;
+                //                      display: flex;
+                //                      justify-content: center;
+                //                      align-items: center;
+                //                      .healthGuide-con-dot-concret {
+                //                          width: 0.15rem;
+                //                          height: 0.15rem;
+                //                          background: #000;
+                //                          border-radius: 50%;
+                //                      }
+                //                  }
+                //              }
+                >div:nth-of-type(14) {
+                    width: 1.34rem;
+                    height: 0.91rem;
+                    position: absolute;
+                    top: 66.9%;
+                    left: 69.3%;
+                    background: rgba(255, 255, 25, 0.5);
+                    .healthGuide-con-footprint {
+                        width: 0.25rem;
+                        height: 0.31rem;
                         position: absolute;
-                        left: -35%;
-                        top: 92%;
-                        display: block;
-                        div {
-                            width: 0.46rem;
-                            height: 0.23rem;
-                            float: left;
-                            font-size: 0.23rem;
-                            line-height: 0.23rem;
+                        top: 5%;
+                        left: 60%;
+                        transform: rotate(20deg);
+                        img {
+                            width: 100%;
+                            height: 100%;
                         }
-                        div:nth-of-type(1) {
-                            width: 1.01rem;
-                            height: 0.33rem;
-                            border-bottom: 0.02rem solid rgba(227, 225, 226, 1);
-                            text-align: center;
-                            line-height: 0.33rem;
-                            margin-right: 0.1rem;
-                        }
-                        div:nth-of-type(2) {
-                            width: 0.33rem;
-                            height: 0.33rem;
+                    }
+                    .healthGuide-con-dot {
+                        position: absolute;
+                        top: 44%;
+                        left: 45%;
+                        width: 0.28rem;
+                        height: 0.28rem;
+                        border: 0.02rem solid #000;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .healthGuide-con-dot-concret {
+                            width: 0.15rem;
+                            height: 0.15rem;
+                            background: #000;
                             border-radius: 50%;
-                            background: rgba(27, 149, 213, 1);
                         }
-                        div:nth-of-type(3) {
-                            width: 0.66rem;
-                            height: 0.33rem;
-                            font-size: 0.24rem;
-                            font-family: PingFangSC-Regular;
-                            font-weight: 400;
-                            color: rgba(51, 51, 51, 1);
-                            line-height: 0.33rem;
+                    }
+                }
+                >div:nth-of-type(15) {
+                    width: 1.13rem;
+                    height: 1.07rem;
+                    position: absolute;
+                    top: 56.5%;
+                    left: 72.55%;
+                    background: rgba(255, 255, 25, 0.5);
+                    .healthGuide-con-footprint {
+                        width: 0.25rem;
+                        height: 0.31rem;
+                        position: absolute;
+                        top: 5%;
+                        left: 40%;
+                        transform: rotate(0deg);
+                        img {
+                            width: 100%;
+                            height: 100%;
                         }
+                    }
+                    .healthGuide-con-dot {
+                        position: absolute;
+                        top: 44%;
+                        left: 45%;
+                        width: 0.28rem;
+                        height: 0.28rem;
+                        border: 0.02rem solid #000;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .healthGuide-con-dot-concret {
+                            width: 0.15rem;
+                            height: 0.15rem;
+                            background: #000;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+                >div:nth-of-type(16) {
+                    width: 2.03rem;
+                    height: 1.02rem;
+                    position: absolute;
+                    top: 46.7%;
+                    left: 55.5%;
+                    .healthGuide-con-footprint {
+                        width: 0.25rem;
+                        height: 0.31rem;
+                        position: absolute;
+                        top: 5%;
+                        left: 30%;
+                        transform: rotate(-30deg);
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    .healthGuide-con-dot {
+                        position: absolute;
+                        top: 44%;
+                        left: 45%;
+                        width: 0.28rem;
+                        height: 0.28rem;
+                        border: 0.02rem solid #000;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .healthGuide-con-dot-concret {
+                            width: 0.15rem;
+                            height: 0.15rem;
+                            background: #000;
+                            border-radius: 50%;
+                        }
+                    }
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .sun {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 29%;
+                    margin: auto;
+                    width: 1.1rem;
+                    height: 1.1;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .moon {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 59%;
+                    margin: auto;
+                    width: 1.21rem;
+                    height: 1.23rem;
+                    img {
+                        width: 100%;
+                        height: 100%;
                     }
                 }
             }
