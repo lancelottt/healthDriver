@@ -1,0 +1,155 @@
+.handVioce{
+	width:100%;
+	height: auto;
+    padding-bottom: 3.2rem;
+	background: #F2F2F2;
+}
+.handBack,.vioContent{
+	padding-top: .3rem;
+    box-sizing: border-box;
+	width:100%;
+	height: auto;
+	background: #FFFFFF;
+	margin-top: .04rem;
+}
+.voiceHeader{
+	width:92%;
+	height: .84rem;
+	margin: auto;
+}
+.voiceHeaderLeft{
+    width:10%;
+    float: left;
+}
+.voiceHeaderLeft img{
+    width:.41rem;
+	height: .33rem;
+	margin-top: .2rem;
+	background-size: 1005 100%;
+}
+.voiceHeaderRight{
+	width:90%;
+	float: right;
+	font-size: .28rem;
+	height: .84rem;
+	line-height: .84rem;
+	text-align: center;
+	color: #333333;
+}
+.vioceCon{
+	width:92%;
+	margin: auto;
+	border-bottom: 1px solid #f2f2f2;
+	box-sizing: border-box;
+}
+.vioceConVioce{
+	width:1.62rem;
+	height: 2.12rem;
+	margin: auto;
+}
+.vioceConVioce img{
+	width:100%;
+	height: 100%;
+}
+.jiaose{
+	width: 100%;
+	height: auto;
+	margin-top: .1rem;
+}
+.yuyin,.mincheng,.ziding{
+	padding-bottom: .4rem;
+	width:92%;
+	border-bottom: 1px solid #f2f2f2;
+    box-sizing: border-box;
+	margin: auto;
+	padding-top: .3rem;
+}
+.recording{
+	zoom:1;
+	width:100%;
+	height:auto;
+}
+.recording:after{
+	clear:both;content:'';display:block;width:0;height:0;visibility:hidden; 
+}
+.yuyinLeft,.recordLeft{
+	width:20%;
+	height: 1.4rem;
+	line-height: 1.4rem;
+	float: left;
+	border-right: 1px solid #F2F2F2;
+}
+.voiceLeft{
+	width:20%;
+	height: 1rem;
+	line-height: 1rem;
+	float: left;
+	border-right: 1px solid #F2F2F2;
+}
+.yuyinRight{
+	padding-left: .2rem;
+	box-sizing: border-box;
+	margin-top: .5rem;
+	width:80%;
+	float: right;
+}
+.yuyinRight ul li{
+	float: left;
+	padding: .1rem 0;
+	width: 25%;
+	position: relative;
+	margin-bottom: .2rem;
+}
+.yuyinRight ul li:after{
+	content: '';
+	width: .22rem;
+	height: .22rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	margin: auto;
+	background: url(../../../static/images/wuQuan.png);
+	background-size:100% 100%;
+}
+.yuyinRight ul li.active:after{
+	background: url(../../../static/images/yanQUan.png);
+	background-size:100% 100%;
+}
+.voiceRigh{
+	/*margin-top: .3rem;*/
+	height: 1rem;
+	float: left;
+	margin-left: .5rem;
+}
+.voiceRighinput{
+	height: 100% !important;
+}
+.recordRiOne{
+	float: left;
+	margin-right: .5rem;
+	margin-left: .3rem;
+}
+.recordRiOne img{
+	width:0.88rem;
+	height: .88rem;
+	background-size: 100% 100%;
+}
+.recodeImg{
+	float: left;
+}
+.recodeYuyin{
+	    margin-top: .3rem;
+	        margin-left: .2rem;
+	float: left;
+}
+.recordRi{
+	margin-top: .3rem;
+	width:80%;
+	float: left;
+}
+.recordRiTwo img{
+	width:.71rem;
+	height: .69rem;
+	background-size: 100% 100%;
+}
