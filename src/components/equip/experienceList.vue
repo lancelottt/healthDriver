@@ -106,7 +106,7 @@ export default {
           return;
         }
       });
-      this.scroll.on("pullingDown", () => {
+      this.foodsScroll.on("pullingDown", () => {
         console.log("触顶了");
       });
     },
@@ -181,7 +181,7 @@ export default {
     },
     handLower(id) {
       this.$router.push({
-        path: "equipSport",
+        path: "ChargetListDetail",
         query: { id: id }
       });
     }

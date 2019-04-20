@@ -1,13 +1,15 @@
 <template>
   <div>
-    <div class="hadHea">
-      <div class="had">
-        <div class="componentHeader-header">
-          <div class="Tp" @click="handlerBack()"></div>
-          <div class="headerAmic">{{title}}</div>
-        </div>
+    <header>
+      <span class="back_btn" @click="handlerBack()">
+        <img src="../../../static/img/arrow_03.png">
+      </span>
+      <div class="in_main">
+        <i class="el-icon-search"></i>
+        <input type="text" placeholder="请输入内容..." class="search_input" v-model="searchText">
       </div>
-    </div>
+      <span class="searc_btn" @click="searchList">搜索</span>
+    </header>
 
     <div class="story-list">
       <div v-if="storyList">
@@ -33,7 +35,6 @@
           </li>
         </ul>
       </div>
-
     </div>
   </div>
 </template>
@@ -45,38 +46,62 @@ export default {
       listType: "", // 1: 蜕变故事 2：健康咨询
       storyList: [],
       newsList: [],
-      title: ""
+      title: "",
+      searchText: null
     };
   },
   created() {
     this.listType = this.$route.query.type;
     if (this.listType == 1) {
       this.title = "蜕变故事";
-      this.getStoryList();
+      this.getStoryList("");
     } else if (this.listType == 2) {
       this.title = "健康咨询";
-      this.getNewsList();
+      this.getNewsList("");
     }
   },
   methods: {
+    searchList() {
+      console.log(this.listType);
+      if (this.searchText) {
+        if (this.listType == 1) {
+          this.getStoryList(this.searchText);
+        } else if (this.listType == 2) {
+          this.getNewsList(this.searchText);
+        }
+      } else {
+        if (this.listType == 1) {
+          this.getStoryList('');
+        } else if (this.listType == 2) {
+          this.getNewsList('');
+        }
+      }
+    },
     handlerBack() {
       this.$router.back();
     },
     goMain(id, typeId) {
       this.$router.push({
         path: "/healthyZ/HealStory/HealthStoryMain",
-        query: { id: id ,type: typeId }
+        query: { id: id, type: typeId }
       });
     },
-    getStoryList() {
-      get("/health-web/modules/hfmmetamorphosisstory/list").then(res => {
-        console.log(res.page.list);
+    getStoryList(keyword) {
+      console.log("456");
+      this.storyList = [];
+      get("/health-web/modules/hfmmetamorphosisstory/list", {
+        keyword: keyword
+      }).then(res => {
+        console.log(res)
         this.storyList = res.page.list;
       });
     },
-    getNewsList() {
-      get("/health-web/modules/hfmhealthinformation/list").then(res => {
-        console.log(res.page.list);
+    getNewsList(keyword) {
+      console.log("123");
+      this.newsList = [];
+      get("/health-web/modules/hfmhealthinformation/list", {
+        keyword: keyword
+      }).then(res => {
         this.newsList = res.page.list;
       });
     }
@@ -171,5 +196,39 @@ h4 {
   margin: auto;
   font-size: 0.34rem;
   float: left;
+}
+
+header {
+  padding: 5px 0;
+}
+.search_input {
+  width: 100%;
+  height: 30px;
+  border: 1px solid #f2f2f2;
+  line-height: 30px;
+  border-radius: 3px;
+  padding: 0 26px;
+  box-sizing: border-box;
+  outline: none;
+}
+#kwnoFood > header {
+  height: auto;
+}
+.searc_btn {
+  width: 1rem;
+}
+.back_btn {
+  margin-right: 6px;
+}
+.in_main {
+  width: 75%;
+  position: relative;
+}
+.in_main i {
+  position: absolute;
+  left: 5px;
+  top: 9px;
+  font-size: 14px;
+  color: #999;
 }
 </style>

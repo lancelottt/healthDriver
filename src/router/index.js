@@ -138,13 +138,10 @@ import SetUp from "@/components/szsetUp/setUp";
 import Equip from "@/components/equip/equip";
 //健康管理**
 import HealthMana from "@/components/pages/shopping/shopTabbar/healthMana";
-//体验套餐**
-import Experience from "@/components/experience/experience";
 
 //套餐详情
 import PackageDetails from "@/components/experience/packageDetails";
-//认识食物
-import KwnoFoodIndex from "@/components/healthMarket/kwnoFoodComponents/index";
+//认识食物 
 import KnowFoodCarBon from "@/components/healthMarket/kwnoFoodComponents/carbon";
 import KnowFoodEggWhite from "@/components/healthMarket/kwnoFoodComponents/eggWhite";
 import KnowFoodVegetable from "@/components/healthMarket/kwnoFoodComponents/vegetable";
@@ -185,11 +182,17 @@ import HealthStoryMain from "@/components/healthMarket/healthStoryMain";
 import HealtTargetMore from "@/components/healthMarket/healthTargetMore";
 import HealtTarget from "@/components/healthMarket/healtTarget";
 import HealthTargetMain from "@/components/healthMarket/healthTargetMain";
+import ExperienceList from '@/components/equip/experienceList';
+import ChargeList from '@/components/equip/ChargeList';
 
 //打卡页面 
 import WechatLoginTest from "@/components/WeChatTest/weChatLoginTest";
-//import Author from "@/components/WeChatTest/author";
 
+import Author from "@/components/WeChatTest/author";
+// h5商城
+import ShopHerf from '@/components/pages/shopping/shopHerf';
+// 健康方案
+import ChargetListDetail from "@/components/experience/ChargetListDetail";
 Vue.use(Router);
 //let routes = new Set([...wqyRouters, ...xycRouters, ...zydRouters]);
 export default new Router({
@@ -429,6 +432,7 @@ export default new Router({
 			]
 		},
 
+
 		// 引入我的**
 		{
 			path: "/me",
@@ -546,11 +550,7 @@ export default new Router({
 			path: "/KwnoFood",
 			name: "",
 			component: KwnoFood,
-			children: [{
-					path: "/KwnoFood/index",
-					name: "",
-					component: KwnoFoodIndex
-				},
+			children: [
 				{
 					path: "/KwnoFood/carbon",
 					name: "",
@@ -695,21 +695,12 @@ export default new Router({
 			name: "equip",
 			component: Equip
 		},
-		{
-			path: "/experience",
-			name: "experience",
-			component: Experience
-		},
+		
 		//      健康管理**
 		{
 			path: "/healthMana",
 			name: "healthMana",
 			component: HealthMana
-		},
-		{
-			path: "/experience",
-			name: "experience",
-			component: Experience
 		},
 		{
 			path: "/equipDetails",
@@ -783,5 +774,17 @@ export default new Router({
 			name: "HealtTargetMore",
 			component: HealtTargetMore
 		},
+		{
+            path: '/experienceList',
+            component: ExperienceList
+        },
+        {
+            path: '/ChargeList',
+            component: ChargeList
+        }, {
+            path: '/ChargetListDetail',
+            component: ChargetListDetail
+        }
 	]
+
 });

@@ -8,7 +8,7 @@
     </div>
     <div class="packageDetails" v-if="info">
       <div class="packageImg">
-        <img :src="info.pic">
+        <img :src="info.schemeImgUrl">
         <!-- <div class="gouwu">
           <div class="gou"></div>
           <div class="gouRi"></div>
@@ -25,14 +25,13 @@
           <div class="storePriceR">已售{{info.sale}}件</div>
         </div>
         <div class="packContent">
-          <p>{{info.name}}</p>
-          <p>{{info.name}}</p>
+          <p>{{info.chargeSchemeName}}</p>
+          <p>{{info.chargeSchemeDescribe}}</p>
         </div>
-        <!-- <div class="packCAontentTree">
-          <span>12项肿瘤筛查</span>
-          <span>脑TCD</span>
-          <span>血流变</span>
-        </div>-->
+        <div class="Tree" v-for="(item,index) in info.chargeSchemeItem" :key="index">
+          <span id="span">{{item.remindItemName}}</span>
+          <span id="span">{{item.remindItemName}}</span>
+        </div>
       </div>
       <!--高级餐厅**-->
       <!-- <div class="taurant">高级套餐</div> -->
@@ -44,9 +43,8 @@
           <span>女性</span>
         </div>-->
         <!--支持门店**-->
-        <div class="stores" @click="goStore(info.id)">
-          <span>支持门店</span>
-          <span>(190)</span>
+        <div>
+          <div v-html="info.chargeSuitable"></div>
         </div>
         <!--地址**-->
         <!-- <div class="dizhi">
@@ -68,24 +66,25 @@ export default {
     };
   },
   created() {
-    this.getProductInfo(); 
+    this.getProductInfo();
   },
   methods: {
     getProductInfo() {
-      get(`/health-web/modules/pmsproduct/info/${this.$route.query.id}`).then(
+      console.log("123");
+      get(`/ChargeScheme/details/chargeScheme?id=${this.$route.query.id}`).then(
         res => {
-          this.info = res.pmsProduct;
+          this.info = res.data;
         }
       );
     },
     handlerBack() {
       this.$router.back();
     },
-    goStore(id){
+    goStore(id) {
       this.$router.push({
-        path: '/store',
-        query: {id: id}
-      })
+        path: "/store",
+        query: { id: id }
+      });
     }
   }
 };
@@ -162,4 +161,20 @@ export default {
   width: 90%;
   padding-bottom: 0.1rem;
 }
+.Tree{
+  text-align: left;
+  margin-top: 4px;
+}
+.Tree #span {
+  height: 20px;
+  line-height: 20px;
+  padding: 2px;
+  display: inline-block;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 94, 58, 1);
+  padding: 0 4px;
+  color: rgba(255, 94, 58, 1);
+  margin-right: 4px;
+}
+ 
 </style>

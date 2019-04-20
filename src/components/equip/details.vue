@@ -6,26 +6,27 @@
 	 	</div>
 		 <div class="tab">
 	           <div class="tabItem">
-	               <router-link to="/equipSport">商品</router-link>
+	               <router-link  :to="{path: '/equipSport' , query: {id: this.$route.query.id }}">商品</router-link>
 	           </div>
-	           <div class="tabItem">
+	           <!-- <div class="tabItem">
 	               <router-link to="/equipEvaluate">评论</router-link>
-	           </div>
+	           </div> -->
 	          <div class="tabItem">
-	               <router-link to="/modityDetails">详情</router-link>
+	               <router-link :to="{path: '/modityDetails' , query: {id: this.$route.query.id }}">详情</router-link>
 	           </div>
 	       </div>
-	       <div class="gootRi">
+	       <!-- <div class="gootRi">
 	       	  <div class="gootRiImg"></div>
-	       </div>
-       </div>
+	       </div> -->
+        </div>
         <router-view/>  
-	 <DetailsFoot :serviceType="serviceType"  v-on:ChildSerice="goChildSerice"/>
+	    <!-- <DetailsFoot :serviceType="serviceType"  v-on:ChildSerice="goChildSerice"/> -->
 	</div>
 </template>
 
 <script>
     import DetailsFoot from './details/detailsFoot'
+    import {get} from '../../api/fetch';
     export default {
         components: {
             DetailsFoot
@@ -35,12 +36,16 @@
                 serviceType: 2 // 在线客服类型: 1、功能异常 2、在线问 9、其他异常
             }
         },
+        created() {
+           
+        },
         methods: {
             handFootLeft() {
-                this.$router.go(-1);
+                this.$router.back("/equip");
             },
+
             goChildSerice(type) {
-                this.$router.push(`/KwnoFood/fruit/Airlines/${this.serviceType}`)
+                this.$router.push(`/modules/pmsproduct/info/{id}`)
             }
         }
     }
@@ -49,8 +54,7 @@
     .detaildsCon {
         width: 100%;
         height: auto;
-        padding-bottom: 2.15rem;
-        background: #eee;
+        padding-bottom: 2.15rem; 
         box-sizing: border-box;
     }
     
@@ -113,7 +117,9 @@
         font-size: .28rem;
         color: #333333;
     }
-    
+    .tabItem:first-child{
+        margin-left: 16%;
+    }
     a {
         display: block;
         color: #333333;

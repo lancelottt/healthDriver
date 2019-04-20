@@ -2,13 +2,6 @@
   <div>
     <div class="upper" v-if="PartsUpper">
       <search-header @searchList="searchList"></search-header>
-      <swiper :options="swiperOption">
-        <swiper-slide v-for="(item,index) in PartsUpper" :key="index">
-          <div @click="checkCategory(item.id,index)" class="item-title">
-            <b :class="{'Active': index == activeId}">{{item.name}}</b>
-          </div>
-        </swiper-slide>
-      </swiper>
     </div>
     <div class="equipZ">
       <div class="equip" ref="foodsWrapper">
@@ -21,9 +14,9 @@
                 :key="index"
                 @click="handLower(list.id)"
               >
-                <img :src="list.pic">
-                <div class="desp">{{list.name}}</div>
-                <div class="desp">{{list.subTitle}}</div>
+                <img :src="list.schemeImgUrl">
+                <div class="desp">{{list.chargeSchemeName}}</div>
+                <div class="desp">{{list.chargeSchemeDescribe }}</div>
                 <div class="dikou">
                   <p>价格：</p>
                   <p class="datashu">{{list.price}}</p>
@@ -76,10 +69,9 @@ export default {
     };
   },
   created() {
-    this.getCategoryList();
+    this.getProductList( this.limit, this.currPage);
     this.$nextTick(() => {
-      this._initScroll();
-      this.setData();
+      this._initScroll(); 
     });
   },
   methods: {
@@ -90,7 +82,7 @@ export default {
         // 刷新数据的过程中，回弹停留在距离顶部还有20px的位置
         this.goods = []; // 重置数据
         this.searchCondition.pageNo = 1; // 重置分页数
-        this.setData(); //获取数据方法
+        //  this.setData(); //获取数据方法
       });
       this.foodsScroll.on("pullingUp", () => {
         if (this.isLoad) {
@@ -106,7 +98,7 @@ export default {
           return;
         }
       });
-      this.scroll.on("pullingDown", () => {
+      this.foodsScroll.on("pullingDown", () => {
         console.log("触顶了");
       });
     },
@@ -120,68 +112,56 @@ export default {
       this.keyword = key;
       this.currPage = 1;
       this.lowerList = [];
-      this.getProductList(
-        this.categoryId,
-        this.keyword,
-        this.limit,
-        this.currPage
-      );
-    },
-    /* 分类 */
-    getCategoryList() {
-      get("/health-web/modules/pmsproductcategory/list", { parentId: 0 }).then(
-        res => {
-          var equipId = this.$route.query.id;
-          res.list.map(item => {
-            if (item.id == equipId) {
-              this.PartsUpper = item.productCategoryList;
-            }
-          });
-          this.categoryId = this.PartsUpper[0].id;
-          this.getProductList(
-            this.categoryId,
-            this.keyword,
-            this.limit,
-            this.currPage
-          );
-        }
-      );
+      console.log(this.limit, this.currPage);
+      if (this.keyword) {
+        this.getProductSearchList(this.keyword, this.limit, this.currPage);
+        console.log('you')
+      } else {
+        this.getProductList(this.limit, this.currPage);
+         console.log('meiyou')
+      }
     },
     /*  商品列表 */
-    getProductList(id, keyword, limit, currPage) {
-      get(`/health-web/modules/pmsproduct/list/`, {
-        productCategoryId: id,
-        keyword: keyword,
-        limit: limit,
-        page: currPage
+    getProductList( limit, currPage) {
+      console.log(12);
+      get(`/ChargeScheme/list/chargeScheme`, {
+        pageSize: limit,
+        pageNum: currPage
       }).then(res => {
+        console.log(res.data.list);
         /*  数据长度小于limit */
-        if (res.page.list.length < this.limit) {
+        if (res.data.list.length < this.limit) {
           this.isLoad = false;
         }
         this.currPage = this.currPage + 1;
-        this.lowerList.push(...res.page.list);
+        this.lowerList.push(...res.data.list);
         this.$nextTick(() => {
           this.pullingDownUp();
         });
       });
     },
-    /* 分类切换 */
-    checkCategory(id, index) {
-      this.activeId = index;
-      this.categoryId = id;
-      this.currPage = 1;
-      this.lowerList = [];
-      this.getProductList(
-        this.categoryId,
-        this.keyword,
-        this.limit,
-        this.currPage
-      );
+    /*  搜素商品列表 */
+    getProductSearchList(keyword, limit, currPage) {
+      get(`/ChargeScheme/list/chargeScheme`, {
+        chargeSchemeName: keyword,
+        pageSize: limit,
+        pageNum: currPage
+      }).then(res => {
+        console.log(res.data.list);
+        /*  数据长度小于limit */
+        if (res.data.list.length < this.limit) {
+          this.isLoad = false;
+        }
+        this.currPage = this.currPage + 1;
+        this.lowerList.push(...res.data.list);
+        this.$nextTick(() => {
+          this.pullingDownUp();
+        });
+      });
     },
     handLower(id) {
       this.$router.push({
-        path: "equipSport",
+        path: "ChargetListDetail",
         query: { id: id }
       });
     }
@@ -213,5 +193,8 @@ export default {
 }
 .lowerList img {
   margin-bottom: 0.3rem;
+}
+.lowerZ{
+      margin-top: 48px;
 }
 </style>

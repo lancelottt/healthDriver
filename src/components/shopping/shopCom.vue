@@ -111,6 +111,7 @@ export default {
           if (res.code == 0) {
             this.cardMain = res.userAthleticRecords;
             this.cardCode = res.count;
+            console.log(res)
           }
         }
       );
@@ -174,5 +175,19 @@ a {
   padding-bottom: 1.15rem;
   box-sizing: border-box;
   background: #eeeeee;
+}
+.swiper-slide{
+  height: 40px !important;
+}
+.item-title {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    height: 45px;
+    line-height: 45px;
+    overflow: hidden;
+    text-align: center;
 }
 </style>
