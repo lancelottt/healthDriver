@@ -1,6 +1,6 @@
 import axios from 'axios';
 //const repUrl = 'http://192.168.1.119:8081'; // 开发接口地址
-  const repUrl = 'http://192.168.1.145:8081';
+  const repUrl = 'http://192.168.1.144:8081';
 //const repUrl = 'http://192.168.1.115:8080'; // 开发接口地址
 //const repUrl = 'http://2b3665801a.51mypc.cn:20626'; // 开发接口地址
 const headers = {

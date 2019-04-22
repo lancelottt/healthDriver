@@ -70,10 +70,12 @@
 						<section>
 							<div class="healthGuide-con-right">
 								<div class="">
+									<router-link to='/healthPlan/myReminder'>
 									<div>
 										<img src="../../../static/hulu/biao.png" />
 									</div>
 									<p>提醒</p>
+									</router-link>
 								</div>
 								<ul v-for="(item,index) in this.schemeList" :key='index' @click="handlerHitCardClick(item)">
 									<li>{{item.remindItemName}}</li>
@@ -98,7 +100,7 @@
 									<div>
 										<img src="../../../static/hulu/bitch.png" />
 									</div>
-									<p>距下次打卡：<b>05:16:20</b></p>
+									<p>距下次打卡：<b>{{countDownTime}}</b></p>
 								</div>
 							</div>
 						</section>
@@ -379,7 +381,7 @@ export default {
 			succedStatus: [],
 			curHour: '',
 			curMinutes: '',
-
+			countDownTime:'',
 		}
 	},
 	beforeCreate() {
@@ -494,7 +496,7 @@ export default {
 		this.curHour = new Date().getHours() < 10 ? "0" + new Date().getHours() : new Date().getHours();
 		this.curMinutes = new Date().getMinutes() < 10 ? "0" + new Date().getMinutes() : new Date().getMinutes();
 		//				this.nowTimer = curHour + ':' + curMinutes //修改数据dater
-		console.log(this.nowTimer)
+		console.log('nowTimer'+this.nowTimer)
 		this.timer = setInterval(function() {
 			var del5 = new Date().getSeconds() - 300
 			if(del5 < 0 && del5 > -60) {
@@ -530,13 +532,12 @@ export default {
 			//				}
 			//				if当前小时==接口小时&&当前分钟和接口分钟之差的绝对值小于等于5   || 当前小时和接口 小时只差小于1&&当前分钟和接口分钟之差的绝对值大于等于55          打卡成功1
 			if(item.isFinish == 0) {
-					console.log(typeof(this.nowTimer)+typeof(this.response.memberRemindScheme.memberRemindSchemeCode)+typeof(item.memberRemindSchemeItemCode)+typeof(item.remindTime)+typeof(item.remindItemName)+typeof('1'))
+//					console.log(typeof(this.nowTimer)+typeof(this.response.memberRemindScheme.memberRemindSchemeCode)+typeof(item.memberRemindSchemeItemCode)+typeof(item.remindTime)+typeof(item.remindItemName)+typeof('1'))
 				if(item.remindTime.substr(0, 2) == this.nowTimer.substr(0, 2) && Math.abs(item.remindTime.substr(3, 2) - this.nowTimer.substr(3, 2)) <= 5 || Math.abs(item.remindTime.substr(0, 2) - this.nowTimer.substr(0, 2)) <= 1 && Math.abs(item.remindTime.substr(3, 2) - this.nowTimer.substr(3, 2)) >= 55) {
-					console.log(item)
 					console.log(typeof(this.nowTimer)+typeof(this.response.memberRemindScheme.memberRemindSchemeCode)+typeof(item.memberRemindSchemeItemCode)+typeof(item.remindTime)+typeof(item.remindItemName)+typeof('1'))
 					get('/health-web/frontMemberScheme/memberClockRecord?clockTime=' + this.nowTimer + '&memberRemindSchemeCode=' + this.response.memberRemindScheme.memberRemindSchemeCode + '&memberRemindSchemeItemCode=' + item.memberRemindSchemeItemCode + '&remindTime=' + item.remindTime + '&remindItemName=' + item.remindItemName+ '&status=' + '1',{}).then(
 						(res) => {
-							alert('打卡成')
+							alert('打卡成功')
 							console.log('发送成功状态成功' + res)
 						}
 					).catch(
@@ -573,6 +574,7 @@ export default {
 			})
 
 		},
+		//判断打卡超时状态
 		failure() {
 			this.schemeList.map((item) => {
 				if(item.isFinish == 0) {
@@ -598,6 +600,31 @@ export default {
 				}
 			})
 
+		},
+//		距下次打卡倒计时
+		countDown(){
+			this.schemeList.map((item)=>{
+				var nextRemindTime = null;
+				if(item.isFinish == 0){
+					if(Number(item.remindTime.substr(0,2))-Number(this.nowTimer.substr(0,2)) >=0  || Number(item.remindTime.substr(0,2))-Number(this.nowTimer.substr(0,2)) <0 && Number(item.remindTime.substr(3,2))-Number(this.nowTimer.substr(3,2))>0){
+						var nextRemindTime = item.remindTime
+						if(Number(nextRemindTime.substr(0,2)) - Number(this.nowTimer.substr(0,2))>0){
+							var countDownTimeH = Number(nextRemindTime.substr(0,2)) - Number(this.nowTimer.substr(0,2))
+						}else{
+							countDownTimeH = '00'
+						}
+						if(Number(nextRemindTime.substr(3,2)) - Number(this.nowTimer.substr(3,2))>0){
+							var countDownTimeM = Number(nextRemindTime.substr(3,2)) - Number(this.nowTimer.substr(3,2)) 
+							countDownTimeM < 10 ?countDownTimeM = '0'+ countDownTimeM:countDownTimeM = countDownTimeM
+						}else{
+							countDownTimeM = "00"
+						}
+						this.countDownTime = countDownTimeH + ':' + countDownTimeM
+					}else{
+						this.countDownTime = "今日打卡结束"
+					}
+				}
+			})
 		}
 		//			handleBack() {
 		//				this.$router.back()
@@ -622,7 +649,6 @@ export default {
 			(res) => {
 				this.response = res
 				this.schemeList = res.memberRemindScheme.memberRemindSchemeItemList;
-				//					console.log(this.schemeList)
 				var reg = /^(20|21|22|23|[0-1]\d):[0-5]\d:[0-5]\d$/;
 				var regExp = new RegExp(reg);
 				for(var i = 0; i < this.schemeList.length; i++) {
@@ -976,8 +1002,8 @@ export default {
 						}
 					}
 				}
-				//						console.log(this.showBox)
 				this.failure();
+				this.countDown()
 			}
 		).catch(
 			(err) => {
@@ -994,11 +1020,11 @@ export default {
 	watch: {
 		curHour: function(newVal) {
 			this.curHour = newVal
-			console.log(this.curHour)
+			console.log('当前时'+this.curHour)
 		},
 		curMinutes: function(modVal) {
 			this.curMinutes = modVal
-			console.log(this.curMinutes)
+			console.log('当前分'+this.curMinutes)
 		},
 		// 如果 `clientHeight` 发生改变，这个函数就会运行
 		clientHeight: function() {
