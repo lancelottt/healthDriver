@@ -124,17 +124,17 @@ export default {
     /*  商品列表 */
     getProductList( limit, currPage) {
       console.log(12);
-      get(`/ChargeScheme/list/chargeScheme`, {
+      get(`/health-web/ChargeScheme/list/chargeScheme`, {
         pageSize: limit,
         pageNum: currPage
       }).then(res => {
         console.log(res.data.list);
         /*  数据长度小于limit */
-        if (res.data.list.length < this.limit) {
+        if (res.data.length < this.limit) {
           this.isLoad = false;
         }
         this.currPage = this.currPage + 1;
-        this.lowerList.push(...res.data.list);
+        this.lowerList.push(...res.data);
         this.$nextTick(() => {
           this.pullingDownUp();
         });
@@ -142,7 +142,7 @@ export default {
     },
     /*  搜素商品列表 */
     getProductSearchList(keyword, limit, currPage) {
-      get(`/ChargeScheme/list/chargeScheme`, {
+      get(`/health-web/ChargeScheme/list/chargeScheme`, {
         chargeSchemeName: keyword,
         pageSize: limit,
         pageNum: currPage

@@ -156,4 +156,8 @@
 		color: rgba(255, 94, 58, 1);
 		transition: color ease-in-out 1s;
 	}
+
+	label{
+		background: #ffffff !important;
+	}
 </style>

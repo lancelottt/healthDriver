@@ -62,7 +62,7 @@ import ModityDetails from "@/components/equip/details/modityDetails";
 ////引入商城中运动手表首页运动装备**
 //import SportsEquip from '@/components/pages/shopping/shopTabbar/sportsEquip'
 ////引入商城中运动手表首页体验套餐**
-//import Exper from '@/components/pages/shopping/shopTabbar/experience'
+// import Exper from '@/components/pages/shopping/shopTabbar/experience'
 // 引入数据组件**
 import DataSj from "@/components/pages/datasj/datasj";
 // 体重**
@@ -73,7 +73,7 @@ import Blood from "@/components/pages/datasj/blood/blood";
 import Sugar from "@/components/pages/datasj/sugar/sugar";
 // 运动**
 import Motion from "@/components/pages/datasj/motion/motion";
-// 心率**
+// 心率**s
 import Heart from "@/components/pages/datasj/heart/heart";
 // 引入我的组件**
 import Me from "@/components/pages/me/me";
@@ -142,6 +142,7 @@ import HealthMana from "@/components/pages/shopping/shopTabbar/healthMana";
 //套餐详情
 import PackageDetails from "@/components/experience/packageDetails";
 //认识食物 
+// import KwnoFoodIndex from "@/components/healthMarket/kwnoFoodComponents/index";
 import KnowFoodCarBon from "@/components/healthMarket/kwnoFoodComponents/carbon";
 import KnowFoodEggWhite from "@/components/healthMarket/kwnoFoodComponents/eggWhite";
 import KnowFoodVegetable from "@/components/healthMarket/kwnoFoodComponents/vegetable";
@@ -187,12 +188,13 @@ import ChargeList from '@/components/equip/ChargeList';
 
 //打卡页面 
 import WechatLoginTest from "@/components/WeChatTest/weChatLoginTest";
-
 import Author from "@/components/WeChatTest/author";
 // h5商城
 import ShopHerf from '@/components/pages/shopping/shopHerf';
 // 健康方案
 import ChargetListDetail from "@/components/experience/ChargetListDetail";
+import MeOrder from "@/components/pages/me/MeOrder";
+import Collections from "@/components/pages/me/Collections";
 Vue.use(Router);
 //let routes = new Set([...wqyRouters, ...xycRouters, ...zydRouters]);
 export default new Router({
@@ -779,12 +781,25 @@ export default new Router({
             component: ExperienceList
         },
         {
-            path: '/ChargeList',
-            component: ChargeList
-        }, {
             path: '/ChargetListDetail',
             component: ChargetListDetail
-        }
-	]
+        },
+        {
+            path: '/MeOrder',
+            component: MeOrder
+        },
+        {
+            path: '/Collections',
+            component: Collections
+        },
+        {
+            path: '/ChargeList',
+            component: ChargeList
+        },
+         {
+            path: '/shopherf',
+            component: ShopHerf
+         }
 
+    ]
 });

@@ -3,7 +3,7 @@
     <div class="had">
       <div class="componentHeader-header">
         <div class="Tp" @click="handlerBack()"></div>
-        <div class="headerAmic">体检套餐</div>
+        <div class="headerAmic">方案</div>
       </div>
     </div>
     <div class="packageDetails" v-if="info">
@@ -53,9 +53,11 @@
       </div>
     </div>
     <!-- <DetailsFoot/> -->
+    <div class="footer">
+      <span class="buyBtn" @click="goBuy()">立即购买</span>
+    </div>
   </div>
 </template>
-
 
 <script>
 import { get } from "../../api/fetch";
@@ -69,9 +71,14 @@ export default {
     this.getProductInfo();
   },
   methods: {
-    getProductInfo() {
-      console.log("123");
-      get(`/ChargeScheme/details/chargeScheme?id=${this.$route.query.id}`).then(
+    goBuy() {
+      this.$router.push({
+        path: "/payInfo",
+        query: { id: this.$route.query.id }
+      });
+    },
+    getProductInfo() { 
+      get(`/health-web/ChargeScheme/details/chargeScheme?id=${this.$route.query.id}`).then(
         res => {
           this.info = res.data;
         }
@@ -161,7 +168,7 @@ export default {
   width: 90%;
   padding-bottom: 0.1rem;
 }
-.Tree{
+.Tree {
   text-align: left;
   margin-top: 4px;
 }
@@ -176,5 +183,24 @@ export default {
   color: rgba(255, 94, 58, 1);
   margin-right: 4px;
 }
- 
+.footer {
+  width: 100%;
+  height: auto;
+  border-top: 1px solid #f2f2f2;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  padding-top: 0.15rem;
+  padding-bottom: 0.15rem;
+}
+.buyBtn {
+  display: block;
+  border: 1px solid rgba(255, 94, 58, 1);
+  padding: 0.2rem 0;
+  width: 3rem;
+  color: #ffffff;
+  background: rgba(255, 94, 58, 1);
+  margin: 0 auto;
+}
 </style>

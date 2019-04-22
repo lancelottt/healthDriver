@@ -2,13 +2,8 @@
     <div class="had">
         <div>
             <div class="componentHeader-header">
-                <div class="Tp">
-                    <i class="iconfont Tpi icon-jiantou-left"></i>
-                </div>
+                <div class="Tp"></div>
                 <div class="headerAmic">数据中心</div>
-                <div class="headerFb">
-                    <img src="./img/ShareIcon.png" alt="">
-                </div>
             </div>
         </div>
     </div>

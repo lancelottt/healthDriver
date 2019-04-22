@@ -1,5 +1,4 @@
 <template>
-
   <div class="shopCon">
     <div class="tabbar">
       <div class="tabbarCon">
@@ -8,39 +7,20 @@
             <swiper-slide v-for="(item,index) in navList" :key="index">
               <div class="item-title">
                 <router-link :to="{ path: item.path, query: { id: item.id}}">
-                  <b>{{item.name}}</b>
+                  <b  :class="{'fruitActive': index == activeId}">{{item.name}}</b>
                 </router-link>
               </div>
             </swiper-slide>
           </swiper>
-          <!-- <swiper :options="swiperOption">
-           <swiper-slide>
-              <router-link to="/shopping">热销推荐</router-link>
-            </swiper-slide>
-            <swiper-slide>
-              <router-link to="/healthMana">健康管理</router-link>
-          </swiper-slide>-->
-          <!--  <swiper-slide>
-              <router-link to="/equip">生活周边</router-link>
-            </swiper-slide>
-            <swiper-slide>
-              <router-link to="/experience">体检套餐</router-link>
-            </swiper-slide>
-            <swiper-slide>
-              <router-link to="/shopherf">商城</router-link>
-            </swiper-slide>
-
-         >
-          </swiper>-->
         </div>
       </div>
       <div class="watch"></div>
-      
+
       <div class="health">
         <div class="healContent">
           <div class="healCon">健康管理</div>
           <div class="healRight">
-            <span>更多</span>
+            <span @click="goMore()">更多</span>
             <span>
               <i class="iconfont icon-fanhui1"></i>
             </span>
@@ -48,49 +28,13 @@
         </div>
         <div class="conUl">
           <ul>
-            <li>
-              <img src="../../../../static/images/jia02.png" alt>
+            <li v-for="(item,index) in lowerList" :key="index" @click="goMain(item.id)">
+              <img :src="item.schemeImgUrl" alt>
               <div class="liCentent">
-                <p>防弹减脂营</p>
-                <p>月瘦10-30斤</p>
-                <p>下单即刻蜕变吧</p>
-              </div>
-            </li>
-            <li>
-              <img src="../../../../static/images/jia01.png" alt>
-              <div class="liCentent allow">
-                <p>防弹控糖营</p>
-                <p>一个月内减针</p>
-                <p id="liTwo">下单即刻控糖吧</p>
-              </div>
-            </li>
-            <li>
-              <img src="../../../../static/images/jia03.png" alt>
-              <div class="liCentent">
-                <p>防弹降压营</p>
-                <p>一个月内减药</p>
-                <p>下单即刻降压吧</p>
-              </div>
-            </li>
-            <li>
-              <img src="../../../../static/images/jia04.png" alt>
-              <div class="liCentent allow">
-                <p>防弹降压营</p>
-                <p>一个月内减药</p>
-                <p id="lowering">下单即刻降脂吧</p>
+                <p>{{item.chargeSchemeName}}</p>
               </div>
             </li>
           </ul>
-        </div>
-        <!--拼团**-->
-        <div class="assemble">
-          <div class="assLeft">拼团</div>
-          <div class="assRight">
-            <span>更多</span>
-            <span>
-              <i class="iconfont icon-fanhui1"></i>
-            </span>
-          </div>
         </div>
       </div>
       <iframe
@@ -134,13 +78,28 @@ export default {
           name: "健康管理",
           path: "/ChargeList"
         }
-      ]
+      ],
+      lowerList: [],
+      limit: 4,
+      currPage: 1
     };
   },
   created() {
     this.getNavCategory();
+    this.getProductSearchList(this.limit, this.currPage);
   },
   methods: {
+    goMain(id) {
+      this.$router.push({
+        path: "/ChargetListDetail",
+        query:{
+          id: id
+        }
+      });
+    },
+    goMore() {
+      this.$router.push("/ChargeList");
+    },
     getNavCategory() {
       get("/health-web/modules/pmsproductcategory/list", {
         parentId: 0
@@ -152,7 +111,7 @@ export default {
           if (item.name == "生活周边") {
             lifeArr.name = item.name;
             lifeArr.path = "/equip";
-            lifeArr.id =  item.id;
+            lifeArr.id = item.id;
             this.navList.push(lifeArr);
           }
           if (item.name == "体检套餐") {
@@ -163,12 +122,34 @@ export default {
           }
         });
       });
+    },
+    getProductSearchList(limit, currPage) {
+      get(`/ChargeScheme/list/chargeScheme`, {
+        pageSize: limit,
+        pageNum: currPage
+      }).then(res => {
+        this.lowerList = res.data.list;
+        console.log(res);
+        /*  数据长度小于limit */
+        // if (res.data.list.length < this.limit) {
+        //   this.isLoad = false;
+        // }
+        // this.currPage = this.currPage + 1;
+        // this.lowerList.push(...);
+        // this.$nextTick(() => {
+        //   this.pullingDownUp();
+        // });
+      });
     }
   }
 };
 </script>
 <style lang="" scoped>
 @import "../../../assets/watchMove/watchMove.css";
+.liCentent p {
+  color: #f699ce;
+  font-size: 0.24rem;
+}
 .shopCon {
   position: absolute;
   background: #fff;
@@ -362,5 +343,8 @@ a {
 }
 .swiper-slide {
   width: 50%;
+}
+.tabbarCon{
+  height: 45px;
 }
 </style>
