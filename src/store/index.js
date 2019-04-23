@@ -2,6 +2,7 @@ import Vue from "vue";
 import Vuex from "vuex";
 import axios from 'axios'
 import userInfoStore from './userInfoStore'
+import remindStore from './remindStore'
 Vue.use(Vuex);
 
 const state = {
@@ -12,7 +13,10 @@ const state = {
 	address: [],
 	show: true,
 	token: '',
-	ids: ''
+	ids: '',
+	remindName:'',
+	remindTime:'',
+	memberRemindVoiceName:'',
 }
 const getters = {
 
@@ -21,6 +25,13 @@ const mutations = {
 	handlerCommit(state,params){
 		console.log(params)
 		state.ids = params
+	},
+	handlerRemindCommit(state,params){
+		console.log(params)
+		state.remindName = params.remindItemName
+		state.remindTime = params.remindTime
+		state.memberRemindVoiceName = params.memberRemindVoiceName
+		
 	}
 //	handleEditTabStatus(state, params) {
 //		if(!params) {
@@ -55,6 +66,9 @@ const actions = {
 	handlerDispatch({commit},params){
 		console.log({commit},params)
 		commit("handlerCommit",params)
+	},
+	handlerRemindDispatch({commit},params){
+		commit("handlerRemindCommit",params)
 	}
 }
 
@@ -64,7 +78,8 @@ const store = new Vuex.Store({
 	mutations,
 	actions,
 	modules: {
-		userInfoStore
+		userInfoStore,
+		remindStore
 	}
 })
 export default store;

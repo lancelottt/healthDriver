@@ -85,15 +85,15 @@
 								return;
 							}
 							wxLoginObj.authorize(function(e) {
-								plus.nativeUI.toast('授权成功' + JSON.stringify(e))
+								plus.nativeUI.toast('授权成功')
 								console.log('授权成功' + JSON.stringify(e))
 								weixinCode = e.code
 								console.log('Code：' + weixinCode)
 								if(!e.authResult) {
 									wxLoginObj.login(function(e) {
-										plus.nativeUI.toast('登陆成功 ' + JSON.stringify(e))
+										plus.nativeUI.toast('登陆成功 ')
 										console.log('登陆成功 ' + JSON.stringify(e))
-										axios.get("http://192.168.1.145:8081/health-web/modules/wxThirdParty/login?code=" + weixinCode, {
+										axios.get("http://bossdu.zicp.vip:55090/health-web/modules/wxThirdParty/login?code=" + weixinCode, {
 											//											params: {
 											//												code: _this.weixinCode
 											//											}
@@ -134,7 +134,7 @@
 											console.log('从服务器接收失败 ' + JSON.stringify(response))
 										})
 									}, function(e) {
-										plus.nativeUI.toast('登录失败' + JSON.stringify(e))
+										plus.nativeUI.toast('登录失败')
 										console.log('登录失败' + JSON.stringify(e))
 									}, {
 										scope: 'snsapi_base,snsapi_userinfo',
@@ -151,7 +151,7 @@
 									})
 								}, 1000)
 							}, function(e) {
-								plus.nativeUI.toast('授权失败' + JSON.stringify(e))
+								plus.nativeUI.toast('授权失败')
 								console.log('授权失败' + JSON.stringify(e))
 							}, {
 								scope: 'snsapi_base,snsapi_userinfo',

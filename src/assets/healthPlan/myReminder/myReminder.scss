@@ -1,5 +1,11 @@
             .hitCard {
             height: 100%;
+            header{
+                z-index: 99;
+                height: 0.84rem;
+                position: fixed;
+                top: 0;
+            }
             h1{
                 margin-left: 0.3rem;
                 font-size: 0.3rem;
@@ -35,7 +41,7 @@
                     position: absolute;
                     top: 0.39rem;
                     left: 0.69rem;
-                    background: rgba(0, 0, 0, 0.23);
+                    background: rgba(29, 103, 12, 0.23);
                     .mask-left {
                         width: 70%;
                         height: 100%;

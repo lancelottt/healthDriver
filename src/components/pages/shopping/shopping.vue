@@ -37,13 +37,6 @@
           </ul>
         </div>
       </div>
-      <iframe
-        id="mainIframe"
-        name="mainIframe"
-        src="http://www.baidu.com"
-        frameborder="0"
-        scrolling="auto"
-      ></iframe>
     </div>
     <foot-tabbar></foot-tabbar>
   </div>
@@ -124,14 +117,17 @@ export default {
       });
     },
     getProductSearchList(limit, currPage) {
-      get(`/ChargeScheme/list/chargeScheme`, {
+
+      get(`/health-web/ChargeScheme/list/chargeScheme`, {
         pageSize: limit,
         pageNum: currPage
       }).then(res => {
-        this.lowerList = res.data.list;
-        console.log(res);
+        for(var i = 0;i<4; i++) {
+         this.lowerList.push(res.data[i])
+        }
+        console.log(this.lowerList);
         /*  数据长度小于limit */
-        // if (res.data.list.length < this.limit) {
+        // if (res.data.length < this.limit) {
         //   this.isLoad = false;
         // }
         // this.currPage = this.currPage + 1;
@@ -159,12 +155,10 @@ export default {
   bottom: 0;
   z-index: 999;
 }
-
 .tabbar {
   width: 100%;
   height: auto;
 }
-
 .exper {
   width: 100%;
   position: fixed;
@@ -175,7 +169,6 @@ export default {
   background: #fff;
   left: 0;
 }
-
 .hotExpe:after {
   clear: both;
   content: "";
@@ -184,14 +177,12 @@ export default {
   height: 0;
   visibility: hidden;
 }
-
 .hotExpe {
   width: 95%;
   height: auto;
   zoom: 1;
   margin: auto;
 }
-
 .hotExpeLeft {
   float: left;
   background: url(../../../../static/images/sousuoR.png) no-repeat center;
@@ -201,7 +192,6 @@ export default {
   margin-right: 0.2rem;
   margin-top: 0.1rem;
 }
-
 .hotExpeIn {
   width: 77%;
   height: 0.63rem;
@@ -211,7 +201,6 @@ export default {
   padding-left: 0.2rem;
   box-sizing: border-box;
 }
-
 .hotExpeIn input {
   width: 100%;
   outline: none;
@@ -223,7 +212,6 @@ export default {
   box-sizing: border-box;
   line-height: 0.63rem;
 }
-
 .hotExpeRight {
   width: 7%;
   height: 0.37rem;
@@ -233,20 +221,17 @@ export default {
   margin-top: 0.1rem;
   margin-right: 0.1rem;
 }
-
 .hotLeft {
   float: left;
   margin-top: 0.15rem;
   width: 6%;
 }
-
 .hotRight {
   float: left;
   width: 94%;
   height: 0.63rem;
   position: relative;
 }
-
 .chahao {
   width: 0.37rem;
   height: 0.37rem;
@@ -256,7 +241,6 @@ export default {
   right: 0.15rem;
   top: 0.15rem;
 }
-
 .contents {
   width: 100%;
   height: auto;
@@ -267,12 +251,10 @@ export default {
   padding-left: 0.3rem;
   box-sizing: border-box;
 }
-
 .contents span:nth-of-type(2) {
   margin-left: 0.2rem;
   display: inline-block;
 }
-
 .conSpan {
   width: 0.41rem;
   height: 0.33rem;
@@ -280,7 +262,6 @@ export default {
   background-size: 100% 100%;
   display: inline-block;
 }
-
 .tab {
   height: 0.92rem;
   line-height: 0.92rem;
@@ -290,7 +271,6 @@ export default {
   background: #fff;
   margin: auto;
 }
-
 .tabItem {
   float: left;
   width: 20%;
@@ -298,16 +278,13 @@ export default {
   font-size: 0.28rem;
   color: rgb(77, 85, 93);
 }
-
 a {
   display: block;
   position: relative;
 }
-
 .router-link-active {
   color: #ff5e3a;
 }
-
 .router-link-active::after {
   content: "";
   position: absolute;
@@ -318,7 +295,6 @@ a {
   transform: translateX(-50%);
   background: #ff5e3a;
 }
-
 .item-title {
   width: 100%;
   white-space: nowrap;
@@ -330,7 +306,6 @@ a {
   overflow: hidden;
   text-align: center;
 }
-
 .fruitActive:after {
   position: absolute;
   content: "";
