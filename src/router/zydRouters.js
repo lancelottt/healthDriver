@@ -5,7 +5,8 @@ import MyReminder from '@/components/healthPlan/myReminder';
 import Message from '@/components/pages/me/message';
 import MessageMain from '@/components/pages/me/messageMain';
 import payInfo from '@/components/payInfo/payInfo';
-import MyRemindDetail from '@/components/healthPlan/myRemindDetail.vue'
+import MyRemindDetail from '@/components/healthPlan/myRemindDetail.vue';
+import PaymentInfo from '@/components/loginChat/paymentInfo'
 export default [{
         path: '/healthPlan/myReminder',
         component: MyReminder
@@ -25,5 +26,9 @@ export default [{
     {
         path: '/payInfo',
         component: payInfo
+    },
+    {
+        path: '/paymentInfo',
+        component: PaymentInfo
     }
 ]

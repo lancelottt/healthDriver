@@ -35,6 +35,8 @@ const mutations = {
 		state.memberRemindVoiceName = params.memberRemindVoiceName
 //		state.remindItemId = params.remindItemId
 //		state.memberRemindVoice = params.memberRemindVoice
+	},
+	handlerUserInfoCommit(state,params){
 	}
 //	handleEditTabStatus(state, params) {
 //		if(!params) {
@@ -72,6 +74,9 @@ const actions = {
 	},
 	handlerRemindDispatch({commit},params){
 		commit("handlerRemindCommit",params)
+	},
+	handlerDispatchUserInfo({commit},params){
+		commit('handlerUserInfoCommit',params)
 	}
 }
 

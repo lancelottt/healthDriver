@@ -25,7 +25,7 @@
 							    语音列表<i class="el-icon-arrow-down el-icon--right"></i>
 							  </span>
 							  <el-dropdown-menu slot="dropdown">
-							    <el-dropdown-item :command=item.voiceName v-for="(item,index) in this.userVoiceBanks">{{item.voiceName}}</el-dropdown-item>
+							    <el-dropdown-item :command=item.voiceName v-for="(item,index) in this.userVoiceBanks" :key=index>{{item.voiceName}}</el-dropdown-item>
 							    
 							  </el-dropdown-menu>
 						</el-dropdown>

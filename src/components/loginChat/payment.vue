@@ -30,7 +30,6 @@
 				
 			</section>
 			<div class="nextBtn" @click="handlerNext()">
-					next
 				</div>
 		</article>
 	</div>
@@ -45,7 +44,7 @@
 		},
 		methods: {
 			handlerWxPay() {
-				this.$router.push('/qwer')
+				this.$router.push('/paymentInfo')
 //				var _this = this;
 //				var k = null;
 //				var wxpayService = null;

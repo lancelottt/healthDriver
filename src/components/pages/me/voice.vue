@@ -3,7 +3,7 @@
 		<div class="handBack">
 			<div class="voiceHeader">
 				<div class="voiceHeaderLeft">
-					<img src="../../../../static/images/fanhui.png" />
+					<img src="../../../../static/images/fanhui.png" @click="handlerBack"/>
 				</div>
 				<div class="voiceHeaderRight">语音定制</div>
 			</div>
@@ -126,6 +126,9 @@
 			}
 		},
 		methods: {
+			handlerBack(){
+				this.$router.back()
+			},
 			vioceCon(){
 				this.$router.push("/voiceList")
 			},

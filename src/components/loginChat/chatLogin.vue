@@ -41,7 +41,8 @@
 			return {
 				weixinCode: '',
 				weChatServices: {},
-				id:''
+				id:'',
+				responseDataUser:[],
 			}
 		},
 		beforeCreate() {
@@ -98,7 +99,10 @@
 											//												code: _this.weixinCode
 											//											}
 										}).then(function(response) {
+											console.log(response)
 											console.log('从服务器接收成功' + JSON.stringify(response))
+											plus.nativeUI.toast('从服务器接收成功 ')
+											_this.responseDataUser = response.data.user
 											_this.id = response.data.user.id
 
 											_this.sendInfo()
@@ -207,6 +211,7 @@
 			sendInfo() {
 				console.log(this.id)
 				//				this.observer.$emit('change',this.id)
+				this.$store.dispatch("handlerDispatchUserInfo",this.responseDataUser)
 				this.$store.dispatch("handlerDispatch", this.id)
 			},
 			//			saveUserInfo(){

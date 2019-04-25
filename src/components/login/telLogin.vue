@@ -39,8 +39,8 @@
 			
 			verifyPhone: function(inputPhone) {
 				if(!(/^1[34578]\d{9}$/.test(inputPhone))) {
-					plus.nativeUI.toast("手机号码有误，请重填");
-					return false;
+					console.log("手机号码有误，请重填");
+					return "手机号码有误，请检查";
 				}
 			}
 		},

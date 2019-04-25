@@ -24,19 +24,6 @@ export function get(url, params, data = {}) {
         })
 }
 
-export function cnget(url, params, data = {}) {
-    return axios.get('http://2b3665801a.51mypc.cn:20626/' + url, {
-            headers: headers,
-            params: params,
-            data: data
-        })
-        .then((res) => {
-            return Promise.resolve(res.data)
-        })
-        .catch((err) => {
-            console.log(err)
-        })
-}
 export function post(url, data) {
     return axios.post(repUrl + url, data, {
             headers: headers
