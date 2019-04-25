@@ -77,9 +77,8 @@
 				this.$router.back()
 			},
 			handlerChangeTime(){
-				alert(1)
-				console.log(this.userVoiceBankId+this.userVoiceBankCode)
-				get('/health-web/frontMemberScheme/memberRemindVoice?memberRemindSchemeItemId='+ this.userVoiceBankId +'&userVoiceBankCode=' + this.userVoiceBankCode,{}).then((res)=>{
+				console.log(this.userVoiceBankId+this.userVoiceBankCode+this.value1)
+				get('/health-web/frontMemberScheme/memberRemindVoice?memberRemindSchemeItemId='+ this.userVoiceBankId +'&userVoiceBankCode=' + this.userVoiceBankCode+'&remindTime=11:18:55',{}).then((res)=>{
 					console.log(res)
 					this.$message({message:'你选择的是' + this.value1, type: 'success'})
 				}).catch((err)=>{
