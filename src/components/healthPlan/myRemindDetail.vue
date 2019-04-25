@@ -1,19 +1,37 @@
 <template>
-	<div id="">
+	<div id="remindDetail">
 		<div class="remindDetail">
 			<header><span class="" @click="handleBack()"><img src="../../../static/img/arrow_03.png"/></span><span>我的提醒</span><span></span></header>
 			<div class="myPlan">
 				<div class="">
 					<p>{{name}}</p>
 				</div>
-				<div class="" @click="handlerChangeTime()">
-					<p>提醒时间：&nbsp;<b>{{time}}</b></p>
-					<p>></p>
+				<div class="">
+					<p>提醒时间：&nbsp;<b></b></p>
+					<p>
+						<el-time-select @change="handlerChangeTime" v-model="value1" :picker-options="{
+						    start: time,
+						    step: '00:01',
+						    end: '18:30'
+						  }" placeholder="选择时间">
+						</el-time-select>
+						></p>
+
 				</div>
-				<div class="" @click="handlerChangeVoice()">
-					<p>应用语音：&nbsp;<b>{{voice}}</b></p>
-					<p>></p>
+				<div class="demonstration">
+					<p>应用语音：&nbsp;<b>
+						<el-dropdown @command="handleCommand">
+							  <span class="el-dropdown-link">
+							    语音列表<i class="el-icon-arrow-down el-icon--right"></i>
+							  </span>
+							  <el-dropdown-menu slot="dropdown">
+							    <el-dropdown-item :command=item.voiceName v-for="(item,index) in this.userVoiceBanks">{{item.voiceName}}</el-dropdown-item>
+							    
+							  </el-dropdown-menu>
+						</el-dropdown>
+					</b></p>
 				</div>
+
 			</div>
 		</div>
 	</div>
@@ -25,28 +43,69 @@
 	import { get, post } from '../../api/fetch.js'
 	export default {
 		data() {
-			return {}
+			return {
+				value1: '',
+				userVoiceBanks: [],
+				voiceNameBox: [],
+//				语音code
+				userVoiceBankCode:'',
+				userVoiceBankId:'',
+			}
 		},
 		computed: {
 			...Vuex.mapState({
-				time: state => store.state.remindTime,
+				time: state => store.state.remindTime.substr(0, 5),
 				name: state => store.state.remindName,
 				voice: state => store.state.memberRemindVoiceName,
 			})
+		},
+		created(){
+			get('/health-web/frontMemberScheme/memberRemindList', {}).then((res) => {
+				console.log(res)
+								this.userVoiceBanks = res.userVoiceBanks
+								this.userVoiceBanks.map((item) => {
+									this.userVoiceBankId = item.userVoiceBankId
+									this.userVoiceBankCode = item.userVoiceBankCode
+									this.voiceNameBox.push(item.voiceName)
+									this.voiceNameBox  = this.voiceNameBox.slice(0,2)
+									console.log(this.voiceNameBox)
+								})
+							})
 		},
 		methods: {
 			handleBack() {
 				this.$router.back()
 			},
-			handlerChangeTime() {
+			handlerChangeTime(){
+				alert(1)
+				console.log(this.userVoiceBankId+this.userVoiceBankCode)
+				get('/health-web/frontMemberScheme/memberRemindVoice?memberRemindSchemeItemId='+ this.userVoiceBankId +'&userVoiceBankCode=' + this.userVoiceBankCode,{}).then((res)=>{
+					console.log(res)
+					this.$message({message:'你选择的是' + this.value1, type: 'success'})
+				}).catch((err)=>{
+					console.log('发送时间设置失败'+err)
+				})
 				
-			}
+			},
+			 handleCommand(command) {
+			 	get('/health-web/frontMemberScheme/memberRemindVoice?memberRemindSchemeItemId='+ this.userVoiceBankId +'&userVoiceBankCode=' + this.userVoiceBankCode,{}).then((res)=>{
+					console.log(res)
+					this.$message({message:'你选择的是' + command, type: 'success'});
+				}).catch((err)=>{
+					console.log('发送声音设置失败'+err)
+				})
+        
+      }
 		}
 	}
 </script>
 
 <style>
-	.hitCard {
+	#remindDetail{
+		height: 100%;
+		overflow: hidden;
+	}
+	.remindDetail {
 		height: 100%;
 	}
 	
@@ -94,7 +153,7 @@
 	.remindDetail .myPlan>div {
 		display: flex;
 		flex-direction: row;
-		justify-content: space-around;
+		justify-content: space-between;
 		align-items: center;
 		margin: 0 auto;
 		width: 80%;
@@ -111,7 +170,28 @@
 	}
 	
 	.remindDetail .myPlan>div>p>b {
+		display: block;
 		color: #999999;
+	}
+	
+	.remindDetail .myPlan>div:nth-of-type(2)>p:nth-of-type(2)>.el-input {
+		width: 3.5rem;
+		opacity: 0;
+	}
+	
+	.el-message-box {
+		width: 100%;
+	}
+	.remindDetail .myPlan>div:nth-of-type(1){
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+	.remindDetail .demonstration>p{
+		width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 	}
 	/*.hitCard .myPlan .healthPlan-mask {
       width: 5.42rem;

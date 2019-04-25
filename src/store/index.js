@@ -17,6 +17,8 @@ const state = {
 	remindName:'',
 	remindTime:'',
 	memberRemindVoiceName:'',
+	remindItemId:'',
+	memberRemindVoice:'',
 }
 const getters = {
 
@@ -31,7 +33,8 @@ const mutations = {
 		state.remindName = params.remindItemName
 		state.remindTime = params.remindTime
 		state.memberRemindVoiceName = params.memberRemindVoiceName
-		
+//		state.remindItemId = params.remindItemId
+//		state.memberRemindVoice = params.memberRemindVoice
 	}
 //	handleEditTabStatus(state, params) {
 //		if(!params) {

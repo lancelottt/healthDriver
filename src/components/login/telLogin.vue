@@ -12,7 +12,7 @@
 			<div class="telLogin-con">
 				<span>手机号</span>
 				<el-input v-model="inputPhone" placeholder="请输入手机号" maxlength=11 clearable autofocus></el-input>
-				<h2 v-if="verifyPhone">{{inputPhone | verifyPhone}}</h2>
+				<h2>{{inputPhone|verifyPhone}}</h2>
 				<span>验证码</span>
 				<el-row class='telLogin-getVarifyCode'>
 					<el-input v-model="inputVarifyCode" placeholder="请输入验证码  "></el-input>
@@ -36,6 +36,7 @@
 			}
 		},
 		filters: {
+			
 			verifyPhone: function(inputPhone) {
 				if(!(/^1[34578]\d{9}$/.test(inputPhone))) {
 					plus.nativeUI.toast("手机号码有误，请重填");

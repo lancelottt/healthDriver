@@ -564,7 +564,6 @@
 					}
 				})
 				return finishVal;
-
 			},
 			changeFixed(clientHeight) { //动态修改样式
 				this.$refs.homePage.style.height = clientHeight + 'px';
@@ -631,7 +630,7 @@
 								countDownTimeH -= 1
 							}
 							countDownTimeH<=0?countDownTimeH='00':countDownTimeH
-							this.countDownTime = countDownTimeH + ':' + countDownTimeM
+							this.countDownTime = countDownTimeH + '时' + countDownTimeM + '分'
 						} else {
 							this.countDownTime = "今日打卡结束"
 						}
@@ -659,6 +658,7 @@
 		mounted() {
 			get('/health-web/frontMemberScheme/healthCorona', {}).then(
 				(res) => {
+					console.log(res)
 					this.response = res
 					this.schemeList = res.memberRemindScheme.memberRemindSchemeItemList;
 					var reg = /^(20|21|22|23|[0-1]\d):[0-5]\d:[0-5]\d$/;
