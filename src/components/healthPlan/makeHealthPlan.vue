@@ -71,13 +71,13 @@ export default {
         },
         {
           src: "http://lorempixel.com/400/245/food",
-          content1: "666",
-          content2: "what the hell?"
+          content1: "健康运动养成",
+          content2: "健康运动课程"
         },
         {
           src: "http://lorempixel.com/400/245/food",
-          content1: "how dare you!",
-          content2: "面对疾风吧!"
+          content1: "想变瘦吗",
+          content2: "均衡膳食管理"
         }
       ],
       freeContent: [
@@ -103,13 +103,13 @@ export default {
       costContent: [
         {
           src: "static/img/qwe/food1.png",
-          content1: "健康生活方式养成",
+          content1: "健康生活方式",
           content2: "学习",
           path: "/shopping"
         },
         {
           src: "static/img/qwe/food2.png",
-          content1: "营养搭配均衡美味",
+          content1: "营养搭配均衡",
           content2: "学习",
           path: "/healthMarket/playFood/kwnoFood"
         },

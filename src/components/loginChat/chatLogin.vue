@@ -17,9 +17,11 @@
 						<img src="../../../static/img/weixin.png" alt="">
 					</div>
 					<span>微信登录</span>
-					<span @click="next1()">1<i>{{ids}}</i></span>
+<!--					<span @click="next1()">1<i>{{ids}}</i></span>
+-->					<!--<p>{{userid}}</p>
+					<p>{{usernick}}</p>
+					<p>{{usercode}}</p>-->
 				</div>
-
 			</div>
 			<div class="imgT">
 				<div class="imgTleft"><img src="../../../static/img/jY.png" alt=""></div>
@@ -29,7 +31,8 @@
 	</div>
 </template>
 <script>
-	//	import bus from '@/utils/bus.js'
+	//	import bus from '@/utils/bus.js'、
+	import { get, post } from "../../api/fetch";
 	import axios from 'axios'
 	import store from '@/store/index'
 	import vue from 'vue'
@@ -41,8 +44,10 @@
 			return {
 				weixinCode: '',
 				weChatServices: {},
-				id:'',
-				responseDataUser:[],
+				id: '',
+				responseDataUser: [],
+				userInfo: [],
+				targetInfo:null,
 			}
 		},
 		beforeCreate() {
@@ -62,7 +67,10 @@
 		},
 		computed: {
 			...Vuex.mapState({
-				ids: state => state.ids
+				userid:state=>store.state.user.uid,
+				usernick: state => store.state.myInfo.nickname,
+				usercode:state=>store.state.user.userCode,
+				userav:state=>store.state.myInfo.headimgurl,
 			})
 		},
 		methods: {
@@ -71,6 +79,8 @@
 				var k = null;
 				var wxLoginObj = null;
 				var weixinCode = null;
+				var maccessToken = null;
+				var mopenid = null;
 				document.getElementById('loginWx').addEventListener('click', function() {
 					plus.oauth.getServices(
 						function(s) {
@@ -91,22 +101,27 @@
 								weixinCode = e.code
 								console.log('Code：' + weixinCode)
 								if(!e.authResult) {
-									wxLoginObj.login(function(e) {
-										plus.nativeUI.toast('登陆成功 ')
-										console.log('登陆成功 ' + JSON.stringify(e))
-										axios.get("http://bossdu.zicp.vip:55090/health-web/modules/wxThirdParty/login?code=" + weixinCode, {
+									wxLoginObj.login(function(suc) {
+										mopenid = suc.target.authResult.openid
+										maccessToken = suc.target.authResult.access_token
+//										plus.nativeUI.toast('登陆成功 ')
+										console.log('登陆成功 ' + JSON.stringify(suc))
+										_this.userInfo = suc.target.userInfo
+										get("/health-web/modules/wxThirdParty/login?openid=" + mopenid+'&accessToken='+maccessToken, {
 											//											params: {
 											//												code: _this.weixinCode
 											//											}
 										}).then(function(response) {
-											console.log(response)
-											console.log('从服务器接收成功' + JSON.stringify(response))
-											plus.nativeUI.toast('从服务器接收成功 ')
-											_this.responseDataUser = response.data.user
-											_this.id = response.data.user.id
-
+											localStorage.setItem('tokenCookie',response.user.token)
+											console.log(response.user.token)
+											console.log('从服务器接收成功 '+JSON.stringify(response))
+//											plus.nativeUI.toast('从服务器接收成功 ')
+											_this.responseDataUser = response.user
+											console.log(JSON.stringify(_this.responseDataUser))
 											_this.sendInfo()
-											switch(response.data.user.ompleteStatus) {
+											_this.id = response.user.id
+											setTimeout(function(){
+												switch(response.user.ompleteStatus) {
 												case 0:
 													_this.$router.push({
 														name: 'payment'
@@ -132,10 +147,11 @@
 												default:
 													break;
 											}
+											},3000)
 											//											_this.saveUserInfo()
 											//											_this.saveCookie(response.data.user.id)
-										}).catch(function(response) {
-											console.log('从服务器接收失败 ' + JSON.stringify(response))
+										}).catch(function(fail) {
+											console.log('从服务器接收失败 ' + JSON.stringify(fail))
 										})
 									}, function(e) {
 										plus.nativeUI.toast('登录失败')
@@ -153,7 +169,7 @@
 									}, function(e) {
 										console.log("注销失败" + JSON.stringify(e))
 									})
-								}, 1000)
+								}, 5000)
 							}, function(e) {
 								plus.nativeUI.toast('授权失败')
 								console.log('授权失败' + JSON.stringify(e))
@@ -197,7 +213,7 @@
 							//							);
 						},
 						function(e) {
-							plus.nativeUI.toast('第三方登录插件获取失败');
+//							plus.nativeUI.toast('第三方登录插件获取失败');
 							console.log('第三方登录插件获取失败' + JSON.stringify(e));
 						}
 					);
@@ -209,9 +225,11 @@
 				})
 			},
 			sendInfo() {
-				console.log(this.id)
+				console.log(this.responseDataUser)
 				//				this.observer.$emit('change',this.id)
-				this.$store.dispatch("handlerDispatchUserInfo",this.responseDataUser)
+				
+				this.$store.dispatch("handlerDispatchUserInfo", this.responseDataUser)
+				this.$store.dispatch("handlerMyInfo", this.userInfo)
 				this.$store.dispatch("handlerDispatch", this.id)
 			},
 			//			saveUserInfo(){

@@ -64,7 +64,7 @@
 								<img src="../../../static/hulu/tree.png" />
 							</div>
 							<div id="">
-								<img src="../../../static/hulu/ellipsise.png" />
+								<img src="../../../static/hulu/ellipsise.png" @click="handlerShare()"/>
 							</div>
 						</article>
 						<section>
@@ -104,7 +104,7 @@
 									<div>
 										<img src="../../../static/hulu/bitch.png" />
 									</div>
-									<p>距下次打卡：<b>{{countDownTime}}</b></p>
+									<p>倒计时:<br></br><b>{{countDownTime}}</b></p>
 								</div>
 							</div>
 						</section>
@@ -527,7 +527,19 @@
 
 		},
 		methods: {
+			handlerShare(){
+				plus.share.sendWithSystem({
+					content:'快来加入健康驾校吧',
+					pictures:'../../../../static/hulu/bg.png',
+					href:'https://www.baidu.com'
+				},function(succ){
+					console.log(succ)
+				},function(fail){
+					console.log(fail)
+				})
+			},
 			handlerHitCardClick(item) {
+				const path ='http://192.168.1.144:8001'
 				console.log(item)
 
 				//				switch(item.remindTime.substr(0, 2)) {
@@ -538,7 +550,7 @@
 				if(item.isFinish == 0) {
 					//					console.log(typeof(this.nowTimer)+typeof(this.response.memberRemindScheme.memberRemindSchemeCode)+typeof(item.memberRemindSchemeItemCode)+typeof(item.remindTime)+typeof(item.remindItemName)+typeof('1'))
 					if(item.remindTime.substr(0, 2) == this.nowTimer.substr(0, 2) && Math.abs(item.remindTime.substr(3, 2) - this.nowTimer.substr(3, 2)) <= 5 || Math.abs(item.remindTime.substr(0, 2) - this.nowTimer.substr(0, 2)) <= 1 && Math.abs(item.remindTime.substr(3, 2) - this.nowTimer.substr(3, 2)) >= 55) {
-						
+//						plus.audio.createPlayer(path+item.voicePath).play()
 						console.log(typeof(this.nowTimer) + typeof(this.response.memberRemindScheme.memberRemindSchemeCode) + typeof(item.memberRemindSchemeItemCode) + typeof(item.remindTime) + typeof(item.remindItemName) + typeof('1'))
 						get('/health-web/frontMemberScheme/memberClockRecord?clockTime=' + this.nowTimer + '&memberRemindSchemeCode=' + this.response.memberRemindScheme.memberRemindSchemeCode + '&memberRemindSchemeItemCode=' + item.memberRemindSchemeItemCode + '&remindTime=' + item.remindTime + '&remindItemName=' + item.remindItemName + '&status=' + '1', {}).then(
 							(res) => {
@@ -667,10 +679,10 @@
 						var subHour = this.schemeList[i].remindTime.substr(0, 2)
 						this.showBox.push(subHour)
 						//方法 1.switch case挨个判断           方法2.放到数组里，属于数组为真，否则为假
-						if(!regExp.test(this.schemeList[i].remindTime)) {　
-							console.log("时间格式不正确，正确格式为：12:00:00");　　
-							return;
-						} else {
+//						if(!regExp.test(this.schemeList[i].remindTime)) {　
+//							console.log("时间格式不正确，正确格式为：12:00:00");　　
+//							return;
+//						} else {
 							var _this = this;
 							//							console.log(subHour)
 							switch(subHour) {
@@ -1011,7 +1023,7 @@
 										console.log('23未打卡')
 									}
 									break;
-							}
+//							}
 						}
 					}
 					this.failure();

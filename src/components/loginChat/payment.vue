@@ -9,7 +9,7 @@
 			<section class="mainframe">
 				<div>
 					<div><img src="../../../static/img/huangguan (2).png" /></div>
-					<i>会员488/年</i>
+					<i>会员{{this.cost}}/年</i>
 				</div>
 				<div>
 					<div>
@@ -19,6 +19,12 @@
 						<div><img src="../../../static/img/qwe/ELIT.png" /><b>健康自律养成计划</b></div>
 					</div>
 				</div>
+				<!--<p>{{userid}}</p>
+				<p>{{usernick}}</p>
+				<p>{{usercode}}</p>
+				<p>{{this.token}}</p>
+				<img :src="userav"/>-->
+				<!--<p>{{store.state.user.token}}</p>-->
 				<div>
 					会员权益
 				</div>
@@ -29,20 +35,48 @@
 				</div>-->
 				
 			</section>
-			<div class="nextBtn" @click="handlerNext()">
-				</div>
+			<!--<div class="nextBtn" @click="handlerNext()">.
+				</div>-->
 		</article>
 	</div>
 </template>
 
 <script>
+	import { get, post } from "../../api/fetch";
+	import axios from 'axios'
+	import store from '@/store/index'
+	import vue from 'vue'
+	import Vuex from 'vuex'
 	export default {
 		data() {
 			return {
-
+				token:'',
+				cost:''
 			}
 		},
+		created(){
+			this.token = store.state.user.token
+		},
+		computed: {
+			...Vuex.mapState({
+				userid:state=>store.state.user.uid,
+				usernick: state => store.state.myInfo.nickname,
+				usercode:state=>store.state.user.userCode,
+				userav:state=>store.state.myInfo.headimgurl,
+			})
+		},
+		mounted(){
+			this.getProductInfo()
+			console.log(store.state.user.token)
+		},
 		methods: {
+			getProductInfo() {
+				get('/health-web/modules/pmsproduct/getUserProduct', {}).then(res => {
+					this.info = res.pmsProduct;
+					this.cost = res.pmsProduct.price
+					console.log(JSON.stringify(this.info))
+				});
+			},
 			handlerWxPay() {
 				this.$router.push('/paymentInfo')
 //				var _this = this;

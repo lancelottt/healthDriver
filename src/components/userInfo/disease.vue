@@ -76,7 +76,7 @@
 		},
 		computed: {},
 		created() {
-			get('/health-web/sys/navDicWeb/navDicList', {}).then(
+			get('/health-web/sys/navDicWeb/navDicList',{}).then(
 				(res) => {
 					if(res.msg == 'success') {
 						console.log(res)

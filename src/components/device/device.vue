@@ -579,51 +579,67 @@
                 this.$router.push('/device/SetWeight')
             },
             WeightData() {
-                get('/health-web/modules/userDataRecord/latestInfo/weight_value').then((res) => {
+                get('/health-web/modules/userDataRecord/latestInfo/weight_value',
+                {
+				}).then((res) => {
                     this.healthData.weightValue = res.userLatestRecord.weightValue;
                     this.healthData.weightTime = res.userLatestRecord.createTime;
                 })
             },
             athleticData() {
-                get('/health-web/modules/userDataRecord/latestInfo/athletic').then((res) => {
+                get('/health-web/modules/userDataRecord/latestInfo/athletic',
+                {
+				}).then((res) => {
                     this.healthData.athleticHeatValue = res.userLatestRecord.athleticHeatValue;
                     this.healthData.athleticHeatTime = res.userLatestRecord.createTime;
                 })
             },
             sleepData() {
-                get('/health-web/modules/userDataRecord/latestInfo/sleep').then((res) => {
+                get('/health-web/modules/userDataRecord/latestInfo/sleep',
+                {
+				}).then((res) => {
                     this.healthData.sleepHourValue = res.userLatestRecord.sleepHourValue;
                     this.healthData.sleepMinuteValue = res.userLatestRecord.sleepMinuteValue;
                     this.healthData.sleepCreateTime = res.userLatestRecord.createTime;
                 })
             },
             bloodPressureData() {
-                get('/health-web/modules/userDataRecord/latestInfo/blood_pressure').then((res) => {
+                get('/health-web/modules/userDataRecord/latestInfo/blood_pressure',
+                {
+				}).then((res) => {
                     this.healthData.bloodPressureLow = res.userLatestRecord.bloodPressureLow;
                     this.healthData.bloodPressureHigh = res.userLatestRecord.bloodPressureHigh;
                     this.healthData.bloodPressureTime = res.userLatestRecord.createTime;
                 })
             },
             bloodGlucoseData() {
-                get('/health-web/modules/userDataRecord/latestInfo/blood_glucose').then((res) => {
+                get('/health-web/modules/userDataRecord/latestInfo/blood_glucose',
+                {
+				}).then((res) => {
                     this.healthData.bloodGlucoseValue = res.userLatestRecord.bloodGlucoseValue;
                     this.healthData.bloodGlucoseTime = res.userLatestRecord.createTime;
                 })
             },
             fatRateData() {
-                get('/health-web/modules/userDataRecord/latestInfo/fat_rate').then((res) => {
+                get('/health-web/modules/userDataRecord/latestInfo/fat_rate',
+                {
+				}).then((res) => {
                     this.healthData.fatRateValue = res.userLatestRecord.fatRateValue;
                     this.healthData.fatRateTime = res.userLatestRecord.createTime;
                 })
             },
             heartRateData() {
-                get('/health-web/modules/userDataRecord/latestInfo/heart_rate').then((res) => {
+                get('/health-web/modules/userDataRecord/latestInfo/heart_rate',
+                {
+				}).then((res) => {
                     this.healthData.heartRateValue = res.userLatestRecord.heartRateValue;
                     this.healthData.heartRateTime = res.userLatestRecord.createTime;
                 })
             },
             animalHeatData() {
-                get('/health-web/modules/userDataRecord/latestInfo/animal_heat').then((res) => {
+                get('/health-web/modules/userDataRecord/latestInfo/animal_heat',
+                {
+				}).then((res) => {
                     this.healthData.animalHeatValue = res.userLatestRecord.animalHeatValue;
                     this.healthData.animalHeatTime = res.userLatestRecord.createTime;
 

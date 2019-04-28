@@ -12,7 +12,7 @@
 					<div class="myTet">拍下你身体的剪影，你将会看到自己的变化</div>
 					<div class="imgTu">
 						<!--渲染图片**-->
-						<el-upload style="width:92%;height: auto;margin: auto;" action="http://192.168.1.145:8081/health-web/modules/userCompImg/addBatch"  
+						<el-upload style="width:92%;height: auto;margin: auto;" action="http://bossdu.zicp.vip:55090/health-web/modules/userCompImg/addBatch"  
 							:headers="headerImg" 
 							list-type="picture-card"  
 							:on-remove="handleRemove"

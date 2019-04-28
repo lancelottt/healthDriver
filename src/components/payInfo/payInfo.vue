@@ -39,7 +39,7 @@
       <ul>
         <li>
           合计：
-          <span>￥1320.00</span>
+          <span>￥{{info.price}}</span>
         </li>
         <li>
           <h3 @click="getPlaceOrder">确认支付</h3>
@@ -49,6 +49,9 @@
   </div>
 </template>
 <script>
+	import store from '@/store/index'
+	import vue from 'vue'
+	import Vuex from 'vuex'
 import { get, post } from "../../api/fetch";
 export default {
   data() {
@@ -61,7 +64,6 @@ export default {
   created() {
     this.getProductInfo();
     /* 检测支付通道 */
-    this.plusjk();
   },
   methods: {
     handlerBack() {
@@ -77,141 +79,87 @@ export default {
         this.info = res.data;
       });
     },
-    /* 获取支付通道 */
-    plusjk() {
-      plus.payment.getChannels(
-        function(channels) {
-          var that = this;
-          // var content = document.getElementById("payment");
-          // var info = document.getElementById("info");
-          // var txt = "支付通道信息：";
-          for (var i in channels) {
-            console.log("获取支付通道成功" + JSON.stringify(channels[i].id));
-            //          var channel = channels[i];
-            if (
-              channels[i].id == "qhpay" ||
-              channels[i].id == "qihoo" ||
-              channels[i].id == "alipay"
-            ) {
-            }
-            console.log("是否安装微信wxpay");
-            // 过滤掉不支持的支付通道：暂不支持360相关支付
-            //            continue;
-            that.wxService = channels[i].id;
- 
-            console.log("that.wxService" + that.wxService);
-            //          this.pays[channel.id] = channel;
-
-            // txt += "id:" + channel.id + ", ";
-            // txt += "description:" + channel.description + ", ";
-            // txt += "serviceReady:" + channel.serviceReady + "； ";
-            // var de = document.createElement("div");
-            // de.setAttribute("class", "button");
-            // de.setAttribute("onclick", "pay(this.id)");
-            // de.id = channel.id;
-            // de.innerText = channel.description + "支付";
-            // content.appendChild(de);
-            //          this.checkServices(channel);
-          }
-          // info.innerText = txt;
-        },
-        function(e) {
-          console.log("获取支付通道失败：" + e.message);
-        }
-      );
-    },
-    /* 检测是否安装支付服务 */
-    //  checkServices(pc) {
-    //    if (!pc.serviceReady) {
-    //      var txt = null;
-    //      switch (pc.id) {
-    //        case "alipay":
-    //          txt =
-    //            "检测到系统未安装“支付宝快捷支付服务”，无法完成支付操作，是否立即安装？";
-    //          break;
-    //        default:
-    //          txt =
-    //            "系统未安装“" +
-    //            pc.description +
-    //            "”服务，无法完成支付，是否立即安装？";
-    //          break;
-    //      }
-    //      plus.nativeUI.confirm(
-    //        txt,
-    //        function(e) {
-    //          if (e.index == 0) {
-    //            pc.installService();
-    //          }
-    //        },
-    //        pc.description
-    //      );
-    //    }
-    //  },
     /* 下单-生成订单 */
     getPlaceOrder() {
       get(`/health-web/order/generateSchemeOrder`, {
         schemeCode: this.$route.query.id,
-        userId: 1
+        userId: store.state.user.uid
       })
         .then(res => {
           console.log(res.order.orderSn, res.order.totalAmount);
-          this.goPay(res.order.orderSn, res.order.totalAmount, {"id":"wxpay","description":"微信","serviceReady":true});
+          this.goPay(res.order.orderSn, res.order.totalAmount);
           console.log("下单成功！");
         })
         .catch(err => {
           console.log("下单失败" + err);
         });
     },
+    			goPay(outTradeNo, totalFee) {
+				
+				post(
+					"/health-web/weixinMobile/dopay?orderType=0&outTradeNo=" +
+					outTradeNo +
+					"&totalFee=" +
+					totalFee +
+					"&openId="+store.state.myInfo.openid
+//					"&openId=oi1oy1dgeHOAqdYLSF2sICfRG61w"
+				).then(res => {
+					var dopay = res;
+					var _this = this;
+					var k = null;
+					var wxpayService = null;
+					var wxpayReady = null;
+					plus.payment.getChannels(
+						s => {
+							plus.nativeUI.toast("获取支付通道成功 " + JSON.stringify(s));
+							console.log("获取支付通道成功 " + JSON.stringify(s));
+							if(s.length) {
+								for(k in s) {
+									if((s[k].id = "wxpay")) {
+										wxpayService = s[k];
+										console.log("wxpayService" + wxpayService);
+									}
+								}
+							} else {
+								console.log("没有微信通道");
+							}
+							plus.payment.request(
+								wxpayService, {
+									retcode: 0,
+									retmsg: "ok",
+									appid: dopay.appid,
+									noncestr: dopay.noncestr,
+									package: "Sign=WXPay",
+									partnerid: dopay.partnerid,
+									prepayid: dopay.prepayid,
+									timestamp: dopay.timestamp,
+									sign: dopay.sign
+								},
+								function(s) {
+									console.log("this:"+this)
+								console.log('_this'+_this)
+									console.log("支付操作成功！" + JSON.stringify(s));
+									plus.nativeUI.toast("支付操作成功!");
+									_this.$router.push({
+										name: 'Invitation'
+									})
+									
+								},
+								function(e) {
+									plus.nativeUI.toast("支付操作失败！" + JSON.stringify(e));
+									console.log("支付失败：" + e.message);
+								}
+							);
+						},
+						error => {
+							plus.nativeUI.toast("获取支付通道失败 " + JSON.stringify(error));
+							console.log("获取支付通道失败" + JSON.stringify(error));
+						}
+					);
+
+				});
+			}
     /* 支付 */
-    goPay(outTradeNo, totalFee, id) {
-      var _this = this;
-      console.log(_this.wxService + "_this.wxService");
-      console.log(this.wxService + "this.wxService");
-      alert(2);
-      get("/health-web/weixinMobile/dopay", {
-        orderType: 0,
-        outTradeNo: outTradeNo,
-        totalFee: totalFee,
-        openId: "oi1oy1dgeHOAqdYLSF2sICfRG61w"
-      }).then(res => {
-        console.log(JSON.stringify(res));
-        var dopay = res;
-        console.log("dopay:" + JSON.stringify(dopay));
-        var order1 = {
-          //参数顺序必须正确
-          appid: dopay.appid,
-          noncestr: dopay.noncestr,
-          package: "Sign=WXPay",
-          partnerid: dopay.partnerid,
-          prepayid: dopay.prepayid,
-          timestamp: dopay.timestamp,
-          sign: dopay.sign
-        };
-        plus.payment.request(
-          this.wxService,
-          order1,
-          function(result) {
-            plus.nativeUI.alert(
-              "支付成功：感谢你的支持，我们会继续努力完善产品。",
-              function() {
-                back();
-              },
-              "捐赠"
-            );
-            console.log(
-              result + "支付成功：感谢你的支持，我们会继续努力完善产品。"
-            );
-          },
-          function(e) {
-            plus.nativeUI.alert(
-              "更多错误信息请参考支付(Payment)规范文档：http://www.html5plus.org/#specification#/specification/Payment.html",
-              null,
-              "支付失败：" + e.code + "," + e
-            );
-          }
-        );
-      });
-    }
   }
 };
 </script>

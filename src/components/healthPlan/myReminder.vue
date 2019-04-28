@@ -23,28 +23,50 @@
 <script>
 	import store from '@/store/index'
 	import remindStore from '@/store/remindStore'
-	import {get,post} from '../../api/fetch.js'
-	export default{
-		data(){
-			return{
-				memberRemindList:[]
+	import { get, post } from '../../api/fetch.js'
+	export default {
+		data() {
+			return {
+				memberRemindList: []
 			}
 		},
-		created(){
-			get('/health-web/frontMemberScheme/healthCorona',{}).then((res)=>{
-//				/health-web/frontMemberScheme/memberRemindList
+		created() {
+			get('/health-web/frontMemberScheme/healthCorona', {}).then((res) => {
+				//				/health-web/frontMemberScheme/memberRemindList
 				console.log(res)
 				this.memberRemindList = res.memberRemindScheme.memberRemindSchemeItemList
 			})
 		},
-		methods:{
-			handleBack(){
+		methods: {
+			handleBack() {
 				this.$router.back()
 			},
-			handlerModifyRemind(item){
+			handlerModifyRemind(item) {
 				console.log(item)
-				this.$store.dispatch('handlerRemindDispatch',item)
-				this.$router.push('/myReminder/myRemindDetail')
+				this.$store.dispatch('handlerRemindDispatch', item)
+				//				switch(index){
+				//					case 0:
+				//					
+				//					break;
+				//					case 1:
+				//					this.$store.dispatch('handlerRemindDispatch1',item)
+				//				}
+
+				this.$router.push({
+					name: 'myRemindDetail',
+					params: {
+						myuid: item.id,
+						mymemberRemindVoice:item.memberRemindVoice,
+						myremindTime:item.remindTime,
+						myvoicePath:item.voicePath
+					}
+				})
+//				this.$router.push({
+//					name: 'login',
+//					params: {
+//						id: id
+//					}
+//				})
 			}
 		}
 	}

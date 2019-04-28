@@ -47,7 +47,7 @@ Vue.use(vueTouch);
 //import holdno from './utils/holdno'
 
 Vue.use(VideoPlayer)
-    // Vue.use(myCharts)
+// Vue.use(myCharts)
 
 // Vue.prototype.$echarts = myCharts
 // swiper4的vueAwesomeSwiper
@@ -68,26 +68,74 @@ Vue.use(Mint);
 //Vue.prototype.holdno = holdno;
 
 Vue.config.productionTip = false
-    /* eslint-disable no-new */
-    // holdno是我自己定义的一个工具集 里面有各种操作方法
+/* eslint-disable no-new */
+// holdno是我自己定义的一个工具集 里面有各种操作方法
 
 new Vue({
-    el: '#app',
-    router,
-    store,
-    components: {
-        App
-    },
-    template: '<App/>',
+	el: '#app',
+	router,
+	store,
+	components: {
+		App
+	},
+	template: '<App/>',
 
 })
+Vue.component('timerBtn', {
+	template: '<button v-on:click="run" :disabled="disabled || time > 0">{{ text }}</button>',
+	props: {
+		second: {
+			type: Number,
+			default: 60
+		},
+		disabled: {
+			type: Boolean,
+			default: false
+		}
+	},
+	data: function() {
+		return {
+			time: 0
+		}
+	},
+	methods: {
+		run: function() {
+			this.$emit('run');
+		},
+		start: function() {
+			this.time = this.second;
+			this.timer();
+		},
+		stop: function() {
+			this.time = 0;
+			this.disabled = false;
+		},
+		setDisabled: function(val) {
+			this.disabled = val;
+		},
+		timer: function() {
+			if(this.time > 0) {
+				this.time--;
+				setTimeout(this.timer, 1000);
+			} else {
+				this.disabled = false;
+			}
+		}
+
+	},
+	computed: {
+		text: function() {
+			return this.time > 0 ? this.time + 's 后重获取' : '获取验证码';
+		}
+	}
+});
 router.beforeEach((to, from, next) => {
-    //	console.log(store.state.user.id)
-    if (!store.state.user.id && to.path != '/author') {
-        // 第一次进入项目
-        setCookie('beforeLoginUrl', to.fullPath) // 保存用户进入的url
-        next('/loginChat/chatLogin')
-        return true
-    }
-    next()
+	//	console.log(store.state.user.id)
+	if(!store.state.user.id && to.path != '/author') {
+		// 第一次进入项目
+		setCookie('beforeLoginUrl', to.fullPath) // 保存用户进入的url
+		next('/loginChat/chatLogin')
+		return true
+	}
+	next()
 })

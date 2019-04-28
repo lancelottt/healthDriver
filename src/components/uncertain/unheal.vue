@@ -4,7 +4,7 @@
             <div>
                 <div class="componentHeader-header">
                     <div class="Tp" @click="handBack()">
-                        <i class="iconfont Tpi icon-jiantou-left"></i>
+                        <i class="iconfont icon-jiantou-left"></i>
                     </div>
                     <div class="headerAmic">身体档案</div>
                 </div>

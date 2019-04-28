@@ -83,12 +83,12 @@
             </p>
             <p>我的订单</p>
           </li>
-					<!--<li @click="handlerMembership()">
+					<li @click="handlerMembership()">
 						<p>
 							<img src="../../../../static/images/me09.png" alt="" />
 						</p>
-						<p>我的团队</p>
-					</li>-->
+						<p>语音列表</p>
+					</li>
 				</ul>
 			</div>
 			<!-- 我的计划** -->
@@ -153,11 +153,11 @@
 					name: 'family'
 				})
 			},
-//			handlerMembership() {
-//				this.$router.push({
-//					name: 'memCen'
-//				})
-//			},
+			handlerMembership() {
+				this.$router.push({
+					name:'voiceList'
+				})
+			},
 			getUser() {
 				get('/health-web/modules/umsmember/getUser', {}).then((res) => {
 					if(res.code == 0) {

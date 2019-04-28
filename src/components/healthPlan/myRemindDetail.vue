@@ -6,18 +6,22 @@
 				<div class="">
 					<p>{{name}}</p>
 				</div>
+				
 				<div class="">
 					<p>提醒时间：&nbsp;<b></b></p>
+					
 					<p>
 						<el-time-select @change="handlerChangeTime" v-model="value1" :picker-options="{
-						    start: time,
+						    start: this.myremindTime,
 						    step: '00:01',
-						    end: '18:30'
+						    end: '23:59'
 						  }" placeholder="选择时间">
 						</el-time-select>
 						></p>
 
 				</div>
+				<div>之前的提醒时间:{{this.myremindTime}}</div>
+				<div>选择的提醒时间:{{this.value1}}</div>
 				<div class="demonstration">
 					<p>应用语音：&nbsp;<b>
 						<el-dropdown @command="handleCommand">
@@ -42,8 +46,13 @@
 	import remindStore from '@/store/remindStore'
 	import { get, post } from '../../api/fetch.js'
 	export default {
+		name: 'myRemindDetail',
 		data() {
 			return {
+				myuId:this.$route.params.myuid,
+				mymemberRemindVoice:this.$route.params.mymemberRemindVoice,
+				myremindTime:this.$route.params.myremindTime,
+				myvoicePath:this.$route.params.myvoicePath,
 				value1: '',
 				userVoiceBanks: [],
 				voiceNameBox: [],
@@ -77,8 +86,8 @@
 				this.$router.back()
 			},
 			handlerChangeTime(){
-				console.log(this.userVoiceBankId+this.userVoiceBankCode+this.value1)
-				get('/health-web/frontMemberScheme/memberRemindVoice?memberRemindSchemeItemId='+ this.userVoiceBankId +'&userVoiceBankCode=' + this.userVoiceBankCode+'&remindTime=11:18:55',{}).then((res)=>{
+				console.log(this.myuId+this.mymemberRemindVoice+this.value1)
+				get('/health-web/frontMemberScheme/memberRemindVoice?memberRemindSchemeItemId='+ this.myuId +'&userVoiceBankCode=' + this.mymemberRemindVoice+'&remindTime='+this.value1,{}).then((res)=>{
 					console.log(res)
 					this.$message({message:'你选择的是' + this.value1, type: 'success'})
 				}).catch((err)=>{
@@ -87,7 +96,7 @@
 				
 			},
 			 handleCommand(command) {
-			 	get('/health-web/frontMemberScheme/memberRemindVoice?memberRemindSchemeItemId='+ this.userVoiceBankId +'&userVoiceBankCode=' + this.userVoiceBankCode,{}).then((res)=>{
+			 	get('/health-web/frontMemberScheme/memberRemindVoice?memberRemindSchemeItemId='+ this.myuId +'&userVoiceBankCode=' + this.mymemberRemindVoice,{}).then((res)=>{
 					console.log(res)
 					this.$message({message:'你选择的是' + command, type: 'success'});
 				}).catch((err)=>{

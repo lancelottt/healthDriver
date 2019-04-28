@@ -7,9 +7,9 @@
 				请确认邀请人信息
 			</div>
 			<div class="inviterInfo">
-				<div><img src="../../../build/logo.png" /></div>
+				<div><img :src="inviter.icon" /></div>
 				<div>推荐人</div>
-				<div>zyd</div>
+				<div>{{inviter.nickname}}</div>
 			</div>
 			<el-row>
 				<el-button type="danger" round class="inviteInfoRight" @click="handleInviteInfoRight()">确认</el-button>
@@ -28,11 +28,25 @@
 </template>
 
 <script>
+	import {get,post} from '@/api/fetch';
+	import Vuex from 'vuex';
+	import store from '@/store/index';
 	export default {
 		data() {
 			return {
-				
+				inviter:null,
 			}
+		},
+		created(){
+			get('/health-web/modules/umsdistribution/userInfoByPromotionCode?promotionCode=fn5m3zpisfk2',{
+//				promotionCode:store.state.promotionCode
+			}).then((suc)=>{
+				console.log(suc)
+				this.inviter=suc.user
+				console.log(this.inviter)
+			}).catch((err)=>{
+				console.log(err)
+			})
 		},
 		methods: {
 			handleBack(){

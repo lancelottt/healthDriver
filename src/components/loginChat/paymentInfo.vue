@@ -13,7 +13,7 @@
 			<div class="proInfo" v-if="info">
 				<ul>
 					<li>
-						<img :src="info.schemeImgUrl">
+						<img :src="info.pic">
 					</li>
 					<li>
 						<h3>{{info.name}}</h3>
@@ -50,54 +50,76 @@
 </template>
 <script>
 	import { get, post } from "../../api/fetch";
+	import axios from 'axios'
+	import store from '@/store/index'
+	import vue from 'vue'
+	import Vuex from 'vuex'
 	export default {
 		data() {
 			return {
 				info: null,
 				pays: {}, // 支付通道标识
-				wxService: null
+				wxService: null,
 			};
 		},
 		created() {
-			this.getProductInfo();
+			
 			/* 检测支付通道 */
 			// this.plusjk();
+		},
+		mounted(){
+			this.getProductInfo();
+		},
+		computed: {
+			...Vuex.mapState({
+				userid:state=>store.state.user.uid,
+				usernick: state => store.state.myInfo.nickname,
+				usercode:state=>store.state.user.userCode,
+				userav:state=>store.state.myInfo.headimgurl,
+				openid:state=>store.state.myInfo.openid
+			})
 		},
 		methods: {
 			handlerBack() {
 				this.$router.back();
 			},
 			getProductInfo() {
-				get('/health-web/modules/pmsproduct/getUserProduct',{}).then(res => {
+				get('/health-web/modules/pmsproduct/getUserProduct', {}).then(res => {
 					this.info = res.pmsProduct;
+					console.log(JSON.stringify(this.info))
 				});
 			},
 			// 下单
 			getPlaceOrder() {
 				get('/health-web/order/generateOrder', {
-//					`/health-web/order/generateSchemeOrder`
-//						schemeCode: this.$route.query.id,
-						productId:39,
-						userId: 1
+					
+						//					`/health-web/order/generateSchemeOrder`
+						//						schemeCode: this.$route.query.id,
+						productId: 39,
+						userId:store.state.user.uid,
 					})
 					.then(res => {
-						console.log(res);
+						console.log("下单成功！"+JSON.stringify(res));
+						console.log('store:'+store.state.user.uid)
+						console.log('store:'+store.state.user.token)
+						console.log('store:'+store.state.myInfo.openid)
 						this.goPay(res.order.orderSn, res.order.totalAmount);
-						console.log("下单成功！");
 					})
 					.catch(err => {
-						console.log("下单失败" + err);
+						console.log("下单失败" + JSON.stringify(err));
 					});
 			},
 
 			/* 支付 */
 			goPay(outTradeNo, totalFee) {
+				
 				post(
 					"/health-web/weixinMobile/dopay?orderType=0&outTradeNo=" +
 					outTradeNo +
 					"&totalFee=" +
 					totalFee +
-					"&openId=oi1oy1dgeHOAqdYLSF2sICfRG61w"
+					"&openId="+store.state.myInfo.openid
+//					"&openId=oi1oy1dgeHOAqdYLSF2sICfRG61w"
 				).then(res => {
 					var dopay = res;
 					var _this = this;
@@ -106,7 +128,7 @@
 					var wxpayReady = null;
 					plus.payment.getChannels(
 						s => {
-							plus.nativeUI.toast("获取支付通道成功 " + JSON.stringify(s));
+//							plus.nativeUI.toast("获取支付通道成功 " + JSON.stringify(s));
 							console.log("获取支付通道成功 " + JSON.stringify(s));
 							if(s.length) {
 								for(k in s) {
@@ -131,17 +153,23 @@
 									sign: dopay.sign
 								},
 								function(s) {
-									plus.nativeUI.toast("支付操作成功！" + JSON.stringify(s));
+									console.log("this:"+this)
+								console.log('_this'+_this)
 									console.log("支付操作成功！" + JSON.stringify(s));
+									plus.nativeUI.toast("支付成功!");
+									_this.$router.push({
+										name: 'Invitation'
+									})
+									
 								},
 								function(e) {
-									plus.nativeUI.toast("支付操作失败！" + JSON.stringify(e));
-									console.log("支付失败：" + e.message);
+									plus.nativeUI.toast("支付操作失败!");
+									console.log("支付失败：" +  JSON.stringify(e));
 								}
 							);
 						},
 						error => {
-							plus.nativeUI.toast("获取支付通道失败 " + JSON.stringify(error));
+							plus.nativeUI.toast("获取支付通道失败 " );
 							console.log("获取支付通道失败" + JSON.stringify(error));
 						}
 					);

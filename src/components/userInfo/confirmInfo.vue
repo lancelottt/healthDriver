@@ -41,7 +41,6 @@
 				</div>
 				<!--				<h2>你选的是：<br />身高：<i>{{inputHeight}}</i><br />生日：<i>{{inputBirth}}</i><br />性别：<i>{{gender}}</i><br />当前体重 ：<i>{{inputCurrentWeight}}</i><br />目标体重：<i>{{inputTargetWeight}}</i></h2>
 --></div>
-			<h2>userId:{{ids}}</h2>
 			<button class="my-big-el-button--danger" @click="handleGo()"><span>确认</span></button>
 		</section>
 		<!--<footer><span @click="handleGo()">下一步</span></footer>-->

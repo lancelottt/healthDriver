@@ -50,7 +50,7 @@ header {
       border-radius: 0;
       padding: 0; }
     #telLogin .telLogin .telLogin-con a {
-      width: 1.57rem;
+      min-width: 1.57rem;
       height: 0.26rem;
       font-size: 0.28rem;
       font-family: PingFangSC-Regular;
@@ -93,7 +93,6 @@ header {
   border-radius: 0.45rem;
   position: relative; }
   .telLogin-getVarifyCode a {
-    width: 1.43rem !important;
     height: 0.46rem !important;
     box-sizing: border-box;
     display: block;

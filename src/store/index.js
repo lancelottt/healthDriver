@@ -8,7 +8,12 @@ Vue.use(Vuex);
 const state = {
 	weChatServices: '',
 	user: {
-		id: "111"
+		id:'111',
+		uid: "",
+		userCode:'',
+		memberLevelId:'',
+		token:'',
+		ompleteStatus:'',
 	},
 	address: [],
 	show: true,
@@ -19,25 +24,56 @@ const state = {
 	memberRemindVoiceName:'',
 	remindItemId:'',
 	memberRemindVoice:'',
+	myInfo:{
+		nickname:'',
+		sex:'',
+		headimgurl:'',
+		openid:'',
+		access_token:''
+	},
+	promotionCode:'',
 }
 const getters = {
-
 }
 const mutations = {
 	handlerCommit(state,params){
-		console.log(params)
-		state.ids = params
+		if(params){state.ids = params}
 	},
 	handlerRemindCommit(state,params){
-		console.log(params)
-		state.remindName = params.remindItemName
-		state.remindTime = params.remindTime
-		state.memberRemindVoiceName = params.memberRemindVoiceName
+		if(params){
+			state.remindName = params.remindItemName
+			state.remindTime = params.remindTime
+			state.memberRemindVoiceName = params.memberRemindVoiceName
+		}
+		
 //		state.remindItemId = params.remindItemId
 //		state.memberRemindVoice = params.memberRemindVoice
 	},
 	handlerUserInfoCommit(state,params){
+		console.log(state,params)
+		state.user.uid = params.id
+		state.user.userCode = params.userCode
+		state.user.memberLevelId = params.memberLevelId
+		state.user.token = params.token
+		state.user.ompleteStatus = params.ompleteStatus
+	},
+	handlerMyInfoCommit(state,params){
+		if(params){
+			state.myInfo.nickname = params.nickname
+			state.myInfo.sex = params.sex
+			state.myInfo.headimgurl = params.headimgurl
+			state.myInfo.openid = params.openid
+			state.myInfo.access_token = params.access_token
+		}
+		
+	},
+	handlerProCodeCommit(state,params){
+		if(params){
+					state.promotionCode = params
+
+		}
 	}
+	
 //	handleEditTabStatus(state, params) {
 //		if(!params) {
 //			state.show = !state.show;
@@ -57,17 +93,17 @@ const mutations = {
 
 }
 const actions = {
-	handleEditTabStatus({
-		commit
-	}, params) {
-		console.log(params)
-		commit("handleEditTabStatus", params);
-	},
-	handlerModify({
-		commit
-	}, params) {
-		commit("handlerMessage", params)
-	},
+//	handleEditTabStatus({
+//		commit
+//	}, params) {
+//		console.log(params)
+//		commit("handleEditTabStatus", params);
+//	},
+//	handlerModify({
+//		commit
+//	}, params) {
+//		commit("handlerMessage", params)
+//	},
 	handlerDispatch({commit},params){
 		console.log({commit},params)
 		commit("handlerCommit",params)
@@ -76,7 +112,15 @@ const actions = {
 		commit("handlerRemindCommit",params)
 	},
 	handlerDispatchUserInfo({commit},params){
+				console.log({commit},params)
+
 		commit('handlerUserInfoCommit',params)
+	},
+	handlerMyInfo({commit},params){
+		commit("handlerMyInfoCommit",params)
+	},
+	handlerProCodeAction({commit},params){
+		commit("handlerProCodeCommit",params)
 	}
 }
 
