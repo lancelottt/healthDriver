@@ -13,7 +13,7 @@
 							<el-upload
 							  class="avatar-uploader"
 							  :headers="headerImg" 
-							  action="http://192.168.1.145:8081/health-web/modules/umsmember/addImg"
+							  action="http://bossdu.zicp.vip:55090/health-web/modules/umsmember/addImg"
 							  :show-file-list="false"
 							  :on-success="handleAvatarSuccess"
 							  :before-upload="beforeAvatarUpload">

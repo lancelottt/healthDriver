@@ -31,5 +31,16 @@ export default {
 </script>
 <style lang="" scroped>
 @import './unheal/unheal.css';
+/*.Tp i::before{
+	content:none
+}*/
+/*.Tp{
+	height: 0;
+}*/
+/*.simi{
+	display: flex;
+    flex-direction: row;
+    justify-content: center;
+}*/
     
 </style>

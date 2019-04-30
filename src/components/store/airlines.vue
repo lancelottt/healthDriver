@@ -23,7 +23,7 @@
           <p>症状部位，检查报告或其他材料</p>
         </div>
        </div> 
-      <el-upload class="upload-demo" id="upload-demo" ref="upload" action="http://192.168.1.170:8081/health-web/modules/userFeedback/save" :on-preview="handlePreview" :on-success="onSuccess" :limit="6"  :on-remove="handleRemove" :on-change="handleChange" :file-list="fileList" :auto-upload="false" list-type="picture" :headers="{'token': 'faad5a64-2f11-4b4a-9136-f7f50c333947'}" :data="{feedbackType: this.serviceType,feedbackContent: this.feedbackContent}">
+      <el-upload class="upload-demo" id="upload-demo" ref="upload" action="http://bossdu.zicp.vip:55090/health-web/modules/userFeedback/save" :on-preview="handlePreview" :on-success="onSuccess" :limit="6"  :on-remove="handleRemove" :on-change="handleChange" :file-list="fileList" :auto-upload="false" list-type="picture" :headers="{'token': 'faad5a64-2f11-4b4a-9136-f7f50c333947'}" :data="{feedbackType: this.serviceType,feedbackContent: this.feedbackContent}">
          <el-button slot="trigger" size="small" type="primary" id="cheackBtn"></el-button>
          <el-button size="small" type="success" @click="submitUpload" v-if="fileLength>0" id="updataBtn">确定上传</el-button> 
       </el-upload>

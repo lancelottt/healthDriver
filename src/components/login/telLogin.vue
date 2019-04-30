@@ -63,9 +63,10 @@
 						plus.nativeUI.toast(res.msg)
 					}
 					console.log(typeof(this.finalTel))
-					console.log(res)
+					console.log(JSON.stringify(res))
 				}).catch((err) => {
-					console.log(err)
+					console.log('登录失败'+JSON.stringify(err))
+					plus.nativeUI.toast(err.msg)
 				})
 			},
 			getAuthCode(){

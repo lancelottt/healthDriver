@@ -91,7 +91,8 @@
 			},
 			weTo(){
 				this.$router.push({
-					name:'setupTong'
+//					name:'setupTong'
+					name:'Healthy'
 				})
 			}
 		}

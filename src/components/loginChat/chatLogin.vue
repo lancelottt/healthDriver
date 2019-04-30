@@ -17,8 +17,9 @@
 						<img src="../../../static/img/weixin.png" alt="">
 					</div>
 					<span>微信登录</span>
-<!--					<span @click="next1()">1<i>{{ids}}</i></span>
--->					<!--<p>{{userid}}</p>
+					<!--					<span @click="next1()">1<i>{{ids}}</i></span>
+-->
+					<!--<p>{{userid}}</p>
 					<p>{{usernick}}</p>
 					<p>{{usercode}}</p>-->
 				</div>
@@ -47,7 +48,9 @@
 				id: '',
 				responseDataUser: [],
 				userInfo: [],
-				targetInfo:null,
+				targetInfo: null,
+				mopenid:'',
+				maccessToken:''
 			}
 		},
 		beforeCreate() {
@@ -67,10 +70,10 @@
 		},
 		computed: {
 			...Vuex.mapState({
-				userid:state=>store.state.user.uid,
+				userid: state => store.state.user.uid,
 				usernick: state => store.state.myInfo.nickname,
-				usercode:state=>store.state.user.userCode,
-				userav:state=>store.state.myInfo.headimgurl,
+				usercode: state => store.state.user.userCode,
+				userav: state => store.state.myInfo.headimgurl,
 			})
 		},
 		methods: {
@@ -79,8 +82,8 @@
 				var k = null;
 				var wxLoginObj = null;
 				var weixinCode = null;
-				var maccessToken = null;
-				var mopenid = null;
+//				var maccessToken = null;
+//				var mopenid = null;
 				document.getElementById('loginWx').addEventListener('click', function() {
 					plus.oauth.getServices(
 						function(s) {
@@ -102,52 +105,53 @@
 								console.log('Code：' + weixinCode)
 								if(!e.authResult) {
 									wxLoginObj.login(function(suc) {
-										mopenid = suc.target.authResult.openid
-										maccessToken = suc.target.authResult.access_token
-//										plus.nativeUI.toast('登陆成功 ')
+										_this.mopenid = suc.target.authResult.openid
+										_this.maccessToken = suc.target.authResult.access_token
+										//										plus.nativeUI.toast('登陆成功 ')
 										console.log('登陆成功 ' + JSON.stringify(suc))
 										_this.userInfo = suc.target.userInfo
-										get("/health-web/modules/wxThirdParty/login?openid=" + mopenid+'&accessToken='+maccessToken, {
+										get("/health-web/modules/wxThirdParty/login?openid=" + _this.mopenid + '&accessToken=' + _this.maccessToken, {
 											//											params: {
 											//												code: _this.weixinCode
 											//											}
 										}).then(function(response) {
-											localStorage.setItem('tokenCookie',response.user.token)
+											console.log('response.user.ompleteStatus' + response.user.ompleteStatus)
+											localStorage.setItem('tokenCookie', response.user.token)
 											console.log(response.user.token)
-											console.log('从服务器接收成功 '+JSON.stringify(response))
-//											plus.nativeUI.toast('从服务器接收成功 ')
+											console.log('从服务器接收成功 ' + JSON.stringify(response))
+											//											plus.nativeUI.toast('从服务器接收成功 ')
 											_this.responseDataUser = response.user
 											console.log(JSON.stringify(_this.responseDataUser))
 											_this.sendInfo()
 											_this.id = response.user.id
-											setTimeout(function(){
+											setTimeout(function() {
 												switch(response.user.ompleteStatus) {
-												case 0:
-													_this.$router.push({
-														name: 'payment'
-													})
-													break;
-												case 1:
-													_this.$router.push({
-														name: 'Invitation'
-													})
-													break;
-												case 2:
-													_this.$router.push('/login/telLogin')
-													break;
-												case 3:
-													_this.$router.push('/userInfo/confirmInfo')
-													break;
-												case 4:
-													_this.$router.push('/userInfo/identity')
-													break;
-												case 5:
-													_this.$router.push('/healthPlan/makeHealthPlan')
-													break;
-												default:
-													break;
-											}
-											},3000)
+													case 0:
+														_this.$router.push({
+															name: 'payment'
+														})
+														break;
+													case 1:
+														_this.$router.push({
+															name: 'Invitation'
+														})
+														break;
+													case 2:
+														_this.$router.push('/login/telLogin')
+														break;
+													case 3:
+														_this.$router.push('/userInfo/confirmInfo')
+														break;
+													case 4:
+														_this.$router.push('/userInfo/identity')
+														break;
+													case 5:
+														_this.$router.push('/healthPlan/makeHealthPlan')
+														break;
+													default:
+														break;
+												}
+											}, 3000)
 											//											_this.saveUserInfo()
 											//											_this.saveCookie(response.data.user.id)
 										}).catch(function(fail) {
@@ -213,7 +217,7 @@
 							//							);
 						},
 						function(e) {
-//							plus.nativeUI.toast('第三方登录插件获取失败');
+							//							plus.nativeUI.toast('第三方登录插件获取失败');
 							console.log('第三方登录插件获取失败' + JSON.stringify(e));
 						}
 					);
@@ -227,11 +231,47 @@
 			sendInfo() {
 				console.log(this.responseDataUser)
 				//				this.observer.$emit('change',this.id)
-				
+
 				this.$store.dispatch("handlerDispatchUserInfo", this.responseDataUser)
 				this.$store.dispatch("handlerMyInfo", this.userInfo)
 				this.$store.dispatch("handlerDispatch", this.id)
 			},
+//			beforeRouteLeave(to, from, next) {
+//				alert(1)
+//				get("/health-web/modules/wxThirdParty/login?openid=" + _this.mopenid + '&accessToken=' + _this.maccessToken, {
+//						//											params: {
+//						//												code: _this.weixinCode
+//						//											}
+//					}).then(function(response) {
+//						console.log(response)
+//						switch(response.user.ompleteStatus) {
+//							case 0:
+//								_this.$router.push({
+//									name: 'payment'
+//								})
+//								break;
+//							case 1:
+//								_this.$router.push({
+//									name: 'Invitation'
+//								})
+//								break;
+//							case 2:
+//								_this.$router.push('/login/telLogin')
+//								break;
+//							case 3:
+//								_this.$router.push('/userInfo/confirmInfo')
+//								break;
+//							case 4:
+//								_this.$router.push('/userInfo/identity')
+//								break;
+//							case 5:
+//								_this.$router.push('/healthPlan/makeHealthPlan')
+//								break;
+//							default:
+//								break;
+//						}
+//					})
+//			}
 			//			saveUserInfo(){
 			//				console.log(_this.$store)
 			////				_this.$store.dispatch("handlerModify",response.data.user.id)

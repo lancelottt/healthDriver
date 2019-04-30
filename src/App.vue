@@ -217,4 +217,11 @@ span{
 .cals{
     margin-top: .15rem;
 } */
+.icon-jiantou-left:before{
+	content:none
+}
+.simi{
+	display: flex;
+    justify-content: center;
+}
 </style>

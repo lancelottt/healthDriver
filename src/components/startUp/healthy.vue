@@ -106,54 +106,23 @@
 		},
 		methods: {
 			handleStartUp() {
-				var _this = this
-				get("/health-web/modules/wxThirdParty/login?openid=" + store.state.myInfo.openid + '&accessToken=' + store.state.myInfo.access_token, {
-					//											params: {
-					//												code: _this.weixinCode
-					//											}
-				}).then(function(response) {
-					setTimeout(function() {
-						switch(response.user.ompleteStatus) {
-							case 0:
-								_this.$router.push({
-									name: 'payment'
-								})
-								break;
-							case 1:
-								_this.$router.push({
-									name: 'Invitation'
-								})
-								break;
-							case 2:
-								_this.$router.push('/login/telLogin')
-								break;
-							case 3:
-								_this.$router.push('/userInfo/confirmInfo')
-								break;
-							case 4:
-								_this.$router.push('/userInfo/identity')
-								break;
-							case 5:
-								_this.$router.push('/healthPlan/makeHealthPlan')
-								break;
-							default:
-								break;
-						}
-					}, 3000)
-					//											_this.saveUserInfo()
-					//											_this.saveCookie(response.data.user.id)
-				}).catch(function(fail) {
-					console.log('从服务器接收失败 ' + JSON.stringify(fail))
-					_this.$router.push({
-						name: 'Invitation'
-					})
-				})
-
-			},
-			created() {
+				//				var _this = this
+				//				if(localStorage.getItem('ompleteStatusCookie')) {
+				//					var ompleteStatusCookie = localStorage.getItem('ompleteStatusCookie')
+				//					alert(ompleteStatusCookie)
+				//
+				//				} else {
+				//					this.$router.push({
+				//						name: 'loginChat'
+				//					})
+				//				}
+				this.$router.push({
+												name: 'loginChat'
+											})
+					},
+					created() {}
+				}
 			}
-		}
-	}
 </script>
 <style scoped>
 	/* @import '../../style/swiper.css'; */

@@ -539,7 +539,7 @@
 				})
 			},
 			handlerHitCardClick(item) {
-				const path ='http://192.168.1.144:8001'
+//				const path ='http://192.168.1.144:8001'
 				console.log(item)
 
 				//				switch(item.remindTime.substr(0, 2)) {
